@@ -1,0 +1,164 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Decentralized AI Governance Platform",
+      "overview": "A self-regulating DAO platform that uses smart contracts and AI-driven governance models to autonomously manage digital ecosystems.",
+      "problem": "Traditional governance systems are often slow and opaque. This project aims to introduce a transparent, decentralized decision-making process by incorporating mechanisms like quadratic voting and AI-powered dispute resolution.",
+      "features": [
+        "Quadratic voting mechanism",
+        "Treasury management and NFT-based identity roles",
+        "AI-enhanced dispute resolution"
+      ],
+      "image": "/assets/recentprojects/blockchain-project.png",
+      "technologies": ["Solidity", "Substrate", "OpenZeppelin", "Chainlink", "Polygon", "IPFS", "Aragon"],
+      "demoUrl": "https://demo.example.com",
+      "githubUrl": "https://github.com/redjijeanbaptiste/ai-governance",
+      "category": "Blockchain"
+    },
+    {
+      "id": 2,
+      "title": "AI-Enhanced Reputation System",
+      "overview": "A decentralized reputation engine that assigns credibility scores to users based on on-chain activity and community engagement.",
+      "problem": "Ensuring reliable reputation management in decentralized communities is challenging due to vulnerabilities like Sybil attacks. This project leverages AI to dynamically evaluate user behavior and maintain system integrity.",
+      "features": [
+        "Real-time reputation scoring",
+        "Sybil attack prevention",
+        "Integration of on-chain and off-chain data for comprehensive analysis"
+      ],
+      "image": "/assets/recentprojects/ai-project.png",
+      "technologies": ["Ethereum", "Solidity", "Chainlink", "The Graph", "Ceramic", "Polygon"],
+      "demoUrl": "https://demo.example.com/reputation",
+      "githubUrl": "https://github.com/redjijeanbaptiste/ai-reputation-system",
+      "category": "AI"
+    },
+    {
+      "id": 3,
+      "title": "Dynamic NFT Ecosystem",
+      "overview": "An innovative platform where NFTs evolve dynamically based on real-world data and user interactions, governed by a decentralized autonomous organization (DAO).",
+      "problem": "Static NFTs often fail to capture the evolving nature of digital art and interactive media. This project introduces dynamic NFTs that change over time, reflecting trends and engagement metrics.",
+      "features": [
+        "AI-generated dynamic evolution of NFTs",
+        "DAO-based governance to manage NFT behavior",
+        "Real-time data feeds to update NFT attributes"
+      ],
+      "image": "/assets/recentprojects/nft-project.png",
+      "technologies": ["Solidity", "Chainlink", "Ocean Protocol", "Arweave", "IPFS"],
+      "demoUrl": "https://demo.example.com/nft-ecosystem",
+      "githubUrl": "https://github.com/redjijeanbaptiste/dynamic-nft-ecosystem",
+      "category": "Blockchain"
+    },
+    {
+      "id": 4,
+      "title": "Sentiment Analysis API",
+      "overview": "A robust API that classifies text sentiment as positive, negative, or neutral using advanced NLP techniques.",
+      "problem": "Many applications need accurate sentiment analysis for social media monitoring, customer feedback, and market research, but lack easy-to-implement solutions.",
+      "features": [
+        "Real-time sentiment classification",
+        "Multi-language support",
+        "Customizable sentiment thresholds"
+      ],
+      "image": "/assets/recentprojects/sentiment-project.png",
+      "technologies": ["Python", "Flask", "BERT", "Docker", "Redis", "TensorFlow"],
+      "demoUrl": "https://demo.example.com/sentiment",
+      "githubUrl": "https://github.com/redjijeanbaptiste/sentiment-api",
+      "category": "AI"
+    },
+    {
+      "id": 5,
+      "title": "Network Automation Framework",
+      "overview": "A comprehensive Python-based framework for automating network device configuration, backup, and compliance checking.",
+      "problem": "Manual network configuration is error-prone and time-consuming. This framework streamlines network operations through automated provisioning and compliance verification.",
+      "features": [
+        "Multi-vendor device support",
+        "Configuration templating and validation",
+        "Scheduled compliance checks"
+      ],
+      "image": "/assets/recentprojects/network-project.png",
+      "technologies": ["Python", "Netmiko", "NAPALM", "Jinja2", "YAML", "Nornir"],
+      "demoUrl": "https://demo.example.com/network-automation",
+      "githubUrl": "https://github.com/redjijeanbaptiste/network-automation",
+      "category": "Networking"
+    },
+    {
+      "id": 6,
+      "title": "Vulnerability Scanner",
+      "overview": "An automated tool that identifies common security vulnerabilities and misconfigurations in web applications and infrastructure.",
+      "problem": "Organizations struggle to maintain security as their attack surface expands. This scanner automates the detection of vulnerabilities using pattern matching and behavioral analysis.",
+      "features": [
+        "Comprehensive vulnerability database",
+        "Prioritized risk assessment",
+        "Integration with CI/CD pipelines"
+      ],
+      "image": "/assets/recentprojects/security-project.png",
+      "technologies": ["Python", "OWASP", "Docker", "REST API", "PostgreSQL"],
+      "demoUrl": "https://demo.example.com/vulnerability-scanner",
+      "githubUrl": "https://github.com/redjijeanbaptiste/vulnerability-scanner",
+      "category": "Cybersecurity"
+    },
+    {
+      "id": 7,
+      "title": "Smart Contract Audit Framework",
+      "overview": "A tool for auditing smart contracts that combines static analysis, symbolic execution, and fuzz testing to identify vulnerabilities.",
+      "problem": "Smart contract vulnerabilities can lead to massive financial losses. This framework helps developers identify and fix security issues before deployment.",
+      "features": [
+        "Automated vulnerability detection",
+        "Gas optimization analysis",
+        "Contract interaction simulation"
+      ],
+      "image": "/assets/recentprojects/audit-project.png",
+      "technologies": ["Solidity", "JavaScript", "Mythril", "Slither", "Echidna", "Truffle"],
+      "demoUrl": "https://demo.example.com/smart-contract-audit",
+      "githubUrl": "https://github.com/redjijeanbaptiste/smart-contract-audit",
+      "category": "Blockchain"
+    },
+    {
+      "id": 8,
+      "title": "IoT Environmental Monitoring System",
+      "overview": "A network of IoT sensors that collect environmental data and store it on a blockchain for transparent and immutable record-keeping.",
+      "problem": "Environmental data integrity is crucial for research and policy decisions. This system ensures data cannot be tampered with while providing open access.",
+      "features": [
+        "Decentralized data storage",
+        "Real-time monitoring dashboard",
+        "Automated alerts for threshold violations"
+      ],
+      "image": "/assets/recentprojects/iot-project.png",
+      "technologies": ["ESP32", "MQTT", "Ethereum", "React", "Node.js", "InfluxDB"],
+      "demoUrl": "https://demo.example.com/environmental-monitoring",
+      "githubUrl": "https://github.com/redjijeanbaptiste/iot-monitoring",
+      "category": "IoT"
+    },
+    {
+      "id": 9,
+      "title": "Network Intrusion Detection System",
+      "overview": "An ML-powered system that monitors network traffic to detect and alert on suspicious activities and potential security breaches.",
+      "problem": "Traditional rule-based intrusion detection systems struggle with novel attack vectors. This solution uses ML to identify anomalous patterns.",
+      "features": [
+        "Real-time traffic analysis",
+        "Behavioral anomaly detection",
+        "Low false-positive rate through ML"
+      ],
+      "image": "/assets/recentprojects/intrusion-project.png",
+      "technologies": ["Python", "TensorFlow", "Wireshark", "Kafka", "Elasticsearch", "Kibana"],
+      "demoUrl": "https://demo.example.com/intrusion-detection",
+      "githubUrl": "https://github.com/redjijeanbaptiste/intrusion-detection",
+      "category": "Cross-Disciplinary"
+    },
+    {
+      "id": 10,
+      "title": "Decentralized Voting System",
+      "overview": "A blockchain-based voting platform that ensures transparency, immutability, and voter privacy for democratic processes.",
+      "problem": "Traditional voting systems lack transparency and are vulnerable to manipulation. This solution leverages blockchain to create auditable, tamper-proof election records.",
+      "features": [
+        "Anonymous yet verifiable voting",
+        "Real-time results tabulation",
+        "Decentralized voter registration"
+      ],
+      "image": "/assets/recentprojects/voting-project.png",
+      "technologies": ["Solidity", "React", "Ethereum", "IPFS", "zk-SNARKs", "MetaMask"],
+      "demoUrl": "https://demo.example.com/decentralized-voting",
+      "githubUrl": "https://github.com/redjijeanbaptiste/decentralized-voting",
+      "category": "Blockchain"
+    }
+  ]
+}
