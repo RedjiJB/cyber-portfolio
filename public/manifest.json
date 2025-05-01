@@ -1,0 +1,20 @@
+{
+    "name": "Redji Jean Baptiste | Toronto, Canada",
+    "short_name": "redjijeanb.vercel.app",
+    "icons": [
+        {
+            "src": "/rjb_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/rjb_512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#00bfbf",
+    "background_color": "#171c28"
+}

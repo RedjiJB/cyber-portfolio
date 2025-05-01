@@ -1,0 +1,175 @@
+{
+    "basics": {
+        "name": "Redji Jean Baptiste",
+        "label": "AI Engineer & Blockchain Developer",
+        "email": "redji.jeanbaptiste@mail.utoronto.ca",
+        "phone": "8193196405",
+        "picture": "profile.JPG",
+        "x_title": "Hello, I'm",
+        "job1": "AI",
+        "job2": "Engineer",
+        "description": "I design and develop innovative systems at the intersection of blockchain, cybersecurity, and advanced software engineering.",
+        "summary": "based in Toronto, Canada.",
+        "keywords": "blockchain,web3,decentralized,ai,cybersecurity,fullstack,developer,toronto,canada,ethereum,solidity,react,nextjs,nodejs,graphql,solana,polygon",
+        "url": "https://redjijeanb.vercel.app/",
+        "location": {
+            "address": "XX XXXXXstreet",
+            "postalCode": "XXXXX",
+            "city": "Toronto",
+            "country": "Canada",
+            "countryCode": "CA",
+            "region": "Ontario"
+        },
+        "profiles": [
+            {
+                "network": "Gmail",
+                "username": "jredji429@gmail.com",
+                "url": "mailto:jredji429@gmail.com",
+                "x_icon": "fab fa-google"
+            },
+            {
+                "network": "Email (Academic)",
+                "username": "redji.jeanbaptiste@mail.utoronto.ca",
+                "url": "mailto:redji.jeanbaptiste@mail.utoronto.ca",
+                "x_icon": "fas fa-envelope"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "redjijeanbaptiste",
+                "url": "https://www.linkedin.com/in/redji-jean-baptiste-25b0471b7",
+                "x_icon": "fab fa-linkedin-in"
+            },
+            {
+                "network": "GitHub",
+                "username": "RedjiJB",
+                "url": "https://github.com/RedjiJB",
+                "x_icon": "fab fa-github"
+            },
+            {
+                "network": "GitLab",
+                "username": "RedjiJB",
+                "url": "https://gitlab.com/RedjiJB",
+                "x_icon": "fab fa-gitlab"
+            },
+            {
+                "network": "Discord",
+                "username": "uncleruckus9003",
+                "url": "https://discord.com/users/uncleruckus9003",
+                "x_icon": "fab fa-discord"
+            },
+            {
+                "network": "Telegram",
+                "username": "RedjiJB",
+                "url": "https://t.me/RedjiJB",
+                "x_icon": "fab fa-telegram"
+            }
+        ]
+    },
+    "work": [
+        {
+            "company": "MyStudent Management Fund",
+            "position": "Lead Blockchain Developer",
+            "website": "https://example.com",
+            "startDate": "2021-01-01",
+            "endDate": "Present",
+            "summary": "Developing financial technology solutions using blockchain for student-managed investment funds",
+            "highlights": [
+                "Architected and implemented a decentralized trading platform for student investment funds",
+                "Developed smart contracts for transparent fund management and automatic dividend distribution",
+                "Integrated AI solutions for predictive market analysis and portfolio optimization"
+            ]
+        },
+        {
+            "company": "D Central",
+            "position": "Senior Blockchain Engineer",
+            "website": "https://example.com",
+            "startDate": "2019-06-01",
+            "endDate": "2020-12-31",
+            "summary": "Engineered blockchain solutions for enterprise clients focusing on mining optimization and security",
+            "highlights": [
+                "Designed and implemented mining optimization protocols increasing efficiency by 25%",
+                "Created secure blockchain data storage solutions for sensitive financial information",
+                "Led a team of 4 developers working on client-facing blockchain applications"
+            ]
+        },
+        {
+            "company": "Open Source Contributions",
+            "position": "Blockchain & AI Developer",
+            "website": "https://github.com/RedjiJB",
+            "startDate": "2017-01-01",
+            "endDate": "Present",
+            "summary": "Contributing to significant open-source blockchain and AI projects",
+            "highlights": [
+                "Core contributor to decentralized governance frameworks with over 500+ commits",
+                "Developed and maintained AI reputation systems used by several DeFi protocols",
+                "Created educational resources and developer tools for blockchain development"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "University of Toronto",
+            "area": "Computer Science",
+            "studyType": "Bachelor",
+            "startDate": "2013-09-01",
+            "endDate": "2017-05-01",
+            "gpa": "3.8",
+            "courses": ["Algorithms", "Data Structures", "Machine Learning", "Cryptography", "Distributed Systems"]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Blockchain Development",
+            "level": "Expert",
+            "keywords": ["Ethereum", "Solidity", "Rust", "Polygon", "Solana", "Smart Contracts"]
+        },
+        {
+            "name": "Artificial Intelligence",
+            "level": "Advanced",
+            "keywords": ["Neural Networks", "Reinforcement Learning", "TensorFlow", "PyTorch"]
+        },
+        {
+            "name": "Full-Stack Development",
+            "level": "Expert",
+            "keywords": ["React", "Node.js", "Next.js", "GraphQL", "REST APIs"]
+        },
+        {
+            "name": "Cybersecurity",
+            "level": "Advanced",
+            "keywords": ["Threat Detection", "Secure Coding", "Penetration Testing"]
+        },
+        {
+            "name": "DevOps",
+            "level": "Intermediate",
+            "keywords": ["Docker", "Kubernetes", "CI/CD", "AWS", "GCP"]
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "Native speaker"
+        },
+        {
+            "language": "French",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Haitian Creole",
+            "fluency": "Fluent"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Decentralized Finance",
+            "keywords": ["DeFi", "DAOs", "Tokenomics"]
+        },
+        {
+            "name": "AI Ethics",
+            "keywords": ["Responsible AI", "Privacy", "Fairness"]
+        },
+        {
+            "name": "Open Source",
+            "keywords": ["Community", "Collaboration", "Innovation"]
+        }
+    ]
+}
