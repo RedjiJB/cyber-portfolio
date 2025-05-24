@@ -107,10 +107,10 @@ export const About = () => {
   const [textToShow, setTextToShow] = useState("bio");
   
   // Bio text reflects the resume's description and summary
-  const aboutme = `I'm ${FirstName} ${LastName}, a Blockchain & AI Developer based in Toronto, Canada. I design and develop innovative systems at the intersection of blockchain, AI integration, and international development. My expertise spans decentralized technologies, governance systems, and full-stack development with a focus on creating ethical and impactful solutions.`;
-  
+  const aboutme = `I'm ${FirstName} ${LastName}, a Cybersecurity Analyst & AI Engineer based in Toronto, Canada. I protect digital systems through advanced threat analysis, vulnerability assessment, and AI-powered security solutions. My expertise spans security operations, incident response, and machine learning with a focus on developing robust defenses against evolving cyber threats.`;
+
   // Background text reflects education and current focus
-  const background = `I'm currently a student at the University of Toronto pursuing a Bachelor of Arts in International Development Studies & Economics for Management, with an expected graduation in 2026. My focus is on using decentralized technologies to empower communities with local control, transparent systems, and resilient infrastructure. In 2024, I'm actively working on open source projects in AI ethics, decentralized governance, and Web3 education platforms.`;
+  const background = `With a strong foundation in Computer Science from the University of Toronto and industry certifications including OSCP and GIAC, I specialize in implementing AI-driven security solutions that detect and mitigate threats in real-time. In 2024, I'm actively working on advanced security research projects including threat intelligence platforms, adversarial AI testing frameworks, and automated penetration testing tools.`;
 
   // Switch between bio and background every 10 seconds
   useEffect(() => {
@@ -233,20 +233,43 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-link-slash ${classes.skillIcon}`}></i>
-                  Blockchain Development
+                  <i className={`fas fa-shield-alt ${classes.skillIcon}`}></i>
+                  Cybersecurity Analysis
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Expert in Ethereum, Solidity, Rust, Polygon, Solana, NEAR, Web3.js, Ethers.js, and Smart Contracts development
+                  Expert in threat intelligence, vulnerability assessment, incident response, security architecture, and risk management
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Ethereum', 'Solidity', 'Rust', 'Polygon', 'Solana', 'NEAR'].map((tech) => (
-                    <Chip 
-                      key={tech} 
-                      label={tech} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
+                  {['Threat Intelligence', 'SIEM', 'Incident Response', 'Vulnerability Assessment', 'Risk Management'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
+              </Paper>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Paper className={classes.skillCard} elevation={2}>
+                <Typography variant="h6" className={classes.skillItem}>
+                  <i className={`fas fa-tools ${classes.skillIcon}`}></i>
+                  Security Tools
+                </Typography>
+                <Typography variant="body1" className={classes.skillDescription}>
+                  Expert with industry-standard security tools including Nessus, Wireshark, Metasploit, Burp Suite, Kali Linux, and various SIEM platforms
+                </Typography>
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['Nessus', 'Wireshark', 'Metasploit', 'Burp Suite', 'Kali Linux', 'Splunk'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
                     />
                   ))}
                 </div>
@@ -257,19 +280,19 @@ export const About = () => {
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
                   <i className={`fas fa-brain ${classes.skillIcon}`}></i>
-                  Artificial Intelligence
+                  AI & Machine Learning
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Advanced proficiency in Neural Networks, LLMs, NLP, Computer Vision, TensorFlow, PyTorch, and MLOps
+                  Advanced expertise in security-focused AI applications including anomaly detection, behavioral analysis, and NLP for threat detection
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Neural Networks', 'LLMs', 'NLP', 'Computer Vision', 'TensorFlow', 'PyTorch'].map((tech) => (
-                    <Chip 
-                      key={tech} 
-                      label={tech} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
+                  {['Anomaly Detection', 'TensorFlow', 'PyTorch', 'Behavioral Analysis', 'NLP', 'Security Analytics'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
                     />
                   ))}
                 </div>
@@ -279,20 +302,20 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-code ${classes.skillIcon}`}></i>
-                  Full-Stack Development
+                  <i className={`fas fa-network-wired ${classes.skillIcon}`}></i>
+                  Network Security
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Expert in React, Node.js, Next.js, TypeScript, GraphQL, REST APIs, and database technologies
+                  Expert in firewall configuration, VPN implementation, network segmentation, traffic analysis, and secure network architecture
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['React', 'Node.js', 'Next.js', 'TypeScript', 'GraphQL', 'REST APIs'].map((tech) => (
-                    <Chip 
-                      key={tech} 
-                      label={tech} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
+                  {['Firewall Configuration', 'Traffic Analysis', 'Network Segmentation', 'IDS/IPS', 'Zero Trust'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
                     />
                   ))}
                 </div>
@@ -302,20 +325,20 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-shield-alt ${classes.skillIcon}`}></i>
-                  Cybersecurity
+                  <i className={`fas fa-bug ${classes.skillIcon}`}></i>
+                  Penetration Testing
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Advanced knowledge in Threat Detection, Secure Coding, Penetration Testing, Smart Contract Auditing, Zero Knowledge Proofs, and Cryptography
+                  Advanced expertise in ethical hacking, vulnerability exploitation, web application testing, and security assessment methodologies
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Threat Detection', 'Secure Coding', 'Smart Contract Auditing', 'ZK Proofs', 'Cryptography'].map((tech) => (
-                    <Chip 
-                      key={tech} 
-                      label={tech} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
+                  {['OSCP', 'Ethical Hacking', 'Web App Testing', 'Exploit Development', 'Security Assessments'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
                     />
                   ))}
                 </div>
@@ -325,43 +348,20 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-cloud ${classes.skillIcon}`}></i>
-                  DevOps
+                  <i className={`fas fa-code-branch ${classes.skillIcon}`}></i>
+                  Secure Development
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Advanced skills with Docker, Kubernetes, CI/CD, AWS, GCP, Terraform, and GitOps
+                  Advanced knowledge in secure coding practices, code review for security vulnerabilities, DevSecOps, and OWASP secure coding standards
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Docker', 'Kubernetes', 'CI/CD', 'AWS', 'GCP', 'Terraform'].map((tech) => (
-                    <Chip 
-                      key={tech} 
-                      label={tech} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
-                    />
-                  ))}
-                </div>
-              </Paper>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.skillCard} elevation={2}>
-                <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-project-diagram ${classes.skillIcon}`}></i>
-                  DeFi & Web3
-                </Typography>
-                <Typography variant="body1" className={classes.skillDescription}>
-                  Expert in AMMs, Lending Protocols, NFTs, DAOs, Tokenomics, and Decentralized Identity
-                </Typography>
-                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['AMMs', 'Lending Protocols', 'NFTs', 'DAOs', 'Tokenomics', 'DID'].map((tech) => (
-                    <Chip 
-                      key={tech} 
-                      label={tech} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
+                  {['Secure Coding', 'Code Review', 'DevSecOps', 'OWASP Top 10', 'SAST/DAST'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
                     />
                   ))}
                 </div>
@@ -379,11 +379,11 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-balance-scale ${classes.skillIcon}`}></i>
-                  Decentralized AI Governance Platform
+                  <i className={`fas fa-shield-alt ${classes.skillIcon}`}></i>
+                  AI-Powered Security Operations Center
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  A DAO platform integrating quadratic voting mechanisms, treasury management modules, and AI-powered conflict resolution systems (In Development, 2024)
+                  A comprehensive security operations platform using machine learning to detect, analyze, and respond to security threats in real-time (In Development, 2024)
                 </Typography>
                 <Chip label="In Development" size="small" style={{ backgroundColor: '#FFD700', color: '#333', margin: '8px 0' }} />
               </Paper>
@@ -392,11 +392,11 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-user-shield ${classes.skillIcon}`}></i>
-                  AI Ethics Framework
+                  <i className={`fas fa-virus ${classes.skillIcon}`}></i>
+                  Advanced Malware Analysis Framework
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Open-source tools for responsible AI development, including bias detection for LLMs and transparency systems for complex AI applications
+                  An AI-powered system for automated analysis of malware samples, identifying patterns, behaviors, and potential attribution using machine learning
                 </Typography>
                 <Chip label="In Development" size="small" style={{ backgroundColor: '#FFD700', color: '#333', margin: '8px 0' }} />
               </Paper>
@@ -405,11 +405,11 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-graduation-cap ${classes.skillIcon}`}></i>
-                  Web3 Education Platform
+                  <i className={`fas fa-robot ${classes.skillIcon}`}></i>
+                  Adversarial AI Testing Framework
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Interactive learning platform with tutorials on smart contract development, automated testing frameworks, and comprehensive Web3 resources
+                  A platform for testing AI model resilience against adversarial attacks and implementing defensive measures to protect machine learning systems
                 </Typography>
                 <Chip label="Planning Phase" size="small" style={{ backgroundColor: '#87CEEB', color: '#333', margin: '8px 0' }} />
               </Paper>
@@ -418,11 +418,11 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-vote-yea ${classes.skillIcon}`}></i>
-                  Decentralized Voting System
+                  <i className={`fas fa-search ${classes.skillIcon}`}></i>
+                  Threat Intelligence Platform
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Blockchain-based voting platform ensuring transparency, immutability, and voter privacy for democratic processes using zk-SNARKs technology
+                  An AI-driven platform that collects, analyzes, and correlates threat data from multiple sources to provide actionable security intelligence
                 </Typography>
                 <Chip label="Completed" size="small" style={{ backgroundColor: '#90EE90', color: '#333', margin: '8px 0' }} />
               </Paper>
@@ -431,11 +431,11 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-search-dollar ${classes.skillIcon}`}></i>
-                  DeFi for Development Initiative
+                  <i className={`fas fa-laptop-code ${classes.skillIcon}`}></i>
+                  Automated Penetration Testing Framework
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Research project exploring how decentralized finance can drive economic development in underserved communities through accessible financial systems
+                  A comprehensive platform that automates vulnerability scanning, exploitation, and reporting for professional penetration testing engagements
                 </Typography>
                 <Chip label="Research" size="small" style={{ backgroundColor: '#BA55D3', color: 'white', margin: '8px 0' }} />
               </Paper>
@@ -447,25 +447,25 @@ export const About = () => {
           <Typography variant="h5" className={classes.sectionTitle}>
             Research Interests
           </Typography>
-          
+
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-chart-line ${classes.skillIcon}`}></i>
-                  Decentralized Finance (DeFi) for Development
+                  <i className={`fas fa-user-secret ${classes.skillIcon}`}></i>
+                  Threat Intelligence & Attribution
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Exploring how DAOs, tokenomics, and innovative financial models can drive economic development in underserved communities
+                  Researching advanced persistent threats (APTs), cyber attribution techniques, and proactive threat hunting methodologies
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['DeFi', 'DAOs', 'Tokenomics', 'Financial Inclusion'].map((area) => (
-                    <Chip 
-                      key={area} 
-                      label={area} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
+                  {['APT Research', 'Cyber Attribution', 'Threat Hunting', 'Intelligence Analysis'].map((area) => (
+                    <Chip
+                      key={area}
+                      label={area}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
                     />
                   ))}
                 </div>
@@ -475,20 +475,20 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-robot ${classes.skillIcon}`}></i>
-                  AI Ethics & Accessibility
+                  <i className={`fas fa-unlock-alt ${classes.skillIcon}`}></i>
+                  Vulnerability Research
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Researching responsible AI implementation, addressing bias in AI systems, and ensuring technology benefits all communities equitably
+                  Exploring zero-day vulnerabilities, exploit development techniques, and advanced reverse engineering methodologies
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Responsible AI', 'Bias Detection', 'Fairness', 'Explainability'].map((area) => (
-                    <Chip 
-                      key={area} 
-                      label={area} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
+                  {['Zero-day Research', 'Exploit Development', 'Reverse Engineering', 'Binary Analysis'].map((area) => (
+                    <Chip
+                      key={area}
+                      label={area}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
                     />
                   ))}
                 </div>
@@ -498,20 +498,20 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-leaf ${classes.skillIcon}`}></i>
-                  Sustainable Blockchain Solutions
+                  <i className={`fas fa-brain ${classes.skillIcon}`}></i>
+                  AI Security
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Investigating energy-efficient consensus mechanisms and blockchain implementations that align with sustainable development goals
+                  Researching adversarial machine learning, securing AI systems from attacks, and developing robust AI models for security applications
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['PoS', 'Energy Efficiency', 'Carbon Neutrality', 'Green NFTs'].map((area) => (
-                    <Chip 
-                      key={area} 
-                      label={area} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
+                  {['Adversarial ML', 'Model Security', 'Robust AI Systems', 'Security Analytics'].map((area) => (
+                    <Chip
+                      key={area}
+                      label={area}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
                     />
                   ))}
                 </div>
@@ -521,20 +521,20 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-hands-helping ${classes.skillIcon}`}></i>
-                  Open Source Development for Social Impact
+                  <i className={`fas fa-shield-virus ${classes.skillIcon}`}></i>
+                  Open Source Security Tools
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Contributing to community-driven projects that foster collaboration, innovation, and positive societal change
+                  Contributing to and developing open source security tools, frameworks, and educational resources for the cybersecurity community
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Community Building', 'Public Goods', 'Knowledge Sharing', 'Inclusion'].map((area) => (
-                    <Chip 
-                      key={area} 
-                      label={area} 
-                      color="primary" 
-                      size="small" 
-                      style={{ margin: '0 4px 4px 0' }} 
+                  {['OWASP', 'Security Tools', 'Community Projects', 'Threat Sharing'].map((area) => (
+                    <Chip
+                      key={area}
+                      label={area}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
                     />
                   ))}
                 </div>

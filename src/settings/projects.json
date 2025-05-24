@@ -2,83 +2,83 @@
   "projects": [
     {
       "id": 1,
-      "title": "Decentralized AI Governance Platform",
-      "overview": "A self-regulating DAO platform that uses smart contracts and AI-driven governance models to autonomously manage digital ecosystems.",
-      "problem": "Traditional governance systems are often slow and opaque. This project aims to introduce a transparent, decentralized decision-making process by incorporating mechanisms like quadratic voting and AI-powered dispute resolution.",
+      "title": "AI-Powered Security Operations Center (SOC)",
+      "overview": "A comprehensive security operations platform that uses AI to detect, analyze, and respond to security threats in real-time.",
+      "problem": "Traditional SOCs suffer from alert fatigue and manual processes. This solution incorporates machine learning to prioritize alerts, detect anomalies, and automate initial response actions.",
       "features": [
-        "Quadratic voting mechanism",
-        "Treasury management and NFT-based identity roles",
-        "AI-enhanced dispute resolution"
+        "ML-based alert prioritization and correlation",
+        "User and entity behavioral analytics (UEBA)",
+        "Automated incident response workflows"
       ],
-      "image": "/assets/recentprojects/blockchain-project.png",
-      "technologies": ["Solidity", "Substrate", "OpenZeppelin", "Chainlink", "Polygon", "IPFS", "Aragon"],
-      "demoUrl": "https://demo.example.com",
-      "githubUrl": "https://github.com/redjijeanbaptiste/ai-governance",
-      "category": "Blockchain"
+      "image": "/assets/recentprojects/security-project.png",
+      "technologies": ["Python", "TensorFlow", "Elasticsearch", "Kibana", "SOAR", "SIEM", "Docker"],
+      "demoUrl": "https://demo.example.com/ai-soc",
+      "githubUrl": "https://github.com/redjijeanbaptiste/ai-soc-platform",
+      "category": "Cybersecurity"
     },
     {
       "id": 2,
-      "title": "AI-Enhanced Reputation System",
-      "overview": "A decentralized reputation engine that assigns credibility scores to users based on on-chain activity and community engagement.",
-      "problem": "Ensuring reliable reputation management in decentralized communities is challenging due to vulnerabilities like Sybil attacks. This project leverages AI to dynamically evaluate user behavior and maintain system integrity.",
+      "title": "Advanced Malware Analysis Framework",
+      "overview": "An AI-powered system for automated analysis of malware samples, identifying patterns, behavior, and potential attribution.",
+      "problem": "Traditional malware analysis is time-consuming and often misses sophisticated evasion techniques. This framework uses machine learning to accelerate analysis and detect novel patterns.",
       "features": [
-        "Real-time reputation scoring",
-        "Sybil attack prevention",
-        "Integration of on-chain and off-chain data for comprehensive analysis"
+        "Automated static and dynamic analysis",
+        "ML-based malware family classification",
+        "Behavioral pattern recognition across samples"
       ],
       "image": "/assets/recentprojects/ai-project.png",
-      "technologies": ["Ethereum", "Solidity", "Chainlink", "The Graph", "Ceramic", "Polygon"],
-      "demoUrl": "https://demo.example.com/reputation",
-      "githubUrl": "https://github.com/redjijeanbaptiste/ai-reputation-system",
+      "technologies": ["Python", "TensorFlow", "YARA", "Cuckoo Sandbox", "IDA Pro", "Ghidra", "Docker"],
+      "demoUrl": "https://demo.example.com/malware-analysis",
+      "githubUrl": "https://github.com/redjijeanbaptiste/advanced-malware-analysis",
       "category": "AI"
     },
     {
       "id": 3,
-      "title": "Dynamic NFT Ecosystem",
-      "overview": "An innovative platform where NFTs evolve dynamically based on real-world data and user interactions, governed by a decentralized autonomous organization (DAO).",
-      "problem": "Static NFTs often fail to capture the evolving nature of digital art and interactive media. This project introduces dynamic NFTs that change over time, reflecting trends and engagement metrics.",
+      "title": "Automated Penetration Testing Framework",
+      "overview": "A comprehensive platform that automates vulnerability scanning, exploitation, and reporting for penetration testing engagements.",
+      "problem": "Manual penetration testing is time-intensive and can miss vulnerabilities. This solution automates repetitive tasks while allowing security professionals to focus on complex vulnerability analysis.",
       "features": [
-        "AI-generated dynamic evolution of NFTs",
-        "DAO-based governance to manage NFT behavior",
-        "Real-time data feeds to update NFT attributes"
+        "Intelligent vulnerability scanning and verification",
+        "Customizable exploitation modules with safety controls",
+        "Comprehensive reporting with remediation recommendations"
       ],
-      "image": "/assets/recentprojects/nft-project.png",
-      "technologies": ["Solidity", "Chainlink", "Ocean Protocol", "Arweave", "IPFS"],
-      "demoUrl": "https://demo.example.com/nft-ecosystem",
-      "githubUrl": "https://github.com/redjijeanbaptiste/dynamic-nft-ecosystem",
-      "category": "Blockchain"
+      "image": "/assets/recentprojects/security-project.png",
+      "technologies": ["Python", "Metasploit", "Nmap", "Docker", "OWASP ZAP", "Kubernetes", "REST API"],
+      "demoUrl": "https://demo.example.com/pentest-framework",
+      "githubUrl": "https://github.com/redjijeanbaptiste/automated-pentest",
+      "category": "Cybersecurity"
     },
     {
       "id": 4,
-      "title": "Sentiment Analysis API",
-      "overview": "A robust API that classifies text sentiment as positive, negative, or neutral using advanced NLP techniques.",
-      "problem": "Many applications need accurate sentiment analysis for social media monitoring, customer feedback, and market research, but lack easy-to-implement solutions.",
+      "title": "Threat Intelligence Platform",
+      "overview": "An AI-driven platform that collects, analyzes, and correlates threat data from multiple sources to provide actionable intelligence.",
+      "problem": "Security teams are overwhelmed with disparate threat data sources. This platform consolidates and enriches threat intelligence, making it actionable for security operations.",
       "features": [
-        "Real-time sentiment classification",
-        "Multi-language support",
-        "Customizable sentiment thresholds"
+        "Automated collection from open and closed sources",
+        "ML-powered threat correlation and analysis",
+        "Customizable intelligence feeds and alerting"
       ],
       "image": "/assets/recentprojects/sentiment-project.png",
-      "technologies": ["Python", "Flask", "BERT", "Docker", "Redis", "TensorFlow"],
-      "demoUrl": "https://demo.example.com/sentiment",
-      "githubUrl": "https://github.com/redjijeanbaptiste/sentiment-api",
+      "technologies": ["Python", "Elasticsearch", "NLP", "MISP", "STIX/TAXII", "TensorFlow", "Docker"],
+      "demoUrl": "https://demo.example.com/threat-intel",
+      "githubUrl": "https://github.com/redjijeanbaptiste/threat-intel-platform",
       "category": "AI"
     },
     {
       "id": 5,
-      "title": "Network Automation Framework",
-      "overview": "A comprehensive Python-based framework for automating network device configuration, backup, and compliance checking.",
-      "problem": "Manual network configuration is error-prone and time-consuming. This framework streamlines network operations through automated provisioning and compliance verification.",
+      "title": "Secure Network Automation Framework",
+      "overview": "A security-focused framework for automating network configuration with embedded security controls and compliance verification.",
+      "problem": "Traditional network automation often neglects security considerations. This solution enforces security best practices in network configurations and monitors for compliance drift.",
       "features": [
-        "Multi-vendor device support",
-        "Configuration templating and validation",
-        "Scheduled compliance checks"
+        "Security policy enforcement in configurations",
+        "Automated vulnerability scanning post-deployment",
+        "Compliance reporting for major regulatory frameworks"
       ],
       "image": "/assets/recentprojects/network-project.png",
-      "technologies": ["Python", "Netmiko", "NAPALM", "Jinja2", "YAML", "Nornir"],
-      "demoUrl": "https://demo.example.com/network-automation",
-      "githubUrl": "https://github.com/redjijeanbaptiste/network-automation",
-      "category": "Networking"
+      "technologies": ["Python", "Ansible", "Nornir", "Netmiko", "NAPALM", "CIS Benchmarks", "NIST"],
+      "demoUrl": "https://demo.example.com/secure-network",
+      "githubUrl": "https://github.com/redjijeanbaptiste/secure-network-automation",
+      "category": "Cybersecurity"
     },
     {
       "id": 6,
@@ -98,34 +98,34 @@
     },
     {
       "id": 7,
-      "title": "Smart Contract Audit Framework",
-      "overview": "A tool for auditing smart contracts that combines static analysis, symbolic execution, and fuzz testing to identify vulnerabilities.",
-      "problem": "Smart contract vulnerabilities can lead to massive financial losses. This framework helps developers identify and fix security issues before deployment.",
+      "title": "Cloud Security Posture Management",
+      "overview": "An automated platform for continuously monitoring and enforcing security policies across multi-cloud environments.",
+      "problem": "Maintaining security in complex cloud environments is challenging. This solution provides real-time visibility and automated remediation of security issues.",
       "features": [
-        "Automated vulnerability detection",
-        "Gas optimization analysis",
-        "Contract interaction simulation"
+        "Continuous security posture assessment",
+        "Automated policy enforcement and remediation",
+        "Compliance dashboard for major frameworks (SOC 2, HIPAA, PCI DSS)"
       ],
       "image": "/assets/recentprojects/audit-project.png",
-      "technologies": ["Solidity", "JavaScript", "Mythril", "Slither", "Echidna", "Truffle"],
-      "demoUrl": "https://demo.example.com/smart-contract-audit",
-      "githubUrl": "https://github.com/redjijeanbaptiste/smart-contract-audit",
-      "category": "Blockchain"
+      "technologies": ["Python", "Terraform", "AWS Security Hub", "Azure Security Center", "GCP Security Command", "Docker", "Kubernetes"],
+      "demoUrl": "https://demo.example.com/cloud-security",
+      "githubUrl": "https://github.com/redjijeanbaptiste/cloud-security-posture",
+      "category": "Cybersecurity"
     },
     {
       "id": 8,
-      "title": "IoT Environmental Monitoring System",
-      "overview": "A network of IoT sensors that collect environmental data and store it on a blockchain for transparent and immutable record-keeping.",
-      "problem": "Environmental data integrity is crucial for research and policy decisions. This system ensures data cannot be tampered with while providing open access.",
+      "title": "Secure IoT Framework",
+      "overview": "A comprehensive security framework for IoT devices implementing encryption, secure boot, and continuous monitoring.",
+      "problem": "IoT devices often lack basic security controls, creating significant attack vectors. This framework enables developers to implement security by design.",
       "features": [
-        "Decentralized data storage",
-        "Real-time monitoring dashboard",
-        "Automated alerts for threshold violations"
+        "End-to-end encryption for IoT communications",
+        "Secure boot and firmware verification",
+        "Anomaly detection for device behavior monitoring"
       ],
       "image": "/assets/recentprojects/iot-project.png",
-      "technologies": ["ESP32", "MQTT", "Ethereum", "React", "Node.js", "InfluxDB"],
-      "demoUrl": "https://demo.example.com/environmental-monitoring",
-      "githubUrl": "https://github.com/redjijeanbaptiste/iot-monitoring",
+      "technologies": ["ESP32", "ARM TrustZone", "MQTT", "TLS/DTLS", "Python", "C/C++", "TensorFlow Lite"],
+      "demoUrl": "https://demo.example.com/secure-iot",
+      "githubUrl": "https://github.com/redjijeanbaptiste/secure-iot-framework",
       "category": "IoT"
     },
     {
@@ -146,19 +146,19 @@
     },
     {
       "id": 10,
-      "title": "Decentralized Voting System",
-      "overview": "A blockchain-based voting platform that ensures transparency, immutability, and voter privacy for democratic processes.",
-      "problem": "Traditional voting systems lack transparency and are vulnerable to manipulation. This solution leverages blockchain to create auditable, tamper-proof election records.",
+      "title": "Adversarial AI Testing Framework",
+      "overview": "A platform for testing AI model resilience against adversarial attacks and implementing defensive measures.",
+      "problem": "AI systems are vulnerable to adversarial examples that can cause misclassification. This framework helps identify and mitigate these vulnerabilities.",
       "features": [
-        "Anonymous yet verifiable voting",
-        "Real-time results tabulation",
-        "Decentralized voter registration"
+        "Comprehensive adversarial attack simulation",
+        "Defensive technique implementation and testing",
+        "Model robustness reporting and visualization"
       ],
       "image": "/assets/recentprojects/voting-project.png",
-      "technologies": ["Solidity", "React", "Ethereum", "IPFS", "zk-SNARKs", "MetaMask"],
-      "demoUrl": "https://demo.example.com/decentralized-voting",
-      "githubUrl": "https://github.com/redjijeanbaptiste/decentralized-voting",
-      "category": "Blockchain"
+      "technologies": ["Python", "TensorFlow", "PyTorch", "FGSM", "PGD", "AutoAttack", "Docker"],
+      "demoUrl": "https://demo.example.com/adversarial-ai",
+      "githubUrl": "https://github.com/redjijeanbaptiste/adversarial-ai-framework",
+      "category": "AI"
     }
   ]
 }
