@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
       right: theme.spacing(6),
     },
     iconColor: {
-      color: theme.palette.foreground.default,
+      color: theme.palette.text.primary,
     },
 }));
 

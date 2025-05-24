@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   svgHover: {
-    fill: theme.palette.foreground.default,
+    fill: theme.palette.text.primary,
     "&:hover": {
         fill: theme.palette.primary.main,
     },
