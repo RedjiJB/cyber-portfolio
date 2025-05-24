@@ -1,16 +1,16 @@
 {
     "basics": {
         "name": "Redji Jean Baptiste",
-        "label": "AI Engineer & Blockchain Developer",
+        "label": "Cybersecurity Analyst & AI Engineer",
         "email": "redji.jeanbaptiste@mail.utoronto.ca",
         "phone": "8193196405",
         "picture": "profile.JPG",
         "x_title": "Hello, I'm",
-        "job1": "AI",
-        "job2": "Engineer",
-        "description": "I design and develop innovative systems at the intersection of blockchain, cybersecurity, and advanced software engineering.",
+        "job1": "Cybersecurity",
+        "job2": "Analyst",
+        "description": "I protect digital systems through advanced threat analysis, vulnerability assessment, and AI-powered security solutions.",
         "summary": "based in Toronto, Canada.",
-        "keywords": "blockchain,web3,decentralized,ai,cybersecurity,fullstack,developer,toronto,canada,ethereum,solidity,react,nextjs,nodejs,graphql,solana,polygon",
+        "keywords": "cybersecurity,penetration testing,threat intelligence,security analysis,incident response,ai,machine learning,security operations,malware analysis,network security,cloud security,toronto,canada,python,tensorflow,security tools",
         "url": "https://redjijeanb.vercel.app/",
         "location": {
             "address": "XX XXXXXstreet",
@@ -67,81 +67,99 @@
     },
     "work": [
         {
-            "company": "MyStudent Management Fund",
-            "position": "Lead Blockchain Developer",
+            "company": "SecureTech Solutions",
+            "position": "Senior Cybersecurity Analyst",
             "website": "https://example.com",
             "startDate": "2021-01-01",
             "endDate": "Present",
-            "summary": "Developing financial technology solutions using blockchain for student-managed investment funds",
+            "summary": "Leading threat detection and incident response for enterprise clients across financial and healthcare sectors",
             "highlights": [
-                "Architected and implemented a decentralized trading platform for student investment funds",
-                "Developed smart contracts for transparent fund management and automatic dividend distribution",
-                "Integrated AI solutions for predictive market analysis and portfolio optimization"
+                "Developed and implemented an AI-powered threat detection system reducing false positives by 65%",
+                "Led penetration testing initiatives for 15+ enterprise clients, identifying critical vulnerabilities before exploitation",
+                "Architected a secure cloud infrastructure migration strategy enhancing security posture while maintaining compliance"
             ]
         },
         {
-            "company": "D Central",
-            "position": "Senior Blockchain Engineer",
+            "company": "AI Security Labs",
+            "position": "Security AI Engineer",
             "website": "https://example.com",
             "startDate": "2019-06-01",
             "endDate": "2020-12-31",
-            "summary": "Engineered blockchain solutions for enterprise clients focusing on mining optimization and security",
+            "summary": "Designed and implemented AI solutions for advanced threat detection and security analytics",
             "highlights": [
-                "Designed and implemented mining optimization protocols increasing efficiency by 25%",
-                "Created secure blockchain data storage solutions for sensitive financial information",
-                "Led a team of 4 developers working on client-facing blockchain applications"
+                "Created machine learning models for zero-day malware detection with 93% accuracy rate",
+                "Developed anomaly detection systems for network traffic analysis, identifying previously undetected threats",
+                "Led a team of 4 engineers working on security automation and orchestration platforms"
             ]
         },
         {
-            "company": "Open Source Contributions",
-            "position": "Blockchain & AI Developer",
+            "company": "Cyber Defense Initiative",
+            "position": "Security Researcher & AI Specialist",
             "website": "https://github.com/RedjiJB",
             "startDate": "2017-01-01",
             "endDate": "Present",
-            "summary": "Contributing to significant open-source blockchain and AI projects",
+            "summary": "Contributing to open-source security tools and AI-powered defense mechanisms",
             "highlights": [
-                "Core contributor to decentralized governance frameworks with over 500+ commits",
-                "Developed and maintained AI reputation systems used by several DeFi protocols",
-                "Created educational resources and developer tools for blockchain development"
+                "Core contributor to OWASP security projects with over 500+ commits",
+                "Developed and maintained AI-powered vulnerability scanners used by security professionals",
+                "Created educational resources on secure coding practices and AI security frameworks"
             ]
         }
     ],
     "education": [
         {
             "institution": "University of Toronto",
-            "area": "Computer Science",
+            "area": "Computer Science, Specialization in Security",
             "studyType": "Bachelor",
             "startDate": "2013-09-01",
             "endDate": "2017-05-01",
             "gpa": "3.8",
-            "courses": ["Algorithms", "Data Structures", "Machine Learning", "Cryptography", "Distributed Systems"]
+            "courses": ["Cryptography", "Network Security", "Secure Software Systems", "Machine Learning", "Data Structures"]
+        },
+        {
+            "institution": "SANS Institute",
+            "area": "Cybersecurity",
+            "studyType": "Professional Certification",
+            "startDate": "2019-01-01",
+            "endDate": "2019-06-01",
+            "gpa": "",
+            "courses": ["GIAC Security Essentials (GSEC)", "GIAC Certified Incident Handler (GCIH)"]
+        },
+        {
+            "institution": "Offensive Security",
+            "area": "Penetration Testing",
+            "studyType": "Professional Certification",
+            "startDate": "2020-03-01",
+            "endDate": "2020-07-01",
+            "gpa": "",
+            "courses": ["Offensive Security Certified Professional (OSCP)"]
         }
     ],
     "skills": [
         {
-            "name": "Blockchain Development",
+            "name": "Cybersecurity Analysis",
             "level": "Expert",
-            "keywords": ["Ethereum", "Solidity", "Rust", "Polygon", "Solana", "Smart Contracts"]
+            "keywords": ["Threat Intelligence", "Vulnerability Assessment", "Incident Response", "Security Architecture", "Risk Assessment"]
         },
         {
-            "name": "Artificial Intelligence",
-            "level": "Advanced",
-            "keywords": ["Neural Networks", "Reinforcement Learning", "TensorFlow", "PyTorch"]
-        },
-        {
-            "name": "Full-Stack Development",
+            "name": "Security Tools",
             "level": "Expert",
-            "keywords": ["React", "Node.js", "Next.js", "GraphQL", "REST APIs"]
+            "keywords": ["Nessus", "Wireshark", "Metasploit", "Burp Suite", "SIEM", "IDS/IPS", "Kali Linux"]
         },
         {
-            "name": "Cybersecurity",
+            "name": "AI & Machine Learning",
             "level": "Advanced",
-            "keywords": ["Threat Detection", "Secure Coding", "Penetration Testing"]
+            "keywords": ["TensorFlow", "PyTorch", "Anomaly Detection", "Behavioral Analysis", "NLP for Threat Detection"]
         },
         {
-            "name": "DevOps",
-            "level": "Intermediate",
-            "keywords": ["Docker", "Kubernetes", "CI/CD", "AWS", "GCP"]
+            "name": "Network Security",
+            "level": "Expert",
+            "keywords": ["Firewall Configuration", "VPN Implementation", "Network Segmentation", "Traffic Analysis"]
+        },
+        {
+            "name": "Security Development",
+            "level": "Advanced",
+            "keywords": ["Secure Coding", "Code Review", "DevSecOps", "OWASP Top 10", "Security Automation"]
         }
     ],
     "languages": [
@@ -160,16 +178,20 @@
     ],
     "interests": [
         {
-            "name": "Decentralized Finance",
-            "keywords": ["DeFi", "DAOs", "Tokenomics"]
+            "name": "Threat Intelligence",
+            "keywords": ["APT Research", "Cyber Attribution", "Threat Hunting"]
         },
         {
-            "name": "AI Ethics",
-            "keywords": ["Responsible AI", "Privacy", "Fairness"]
+            "name": "Security Research",
+            "keywords": ["Zero-day Vulnerabilities", "Exploit Development", "Reverse Engineering"]
         },
         {
-            "name": "Open Source",
-            "keywords": ["Community", "Collaboration", "Innovation"]
+            "name": "AI Security",
+            "keywords": ["Adversarial Machine Learning", "Security Analytics", "Robust AI Systems"]
+        },
+        {
+            "name": "Open Source Security",
+            "keywords": ["Security Tools", "OWASP", "Community Security Projects"]
         }
     ]
 }

@@ -6,15 +6,15 @@ export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
     const getInitialMode = () => {
-        if (typeof localStorage === "undefined") return true;
+        if (typeof localStorage === "undefined") return false;
         const isReturningUser = "dark" in localStorage;
         const savedMode = JSON.parse(localStorage.getItem("dark"));
         const userPrefersDark = getPrefColorScheme();
         if (isReturningUser) {
             return savedMode;
         }
-        // Default to dark mode
-        return true;
+        // Default to light mode
+        return false;
     };
 
     const getPrefColorScheme = () => {
