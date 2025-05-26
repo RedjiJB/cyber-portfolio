@@ -541,6 +541,32 @@ body {
     font-size: 0.85rem;
 }
 
+/* Project Status Styles */
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.project-status.in-progress {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.project-status.planning {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #FF9800;
+}
+
+.project-status i {
+    font-size: 0.75rem;
+}
+
 /* Footer Styles */
 footer {
     color: var(--text-color);

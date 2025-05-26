@@ -209,7 +209,7 @@ export const About = () => {
                     </Button>
                     <Button 
                       component="a"
-                      href="/interactive-resume"
+                      href="https://redjijb.github.io/interactive-resume/"
                       variant="contained" 
                       className={classes.resumeButton}
                       startIcon={<i className="fas fa-file-alt"></i>}
@@ -383,9 +383,14 @@ export const About = () => {
                   AI-Powered Security Operations Center
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  A comprehensive security operations platform using machine learning to detect, analyze, and respond to security threats in real-time (In Development, 2024)
+                  A comprehensive security operations platform using machine learning to detect, analyze, and respond to security threats in real-time
                 </Typography>
-                <Chip label="In Development" size="small" style={{ backgroundColor: '#FFD700', color: '#333', margin: '8px 0' }} />
+                <Chip 
+                  label="In Progress" 
+                  size="small" 
+                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
+                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
+                />
               </Paper>
             </Grid>
             
@@ -398,7 +403,12 @@ export const About = () => {
                 <Typography variant="body1" className={classes.skillDescription}>
                   An AI-powered system for automated analysis of malware samples, identifying patterns, behaviors, and potential attribution using machine learning
                 </Typography>
-                <Chip label="In Development" size="small" style={{ backgroundColor: '#FFD700', color: '#333', margin: '8px 0' }} />
+                <Chip 
+                  label="Planning" 
+                  size="small" 
+                  style={{ backgroundColor: '#FF9800', color: '#fff', margin: '8px 0' }} 
+                  icon={<i className="fas fa-clock" style={{ fontSize: '0.8rem' }} />}
+                />
               </Paper>
             </Grid>
             
@@ -411,7 +421,12 @@ export const About = () => {
                 <Typography variant="body1" className={classes.skillDescription}>
                   A platform for testing AI model resilience against adversarial attacks and implementing defensive measures to protect machine learning systems
                 </Typography>
-                <Chip label="Planning Phase" size="small" style={{ backgroundColor: '#87CEEB', color: '#333', margin: '8px 0' }} />
+                <Chip 
+                  label="Planning" 
+                  size="small" 
+                  style={{ backgroundColor: '#FF9800', color: '#fff', margin: '8px 0' }} 
+                  icon={<i className="fas fa-clock" style={{ fontSize: '0.8rem' }} />}
+                />
               </Paper>
             </Grid>
             
@@ -424,7 +439,12 @@ export const About = () => {
                 <Typography variant="body1" className={classes.skillDescription}>
                   An AI-driven platform that collects, analyzes, and correlates threat data from multiple sources to provide actionable security intelligence
                 </Typography>
-                <Chip label="Completed" size="small" style={{ backgroundColor: '#90EE90', color: '#333', margin: '8px 0' }} />
+                <Chip 
+                  label="Planning" 
+                  size="small" 
+                  style={{ backgroundColor: '#FF9800', color: '#fff', margin: '8px 0' }} 
+                  icon={<i className="fas fa-clock" style={{ fontSize: '0.8rem' }} />}
+                />
               </Paper>
             </Grid>
             
@@ -437,7 +457,12 @@ export const About = () => {
                 <Typography variant="body1" className={classes.skillDescription}>
                   A comprehensive platform that automates vulnerability scanning, exploitation, and reporting for professional penetration testing engagements
                 </Typography>
-                <Chip label="Research" size="small" style={{ backgroundColor: '#BA55D3', color: 'white', margin: '8px 0' }} />
+                <Chip 
+                  label="In Progress" 
+                  size="small" 
+                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
+                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
+                />
               </Paper>
             </Grid>
           </Grid>

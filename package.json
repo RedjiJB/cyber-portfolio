@@ -1,7 +1,7 @@
 {
   "name": "react-portfolio",
   "version": "0.1.0",
-  "homepage": "",
+  "homepage": "https://redjijb.github.io/cyber-portfolio",
   "description": "A clean and customizable ReactJS portfolio template for fellow developers. Credits to Jo Lienhoop!",
   "repository": "https://github.com/taniyow/react-portfolio",
   "author": "Mark Tan <markcmtan@gmail.com>",
@@ -51,11 +51,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && react-snapshot",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "api": "node src/api/index.js",
-    "dev": "concurrently \"npm run start\" \"npm run api\""
+    "dev": "concurrently \"npm run start\" \"npm run api\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "reactSnapshot": {
     "exclude": [
@@ -81,6 +83,7 @@
   "devDependencies": {
     "concurrently": "^6.2.1",
     "emailjs": "^4.0.0",
+    "gh-pages": "^6.3.0",
     "nodemon": "^2.0.12"
   }
 }
