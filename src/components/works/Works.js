@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { 
   Container, 
   Typography, 
@@ -55,20 +55,41 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-    borderRadius: theme.shape.borderRadius * 2,
+    transition: 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
+    borderRadius: theme.shape.borderRadius * 3,
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.12)',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+    border: `1px solid ${theme.palette.divider}`,
+    position: 'relative',
     '&:hover': {
-      transform: 'translateY(-10px)',
-      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)',
+      transform: 'translateY(-8px) scale(1.02)',
+      boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)',
+      '& $projectMedia': {
+        transform: 'scale(1.05)',
+      },
     },
   },
   projectMedia: {
-    height: 240,
+    height: 220,
     position: 'relative',
     overflow: 'hidden',
+    transition: 'transform 0.4s ease',
+    background: `linear-gradient(135deg, ${theme.palette.primary.main}20, ${theme.palette.secondary.main}20)`,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%)',
+      pointerEvents: 'none',
+      zIndex: 1,
+    },
   },
   projectContent: {
     flexGrow: 1,
@@ -189,25 +210,27 @@ export const Works = () => {
   const { projects } = projectsData;
   const [tabValues, setTabValues] = useState({});
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [filteredProjects, setFilteredProjects] = useState(projects);
   
-  // Extract unique categories
-  const categories = ["All", ...new Set(projects.map(project => project.category))];
-
-  useEffect(() => {
+  // Memoize filtered projects to avoid unnecessary recalculations
+  const filteredProjects = useMemo(() => {
     if (selectedCategory === "All") {
-      setFilteredProjects(projects);
-    } else {
-      setFilteredProjects(projects.filter(project => project.category === selectedCategory));
+      return projects;
     }
+    return projects.filter(project => project.category === selectedCategory);
   }, [selectedCategory, projects]);
+  
+  // Memoize categories to avoid recalculation
+  const categories = useMemo(() => {
+    return ["All", ...new Set(projects.map(project => project.category))];
+  }, [projects]);
 
-  const handleTabChange = (projectId, newValue) => {
-    setTabValues({
-      ...tabValues,
+
+  const handleTabChange = useCallback((projectId, newValue) => {
+    setTabValues(prev => ({
+      ...prev,
       [projectId]: newValue
-    });
-  };
+    }));
+  }, []);
 
   const getTabValue = (projectId) => {
     return tabValues[projectId] || 0;
@@ -259,15 +282,26 @@ export const Works = () => {
         </div>
 
         {filteredProjects.length > 0 ? (
-          <Grid container spacing={4}>
+          <Grid container spacing={3}>
             {filteredProjects.map((project) => (
-              <Grid item xs={12} md={6} lg={4} key={project.id}>
+              <Grid item xs={12} sm={6} md={6} lg={4} key={project.id}>
                 <Card className={classes.projectCard}>
-                  <CardMedia
-                    className={classes.projectMedia}
-                    image={project.image}
-                    title={project.title}
-                  />
+                  <div className={classes.projectMedia}>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block'
+                      }}
+                      onError={(e) => {
+                        e.target.src = '/assets/recentprojects/security-project.png';
+                      }}
+                      loading="lazy"
+                    />
+                  </div>
                   <Chip 
                     label={project.category} 
                     className={classes.categoryChip} 
