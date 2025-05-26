@@ -10,7 +10,7 @@ A modern, responsive portfolio website showcasing my expertise in cybersecurity,
 
 ## 🚀 Live Demo
 
-Check out the live portfolio at: [https://cyber-portfolio.vercel.app](https://cyber-portfolio.vercel.app)
+Check out the live portfolio at: [https://redjijb.github.io/cyber-portfolio/](https://redjijb.github.io/cyber-portfolio/)
 
 ## 🛠️ Built With
 
