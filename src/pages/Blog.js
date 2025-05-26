@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { 
   Container, 
@@ -77,20 +77,24 @@ export const Blog = () => {
   const classes = useStyles();
   const { posts } = blogData;
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [filteredPosts, setFilteredPosts] = useState(posts);
   
-  // Extract unique categories from post tags
-  const allTags = posts.reduce((tags, post) => [...tags, ...post.tags], []);
-  const uniqueTags = ["All", ...new Set(allTags)];
+  // Memoize unique tags extraction
+  const uniqueTags = useMemo(() => {
+    const allTags = posts.reduce((tags, post) => [...tags, ...post.tags], []);
+    return ["All", ...new Set(allTags)];
+  }, [posts]);
 
-  // Filter posts when category changes
-  useEffect(() => {
+  // Memoize filtered posts
+  const filteredPosts = useMemo(() => {
     if (selectedCategory === "All") {
-      setFilteredPosts(posts);
-    } else {
-      setFilteredPosts(posts.filter(post => post.tags.includes(selectedCategory)));
+      return posts;
     }
+    return posts.filter(post => post.tags.includes(selectedCategory));
   }, [selectedCategory, posts]);
+  
+  const handleCategoryChange = useCallback((category) => {
+    setSelectedCategory(category);
+  }, []);
 
   const featuredPost = filteredPosts.length > 0 ? filteredPosts[0] : posts[0];
 
@@ -119,7 +123,7 @@ export const Blog = () => {
             {uniqueTags.map((category) => (
               <Button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryChange(category)}
                 variant={selectedCategory === category ? "contained" : "outlined"}
                 color="primary"
                 className={classes.filterButton}
@@ -141,7 +145,7 @@ export const Blog = () => {
                   
                   {/* Blog posts grid */}
                   <Container className={classes.cardGrid} maxWidth="lg">
-                    <Grid container spacing={4}>
+                    <Grid container spacing={3}>
                       {filteredPosts.slice(1).map((post, index) => (
                         <Grid item key={index} xs={12} sm={6} md={4}>
                           <BlogPostCard post={post} />
