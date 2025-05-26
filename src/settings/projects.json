@@ -10,7 +10,7 @@
         "User and entity behavioral analytics (UEBA)",
         "Automated incident response workflows"
       ],
-      "image": "/assets/recentprojects/security-project.png",
+      "image": "/assets/recentprojects/ai-soc-project.svg",
       "technologies": ["Python", "TensorFlow", "Elasticsearch", "Kibana", "SOAR", "SIEM", "Docker"],
       "demoUrl": "https://demo.example.com/ai-soc",
       "githubUrl": "https://github.com/redjijeanbaptiste/ai-soc-platform",
@@ -27,7 +27,7 @@
         "ML-based malware family classification",
         "Behavioral pattern recognition across samples"
       ],
-      "image": "/assets/recentprojects/ai-project.png",
+      "image": "/assets/recentprojects/malware-analysis.svg",
       "technologies": ["Python", "TensorFlow", "YARA", "Cuckoo Sandbox", "IDA Pro", "Ghidra", "Docker"],
       "demoUrl": "https://demo.example.com/malware-analysis",
       "githubUrl": "https://github.com/redjijeanbaptiste/advanced-malware-analysis",
@@ -44,7 +44,7 @@
         "Customizable exploitation modules with safety controls",
         "Comprehensive reporting with remediation recommendations"
       ],
-      "image": "/assets/recentprojects/security-project.png",
+      "image": "/assets/recentprojects/pentest-framework.svg",
       "technologies": ["Python", "Metasploit", "Nmap", "Docker", "OWASP ZAP", "Kubernetes", "REST API"],
       "demoUrl": "https://demo.example.com/pentest-framework",
       "githubUrl": "https://github.com/redjijeanbaptiste/automated-pentest",
@@ -61,7 +61,7 @@
         "ML-powered threat correlation and analysis",
         "Customizable intelligence feeds and alerting"
       ],
-      "image": "/assets/recentprojects/sentiment-project.png",
+      "image": "/assets/recentprojects/threat-intel.svg",
       "technologies": ["Python", "Elasticsearch", "NLP", "MISP", "STIX/TAXII", "TensorFlow", "Docker"],
       "demoUrl": "https://demo.example.com/threat-intel",
       "githubUrl": "https://github.com/redjijeanbaptiste/threat-intel-platform",
@@ -95,7 +95,7 @@
         "Prioritized risk assessment",
         "Integration with CI/CD pipelines"
       ],
-      "image": "/assets/recentprojects/security-project.png",
+      "image": "/assets/recentprojects/vulnerability-scanner.svg",
       "technologies": ["Python", "OWASP", "Docker", "REST API", "PostgreSQL"],
       "demoUrl": "https://demo.example.com/vulnerability-scanner",
       "githubUrl": "https://github.com/redjijeanbaptiste/vulnerability-scanner",

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="icon" type="image/png" href="/rjb_32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="container resume-container">
+        <!-- Header Section -->
+        <header class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="name">Redji Jean Baptiste</h1>
+                    <h2 class="role mb-3">Blockchain & AI Developer</h2>
+                    <p class="lead mb-3">I design and develop innovative systems at the intersection of blockchain, cybersecurity, and advanced software engineering.</p>
+                    
+                    <div class="d-flex contact-links mb-3">
+                        <a href="mailto:jredji429@gmail.com" class="me-3" title="Gmail">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/redji-jean-baptiste-25b0471b7" target="_blank" class="me-3" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/RedjiJB" target="_blank" class="me-3" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://gitlab.com/RedjiJB" target="_blank" class="me-3" title="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://discord.com/users/uncleruckus9003" target="_blank" class="me-3" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://t.me/RedjiJB" target="_blank" class="me-3" title="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="location mb-3">
+                        <i class="fas fa-map-marker-alt me-2"></i> Toronto, Canada
+                    </div>
+                    
+                    <a href="/interactive-resume/assets/Redji_Custom_Technical_Resume.pdf" download class="pdf-download-btn">
+                        <i class="fas fa-file-pdf me-2"></i> Download Technical Resume
+                    </a>
+                    
+                    <button id="theme-toggle" class="theme-toggle-btn ms-3">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                    <div class="profile-image-container">
+                        <div class="profile-image"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Navigation -->
+        <nav class="resume-nav mb-5">
+            <ul class="nav nav-pills" id="resumeNav">
+                <li class="nav-item">
+                    <a class="nav-link active" data-section="skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-section="experience">Open Source</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-section="education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-section="papers">Papers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-section="projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-section="interests">Interests</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="resume-section active">
+            <h3 class="section-title">Technical Skills</h3>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-link-slash"></i>
+                        </div>
+                        <h4>Blockchain Development</h4>
+                        <div class="skill-level expert"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Ethereum</span>
+                            <span class="skill-tag">Solidity</span>
+                            <span class="skill-tag">Rust</span>
+                            <span class="skill-tag">Polygon</span>
+                            <span class="skill-tag">Solana</span>
+                            <span class="skill-tag">NEAR</span>
+                            <span class="skill-tag">Smart Contracts</span>
+                            <span class="skill-tag">Web3.js</span>
+                            <span class="skill-tag">Ethers.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Artificial Intelligence</h4>
+                        <div class="skill-level advanced"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Neural Networks</span>
+                            <span class="skill-tag">Reinforcement Learning</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">LLMs</span>
+                            <span class="skill-tag">ML Ops</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Full-Stack Development</h4>
+                        <div class="skill-level expert"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">GraphQL</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Serverless</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Cybersecurity</h4>
+                        <div class="skill-level advanced"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Threat Detection</span>
+                            <span class="skill-tag">Secure Coding</span>
+                            <span class="skill-tag">Penetration Testing</span>
+                            <span class="skill-tag">Smart Contract Auditing</span>
+                            <span class="skill-tag">Zero Knowledge Proofs</span>
+                            <span class="skill-tag">Cryptography</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4>DevOps</h4>
+                        <div class="skill-level advanced"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">GCP</span>
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">GitOps</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4>DeFi & Web3</h4>
+                        <div class="skill-level expert"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AMMs</span>
+                            <span class="skill-tag">Lending Protocols</span>
+                            <span class="skill-tag">NFTs</span>
+                            <span class="skill-tag">DAOs</span>
+                            <span class="skill-tag">DID</span>
+                            <span class="skill-tag">Tokenomics</span>
+                            <span class="skill-tag">Yield Farming</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="languages mt-5">
+                <h3 class="section-title">Languages</h3>
+                <div class="language-item">
+                    <span class="language-name">Haitian Creole</span>
+                    <span class="language-level">Native</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Fluent</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">French</span>
+                    <span class="language-level">Fluent</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Open Source Section -->
+        <section id="experience" class="resume-section">
+            <h3 class="section-title">Open Source Contributions</h3>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h4 class="timeline-title">Core Contributor</h4>
+                        <h5 class="timeline-company">Decentralized Governance Framework</h5>
+                        <p>Planning to build open-source governance tools for DAOs and decentralized communities</p>
+                        <ul class="timeline-details">
+                            <li>Designing quadratic voting mechanisms for community decision-making</li>
+                            <li>Planning treasury management modules for transparent capital allocation</li>
+                            <li>Researching conflict resolution systems for decentralized protocols</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h4 class="timeline-title">Lead Developer</h4>
+                        <h5 class="timeline-company">AI Ethics Framework</h5>
+                        <p>Currently working on open-source tools for ensuring responsible AI development</p>
+                        <ul class="timeline-details">
+                            <li>Developing bias detection algorithms for large language models</li>
+                            <li>Creating ethical guidelines and templates for responsible AI deployment</li>
+                            <li>Building explainability tools to make complex AI systems more transparent</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h4 class="timeline-title">Contributor</h4>
+                        <h5 class="timeline-company">Web3 Education Platform</h5>
+                        <p>Starting development on an open learning platform for blockchain and Web3 technologies</p>
+                        <ul class="timeline-details">
+                            <li>Planning interactive tutorials on smart contract development and security</li>
+                            <li>Designing automated testing frameworks for hands-on learning experiences</li>
+                            <li>Creating comprehensive documentation resources for new Web3 developers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="resume-section">
+            <h3 class="section-title">Education</h3>
+            
+            <div class="education-item">
+                <div class="education-logo">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="education-details">
+                    <h4>Bachelor of Arts in International Development Studies & Economics for Management</h4>
+                    <h5>University of Toronto</h5>
+                    <div class="education-date">Expected 2026</div>
+                    <p class="mb-2">Focus: Using decentralized technologies to empower communities with local control, transparent systems, and resilient infrastructure</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Research Papers Section -->
+        <section id="papers" class="resume-section">
+            <h3 class="section-title">Research Papers</h3>
+            
+            <div id="papersCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#papersCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Paper 1"></button>
+                    <button type="button" data-bs-target="#papersCarousel" data-bs-slide-to="1" aria-label="Paper 2"></button>
+                    <button type="button" data-bs-target="#papersCarousel" data-bs-slide-to="2" aria-label="Paper 3"></button>
+                    <button type="button" data-bs-target="#papersCarousel" data-bs-slide-to="3" aria-label="Paper 4"></button>
+                    <button type="button" data-bs-target="#papersCarousel" data-bs-slide-to="4" aria-label="Paper 5"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="paper-card">
+                            <h4>Blockchain for Economic Development</h4>
+                            <p class="paper-abstract">This research explores how blockchain technologies can drive economic development in underserved communities by creating transparent financial systems and reducing barriers to access.</p>
+                            <a href="#" class="paper-link">Read Full Paper <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="paper-card">
+                            <h4>Decentralized Finance in Emerging Markets</h4>
+                            <p class="paper-abstract">An analysis of how DeFi solutions can bridge financial inclusion gaps in emerging markets, with case studies from Caribbean and African economies.</p>
+                            <a href="#" class="paper-link">Read Full Paper <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="paper-card">
+                            <h4>AI Applications in Economic Forecasting</h4>
+                            <p class="paper-abstract">Examining how artificial intelligence can improve economic forecasting in developing economies with limited historical data and rapidly changing conditions.</p>
+                            <a href="#" class="paper-link">Read Full Paper <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="paper-card">
+                            <h4>Financial Inclusion Through Digital Assets</h4>
+                            <p class="paper-abstract">This paper explores how digital assets can extend financial services to the unbanked and create new economic opportunities in underserved regions.</p>
+                            <a href="#" class="paper-link">Read Full Paper <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="paper-card">
+                            <h4>Governance Models for Digital Economies</h4>
+                            <p class="paper-abstract">A comparative analysis of governance structures for digital economies, focusing on DAOs and their potential to revolutionize community-driven decision making.</p>
+                            <a href="#" class="paper-link">Read Full Paper <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#papersCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#papersCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="resume-section">
+            <h3 class="section-title">Featured Projects</h3>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Decentralized AI Governance Platform</h4>
+                    <div class="project-links">
+                        <a href="https://demo.example.com" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/redjijeanbaptiste/ai-governance" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A self-regulating DAO platform that uses smart contracts and AI-driven governance models to autonomously manage digital ecosystems.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">Substrate</span>
+                    <span class="tech-tag">OpenZeppelin</span>
+                    <span class="tech-tag">Chainlink</span>
+                    <span class="tech-tag">Polygon</span>
+                    <span class="tech-tag">IPFS</span>
+                    <span class="tech-tag">Aragon</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>AI-Enhanced Reputation System</h4>
+                    <div class="project-links">
+                        <a href="https://demo.example.com/reputation" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/redjijeanbaptiste/ai-reputation-system" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A decentralized reputation engine that assigns credibility scores to users based on on-chain activity and community engagement.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Ethereum</span>
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">Chainlink</span>
+                    <span class="tech-tag">The Graph</span>
+                    <span class="tech-tag">Ceramic</span>
+                    <span class="tech-tag">Polygon</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Dynamic NFT Ecosystem</h4>
+                    <div class="project-links">
+                        <a href="https://demo.example.com/nft-ecosystem" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/redjijeanbaptiste/dynamic-nft-ecosystem" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">An innovative platform where NFTs evolve dynamically based on real-world data and user interactions, governed by a decentralized autonomous organization (DAO).</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">Chainlink</span>
+                    <span class="tech-tag">Ocean Protocol</span>
+                    <span class="tech-tag">Arweave</span>
+                    <span class="tech-tag">IPFS</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Sentiment Analysis API</h4>
+                    <div class="project-links">
+                        <a href="https://demo.example.com/sentiment" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/redjijeanbaptiste/sentiment-api" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A robust API that classifies text sentiment as positive, negative, or neutral using advanced NLP techniques.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">BERT</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">TensorFlow</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Smart Contract Audit Framework</h4>
+                    <div class="project-links">
+                        <a href="https://demo.example.com/smart-contract-audit" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/redjijeanbaptiste/smart-contract-audit" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A tool for auditing smart contracts that combines static analysis, symbolic execution, and fuzz testing to identify vulnerabilities.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Mythril</span>
+                    <span class="tech-tag">Slither</span>
+                    <span class="tech-tag">Echidna</span>
+                    <span class="tech-tag">Truffle</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Decentralized Voting System</h4>
+                    <div class="project-links">
+                        <a href="https://demo.example.com/decentralized-voting" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/redjijeanbaptiste/decentralized-voting" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A blockchain-based voting platform that ensures transparency, immutability, and voter privacy for democratic processes.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Ethereum</span>
+                    <span class="tech-tag">IPFS</span>
+                    <span class="tech-tag">zk-SNARKs</span>
+                    <span class="tech-tag">MetaMask</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Interests Section -->
+        <section id="interests" class="resume-section">
+            <h3 class="section-title">Interests & Research Areas</h3>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Decentralized Finance</h4>
+                        <div class="interest-tags">
+                            <span class="interest-tag">DeFi</span>
+                            <span class="interest-tag">DAOs</span>
+                            <span class="interest-tag">Tokenomics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>AI Ethics</h4>
+                        <div class="interest-tags">
+                            <span class="interest-tag">Responsible AI</span>
+                            <span class="interest-tag">Privacy</span>
+                            <span class="interest-tag">Fairness</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Open Source</h4>
+                        <div class="interest-tags">
+                            <span class="interest-tag">Community</span>
+                            <span class="interest-tag">Collaboration</span>
+                            <span class="interest-tag">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="mt-5 text-center">
+            <a href="/" class="back-link">
+                <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+            </a>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
