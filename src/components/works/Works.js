@@ -15,13 +15,16 @@ import {
   Paper,
   Tabs,
   Tab,
-  ButtonGroup
+  ButtonGroup,
+  Tooltip
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextDecrypt } from "../content/TextDecrypt";
 import projectsData from "../../settings/projects.json";
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import BuildIcon from '@material-ui/icons/Build';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 
 import './Works.css';
 
@@ -157,6 +160,27 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     padding: theme.spacing(6),
     width: '100%',
+  },
+  statusBadge: {
+    position: 'absolute',
+    top: theme.spacing(2),
+    left: theme.spacing(2),
+    display: 'flex',
+    alignItems: 'center',
+    gap: theme.spacing(0.5),
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    color: '#fff',
+    padding: theme.spacing(0.5, 1.5),
+    borderRadius: theme.shape.borderRadius * 4,
+    fontWeight: 600,
+    fontSize: '0.75rem',
+    zIndex: 1,
+    '&.in-progress': {
+      backgroundColor: 'rgba(76, 175, 80, 0.9)',
+    },
+    '&.planning': {
+      backgroundColor: 'rgba(255, 152, 0, 0.9)',
+    },
   }
 }));
 
@@ -249,6 +273,14 @@ export const Works = () => {
                     className={classes.categoryChip} 
                     size="small" 
                   />
+                  {project.status && (
+                    <Tooltip title={project.status === 'in-progress' ? 'Active Development' : 'Planning Phase'}>
+                      <div className={`${classes.statusBadge} ${project.status}`}>
+                        {project.status === 'in-progress' ? <BuildIcon style={{ fontSize: '1rem' }} /> : <AccessTimeIcon style={{ fontSize: '1rem' }} />}
+                        {project.status === 'in-progress' ? 'In Progress' : 'Planning'}
+                      </div>
+                    </Tooltip>
+                  )}
                   <CardContent className={classes.projectContent}>
                     <Typography variant="h5" className={classes.projectTitle}>
                       {project.title}
