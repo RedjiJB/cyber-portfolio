@@ -1,0 +1,175 @@
+# 🔍 Simple Port Scanner
+
+A lightweight, educational TCP port scanner written in Python. Perfect for learning network programming and security concepts.
+
+![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey)
+
+## 📋 Features
+
+### Basic Scanner (`scanner.py`)
+- ✅ TCP port scanning
+- ✅ Custom port range selection
+- ✅ Hostname resolution
+- ✅ Result saving to file
+- ✅ Clean command-line interface
+
+### Advanced Scanner (`scanner_advanced.py`)
+- ✅ Multi-threaded scanning for speed
+- ✅ Service detection
+- ✅ Banner grabbing
+- ✅ JSON export option
+- ✅ Common port identification
+
+## 🚀 Quick Start
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/simple-port-scanner.git
+cd simple-port-scanner
+
+# No external dependencies required for basic version
+python3 scanner.py --help
+```
+
+### Basic Usage
+```bash
+# Scan default ports (1-1000) on localhost
+python3 scanner.py 127.0.0.1
+
+# Scan specific port range
+python3 scanner.py 192.168.1.1 -p 20-80
+
+# Save results to file
+python3 scanner.py example.com -p 1-100 -s
+```
+
+### Advanced Usage
+```bash
+# Multi-threaded scan with 100 threads
+python3 scanner_advanced.py example.com -t 100
+
+# Scan and export as JSON
+python3 scanner_advanced.py 192.168.1.1 -p 1-65535 -o json
+
+# Quick scan of common ports
+python3 scanner_advanced.py target.com -p 20-443 -t 20
+```
+
+## 📁 Project Structure
+```
+simple-port-scanner/
+├── scanner.py          # Basic port scanner
+├── scanner_advanced.py # Advanced version with threading
+├── requirements.txt    # Python dependencies
+├── results/           # Scan results directory
+│   └── .gitkeep
+├── tests/             # Unit tests
+│   └── test_scanner.py
+└── README.md          # This file
+```
+
+## 🧪 Testing
+
+### Quick Test
+```bash
+# Run all tests
+./run_tests.sh
+
+# Or manually with pytest
+pytest -v
+```
+
+### Test Categories
+```bash
+# Unit tests only
+pytest tests/test_basic_scanner.py tests/test_advanced_scanner.py -v
+
+# Integration tests
+pytest tests/test_integration.py -v
+
+# Performance tests (excluding slow ones)
+pytest tests/test_performance.py -v -m "not slow"
+
+# Run with coverage
+pytest --cov=. --cov-report=html
+```
+
+### Test Structure
+- **Unit Tests**: Test individual functions and classes
+- **Integration Tests**: Test end-to-end functionality
+- **Performance Tests**: Benchmark and stress testing
+- **Mock Servers**: Automated test servers for reliable testing
+
+### CI/CD
+The project includes GitHub Actions workflows for:
+- Multi-platform testing (Linux, Windows, macOS)
+- Multiple Python versions (3.8-3.11)
+- Code quality checks (Black, Flake8, Pylint)
+- Security scanning (Bandit)
+- Coverage reporting
+
+## 🎓 Educational Value
+
+This project demonstrates:
+- **Network Programming**: Socket creation and management
+- **Concurrency**: Threading for parallel operations
+- **Error Handling**: Graceful failure management
+- **CLI Design**: argparse for user-friendly interfaces
+- **Code Organization**: Modular, readable structure
+
+## ⚠️ Legal Notice
+
+**This tool is for educational purposes only!**
+
+- Only scan networks you own or have explicit permission to test
+- Unauthorized port scanning may be illegal in your jurisdiction
+- Always follow responsible disclosure practices
+- The authors are not responsible for misuse
+
+## 🔧 Extending the Scanner
+
+Ideas for enhancement:
+- [ ] UDP port scanning
+- [ ] Stealth scan techniques
+- [ ] OS fingerprinting
+- [ ] Vulnerability detection
+- [ ] GUI interface
+- [ ] Network mapping visualization
+- [ ] Integration with Nmap
+
+## 📚 Learning Resources
+
+- [Python Socket Programming](https://docs.python.org/3/library/socket.html)
+- [Network Security Basics](https://www.sans.org/reading-room/)
+- [Port Scanning Techniques](https://nmap.org/book/man-port-scanning-techniques.html)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👤 Author
+
+**Your Name**
+- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: [Your Name](https://linkedin.com/in/yourname)
+
+## 🌟 Acknowledgments
+
+- Thanks to the Python community for excellent documentation
+- Inspired by classic network security tools
+- Built for cybersecurity education
+
+---
+
+**Remember**: With great power comes great responsibility. Use wisely! 🛡️

@@ -1,0 +1,163 @@
+# 🛡️ Phishing Detection Tool
+
+A powerful ML-powered web application that detects phishing attempts through advanced URL analysis, pattern recognition, and machine learning algorithms.
+
+![Phishing Detection Tool](https://img.shields.io/badge/Security-ML%20Powered-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Tests](https://img.shields.io/badge/Tests-500%2B-success)
+
+## 🚀 Features
+
+### Advanced URL Analysis
+- **Real-time Threat Scoring**: 0-100% visual threat assessment
+- **ML Confidence Metrics**: Shows model certainty for each analysis
+- **Pattern Recognition**: Detects suspicious patterns and keywords
+- **Homograph Attack Detection**: Identifies lookalike domains (e.g., g00gle vs google)
+- **SSL/HTTPS Verification**: Validates secure connections
+
+### Machine Learning Capabilities
+- **8+ Feature Extraction**: URL length, entropy, keywords, special characters
+- **Smart Classification**: Categorizes threats as Safe, Suspicious, or Dangerous
+- **Behavioral Analysis**: Identifies phishing tactics and patterns
+- **Domain Intelligence**: Reputation checking and subdomain analysis
+
+### Security Features
+- **Typosquatting Detection**: Catches common character substitutions
+- **IDN/Punycode Detection**: Identifies internationalized domain attacks
+- **URL Shortener Detection**: Flags potentially malicious redirects
+- **IP Address Detection**: Warns about direct IP access attempts
+
+## 🎯 Demo
+
+Try the live detection with built-in demo URLs:
+- **Safe Site**: Legitimate websites with proper security
+- **Suspicious URL**: URLs with concerning patterns
+- **Phishing Attempt**: Clear phishing indicators
+- **Typosquatting**: Domains mimicking popular sites
+
+## 🛠️ Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/RedjiJB/phishing-detection.git
+cd phishing-detection
+```
+
+2. Open the application:
+```bash
+open index.html
+# or
+python -m http.server 8000
+# then navigate to http://localhost:8000
+```
+
+## 🧪 Testing
+
+The project includes a comprehensive test suite with 500+ tests:
+
+```bash
+cd test
+npm install
+npm test              # Run all tests
+npm run test:coverage # Generate coverage report
+./run-tests.sh       # Run full test suite
+```
+
+### Test Categories:
+- **Unit Tests**: Core function validation
+- **Security Tests**: Vulnerability testing
+- **ML Tests**: Algorithm accuracy validation
+- **E2E Tests**: Browser automation testing
+- **Integration Tests**: Component interaction testing
+
+## 📊 How It Works
+
+1. **Input Analysis**: Enter a URL or email content
+2. **Feature Extraction**: ML model extracts 8+ features
+3. **Pattern Matching**: Checks against known phishing patterns
+4. **Risk Assessment**: Calculates threat score (0-100%)
+5. **Report Generation**: Provides detailed analysis and recommendations
+
+### ML Features Analyzed:
+- URL length and structure
+- Domain entropy (randomness)
+- Suspicious keyword presence
+- Special character distribution
+- Subdomain depth
+- Protocol security (HTTPS)
+- Domain age indicators
+- Character substitution patterns
+
+## 🔍 Detection Examples
+
+### Phishing URLs Detected:
+```
+http://amaz0n-support.tk/update-payment     # Typosquatting + Suspicious TLD
+https://paypal.com.malicious.site          # Subdomain spoofing
+http://192.168.1.1/facebook/login          # IP-based URL
+https://g00gle-security.com/verify         # Homograph attack
+```
+
+### Safe URLs Recognized:
+```
+https://www.google.com
+https://github.com/user/repo
+https://docs.microsoft.com
+```
+
+## 🎨 User Interface
+
+- **Modern Design**: Clean, responsive interface
+- **Visual Indicators**: Color-coded threat levels
+- **Interactive Analysis**: Real-time results
+- **Detailed Reports**: Comprehensive security analysis
+- **Export Functionality**: Save reports as JSON
+
+## 🔒 Security Best Practices
+
+The tool helps users understand:
+- Why HTTPS matters (but isn't everything)
+- How to identify suspicious URLs
+- Common phishing tactics
+- What to look for in domains
+- How ML enhances security
+
+## 📈 Performance
+
+- **Analysis Speed**: <10ms per URL
+- **Concurrent Processing**: 1000 URLs in <5s
+- **Accuracy Rate**: >80%
+- **False Positive Rate**: <10%
+
+## 🤝 Contributing
+
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Run tests (`npm test`)
+4. Commit changes (`git commit -m 'Add AmazingFeature'`)
+5. Push to branch (`git push origin feature/AmazingFeature`)
+6. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by modern phishing detection research
+- Built with cybersecurity best practices
+- Designed for educational and protective use
+
+## ⚠️ Disclaimer
+
+This tool is for educational and protective purposes only. It demonstrates how machine learning can enhance cybersecurity. Always verify URLs through multiple sources and use comprehensive security solutions.
+
+## 📞 Contact
+
+- GitHub: [@RedjiJB](https://github.com/RedjiJB)
+- Project Link: [https://github.com/RedjiJB/phishing-detection](https://github.com/RedjiJB/phishing-detection)
+
+---
+
+**Remember**: Stay vigilant online. When in doubt, don't click!
