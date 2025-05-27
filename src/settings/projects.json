@@ -89,6 +89,23 @@
       "techStack": ["Python", "Networking", "Security"],
       "demoUrl": "https://redjijb.github.io/pcap-analysis/",
       "githubUrl": "https://github.com/RedjiJB/pcap-analysis.git"
+    },
+    {
+      "id": 7,
+      "title": "Universal Language Translator",
+      "overview": "A powerful Python-based language translation system supporting 200+ languages with enterprise-grade features and modern web interface.",
+      "category": "Cross-Disciplinary",
+      "features": [
+        "200+ language support with automatic detection",
+        "Multiple translation providers (Google Translate, LibreTranslate)",
+        "Text-to-speech capabilities for pronunciation",
+        "Offline translation support",
+        "Modern responsive web interface"
+      ],
+      "problem": "Breaking down language barriers by providing accurate, accessible translation services with enterprise-grade security and performance.",
+      "techStack": ["Python", "HTML/CSS/JavaScript", "Docker", "Translation APIs", "Node.js"],
+      "demoUrl": "https://redjijb.github.io/translator-py/",
+      "githubUrl": "https://github.com/RedjiJB/translator-py.git"
     }
   ],
   "projects": [
