@@ -136,7 +136,7 @@ export const About = () => {
   const greetings = "About Me";
   
   // Bio text reflects the resume's description and summary
-  const aboutme = `I'm ${FirstName} ${LastName}, an Analyst & AI Engineer based in Toronto, Canada. I protect digital systems through advanced threat analysis, vulnerability assessment, and AI-powered security solutions. My background is self-taught and open source, with a focus on developing robust defenses against evolving cyber threats.`;
+  const aboutme = `I'm ${FirstName} ${LastName}, a Cybersecurity Analyst based in Toronto, Canada. I protect digital systems through advanced threat analysis, vulnerability assessment, and AI-powered security solutions. My background is self-taught and open source, with a focus on developing robust defenses against evolving cyber threats.`;
 
   return (
     <section className={classes.main}>
