@@ -69,7 +69,16 @@
 }
 
 .light-theme .theme-toggle-btn {
-    color: var(--dark-text);
+    color: #222 !important;
+    background: #e0f7fa !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #b2ebf2;
+}
+
+.light-theme .theme-toggle-btn:hover {
+    color: var(--primary-color) !important;
+    background: #b2ebf2 !important;
+    border-color: #00bfbf;
 }
 
 .light-theme .back-link:hover {
@@ -172,8 +181,9 @@ body {
 .profile-image {
     width: 100%;
     height: 100%;
-    background-image: url('/rjb_512x512.png');
-    background-size: cover;
+    background-image: url('/rjb-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
