@@ -592,7 +592,7 @@ export const About = () => {
 
           <Paper className={classes.experienceCard} elevation={2}>
             <Typography variant="h6" className={classes.experienceTitle}>
-              Guest Services Security
+              Security Officer
             </Typography>
             <Typography variant="subtitle1" className={classes.experienceCompany}>
               One King West Hotel & Residence
@@ -601,7 +601,7 @@ export const About = () => {
               July 2024 - April 2025
             </Typography>
             <Typography variant="body1" className={classes.experienceDescription}>
-              Provided comprehensive security services and guest assistance in a luxury hotel environment. Utilized advanced surveillance technology, maintained detailed security logs, and delivered professional guest services while maintaining security protocols.
+              Provided comprehensive security services and guest assistance in a 51-story luxury hotel environment, serving 400+ residences and hotel guests daily while maintaining 4-star service standards. Utilized advanced surveillance technology including 80+ CCTV cameras, biometric access control systems, and integrated alarm monitoring. Responded to emergency situations with average response time under 2 minutes and conducted regular security audits identifying potential risks.
             </Typography>
           </Paper>
 
@@ -616,7 +616,7 @@ export const About = () => {
               December 2022 - April 2023
             </Typography>
             <Typography variant="body1" className={classes.experienceDescription}>
-              Managed security operations in a high-traffic entertainment complex. Coordinated patrols, monitored CCTV systems, and implemented security protocols for VIP events while collaborating with law enforcement.
+              Engaged in security operations in a high-traffic entertainment complex serving 5,000+ daily visitors across gaming floors, restaurants, and event spaces. Coordinated hourly patrols covering 200,000 sq ft of property and monitored 50+ CCTV cameras. Implemented security protocols for VIP events hosting up to 1,000 guests and trained junior security staff on company protocols.
             </Typography>
           </Paper>
 
@@ -631,7 +631,37 @@ export const About = () => {
               September 2020 - November 2025
             </Typography>
             <Typography variant="body1" className={classes.experienceDescription}>
-              Provided comprehensive security services across multiple locations. Managed operations for diverse properties, conducted risk assessments, and implemented enhanced security protocols while utilizing advanced surveillance technology.
+              Provided comprehensive security services across 15+ client locations including commercial complexes, construction sites, retail establishments, and public events. Engaged in security operations for diverse properties ranging from 10,000 to 500,000 sq ft, adapting security strategies to match unique client needs. Conducted detailed risk assessments and implemented enhanced security protocols that reduced theft incidents.
+            </Typography>
+          </Paper>
+
+          <Paper className={classes.experienceCard} elevation={2}>
+            <Typography variant="h6" className={classes.experienceTitle}>
+              Core Contributor
+            </Typography>
+            <Typography variant="subtitle1" className={classes.experienceCompany}>
+              D Central Mesh Architecture
+            </Typography>
+            <Typography variant="body2" className={classes.experienceDate}>
+              2024 - Present
+            </Typography>
+            <Typography variant="body1" className={classes.experienceDescription}>
+              Designing and implementing secure peer-to-peer communication protocols for decentralized mesh networks, focusing on resilience against network partitioning and adversarial attacks. Contributing to protocol specifications for secure node authentication, encrypted message routing, and distributed key management systems while collaborating with international team of developers.
+            </Typography>
+          </Paper>
+
+          <Paper className={classes.experienceCard} elevation={2}>
+            <Typography variant="h6" className={classes.experienceTitle}>
+              Associate
+            </Typography>
+            <Typography variant="subtitle1" className={classes.experienceCompany}>
+              UTSC Student Managed Fund
+            </Typography>
+            <Typography variant="body2" className={classes.experienceDate}>
+              May 2023 - January 2024
+            </Typography>
+            <Typography variant="body1" className={classes.experienceDescription}>
+              Conducted comprehensive financial analysis and due diligence on equity and fixed-income securities for a simulated student-managed investment portfolio. Collaborated with team of student analysts to develop investment strategies and present quarterly performance reports. Participated in weekly investment committee meetings, presenting research findings that contributed to fund outperforming benchmark indices.
             </Typography>
           </Paper>
         </div>
