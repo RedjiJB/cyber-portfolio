@@ -87,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     width: '100%',
     objectFit: 'cover',
+    objectPosition: 'center',
   },
   overlay: {
     position: 'absolute',
@@ -121,7 +122,7 @@ export const BlogFeatured = ({ post }) => {
             <CardMedia
               component="img"
               className={classes.media}
-              image={post.image}
+              image={`${process.env.PUBLIC_URL}${post.image}`}
               title={post.title}
             />
             <Hidden xsDown>

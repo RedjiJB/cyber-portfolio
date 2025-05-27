@@ -52,22 +52,20 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   projectCard: {
+    padding: theme.spacing(4, 3, 3, 3),
     height: '100%',
+    borderRadius: theme.shape.borderRadius * 2,
+    boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+    borderLeft: `6px solid ${theme.palette.primary.main}`,
+    background: theme.palette.background.paper,
     display: 'flex',
     flexDirection: 'column',
-    transition: 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
-    borderRadius: theme.shape.borderRadius * 3,
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-    border: `1px solid ${theme.palette.divider}`,
-    position: 'relative',
+    transition: 'transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s cubic-bezier(.4,2,.6,1)',
+    marginBottom: theme.spacing(2),
     '&:hover': {
       transform: 'translateY(-8px) scale(1.02)',
-      boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)',
-      '& $projectMedia': {
-        transform: 'scale(1.05)',
-      },
+      boxShadow: '0 12px 32px rgba(0,0,0,0.18)',
+      borderLeft: `8px solid ${theme.palette.secondary.main}`,
     },
   },
   projectMedia: {
@@ -96,23 +94,43 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
   projectTitle: {
-    fontWeight: 700,
-    marginBottom: theme.spacing(1),
-    fontSize: '1.5rem',
+    fontWeight: 800,
+    fontSize: '1.35rem',
+    marginBottom: theme.spacing(1.5),
+    letterSpacing: '0.01em',
+    color: theme.palette.primary.main,
   },
-  projectSubtitle: {
+  projectOverview: {
+    marginBottom: theme.spacing(2.5),
     color: theme.palette.text.secondary,
-    marginBottom: theme.spacing(2),
-    fontSize: '1rem',
+    fontSize: '1.05rem',
+  },
+  projectFeatures: {
+    marginBottom: theme.spacing(1.5),
+  },
+  projectProblem: {
+    marginBottom: theme.spacing(1.5),
+  },
+  projectTechStack: {
+    marginBottom: theme.spacing(1.5),
+    fontWeight: 500,
+  },
+  projectStatus: {
+    fontWeight: 600,
+    color: theme.palette.primary.main,
+    marginBottom: theme.spacing(1.5),
   },
   tabContent: {
-    padding: theme.spacing(2, 0),
+    padding: theme.spacing(2),
   },
   techChips: {
     display: 'flex',
     flexWrap: 'wrap',
     gap: theme.spacing(0.5),
     marginTop: theme.spacing(2),
+    background: theme.palette.action.hover,
+    borderRadius: theme.shape.borderRadius,
+    padding: theme.spacing(1, 1.5),
   },
   techChip: {
     margin: theme.spacing(0.5, 0.5, 0.5, 0),
@@ -127,6 +145,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 3),
     borderTop: `1px solid ${theme.palette.divider}`,
     justifyContent: 'flex-end',
+    marginTop: theme.spacing(2),
   },
   projectButton: {
     borderRadius: 20,
@@ -205,25 +224,28 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export const Works = () => {
+export const Works = ({ completedProjects, projects }) => {
   const classes = useStyles();
-  const { projects } = projectsData;
   const [tabValues, setTabValues] = useState({});
   const [selectedCategory, setSelectedCategory] = useState("All");
+  
+  // Merge completed and in-progress projects
+  const allProjects = useMemo(() => {
+    return [...(completedProjects || []), ...(projects || [])];
+  }, [completedProjects, projects]);
   
   // Memoize filtered projects to avoid unnecessary recalculations
   const filteredProjects = useMemo(() => {
     if (selectedCategory === "All") {
-      return projects;
+      return allProjects;
     }
-    return projects.filter(project => project.category === selectedCategory);
-  }, [selectedCategory, projects]);
+    return allProjects.filter(project => project.category === selectedCategory);
+  }, [selectedCategory, allProjects]);
   
   // Memoize categories to avoid recalculation
   const categories = useMemo(() => {
-    return ["All", ...new Set(projects.map(project => project.category))];
-  }, [projects]);
-
+    return ["All", ...new Set(allProjects.map(project => project.category))];
+  }, [allProjects]);
 
   const handleTabChange = useCallback((projectId, newValue) => {
     setTabValues(prev => ({
@@ -285,42 +307,63 @@ export const Works = () => {
           <Grid container spacing={3}>
             {filteredProjects.map((project) => (
               <Grid item xs={12} sm={6} md={6} lg={4} key={project.id}>
-                <Card className={classes.projectCard}>
-                  <div className={classes.projectMedia}>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        display: 'block'
-                      }}
-                      onError={(e) => {
-                        e.target.src = '/assets/recentprojects/security-project.png';
-                      }}
-                      loading="lazy"
-                    />
-                  </div>
+                <Paper elevation={2} className={classes.projectCard}>
                   <Chip 
                     label={project.category} 
                     className={classes.categoryChip} 
                     size="small" 
                   />
                   {project.status && (
-                    <Tooltip title={project.status === 'in-progress' ? 'Active Development' : 'Planning Phase'}>
-                      <div className={`${classes.statusBadge} ${project.status}`}>
-                        {project.status === 'in-progress' ? <BuildIcon style={{ fontSize: '1rem' }} /> : <AccessTimeIcon style={{ fontSize: '1rem' }} />}
-                        {project.status === 'in-progress' ? 'In Progress' : 'Planning'}
-                      </div>
-                    </Tooltip>
+                    <Chip
+                      label={
+                        project.status === 'completed' || project.status === 'Completed'
+                          ? 'Completed'
+                          : project.status === 'in-progress'
+                          ? 'In Progress'
+                          : 'Planning'
+                      }
+                      color={
+                        project.status === 'completed' || project.status === 'Completed'
+                          ? 'primary'
+                          : project.status === 'in-progress'
+                          ? 'secondary'
+                          : 'default'
+                      }
+                      style={{
+                        position: 'absolute',
+                        top: 16,
+                        left: 16,
+                        fontWeight: 600,
+                        fontSize: '0.85rem',
+                        zIndex: 2
+                      }}
+                      icon={
+                        project.status === 'completed' || project.status === 'Completed'
+                          ? <BuildIcon style={{ fontSize: '1rem' }} />
+                          : project.status === 'in-progress'
+                          ? <AccessTimeIcon style={{ fontSize: '1rem' }} />
+                          : null
+                      }
+                    />
                   )}
                   <CardContent className={classes.projectContent}>
-                    <Typography variant="h5" className={classes.projectTitle}>
+                    <Typography variant="h6" className={classes.projectTitle}>
                       {project.title}
                     </Typography>
-                    <Typography variant="body2" className={classes.projectSubtitle}>
+                    <Typography variant="body2" className={classes.projectOverview}>
                       {project.overview}
+                    </Typography>
+                    <Typography variant="body2" className={classes.projectFeatures}>
+                      <strong>Features:</strong> {project.features ? project.features.join(', ') : 'N/A'}
+                    </Typography>
+                    <Typography variant="body2" className={classes.projectProblem}>
+                      <strong>Problem:</strong> {project.problem || 'N/A'}
+                    </Typography>
+                    <Typography variant="body2" className={classes.projectTechStack}>
+                      <strong>Tech Stack:</strong> {(project.techStack && project.techStack.join(', ')) || (project.technologies && project.technologies.join(', ')) || 'N/A'}
+                    </Typography>
+                    <Typography variant="body2" className={classes.projectStatus}>
+                      Status: {project.status || 'Completed'}
                     </Typography>
                     
                     <Paper elevation={0}>
@@ -339,29 +382,30 @@ export const Works = () => {
                     </Paper>
                     
                     <TabPanel value={getTabValue(project.id)} index={0}>
-                      {project.features.map((feature, idx) => (
+                      {project.features ? project.features.map((feature, idx) => (
                         <Typography key={idx} variant="body2" className={classes.featureItem}>
                           {feature}
                         </Typography>
-                      ))}
+                      )) : <Typography variant="body2">No features available.</Typography>}
                     </TabPanel>
                     
                     <TabPanel value={getTabValue(project.id)} index={1}>
                       <Typography variant="body2">
-                        {project.problem}
+                        {project.problem || 'No problem statement available.'}
                       </Typography>
                     </TabPanel>
                     
                     <TabPanel value={getTabValue(project.id)} index={2}>
                       <div className={classes.techChips}>
-                        {project.technologies.map((tech, idx) => (
-                          <Chip 
-                            key={idx} 
-                            label={tech} 
-                            className={classes.techChip} 
-                            size="small" 
-                          />
-                        ))}
+                        {(project.techStack || project.technologies) ?
+                          (project.techStack || project.technologies).map((tech, idx) => (
+                            <Chip 
+                              key={idx} 
+                              label={tech} 
+                              className={classes.techChip} 
+                              size="small" 
+                            />
+                          )) : <Typography variant="body2">No technologies available.</Typography>}
                       </div>
                     </TabPanel>
                   </CardContent>
@@ -392,7 +436,7 @@ export const Works = () => {
                       Demo
                     </Button>
                   </CardActions>
-                </Card>
+                </Paper>
               </Grid>
             ))}
           </Grid>

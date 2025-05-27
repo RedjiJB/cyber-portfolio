@@ -98,28 +98,45 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
     color: theme.palette.primary.main,
   },
+  experienceSection: {
+    marginTop: theme.spacing(6),
+    marginBottom: theme.spacing(4),
+  },
+  experienceCard: {
+    padding: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      transform: 'translateY(-5px)',
+      boxShadow: theme.shadows[8],
+    },
+    borderLeft: `3px solid ${theme.palette.primary.main}`,
+  },
+  experienceTitle: {
+    fontWeight: 600,
+    color: theme.palette.primary.main,
+    marginBottom: theme.spacing(1),
+  },
+  experienceCompany: {
+    fontWeight: 500,
+    marginBottom: theme.spacing(0.5),
+  },
+  experienceDate: {
+    color: theme.palette.text.secondary,
+    fontSize: '0.9rem',
+    marginBottom: theme.spacing(1),
+  },
+  experienceDescription: {
+    marginTop: theme.spacing(1),
+  },
 }));
 
 export const About = () => {
   const classes = useStyles();
   const greetings = "About Me";
   
-  const [textToShow, setTextToShow] = useState("bio");
-  
   // Bio text reflects the resume's description and summary
-  const aboutme = `I'm ${FirstName} ${LastName}, a Cybersecurity Analyst & AI Engineer based in Toronto, Canada. I protect digital systems through advanced threat analysis, vulnerability assessment, and AI-powered security solutions. My expertise spans security operations, incident response, and machine learning with a focus on developing robust defenses against evolving cyber threats.`;
-
-  // Background text reflects education and current focus
-  const background = `With a strong foundation in Computer Science from the University of Toronto and industry certifications including OSCP and GIAC, I specialize in implementing AI-driven security solutions that detect and mitigate threats in real-time. In 2024, I'm actively working on advanced security research projects including threat intelligence platforms, adversarial AI testing frameworks, and automated penetration testing tools.`;
-
-  // Switch between bio and background every 10 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTextToShow(textToShow === "bio" ? "background" : "bio");
-    }, 10000);
-    
-    return () => clearTimeout(timer);
-  }, [textToShow]);
+  const aboutme = `I'm ${FirstName} ${LastName}, an Analyst & AI Engineer based in Toronto, Canada. I protect digital systems through advanced threat analysis, vulnerability assessment, and AI-powered security solutions. My background is self-taught and open source, with a focus on developing robust defenses against evolving cyber threats.`;
 
   return (
     <section className={classes.main}>
@@ -194,7 +211,7 @@ export const About = () => {
                   </Typography>
                   
                   <Typography variant="body1" component="p" className={classes.aboutText}>
-                    {textToShow === "bio" ? aboutme : background}
+                    {aboutme}
                   </Typography>
                   
                   <Box mt={3} display="flex" flexWrap="wrap">
@@ -209,7 +226,7 @@ export const About = () => {
                     </Button>
                     <Button 
                       component="a"
-                      href="https://redjijb.github.io/interactive-resume/"
+                      href={process.env.PUBLIC_URL + "/interactive-resume"}
                       variant="contained" 
                       className={classes.resumeButton}
                       startIcon={<i className="fas fa-file-alt"></i>}
@@ -226,7 +243,7 @@ export const About = () => {
 
         <div className={classes.skillsSection}>
           <Typography variant="h5" className={classes.sectionTitle}>
-            Skills & Expertise
+            Skills & Knowledge
           </Typography>
 
           <Grid container spacing={3}>
@@ -237,7 +254,7 @@ export const About = () => {
                   Cybersecurity Analysis
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Expert in threat intelligence, vulnerability assessment, incident response, security architecture, and risk management
+                  Familiar with threat intelligence, vulnerability assessment, incident response, security architecture, and risk management, applying these concepts in open source and self-driven projects.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
                   {['Threat Intelligence', 'SIEM', 'Incident Response', 'Vulnerability Assessment', 'Risk Management'].map((tech) => (
@@ -260,7 +277,7 @@ export const About = () => {
                   Security Tools
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Expert with industry-standard security tools including Nessus, Wireshark, Metasploit, Burp Suite, Kali Linux, and various SIEM platforms
+                  Hands-on experience with industry-standard security tools such as Nessus, Wireshark, Metasploit, Burp Suite, Kali Linux, and SIEM platforms, gained through practical exploration and open source work.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
                   {['Nessus', 'Wireshark', 'Metasploit', 'Burp Suite', 'Kali Linux', 'Splunk'].map((tech) => (
@@ -283,7 +300,7 @@ export const About = () => {
                   AI & Machine Learning
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Advanced expertise in security-focused AI applications including anomaly detection, behavioral analysis, and NLP for threat detection
+                  Applied security-focused AI concepts including anomaly detection, behavioral analysis, and NLP for threat detection in personal and collaborative projects.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
                   {['Anomaly Detection', 'TensorFlow', 'PyTorch', 'Behavioral Analysis', 'NLP', 'Security Analytics'].map((tech) => (
@@ -306,7 +323,7 @@ export const About = () => {
                   Network Security
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Expert in firewall configuration, VPN implementation, network segmentation, traffic analysis, and secure network architecture
+                  Comfortable with firewall configuration, VPN implementation, network segmentation, traffic analysis, and designing secure network architectures.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
                   {['Firewall Configuration', 'Traffic Analysis', 'Network Segmentation', 'IDS/IPS', 'Zero Trust'].map((tech) => (
@@ -329,7 +346,7 @@ export const About = () => {
                   Penetration Testing
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Advanced expertise in ethical hacking, vulnerability exploitation, web application testing, and security assessment methodologies
+                  Explored ethical hacking, vulnerability exploitation, web application testing, and security assessment methodologies through self-guided learning and open source contributions.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
                   {['OSCP', 'Ethical Hacking', 'Web App Testing', 'Exploit Development', 'Security Assessments'].map((tech) => (
@@ -352,7 +369,7 @@ export const About = () => {
                   Secure Development
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Advanced knowledge in secure coding practices, code review for security vulnerabilities, DevSecOps, and OWASP secure coding standards
+                  Practiced secure coding, code review for vulnerabilities, DevSecOps, and OWASP secure coding standards in both personal and collaborative environments.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
                   {['Secure Coding', 'Code Review', 'DevSecOps', 'OWASP Top 10', 'SAST/DAST'].map((tech) => (
@@ -566,6 +583,57 @@ export const About = () => {
               </Paper>
             </Grid>
           </Grid>
+        </div>
+
+        <div className={classes.experienceSection}>
+          <Typography variant="h5" className={classes.sectionTitle}>
+            Professional Experience
+          </Typography>
+
+          <Paper className={classes.experienceCard} elevation={2}>
+            <Typography variant="h6" className={classes.experienceTitle}>
+              Guest Services Security
+            </Typography>
+            <Typography variant="subtitle1" className={classes.experienceCompany}>
+              One King West Hotel & Residence
+            </Typography>
+            <Typography variant="body2" className={classes.experienceDate}>
+              July 2024 - April 2025
+            </Typography>
+            <Typography variant="body1" className={classes.experienceDescription}>
+              Provided comprehensive security services and guest assistance in a luxury hotel environment. Utilized advanced surveillance technology, maintained detailed security logs, and delivered professional guest services while maintaining security protocols.
+            </Typography>
+          </Paper>
+
+          <Paper className={classes.experienceCard} elevation={2}>
+            <Typography variant="h6" className={classes.experienceTitle}>
+              Security Officer
+            </Typography>
+            <Typography variant="subtitle1" className={classes.experienceCompany}>
+              Great Canadian Entertainment
+            </Typography>
+            <Typography variant="body2" className={classes.experienceDate}>
+              December 2022 - April 2023
+            </Typography>
+            <Typography variant="body1" className={classes.experienceDescription}>
+              Managed security operations in a high-traffic entertainment complex. Coordinated patrols, monitored CCTV systems, and implemented security protocols for VIP events while collaborating with law enforcement.
+            </Typography>
+          </Paper>
+
+          <Paper className={classes.experienceCard} elevation={2}>
+            <Typography variant="h6" className={classes.experienceTitle}>
+              Security Guard
+            </Typography>
+            <Typography variant="subtitle1" className={classes.experienceCompany}>
+              Iron Horse Security & Investigations
+            </Typography>
+            <Typography variant="body2" className={classes.experienceDate}>
+              September 2020 - November 2025
+            </Typography>
+            <Typography variant="body1" className={classes.experienceDescription}>
+              Provided comprehensive security services across multiple locations. Managed operations for diverse properties, conducted risk assessments, and implemented enhanced security protocols while utilizing advanced surveillance technology.
+            </Typography>
+          </Paper>
         </div>
       </Container>
     </section>

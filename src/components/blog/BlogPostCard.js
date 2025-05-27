@@ -36,7 +36,9 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '56.25%', // 16:9 aspect ratio
     position: 'relative',
     transition: 'transform 0.4s ease',
-    background: `linear-gradient(135deg, ${theme.palette.primary.main}15, ${theme.palette.secondary.main}15)`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
     '&::after': {
       content: '""',
       position: 'absolute',
@@ -113,7 +115,7 @@ export const BlogPostCard = ({ post }) => {
       <CardActionArea component={Link} to={`/blog/${post.id}`}>
         <CardMedia
           className={classes.cardMedia}
-          image={post.image}
+          image={`${process.env.PUBLIC_URL}${post.image}`}
           title={post.title}
         >
           <Chip 

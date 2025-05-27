@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Cracker Project - Ethical Security Research</title>
+    <style>
+        /* ... existing styles ... */
+    </style>
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Password Cracker with Wordlists</h1>
+            <p class="subtitle">Ethical Security Research & Password Analysis</p>
+        </div>
+
+        <div class="warning-banner">
+            <span class="warning-icon">⚠️</span>
+            <div>
+                <strong>LEGAL & ETHICAL USE ONLY</strong><br>
+                This tool is for educational purposes and authorized security testing only. 
+                Only test passwords you own or have explicit written permission to analyze. 
+                Unauthorized password cracking is illegal and unethical.
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('overview')">Overview</button>
+            <button class="tab" onclick="showTab('basic')">Basic Cracker</button>
+            <button class="tab" onclick="showTab('advanced')">Advanced Version</button>
+            <button class="tab" onclick="showTab('analyzer')">Password Analyzer</button>
+            <button class="tab" onclick="showTab('tools')">Pro Tools</button>
+            <button class="tab" onclick="showTab('demo')">Live Demo</button>
+            <button class="tab" onclick="showTab('readme')">Documentation</button>
+        </div>
+
+        <!-- Content sections -->
+        <div id="overview" class="content-section active">
+            <!-- ... existing overview content ... -->
+        </div>
+
+        <div id="basic" class="content-section">
+            <!-- ... existing basic content ... -->
+        </div>
+
+        <div id="advanced" class="content-section">
+            <!-- ... existing advanced content ... -->
+        </div>
+
+        <div id="analyzer" class="content-section">
+            <!-- ... existing analyzer content ... -->
+        </div>
+
+        <div id="tools" class="content-section">
+            <!-- ... existing tools content ... -->
+        </div>
+
+        <div id="demo" class="content-section">
+            <div class="demo-section">
+                <h2 class="demo-title">🎮 Live Demo - Password Security Tester</h2>
+                <p style="margin-bottom: 20px; color: #888;">Test password strength and hash cracking (educational simulation)</p>
+                
+                <div class="input-group">
+                    <select id="demo-mode">
+                        <option value="analyze">Analyze Password</option>
+                        <option value="hash">Generate Hash</option>
+                        <option value="crack">Crack Hash (Demo)</option>
+                    </select>
+                    <input type="text" id="demo-input" placeholder="Enter password or hash">
+                    <select id="hash-type">
+                        <option value="md5">MD5</option>
+                        <option value="sha1">SHA-1</option>
+                        <option value="sha256">SHA-256</option>
+                        <option value="bcrypt">BCrypt</option>
+                    </select>
+                    <button class="button" onclick="runDemo()">Run Demo</button>
+                </div>
+                
+                <div id="demo-results" style="margin-top: 30px;"></div>
+                
+                <div class="terminal" id="demo-terminal" style="display: none;">
+                    <div class="terminal-line terminal-prompt">$ password_cracker --demo</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="readme" class="content-section">
+            <!-- ... existing readme content ... -->
+        </div>
+    </div>
+
+    <script>
+        // Tab switching
+        function showTab(tabName) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Code copying
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const textArea = document.createElement('textarea');
+            textArea.value = codeElement.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 2000);
+        }
+
+        // Demo functionality
+        async function runDemo() {
+            const mode = document.getElementById('demo-mode').value;
+            const input = document.getElementById('demo-input').value;
+            const hashType = document.getElementById('hash-type').value;
+            const resultsDiv = document.getElementById('demo-results');
+            const terminal = document.getElementById('demo-terminal');
+            
+            if (!input) {
+                alert('Please enter a password or hash');
+                return;
+            }
+            
+            terminal.style.display = 'block';
+            terminal.innerHTML = '<div class="terminal-line terminal-prompt">$ password_tool --' + mode + '</div>';
+            
+            try {
+                let response;
+                if (mode === 'analyze') {
+                    response = await fetch('/api/analyze', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ password: input })
+                    });
+                } else if (mode === 'hash') {
+                    response = await fetch('/api/hash', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            password: input,
+                            algorithm: hashType
+                        })
+                    });
+                } else if (mode === 'crack') {
+                    response = await fetch('/api/crack', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            hash: input,
+                            algorithm: hashType
+                        })
+                    });
+                }
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    if (mode === 'analyze') {
+                        displayAnalysisResults(data, resultsDiv, terminal);
+                    } else if (mode === 'hash') {
+                        displayHashResults(data, resultsDiv, terminal);
+                    } else if (mode === 'crack') {
+                        displayCrackResults(data, resultsDiv, terminal);
+                    }
+                } else {
+                    throw new Error(data.error || 'An error occurred');
+                }
+            } catch (error) {
+                terminal.innerHTML += `<div class="terminal-line terminal-error">[!] Error: ${error.message}</div>`;
+                resultsDiv.innerHTML = `<div class="terminal-error">Error: ${error.message}</div>`;
+            }
+        }
+
+        function displayAnalysisResults(data, resultsDiv, terminal) {
+            resultsDiv.innerHTML = `
+                <h3>Password Analysis Results</h3>
+                <table class="hash-table">
+                    <tr>
+                        <th>Property</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>${data.length} characters</td>
+                    </tr>
+                    <tr>
+                        <td>Strength Score</td>
+                        <td>${data.score}/100</td>
+                    </tr>
+                    <tr>
+                        <td>Strength Rating</td>
+                        <td><span class="badge" style="background: ${data.color}22; color: ${data.color}">${data.strength}</span></td>
+                    </tr>
+                    <tr>
+                        <td>Entropy</td>
+                        <td>${data.entropy} bits</td>
+                    </tr>
+                    <tr>
+                        <td>Character Types</td>
+                        <td>
+                            ${data.character_types.lowercase ? '<span class="badge">lowercase</span>' : ''}
+                            ${data.character_types.uppercase ? '<span class="badge">UPPERCASE</span>' : ''}
+                            ${data.character_types.digits ? '<span class="badge">Numbers</span>' : ''}
+                            ${data.character_types.special ? '<span class="badge">Symbols</span>' : ''}
+                        </td>
+                    </tr>
+                </table>
+                ${data.feedback.length > 0 ? '<h4>Recommendations:</h4><ul>' + data.feedback.map(f => '<li>' + f + '</li>').join('') + '</ul>' : ''}
+            `;
+            
+            terminal.innerHTML += `
+                <div class="terminal-line terminal-info">[*] Analyzing password...</div>
+                <div class="terminal-line terminal-success">[+] Analysis complete</div>
+                <div class="terminal-line terminal-info">[*] Strength: ${data.strength} (${data.score}/100)</div>
+            `;
+        }
+
+        function displayHashResults(data, resultsDiv, terminal) {
+            resultsDiv.innerHTML = `
+                <h3>Generated Hash</h3>
+                <table class="hash-table">
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Hash Value</th>
+                    </tr>
+                    <tr>
+                        <td>${data.algorithm.toUpperCase()}</td>
+                        <td style="font-family: monospace; word-break: break-all;">${data.hash}</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 10px; color: #888;">Note: In production, use bcrypt or Argon2 for password storage, not ${data.algorithm.toUpperCase()}</p>
+            `;
+            
+            terminal.innerHTML += `
+                <div class="terminal-line terminal-info">[*] Hashing password with ${data.algorithm}...</div>
+                <div class="terminal-line terminal-success">[+] Hash generated: ${data.hash}</div>
+            `;
+        }
+
+        function displayCrackResults(data, resultsDiv, terminal) {
+            resultsDiv.innerHTML = `
+                <h3>Cracking Results</h3>
+                <div class="terminal ${data.found ? 'terminal-success' : 'terminal-error'}">
+                    ${data.found ? 
+                        `<div>✓ Password found: ${data.password}</div>` :
+                        `<div>✗ ${data.message}</div>`
+                    }
+                </div>
+            `;
+            
+            terminal.innerHTML += `
+                <div class="terminal-line terminal-info">[*] Attempting to crack hash...</div>
+                <div class="terminal-line ${data.found ? 'terminal-success' : 'terminal-error'}">
+                    ${data.found ? 
+                        `[+] PASSWORD FOUND: ${data.password}` :
+                        `[-] ${data.message}`
+                    }
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html> 

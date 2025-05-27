@@ -67,6 +67,45 @@
     },
     "work": [
         {
+            "company": "One King West Hotel & Residence",
+            "position": "Guest Services Security",
+            "website": "",
+            "startDate": "2024-07-01",
+            "endDate": "2025-04-29",
+            "summary": "Provided comprehensive security services and guest assistance in a luxury hotel environment",
+            "highlights": [
+                "Utilized advanced surveillance technology including CCTV and access control systems for efficient security monitoring and incident response",
+                "Maintained detailed security logs and incident reports for legal documentation and procedural compliance",
+                "Delivered professional guest services while maintaining security protocols, enhancing overall visitor experience"
+            ]
+        },
+        {
+            "company": "Great Canadian Entertainment",
+            "position": "Security Officer",
+            "website": "",
+            "startDate": "2022-12-01",
+            "endDate": "2023-04-01",
+            "summary": "Managed security operations in a high-traffic entertainment complex",
+            "highlights": [
+                "Coordinated hourly patrols and monitored 50+ CCTV cameras to ensure comprehensive security coverage",
+                "Collaborated with law enforcement for streamlined incident response",
+                "Implemented and managed security protocols for VIP events, ensuring seamless guest experience"
+            ]
+        },
+        {
+            "company": "Iron Horse Security & Investigations",
+            "position": "Security Guard",
+            "website": "",
+            "startDate": "2020-09-01",
+            "endDate": "2025-11-01",
+            "summary": "Provided comprehensive security services across multiple locations and environments",
+            "highlights": [
+                "Managed security operations for diverse properties including commercial complexes and public events",
+                "Conducted risk assessments and implemented enhanced security protocols reducing theft and vandalism",
+                "Utilized advanced surveillance technology and participated in ongoing security training and development"
+            ]
+        },
+        {
             "company": "SecureTech Solutions",
             "position": "Senior Cybersecurity Analyst",
             "website": "https://example.com",

@@ -7,6 +7,7 @@ import { SocialIcons } from '../components/content/SocialIcons';
 import { SpeedDials } from '../components/speedDial/SpeedDial';
 import { TopNavbar } from '../components/nav/TopNavbar';
 import { Works } from '../components/works/Works';
+import projectsData from '../settings/projects.json';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 40,
     marginBottom: theme.spacing(2),
     color: theme.palette.primary.main,
-  }
+  },
 }));
 
 const expertiseDomains = [
@@ -93,6 +94,7 @@ const expertiseDomains = [
 
 export const Projects = () => {
   const classes = useStyles();
+  const { completedProjects, projects } = projectsData;
 
   return (
     <div className={classes.root}>
@@ -137,7 +139,7 @@ export const Projects = () => {
           </Paper>
         </Container>
         
-        <Works />
+        <Works completedProjects={completedProjects} projects={projects} />
       </div>
     </div>
   );
