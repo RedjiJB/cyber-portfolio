@@ -1,0 +1,251 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Redji Jean Baptiste} \\ \vspace{1pt}
+    2053 Stonehenge Crescent, Ottawa, Ontario \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ +1 (819)-319-6405 ~ \href{mailto:x@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{redji.jeanbaptiste@mail.utoronto.ca}} ~ 
+    \href{https://redjijb.github.io/cyber-portfolio/#/}{\raisebox{-0.2\height} \underline{https://redjijb.github.io/cyber-portfolio/#/}}  ~
+    \vspace{-8pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Toronto}{Sep. 2021 -- November 2026}
+      {Bachelor of Arts - Specialist Program in International Development Studies}{Toronto, Ontario}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {One King West Hotel \& Residence}{July 2024 - April 2025}
+      {Security Officer}{Toronto, Ontario}
+      \resumeItemListStart
+        \resumeItem{Provided comprehensive security services and guest assistance in a 51-story luxury hotel environment, serving 400+ residences and hotel guests daily while maintaining 4-star service standards}
+        \resumeItem{Utilized advanced surveillance technology including 80+ CCTV cameras, biometric access control systems, and integrated alarm monitoring for efficient security coverage across multiple building zones}
+        \resumeItem{Maintained detailed security logs and incident reports using digital reporting systems, ensuring compliance with legal documentation requirements and supporting law enforcement investigations when required}
+        \resumeItem{Delivered professional concierge-level guest services while maintaining strict security protocols, achieving majority positive feedback scores and contributing to the property's reputation for safety and hospitality}
+        \resumeItem{Responded to emergency situations including medical incidents, fire alarms, and security breaches with average response time under 2 minutes}
+        \resumeItem{Conducted regular security audits and vulnerability assessments, identifying and addressing potential risks before incidents occurred}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Great Canadian Entertainment}{December 2022 - April 2023}
+      {Security Officer}{Pickering, Ontario}
+      \resumeItemListStart
+        \resumeItem{Engaged in security operations in a high-traffic entertainment complex serving 5,000+ daily visitors across gaming floors, restaurants, and event spaces}
+        \resumeItem{Coordinated hourly patrols covering 200,000 sq ft of property and monitored 50+ CCTV cameras through advanced surveillance systems to ensure comprehensive 24/7 security coverage}
+        \resumeItem{Collaborated with local law enforcement and emergency services for streamlined incident response, maintaining professional relationships}
+        \resumeItem{Implemented and managed security protocols for VIP events hosting up to 1,000 guests, coordinating with event staff to ensure seamless guest experience while maintaining strict security standards}
+        \resumeItem{De-escalated conflicts and managed crowd control during peak hours, successfully resolving the majority of incidents without law enforcement intervention}
+        \resumeItem{Trained and mentored junior security staff on company protocols, surveillance systems, and customer service excellence}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Iron Horse Security \& Investigations}{September 2020 - November 2025}
+      {Security Guard}{Toronto, Ontario}
+      \resumeItemListStart
+        \resumeItem{Provided comprehensive security services across 15+ client locations including commercial complexes, construction sites, retail establishments, and public events}
+        \resumeItem{Engaged in security operations for diverse properties ranging from 10,000 to 500,000 sq ft, adapting security strategies to match unique client needs and risk profiles}
+        \resumeItem{Conducted detailed risk assessments and implemented enhanced security protocols that reduced theft incidents across assigned properties}
+        \resumeItem{Utilized advanced surveillance technology including IP camera systems, and mobile patrol tracking software to maximize coverage efficiency}
+        \resumeItem{Participated in hours of ongoing security training including crisis management, first aid/CPR certification, de-escalation techniques, and emerging security technologies}
+        \resumeItem{Prepared comprehensive incident reports and maintained detailed activity logs, contributing to successful prosecution of criminal cases}
+        \resumeItem{Developed strong relationships with property managers and tenants, becoming trusted security advisor for multiple long-term clients}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {D Central Mesh Architecture}{2024 - Present}
+      {Core Contributor (Open Source)}{Remote}
+      \resumeItemListStart
+        \resumeItem{Designing and implementing secure peer-to-peer communication protocols for decentralized mesh networks, focusing on resilience against network partitioning and adversarial attacks}
+        \resumeItem{Creating comprehensive documentation, tutorials, and educational resources that will be accessed by developers in the D Central community}
+        \resumeItem{Contributing to protocol specifications for secure node authentication, encrypted message routing, and distributed key management systems}
+        \resumeItem{Collaborating with international team of developers across multiple time zones using Git, conducting code reviews, and participating in architectural decision-making}
+        \resumeItem{Implementing security auditing tools and penetration testing frameworks specifically designed for mesh network vulnerabilities}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {UTSC Student Managed Fund}{May 2023 - January 2024}
+      {Associate}{Toronto, Ontario}
+      \resumeItemListStart
+        \resumeItem{Conducted comprehensive financial analysis and due diligence on equity and fixed-income securities for a simulated student-managed investment portfolio}
+        \resumeItem{Collaborated with team of student analysts to develop investment strategies, perform sector research, and present quarterly portfolio performance reports to faculty advisors and university stakeholders}
+        \resumeItem{Utilized financial modelling software and advanced Excel functions to analyze market trends, evaluate risk-adjusted returns, and optimize portfolio allocation across multiple asset classes}
+        \resumeItem{Participated in weekly investment committee meetings, presenting research findings and investment recommendations that contributed to fund outperforming benchmark indices}
+        \resumeItem{Developed expertise in ESG investing principles and sustainable finance practices, incorporating environmental and social factors into investment decision-making processes}
+        \resumeItem{Gained hands-on experience with portfolio management tools, risk assessment methodologies, and regulatory compliance requirements in institutional investment management}
+      \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------RESEARCH INTERESTS-----------
+\section{Research Interests}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{DeFi Protocols for Financial Inclusion}}{2024 - Present}
+          \resumeItemListStart
+            \resumeItem{Developing self-sovereign identity solutions and community wealth-building through tokenized cooperatives for underserved markets}
+          \resumeItemListEnd
+          \vspace{-13pt}
+      \resumeProjectHeading
+          {\textbf{Ethical AI Governance Frameworks}}{2024 - Present}
+          \resumeItemListStart
+            \resumeItem{Creating multilingual bias detection and remediation systems for globally representative AI that respects cultural contexts}
+          \resumeItemListEnd
+          \vspace{-13pt}
+      \resumeProjectHeading
+          {\textbf{Environmental Sustainability in Blockchain}}{2024 - Present}
+          \resumeItemListStart
+            \resumeItem{Researching proof-of-stake optimizations, layer-2 scaling solutions, and carbon-neutral validator networks}
+          \resumeItemListEnd
+          \vspace{-13pt}
+      \resumeProjectHeading
+          {\textbf{Public Goods Funding Mechanisms}}{2024 - Present}
+          \resumeItemListStart
+            \resumeItem{Implementing quadratic funding and regenerative cryptoeconomics for sustainable open source development infrastructure}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+%-----------ADDITIONAL INFORMATION-----------
+\section{Additional Information}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages:} {English (Fluent), French (Fluent), Haitian Creole (Native)} \\
+     \textbf{Technical Skills:} {Project Management (Agile, Scrum, Kanban, JIRA), Technical Writing (Documentation, Whitepapers, Specifications)} \\
+     \textbf{Research Skills:} {Data Analysis, Survey Design, Literature Review} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+\end{document}
