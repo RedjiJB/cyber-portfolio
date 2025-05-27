@@ -33,7 +33,7 @@ export const Resume = () => {
     <Link
       color='inherit'
       underline='none'
-      href="/interactive-resume"
+      href={process.env.PUBLIC_URL + "/interactive-resume"}
       target='_blank'
       rel='noopener noreferrer'
       className={classes.footerText}

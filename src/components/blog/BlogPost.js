@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { 
@@ -7,10 +7,12 @@ import {
   Paper, 
   Chip, 
   Button, 
-  Divider,
-  Box
+  Box,
+  Avatar
 } from '@material-ui/core';
 import { ArrowBack } from '@material-ui/icons';
+import ReactMarkdown from 'react-markdown';
+import rehypeSanitize from 'rehype-sanitize';
 import blogData from '../../settings/blog.json';
 import { LogoLink } from '../logo/LogoLink';
 import { ThemeToggle } from '../theme/ThemeToggle';
@@ -34,60 +36,78 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     zIndex: 1,
   },
-  pageTitle: {
-    textAlign: 'center',
-    marginBottom: theme.spacing(4),
-    fontWeight: 700,
-    color: theme.palette.primary.main,
-  },
-  postContainer: {
-    marginBottom: theme.spacing(6),
+  hero: {
     padding: theme.spacing(4),
-    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+    background: `linear-gradient(90deg, #00bfbf 0%, #0077b6 100%)`,
+    color: '#fff',
     borderRadius: theme.shape.borderRadius,
+    marginBottom: theme.spacing(4),
+    textAlign: 'center',
   },
   headerImage: {
     width: '100%',
-    height: '400px',
+    height: 'auto',
+    maxHeight: 400,
     objectFit: 'cover',
-    marginBottom: theme.spacing(4),
+    objectPosition: 'center',
     borderRadius: theme.shape.borderRadius,
-  },
-  postTitle: {
     marginBottom: theme.spacing(2),
+    display: 'block',
+    margin: '0 auto',
+  },
+  meta: {
+    margin: theme.spacing(2, 0),
+    display: 'flex',
+    justifyContent: 'center',
+    gap: theme.spacing(2),
+    flexWrap: 'wrap',
+    alignItems: 'center',
+  },
+  tag: {
+    margin: theme.spacing(0.5),
+    background: '#fff',
+    color: theme.palette.primary.main,
     fontWeight: 600,
   },
-  metadata: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: theme.spacing(3),
-    color: theme.palette.text.secondary,
-  },
-  divider: {
-    margin: theme.spacing(2, 0),
-  },
   content: {
-    marginTop: theme.spacing(4),
-    whiteSpace: 'pre-line',
-    lineHeight: 1.8,
+    padding: theme.spacing(3),
+    background: '#fff',
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: theme.shadows[1],
     fontSize: '1.1rem',
+    lineHeight: 1.8,
+    '& h1, & h2, & h3': {
+      color: theme.palette.primary.main,
+      marginTop: theme.spacing(3),
+      marginBottom: theme.spacing(1),
+    },
+    '& blockquote': {
+      borderLeft: '4px solid #00bfbf',
+      background: '#f0f7fa',
+      padding: theme.spacing(1, 2),
+      margin: theme.spacing(2, 0),
+      fontStyle: 'italic',
+    },
+    '& pre': {
+      background: '#222',
+      color: '#fff',
+      borderRadius: theme.shape.borderRadius,
+      padding: theme.spacing(2),
+      overflowX: 'auto',
+    },
+    '& ul, & ol': {
+      marginLeft: theme.spacing(3),
+    },
+    '& img': {
+      maxWidth: '100%',
+      borderRadius: theme.shape.borderRadius,
+    },
   },
   backButton: {
     marginTop: theme.spacing(4),
     borderRadius: 25,
     padding: '10px 20px',
     fontWeight: 'bold',
-  },
-  tagsContainer: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    marginTop: theme.spacing(4),
-    gap: theme.spacing(1),
-  },
-  tag: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
-    fontWeight: 500,
   },
   errorContainer: {
     display: 'flex',
@@ -102,6 +122,15 @@ export const BlogPost = () => {
   const classes = useStyles();
   const { id } = useParams();
   const post = blogData.posts.find(post => post.id === parseInt(id));
+  const [markdownContent, setMarkdownContent] = useState('');
+
+  useEffect(() => {
+    if (post && post.markdown) {
+      import(`../../settings/posts/${post.markdown}`)
+        .then(module => fetch(module.default).then(res => res.text()))
+        .then(setMarkdownContent);
+    }
+  }, [post]);
 
   if (!post) {
     return (
@@ -115,7 +144,6 @@ export const BlogPost = () => {
           <SpeedDials />
         </Hidden>
         <TopNavbar />
-        
         <div className={classes.contentWrapper}>
           <Container maxWidth="md" className={classes.errorContainer}>
             <Typography variant="h4" gutterBottom>Post not found</Typography>
@@ -149,52 +177,42 @@ export const BlogPost = () => {
         <SpeedDials />
       </Hidden>
       <TopNavbar />
-      
       <div className={classes.contentWrapper}>
         <Container maxWidth="lg">
-          <Typography variant="h3" className={classes.pageTitle}>
-            Blog
-          </Typography>
-          
-          <Container component={Paper} maxWidth="md" className={classes.postContainer}>
-            <img src={post.image} alt={post.title} className={classes.headerImage} />
-            <Typography variant="h3" component="h1" className={classes.postTitle}>
+          <Paper className={classes.hero} elevation={3}>
+            <Typography variant="h3" component="h1" gutterBottom>
               {post.title}
             </Typography>
-            
-            <Box className={classes.metadata}>
-              <Typography variant="body2">
-                By {post.author} | {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </Typography>
-            </Box>
-            
-            <Divider className={classes.divider} />
-            
-            <Typography variant="body1" component="div" className={classes.content}>
-              {post.content}
-            </Typography>
-            
-            <div className={classes.tagsContainer}>
-              {post.tags.map((tag, index) => (
-                <Chip key={index} label={tag} className={classes.tag} />
+            <div className={classes.meta}>
+              <Avatar alt={post.author} src="/assets/profile.JPG" />
+              <Typography variant="subtitle1">{post.author}</Typography>
+              <Typography variant="subtitle2">{new Date(post.date).toLocaleDateString()}</Typography>
+              {post.tags && post.tags.map((tag) => (
+                <Chip key={tag} label={tag} className={classes.tag} />
               ))}
             </div>
-            
-            <Button 
-              component={Link} 
-              to="/blog" 
-              startIcon={<ArrowBack />}
-              className={classes.backButton}
-              color="primary"
-              variant="contained"
-            >
-              Back to Blog
-            </Button>
-          </Container>
+            {post.image && (
+              <Box style={{ textAlign: 'center', marginBottom: '16px' }}>
+                <img src={`${process.env.PUBLIC_URL}${post.image}`} alt={post.title} className={classes.headerImage} />
+              </Box>
+            )}
+            <Typography variant="h6">{post.summary}</Typography>
+          </Paper>
+          <Paper className={classes.content} elevation={1}>
+            <ReactMarkdown rehypePlugins={[rehypeSanitize]}>
+              {markdownContent}
+            </ReactMarkdown>
+          </Paper>
+          <Button 
+            component={Link} 
+            to="/blog" 
+            startIcon={<ArrowBack />}
+            className={classes.backButton}
+            color="primary"
+            variant="contained"
+          >
+            Back to Blog
+          </Button>
         </Container>
       </div>
     </div>

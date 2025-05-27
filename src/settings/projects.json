@@ -1,4 +1,96 @@
 {
+  "completedProjects": [
+    {
+      "id": 1,
+      "title": "Password Security Analyzer",
+      "overview": "A comprehensive tool for analyzing password strength and security.",
+      "category": "Cybersecurity",
+      "features": [
+        "Password strength analysis",
+        "Common password detection",
+        "Security recommendations"
+      ],
+      "problem": "Helps users identify weak passwords and improve security.",
+      "techStack": ["Python", "Cryptography", "Security"],
+      "demoUrl": "https://redjijb.github.io/Password-security_analyzer/",
+      "githubUrl": "https://github.com/RedjiJB/Password-security_analyzer.git"
+    },
+    {
+      "id": 2,
+      "title": "Security Headers Checker",
+      "overview": "A tool to verify and analyze security headers of web applications.",
+      "category": "Cybersecurity",
+      "features": [
+        "Header verification",
+        "Security recommendations",
+        "Compliance checks"
+      ],
+      "problem": "Ensures web applications follow security best practices.",
+      "techStack": ["Python", "Web Security", "HTTP"],
+      "demoUrl": "https://redjijb.github.io/secure-headers_checker/",
+      "githubUrl": "https://github.com/RedjiJB/secure-headers_checker.git"
+    },
+    {
+      "id": 3,
+      "title": "Phishing Detection Tool",
+      "overview": "A tool to detect and analyze phishing attempts.",
+      "category": "Cybersecurity",
+      "features": [
+        "Phishing link detection",
+        "Email analysis",
+        "Threat reporting"
+      ],
+      "problem": "Helps users identify and avoid phishing attacks.",
+      "techStack": ["Python", "Machine Learning", "Security"],
+      "demoUrl": "https://redjijb.github.io/phishing-detection/",
+      "githubUrl": "https://github.com/RedjiJB/phishing-detection.git"
+    },
+    {
+      "id": 4,
+      "title": "WiFi Security Auditor",
+      "overview": "A tool to audit and secure WiFi networks.",
+      "category": "Cybersecurity",
+      "features": [
+        "Network scanning",
+        "Vulnerability detection",
+        "Security recommendations"
+      ],
+      "problem": "Ensures WiFi networks are secure and protected.",
+      "techStack": ["Python", "Networking", "Security"],
+      "demoUrl": "https://redjijb.github.io/Wifi-security_auditor/",
+      "githubUrl": "https://github.com/RedjiJB/Wifi-security_auditor.git"
+    },
+    {
+      "id": 5,
+      "title": "Port Scanner",
+      "overview": "A tool to scan and analyze open ports on networks.",
+      "category": "Cybersecurity",
+      "features": [
+        "Port scanning",
+        "Service detection",
+        "Security reporting"
+      ],
+      "problem": "Helps identify potential security vulnerabilities in networks.",
+      "techStack": ["Python", "Networking", "Security"],
+      "demoUrl": "https://redjijb.github.io/port-scanner/",
+      "githubUrl": "https://github.com/RedjiJB/port-scanner.git"
+    },
+    {
+      "id": 6,
+      "title": "PCAP Analysis Tool",
+      "overview": "A tool to analyze network traffic captured in PCAP files.",
+      "category": "Cybersecurity",
+      "features": [
+        "Traffic analysis",
+        "Protocol detection",
+        "Security insights"
+      ],
+      "problem": "Provides insights into network traffic and potential threats.",
+      "techStack": ["Python", "Networking", "Security"],
+      "demoUrl": "https://redjijb.github.io/pcap-analysis/",
+      "githubUrl": "https://github.com/RedjiJB/pcap-analysis.git"
+    }
+  ],
   "projects": [
     {
       "id": 1,
@@ -97,8 +189,8 @@
       ],
       "image": "/assets/recentprojects/vulnerability-scanner.svg",
       "technologies": ["Python", "OWASP", "Docker", "REST API", "PostgreSQL"],
-      "demoUrl": "https://demo.example.com/vulnerability-scanner",
-      "githubUrl": "https://github.com/redjijeanbaptiste/vulnerability-scanner",
+      "demoUrl": "https://redjijb.github.io/VulnScan-Pro/",
+      "githubUrl": "https://github.com/RedjiJB/VulnScan-Pro.git",
       "category": "Cybersecurity",
       "status": "planning"
     },

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Typography, AppBar, Toolbar, Button, makeStyles, useMediaQuery, useTheme, IconButton, Drawer, List, ListItem, ListItemText } from "@material-ui/core";
+import { AppBar, Toolbar, Button, makeStyles, useMediaQuery, useTheme, IconButton, Drawer, List, ListItem, ListItemText } from "@material-ui/core";
 import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
@@ -91,51 +91,45 @@ export const TopNavbar = () => {
   }, [location.pathname, isMobile]);
 
   const drawer = (
-    <div
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        {navLinks.map((link) => (
-          <ListItem 
-            button 
-            component={Link} 
-            to={link.path} 
-            key={link.text}
-            className={`${classes.drawerItem} ${isActive(link.path) ? classes.drawerItemActive : ''}`}
-          >
-            <ListItemText 
-              primary={<Typography color={isActive(link.path) ? "primary" : "textPrimary"}>{link.text}</Typography>} 
-            />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+    <List>
+      {navLinks.map((link) => (
+        <ListItem 
+          button 
+          component={Link} 
+          to={link.path} 
+          key={link.text}
+          className={`${classes.drawerItem} ${isActive(link.path) ? classes.drawerItemActive : ''}`}
+        >
+          <ListItemText 
+            primary={link.text} 
+            primaryTypographyProps={{ color: isActive(link.path) ? "primary" : "textPrimary" }}
+          />
+        </ListItem>
+      ))}
+    </List>
   );
 
   return (
-    <>
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          {/* Desktop Navigation */}
-          <div className={classes.desktopNav}>
-            <div className={classes.navLinks}>
-              {navLinks.map((link) => (
-                <Button
-                  key={link.text}
-                  component={Link}
-                  to={link.path}
-                  className={`${classes.navButton} ${isActive(link.path) ? classes.active : ''}`}
-                  disableRipple
-                >
-                  {link.text}
-                </Button>
-              ))}
-            </div>
-          </div>
-          
-          {/* Mobile Navigation */}
+    <AppBar position="fixed" className={classes.appBar}>
+      <Toolbar className={classes.toolbar}>
+        {/* Desktop Navigation */}
+        {!isMobile && (
+          <nav className={classes.navLinks}>
+            {navLinks.map((link) => (
+              <Button
+                key={link.text}
+                component={Link}
+                to={link.path}
+                className={`${classes.navButton} ${isActive(link.path) ? classes.active : ''}`}
+                disableRipple
+              >
+                {link.text}
+              </Button>
+            ))}
+          </nav>
+        )}
+        {/* Mobile Navigation */}
+        {isMobile && (
           <IconButton
             edge="start"
             color="inherit"
@@ -145,9 +139,8 @@ export const TopNavbar = () => {
           >
             <MenuIcon />
           </IconButton>
-        </Toolbar>
-      </AppBar>
-      
+        )}
+      </Toolbar>
       {/* Mobile Drawer */}
       <Drawer
         anchor="right"
@@ -157,6 +150,6 @@ export const TopNavbar = () => {
       >
         {drawer}
       </Drawer>
-    </>
+    </AppBar>
   );
 }; 

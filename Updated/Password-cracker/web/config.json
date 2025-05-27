@@ -1,0 +1,87 @@
+{
+    "app": {
+        "name": "Password Cracker",
+        "version": "1.0.0",
+        "debug": false,
+        "host": "0.0.0.0",
+        "port": 5000,
+        "secret_key": null
+    },
+    "security": {
+        "rate_limit": {
+            "window": 60,
+            "max_requests": 100
+        },
+        "password": {
+            "min_length": 8,
+            "require_lowercase": true,
+            "require_uppercase": true,
+            "require_digits": true,
+            "require_special": true,
+            "max_length": 128
+        },
+        "hash": {
+            "default_algorithm": "bcrypt",
+            "bcrypt_rounds": 12,
+            "allowed_algorithms": [
+                "bcrypt",
+                "sha256",
+                "sha512",
+                "md5"
+            ]
+        },
+        "session": {
+            "lifetime": 3600,
+            "secure": true,
+            "httponly": true,
+            "samesite": "Lax"
+        }
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]",
+        "file": {
+            "enabled": true,
+            "path": "logs/app.log",
+            "max_size": 10485760,
+            "backup_count": 10
+        }
+    },
+    "demo": {
+        "enabled": true,
+        "max_attempts": 3,
+        "timeout": 5
+    },
+    "headers": {
+        "Content-Security-Policy": {
+            "default-src": ["'self'"],
+            "script-src": ["'self'", "'unsafe-inline'"],
+            "style-src": ["'self'", "'unsafe-inline'"],
+            "img-src": ["'self'", "data:", "https:"],
+            "font-src": ["'self'", "https:", "data:"],
+            "connect-src": ["'self'"],
+            "frame-ancestors": ["'none'"],
+            "form-action": ["'self'"],
+            "base-uri": ["'self'"],
+            "object-src": ["'none'"],
+            "frame-src": ["'none'"],
+            "media-src": ["'none'"],
+            "worker-src": ["'none'"]
+        },
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-XSS-Protection": "1; mode=block",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "geolocation=(), microphone=(), camera=()"
+    },
+    "error_messages": {
+        "invalid_password": "Password does not meet security requirements",
+        "invalid_hash": "Invalid hash format",
+        "rate_limit": "Too many requests. Please try again later",
+        "unauthorized": "Unauthorized access",
+        "forbidden": "Access forbidden",
+        "not_found": "Resource not found",
+        "server_error": "Internal server error"
+    }
+} 
