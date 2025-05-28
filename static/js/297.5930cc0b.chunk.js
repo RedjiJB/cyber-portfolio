@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_portfolio=self.webpackChunkreact_portfolio||[]).push([[297],{2297:(e,t,o)=>{e.exports=o.p+"static/media/post-4-building.b6d03e8b02bd6171b882.md"}}]);

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="icon" type="image/png" href="/rjb_32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="container resume-container">
+        <!-- Header Section -->
+        <header class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="name">Redji Jean Baptiste</h1>
+                    <h2 class="role mb-3">Analyst</h2>
+                    <p class="lead mb-3">I design and develop innovative systems at the intersection of blockchain, cybersecurity, and advanced software engineering.</p>
+                    
+                    <div class="d-flex contact-links mb-3">
+                        <a href="mailto:jredji429@gmail.com" class="me-3" title="Gmail">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/redji-jean-baptiste-25b0471b7" target="_blank" class="me-3" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/RedjiJB" target="_blank" class="me-3" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://gitlab.com/RedjiJB" target="_blank" class="me-3" title="GitLab">
+                            <i class="fab fa-gitlab"></i>
+                        </a>
+                        <a href="https://discord.com/users/uncleruckus9003" target="_blank" class="me-3" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://t.me/RedjiJB" target="_blank" class="me-3" title="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="location mb-3">
+                        <i class="fas fa-map-marker-alt me-2"></i> Toronto, Canada
+                    </div>
+                    
+                    <a href="assets/Resume-3.pdf" download class="pdf-download-btn">
+                        <i class="fas fa-file-pdf me-2"></i> Download Technical Resume
+                    </a>
+                    
+                    <button id="theme-toggle" class="theme-toggle-btn ms-3">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                    <div class="profile-image-container">
+                        <img src="assets/profile-picture.png" alt="Redji Jean Baptiste profile picture" class="profile-image" />
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Navigation -->
+        <nav class="resume-nav mb-5">
+            <ul class="nav nav-pills" id="resumeNav">
+                <li class="nav-item">
+                    <a class="nav-link active" data-section="skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-section="experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-section="education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-section="projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-section="interests">Interests</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="resume-section active">
+            <h3 class="section-title">Technical Skills</h3>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-link-slash"></i>
+                        </div>
+                        <h4>Blockchain Development</h4>
+                        <div class="skill-level expert"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Ethereum</span>
+                            <span class="skill-tag">Solidity</span>
+                            <span class="skill-tag">Rust</span>
+                            <span class="skill-tag">Polygon</span>
+                            <span class="skill-tag">Solana</span>
+                            <span class="skill-tag">NEAR</span>
+                            <span class="skill-tag">Smart Contracts</span>
+                            <span class="skill-tag">Web3.js</span>
+                            <span class="skill-tag">Ethers.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Artificial Intelligence</h4>
+                        <div class="skill-level advanced"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Neural Networks</span>
+                            <span class="skill-tag">Reinforcement Learning</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">LLMs</span>
+                            <span class="skill-tag">ML Ops</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Full-Stack Development</h4>
+                        <div class="skill-level expert"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">GraphQL</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Serverless</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Cybersecurity</h4>
+                        <div class="skill-level advanced"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Threat Detection</span>
+                            <span class="skill-tag">Secure Coding</span>
+                            <span class="skill-tag">Penetration Testing</span>
+                            <span class="skill-tag">Smart Contract Auditing</span>
+                            <span class="skill-tag">Zero Knowledge Proofs</span>
+                            <span class="skill-tag">Cryptography</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4>DevOps</h4>
+                        <div class="skill-level advanced"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">GCP</span>
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">GitOps</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4>DeFi & Web3</h4>
+                        <div class="skill-level expert"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AMMs</span>
+                            <span class="skill-tag">Lending Protocols</span>
+                            <span class="skill-tag">NFTs</span>
+                            <span class="skill-tag">DAOs</span>
+                            <span class="skill-tag">DID</span>
+                            <span class="skill-tag">Tokenomics</span>
+                            <span class="skill-tag">Yield Farming</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="languages mt-5">
+                <h3 class="section-title">Languages</h3>
+                <div class="language-item">
+                    <span class="language-name">Haitian Creole</span>
+                    <span class="language-level">Native</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Fluent</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">French</span>
+                    <span class="language-level">Fluent</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" class="resume-section">
+            <h3 class="section-title">Professional Experience</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jul 2024 - Apr 2025</div>
+                        <h4 class="timeline-title">Security Officer</h4>
+                        <h5 class="timeline-company">One King West Hotel & Residence</h5>
+                        <p>Provided comprehensive security services and guest assistance in a 51-story luxury hotel environment, serving 400+ residences and hotel guests daily.</p>
+                        <ul class="timeline-details">
+                            <li>Utilized advanced surveillance technology including 80+ CCTV cameras, biometric access control systems, and integrated alarm monitoring for efficient security coverage</li>
+                            <li>Maintained detailed security logs and incident reports using digital reporting systems, ensuring compliance with legal documentation requirements</li>
+                            <li>Delivered professional concierge-level guest services while maintaining strict security protocols, achieving majority positive feedback scores</li>
+                            <li>Responded to emergency situations including medical incidents, fire alarms, and security breaches with average response time under 2 minutes</li>
+                            <li>Conducted regular security audits and vulnerability assessments, identifying and addressing potential risks before incidents occurred</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Dec 2022 - Apr 2023</div>
+                        <h4 class="timeline-title">Security Officer</h4>
+                        <h5 class="timeline-company">Great Canadian Entertainment</h5>
+                        <p>Engaged in security operations in a high-traffic entertainment complex serving 5,000+ daily visitors across gaming floors, restaurants, and event spaces.</p>
+                        <ul class="timeline-details">
+                            <li>Coordinated hourly patrols covering 200,000 sq ft of property and monitored 50+ CCTV cameras through advanced surveillance systems</li>
+                            <li>Collaborated with local law enforcement and emergency services for streamlined incident response, maintaining professional relationships</li>
+                            <li>Implemented and managed security protocols for VIP events hosting up to 1,000 guests, coordinating with event staff to ensure seamless experience</li>
+                            <li>De-escalated conflicts and managed crowd control during peak hours, successfully resolving majority of incidents without law enforcement intervention</li>
+                            <li>Trained and mentored junior security staff on company protocols, surveillance systems, and customer service excellence</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep 2020 - Nov 2025</div>
+                        <h4 class="timeline-title">Security Guard</h4>
+                        <h5 class="timeline-company">Iron Horse Security & Investigations</h5>
+                        <p>Provided comprehensive security services across 15+ client locations including commercial complexes, construction sites, retail establishments, and public events.</p>
+                        <ul class="timeline-details">
+                            <li>Engaged in security operations for diverse properties ranging from 10,000 to 500,000 sq ft, adapting security strategies to match unique client needs</li>
+                            <li>Conducted detailed risk assessments and implemented enhanced security protocols that reduced theft incidents across assigned properties</li>
+                            <li>Utilized advanced surveillance technology including IP camera systems and mobile patrol tracking software to maximize coverage efficiency</li>
+                            <li>Participated in ongoing security training including crisis management, first aid/CPR certification, de-escalation techniques, and emerging security technologies</li>
+                            <li>Prepared comprehensive incident reports and maintained detailed activity logs, contributing to successful prosecution of criminal cases</li>
+                            <li>Developed strong relationships with property managers and tenants, becoming trusted security advisor for multiple long-term clients</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h4 class="timeline-title">Core Contributor</h4>
+                        <h5 class="timeline-company">D Central Mesh Architecture</h5>
+                        <p>Designing and implementing secure peer-to-peer communication protocols for decentralized mesh networks, focusing on resilience against network partitioning and adversarial attacks.</p>
+                        <ul class="timeline-details">
+                            <li>Creating comprehensive documentation, tutorials, and educational resources accessed by developers in the D Central community</li>
+                            <li>Contributing to protocol specifications for secure node authentication, encrypted message routing, and distributed key management systems</li>
+                            <li>Collaborating with international team of developers across multiple time zones using Git, conducting code reviews, and participating in architectural decision-making</li>
+                            <li>Implementing security auditing tools and penetration testing frameworks specifically designed for mesh network vulnerabilities</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2023 - Jan 2024</div>
+                        <h4 class="timeline-title">Associate</h4>
+                        <h5 class="timeline-company">UTSC Student Managed Fund</h5>
+                        <p>Conducted comprehensive financial analysis and due diligence on equity and fixed-income securities for a simulated student-managed investment portfolio.</p>
+                        <ul class="timeline-details">
+                            <li>Collaborated with team of student analysts to develop investment strategies, perform sector research, and present quarterly portfolio performance reports</li>
+                            <li>Utilized financial modelling software and advanced Excel functions to analyze market trends, evaluate risk-adjusted returns, and optimize portfolio allocation</li>
+                            <li>Participated in weekly investment committee meetings, presenting research findings and investment recommendations that contributed to fund outperforming benchmark indices</li>
+                            <li>Developed expertise in ESG investing principles and sustainable finance practices, incorporating environmental and social factors into investment decision-making</li>
+                            <li>Gained hands-on experience with portfolio management tools, risk assessment methodologies, and regulatory compliance requirements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="resume-section">
+            <h3 class="section-title">Education</h3>
+            
+            <div class="education-item">
+                <div class="education-logo">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="education-details">
+                    <h4>Bachelor of Arts in International Development Studies & Economics for Management</h4>
+                    <h5>University of Toronto</h5>
+                    <div class="education-date">Expected 2026 <span class="badge bg-primary ms-2">In Progress</span></div>
+                    <p class="mb-2">Focus: Using decentralized technologies to empower communities with local control, transparent systems, and resilient infrastructure</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="resume-section">
+            <h3 class="section-title">Projects</h3>
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Password Security Analyzer</h4>
+                    <div class="project-links">
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        <a href="https://redjijb.github.io/Password-security_analyzer/" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB/Password-security_analyzer.git" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A comprehensive tool for analyzing password strength, generating secure passwords, and checking for breaches. Includes modular design, extensive test coverage, and security best practices for input validation, error handling, and secure session management.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Cryptography</span>
+                    <span class="tech-tag">Security</span>
+                    <span class="tech-tag">Web Security</span>
+                    <span class="tech-tag">OWASP</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Password Cracker</h4>
+                    <div class="project-links">
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        <a href="https://redjijb.github.io/Password-security_analyzer/" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB/Password-security_analyzer.git" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A secure, educational tool for password analysis and hash cracking simulation. Features password strength analysis, hash generation, and demo hash cracking, with strong security controls and educational content about password security.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">Nginx</span>
+                    <span class="tech-tag">Security</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Security Headers Checker</h4>
+                    <div class="project-links">
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        <a href="https://redjijb.github.io/secure-headers_checker/" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB/secure-headers_checker.git" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A comprehensive testing framework for analyzing and validating HTTP security headers. Includes unit, integration, and end-to-end tests, with features for header validation, export, and security best practices.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">HTTP Security</span>
+                    <span class="tech-tag">OWASP</span>
+                    <span class="tech-tag">Web Security</span>
+                    <span class="tech-tag">Testing</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Phishin Detection Tool</h4>
+                    <div class="project-links">
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        <a href="https://redjijb.github.io/phishing-detection/" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB/phishing-detection.git" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A powerful ML-powered web application that detects phishing attempts through advanced URL analysis, pattern recognition, and machine learning algorithms. Features real-time threat scoring, homograph attack detection, and a modern, interactive UI.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">Security</span>
+                    <span class="tech-tag">Web App</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Wifi Security Auditor</h4>
+                    <div class="project-links">
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        <a href="https://redjijb.github.io/Wifi-security_auditor/" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB/Wifi-security_auditor.git" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A comprehensive educational tool for demonstrating wireless network security analysis concepts and vulnerabilities. Simulates encryption detection, vulnerability analysis, and professional security reporting for WiFi networks.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Network Security</span>
+                    <span class="tech-tag">WiFi</span>
+                    <span class="tech-tag">Encryption</span>
+                    <span class="tech-tag">Security Analysis</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Port Scanner</h4>
+                    <div class="project-links">
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        <a href="https://redjijb.github.io/port-scanner/" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB/port-scanner.git" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A lightweight, educational TCP port scanner written in Python. Demonstrates network programming, concurrency, and error handling, with both basic and advanced scanning modes and a focus on security education.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Networking</span>
+                    <span class="tech-tag">TCP/IP</span>
+                    <span class="tech-tag">Security</span>
+                    <span class="tech-tag">Concurrency</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>PCAP Analysis</h4>
+                    <div class="project-links">
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        <a href="https://redjijb.github.io/pcap-analysis/" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB/pcap-analysis.git" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A collection of network forensics analyses demonstrating incident response and threat hunting capabilities. Includes deep packet inspection, timeline reconstruction, and custom automation scripts for analyzing PCAP files.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Wireshark</span>
+                    <span class="tech-tag">Network Forensics</span>
+                    <span class="tech-tag">PCAP</span>
+                    <span class="tech-tag">Security Analysis</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Universal Language Translator</h4>
+                    <div class="project-links">
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        <a href="https://redjijb.github.io/translator-py/" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB/translator-py" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A powerful Python-based language translation system supporting 200+ languages with enterprise-grade features. Includes automatic language detection, multiple translation providers (Google Translate, LibreTranslate), text-to-speech capabilities, offline support, and a modern responsive web interface.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Google Translate API</span>
+                    <span class="tech-tag">LibreTranslate</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">HTML/CSS/JS</span>
+                    <span class="tech-tag">Text-to-Speech</span>
+                </div>
+            </div>
+            <!-- Existing in-progress/planning projects remain below -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Decentralized AI Governance Platform</h4>
+                    <div class="project-links">
+                        <span class="project-status planning"><i class="fas fa-clock"></i> Planning</span>
+                        <a href="https://demo.example.com" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A self-regulating DAO platform that uses smart contracts and AI-driven governance models to autonomously manage digital ecosystems.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">Substrate</span>
+                    <span class="tech-tag">OpenZeppelin</span>
+                    <span class="tech-tag">Chainlink</span>
+                    <span class="tech-tag">Polygon</span>
+                    <span class="tech-tag">IPFS</span>
+                    <span class="tech-tag">Aragon</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>AI-Enhanced Reputation System</h4>
+                    <div class="project-links">
+                        <span class="project-status in-progress"><i class="fas fa-hammer"></i> In Progress</span>
+                        <a href="https://demo.example.com/reputation" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A decentralized reputation engine that assigns credibility scores to users based on on-chain activity and community engagement.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Ethereum</span>
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">Chainlink</span>
+                    <span class="tech-tag">The Graph</span>
+                    <span class="tech-tag">Ceramic</span>
+                    <span class="tech-tag">Polygon</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Dynamic NFT Ecosystem</h4>
+                    <div class="project-links">
+                        <span class="project-status planning"><i class="fas fa-clock"></i> Planning</span>
+                        <a href="https://demo.example.com/nft-ecosystem" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">An innovative platform where NFTs evolve dynamically based on real-world data and user interactions, governed by a decentralized autonomous organization (DAO).</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">Chainlink</span>
+                    <span class="tech-tag">Ocean Protocol</span>
+                    <span class="tech-tag">Arweave</span>
+                    <span class="tech-tag">IPFS</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Sentiment Analysis API</h4>
+                    <div class="project-links">
+                        <span class="project-status in-progress"><i class="fas fa-hammer"></i> In Progress</span>
+                        <a href="https://demo.example.com/sentiment" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A robust API that classifies text sentiment as positive, negative, or neutral using advanced NLP techniques.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">BERT</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">TensorFlow</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Smart Contract Audit Framework</h4>
+                    <div class="project-links">
+                        <span class="project-status planning"><i class="fas fa-clock"></i> Planning</span>
+                        <a href="https://demo.example.com/smart-contract-audit" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A tool for auditing smart contracts that combines static analysis, symbolic execution, and fuzz testing to identify vulnerabilities.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Mythril</span>
+                    <span class="tech-tag">Slither</span>
+                    <span class="tech-tag">Echidna</span>
+                    <span class="tech-tag">Truffle</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Decentralized Voting System</h4>
+                    <div class="project-links">
+                        <span class="project-status planning"><i class="fas fa-clock"></i> Planning</span>
+                        <a href="https://demo.example.com/decentralized-voting" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/RedjiJB" target="_blank" class="project-link" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="project-description">A blockchain-based voting platform that ensures transparency, immutability, and voter privacy for democratic processes.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Ethereum</span>
+                    <span class="tech-tag">IPFS</span>
+                    <span class="tech-tag">zk-SNARKs</span>
+                    <span class="tech-tag">MetaMask</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Interests Section -->
+        <section id="interests" class="resume-section">
+            <h3 class="section-title">Interests & Research Areas</h3>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Decentralized Finance</h4>
+                        <div class="interest-tags">
+                            <span class="interest-tag">DeFi</span>
+                            <span class="interest-tag">DAOs</span>
+                            <span class="interest-tag">Tokenomics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>AI Ethics</h4>
+                        <div class="interest-tags">
+                            <span class="interest-tag">Responsible AI</span>
+                            <span class="interest-tag">Privacy</span>
+                            <span class="interest-tag">Fairness</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Open Source</h4>
+                        <div class="interest-tags">
+                            <span class="interest-tag">Community</span>
+                            <span class="interest-tag">Collaboration</span>
+                            <span class="interest-tag">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="mt-5 text-center">
+            <a href="/" class="back-link">
+                <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+            </a>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

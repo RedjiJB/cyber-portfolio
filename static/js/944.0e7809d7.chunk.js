@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_portfolio=self.webpackChunkreact_portfolio||[]).push([[944],{944:(e,t,c)=>{e.exports=c.p+"static/media/post-2-architecture.58b6c95e0c74c9e2ffa2.md"}}]);

@@ -1,0 +1,229 @@
+# Security Headers Checker - Test Suite
+
+A comprehensive testing framework for the Security Headers Checker application, including unit tests, integration tests, and end-to-end tests.
+
+## Test Structure
+
+```
+tests/
+├── unit/                    # Unit tests for individual functions
+│   ├── headerAnalyzer.test.js
+│   └── exporters.test.js
+├── integration/             # Integration tests for UI components
+│   └── ui.test.js
+├── e2e/                    # End-to-end tests with Puppeteer
+│   ├── setup.js
+│   └── scanner.test.js
+├── fixtures/               # Test data and mocks
+│   └── mockData.js
+├── utils/                  # Test utilities and helpers
+│   └── testHelpers.js
+├── __mocks__/             # Jest mocks
+│   └── styleMock.js
+└── setup.js               # Global test setup
+```
+
+## Running Tests
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Run All Tests
+```bash
+npm test
+```
+
+### Run Tests in Watch Mode
+```bash
+npm run test:watch
+```
+
+### Run Tests with Coverage
+```bash
+npm run test:coverage
+```
+
+### Run E2E Tests
+```bash
+npm run test:e2e
+```
+
+### Run All Tests with Coverage and E2E
+```bash
+npm run test:all
+```
+
+## Test Coverage
+
+The test suite aims for >80% code coverage across all metrics:
+- **Statements**: 80%+
+- **Branches**: 80%+
+- **Functions**: 80%+
+- **Lines**: 80%+
+
+Coverage reports are generated in the `coverage/` directory.
+
+## Unit Tests
+
+### Header Analyzer Tests
+- Security header configuration validation
+- Header validation logic for each security header
+- Grade calculation and scoring
+- Warning and issue detection
+- Missing header identification
+
+### Exporter Tests
+- JSON export functionality
+- HTML report generation with XSS protection
+- CSV export with proper escaping
+- Download link creation
+- Error handling
+
+## Integration Tests
+
+### UI Component Tests
+- Scanner section functionality
+- Loading states
+- Results display
+- Header card rendering
+- Export button interactions
+- Responsive behavior
+- Error handling
+
+## End-to-End Tests
+
+### Full Application Flow
+- Page load and initialization
+- URL input and scanning
+- Demo site loading
+- Results display and grading
+- Export functionality
+- Keyboard navigation
+- Visual feedback
+- Error states
+- Responsive design testing
+
+## Test Utilities
+
+### Mock Data (`fixtures/mockData.js`)
+- Pre-configured header sets (secure, moderate, poor, empty)
+- Mock scan results with various grades
+- Test URLs (valid and invalid)
+- Export test data
+- Browser test configurations
+
+### Test Helpers (`utils/testHelpers.js`)
+- `waitFor()` - Wait for conditions
+- `mockFetchResponse()` - Mock API responses
+- `typeText()` - Simulate user typing
+- `testAccessibility()` - Basic a11y testing
+- `PerformanceMeasure` - Performance testing
+- `generateTestReport()` - Test reporting
+
+## Writing New Tests
+
+### Unit Test Example
+```javascript
+describe('New Feature', () => {
+  test('should perform expected behavior', () => {
+    const result = myFunction(input);
+    expect(result).toBe(expectedOutput);
+  });
+});
+```
+
+### Integration Test Example
+```javascript
+test('should update UI when action occurs', () => {
+  const button = screen.getByText('Click Me');
+  fireEvent.click(button);
+  
+  expect(screen.getByText('Updated')).toBeInTheDocument();
+});
+```
+
+### E2E Test Example
+```javascript
+test('should complete user flow', async () => {
+  await page.goto('http://localhost:8080');
+  await page.type('#input', 'test data');
+  await page.click('#submit');
+  
+  await page.waitForSelector('.results');
+  const result = await page.$eval('.result', el => el.textContent);
+  expect(result).toBe('Expected Result');
+});
+```
+
+## Performance Testing
+
+Performance benchmarks are included for:
+- Page load time: <3s acceptable, <5s warning
+- Scan completion: <2s acceptable, <3s warning
+- Export generation: <0.5s acceptable, <1s warning
+
+## Accessibility Testing
+
+Basic accessibility checks include:
+- Alt text on images
+- Form input labels
+- Heading hierarchy
+- Color contrast (simplified)
+
+## CI/CD Integration
+
+The test suite is designed to run in CI/CD pipelines:
+
+```yaml
+# Example GitHub Actions workflow
+test:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+    - run: npm ci
+    - run: npm run test:coverage
+    - run: npm run test:e2e
+```
+
+## Debugging Tests
+
+### Debug Unit/Integration Tests
+```bash
+node --inspect-brk node_modules/.bin/jest --runInBand
+```
+
+### Debug E2E Tests
+Set `headless: false` in `jest-puppeteer.config.js`
+
+### View Coverage Report
+```bash
+npm run test:coverage
+open coverage/lcov-report/index.html
+```
+
+## Best Practices
+
+1. **Isolation**: Each test should be independent
+2. **Clarity**: Test names should clearly describe what they test
+3. **Coverage**: Aim for high coverage but focus on meaningful tests
+4. **Performance**: Keep tests fast (<5s for unit, <30s for E2E)
+5. **Maintenance**: Update tests when features change
+
+## Troubleshooting
+
+### Common Issues
+
+1. **E2E tests failing**: Ensure server is running on port 8080
+2. **Coverage thresholds**: Update thresholds in `package.json` if needed
+3. **Timeout errors**: Increase timeout in test configuration
+4. **Module not found**: Check import paths and Jest configuration
+
+### Getting Help
+
+For issues or questions:
+1. Check existing test examples
+2. Review Jest and Puppeteer documentation
+3. Run tests with `--verbose` flag for more details
