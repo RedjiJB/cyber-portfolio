@@ -26,7 +26,7 @@ A modern, responsive interactive resume built with vanilla JavaScript, HTML5, an
 - Focus on blockchain, AI ethics, and Web3 education
 
 ### 3. **Education**
-- University of Toronto academic information
+- Algonquin College academic information
 - Focus on International Development Studies & Economics
 
 ### 4. **Research Papers**
@@ -132,4 +132,4 @@ This project is open source and available for personal use and modification.
 - Email: jredji429@gmail.com
 - LinkedIn: [linkedin.com/in/redji-jean-baptiste-25b0471b7](https://www.linkedin.com/in/redji-jean-baptiste-25b0471b7)
 - GitHub: [github.com/RedjiJB](https://github.com/RedjiJB)
-- Location: Toronto, Canada
+- Location: Ottawa, Canada

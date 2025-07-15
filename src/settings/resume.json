@@ -9,13 +9,13 @@
         "job1": "Cybersecurity",
         "job2": "Analyst",
         "description": "I protect digital systems through advanced threat analysis, vulnerability assessment, and AI-powered security solutions.",
-        "summary": "based in Toronto, Canada.",
-        "keywords": "cybersecurity,penetration testing,threat intelligence,security analysis,incident response,ai,machine learning,security operations,malware analysis,network security,cloud security,toronto,canada,python,tensorflow,security tools",
+        "summary": "based in Ottawa, Canada.",
+        "keywords": "cybersecurity,penetration testing,threat intelligence,security analysis,incident response,ai,machine learning,security operations,malware analysis,network security,cloud security,ottawa,canada,python,tensorflow,security tools",
         "url": "https://redjijeanb.vercel.app/",
         "location": {
             "address": "XX XXXXXstreet",
             "postalCode": "XXXXX",
-            "city": "Toronto",
+            "city": "Ottawa",
             "country": "Canada",
             "countryCode": "CA",
             "region": "Ontario"
@@ -147,13 +147,13 @@
     ],
     "education": [
         {
-            "institution": "University of Toronto",
-            "area": "Computer Science, Specialization in Security",
-            "studyType": "Bachelor",
-            "startDate": "2013-09-01",
-            "endDate": "2017-05-01",
+            "institution": "Algonquin College",
+            "area": "Computer Systems Technician - Networking (1560X03F)",
+            "studyType": "Diploma",
+            "startDate": "2025-09-02",
+            "endDate": "2027-05-01",
             "gpa": "3.8",
-            "courses": ["Cryptography", "Network Security", "Secure Software Systems", "Machine Learning", "Data Structures"]
+            "courses": ["Network Infrastructure", "Network Security", "System Administration", "Cybersecurity Fundamentals", "Cloud Technologies"]
         },
         {
             "institution": "SANS Institute",
