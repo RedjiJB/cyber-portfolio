@@ -9,6 +9,16 @@ import { TopNavbar } from '../components/nav/TopNavbar';
 import { Works } from '../components/works/Works';
 import projectsData from '../settings/projects.json';
 
+// Material-UI Icons
+import { 
+  Link as LinkIcon, 
+  Psychology as BrainIcon, 
+  Security as ShieldIcon, 
+  Language as GlobeIcon, 
+  PhoneAndroid as MobileIcon, 
+  Sync as SyncIcon 
+} from '@material-ui/icons';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -63,32 +73,32 @@ const expertiseDomains = [
   {
     title: "Blockchain & Web3",
     description: "Smart contracts, DeFi protocols, NFTs, and decentralized governance systems.",
-    icon: "🔗"
+    icon: LinkIcon
   },
   {
     title: "Artificial Intelligence",
     description: "Machine learning models, NLP systems, and computer vision applications.",
-    icon: "🧠"
+    icon: BrainIcon
   },
   {
     title: "Cybersecurity",
     description: "Vulnerability assessment, penetration testing, and secure system design.",
-    icon: "🔒"
+    icon: ShieldIcon
   },
   {
     title: "Networking",
     description: "Network automation, traffic analysis, and infrastructure optimization.",
-    icon: "🌐"
+    icon: GlobeIcon
   },
   {
     title: "IoT & Edge Computing",
     description: "Sensor networks, real-time data processing, and connected devices.",
-    icon: "📱"
+    icon: MobileIcon
   },
   {
     title: "Cross-Disciplinary",
     description: "Projects that integrate multiple domains for innovative solutions.",
-    icon: "🔄"
+    icon: SyncIcon
   }
 ];
 
@@ -120,21 +130,22 @@ export const Projects = () => {
             </Typography>
             
             <Grid container spacing={3}>
-              {expertiseDomains.map((domain, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
-                  <Paper elevation={2} className={classes.domainCard}>
-                    <Typography variant="h1" className={classes.domainIcon}>
-                      {domain.icon}
-                    </Typography>
-                    <Typography variant="h6" className={classes.domainTitle}>
-                      {domain.title}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      {domain.description}
-                    </Typography>
-                  </Paper>
-                </Grid>
-              ))}
+              {expertiseDomains.map((domain, index) => {
+                const IconComponent = domain.icon;
+                return (
+                  <Grid item xs={12} sm={6} md={4} key={index}>
+                    <Paper elevation={2} className={classes.domainCard}>
+                      <IconComponent className={classes.domainIcon} />
+                      <Typography variant="h6" className={classes.domainTitle}>
+                        {domain.title}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        {domain.description}
+                      </Typography>
+                    </Paper>
+                  </Grid>
+                );
+              })}
             </Grid>
           </Paper>
         </Container>
