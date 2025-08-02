@@ -2,53 +2,13 @@
   "posts": [
     {
       "id": 1,
-      "title": "Meet D Central Mesh: Internet-Grade Connectivity Without the Internet",
-      "date": "2024-04-19",
+      "title": "Starting the Subnet Designer & Visualizer Project",
+      "date": "2025-01-02",
       "author": "Redji Jean Baptiste",
-      "summary": "A plain-language tour of the vision, the problem we're tackling, and why a tiered mesh matters.",
+      "summary": "Beginning my journey to build a Python tool that calculates VLSM subnet schemes and produces LAN topology diagrams",
       "image": "/assets/blog/blog1.png",
-      "tags": ["Architecture", "Security", "Networking", "Decentralization", "Technical Design"],
-      "markdown": "meet-d-central-mesh.md"
-    },
-    {
-      "id": 2,
-      "title": "Under the Hood of D Central Mesh: Tiers, BATMAN-adv, and Adaptive Network Coding",
-      "date": "2024-04-26",
-      "author": "Redji Jean Baptiste",
-      "summary": "A technologist's walkthrough of how packets actually move across the mesh, from ETX+SNR path metrics to sleep-aware RPL borders—see why our routing stack is equal parts battle-tested and cutting-edge.",
-      "image": "/assets/blog/blog2.png",
-      "tags": ["Architecture", "Networking", "Protocols", "Technical Deep Dive"],
-      "markdown": "post-2-architecture.md"
-    },
-    {
-      "id": 3,
-      "title": "Zero-Trust Everything: Mesh-CT, Post-Quantum Crypto, and Beyond",
-      "date": "2024-05-03",
-      "author": "Redji Jean Baptiste",
-      "summary": "Why certificates last four hours, not four years, and how that stops entire classes of attacks. A deep yet accessible look at our layered security model, from secure boot to attribute-based encryption.",
-      "image": "/assets/blog/blog3.png",
-      "tags": ["Security", "Zero Trust", "Cryptography", "Mesh-CT", "Post-Quantum"],
-      "markdown": "post-3-security.md"
-    },
-    {
-      "id": 4,
-      "title": "From Edge AI to CRDT Storage: Shipping Apps on D Central Mesh",
-      "date": "2024-05-10",
-      "author": "Redji Jean Baptiste",
-      "summary": "How the service registry, container conventions, and GitOps pipeline turn infrastructure into a developer playground. K3s on a Raspberry Pi, WASM functions on a router, model inference on your phone—the mesh is an app platform hiding in plain sight.",
-      "image": "/assets/blog/blog4.png",
-      "tags": ["Edge Computing", "Apps", "Containers", "DevOps", "Platform"],
-      "markdown": "post-4-building.md"
-    },
-    {
-      "id": 5,
-      "title": "The Journey to 2026: Pilot Sites, Quantum Upgrades, and Your Role",
-      "date": "2024-05-17",
-      "author": "Redji Jean Baptiste",
-      "summary": "A transparent delivery plan, key milestones, and exactly where we need help. We're shipping in four phases—foundation, pilot, regional, quantum-ready. Here's what's done, what's next, and how you can jump in today.",
-      "image": "/assets/blog/blog5.png",
-      "tags": ["Roadmap", "Community", "Quantum", "Deployment", "Open Source"],
-      "markdown": "post-5-roadmap.md"
+      "tags": ["Python", "VLSM", "Networking", "CST8182", "Project Planning"],
+      "markdown": "subnet-designer-project-start.md"
     }
   ]
 }
