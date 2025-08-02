@@ -160,3 +160,5 @@ export const BlogPostCard = ({ post }) => {
     </Card>
   );
 };
+
+export default BlogPostCard;

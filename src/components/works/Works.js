@@ -451,3 +451,5 @@ export const Works = ({ completedProjects, projects }) => {
     </section>
   );
 };
+
+export default Works;
