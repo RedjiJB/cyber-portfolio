@@ -299,3 +299,5 @@ export const RecentProjects = ({ maxProjects = 6 }) => {
     </section>
   );
 };
+
+export default RecentProjects;

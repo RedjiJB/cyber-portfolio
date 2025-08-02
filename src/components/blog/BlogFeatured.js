@@ -181,3 +181,5 @@ export const BlogFeatured = ({ post }) => {
     </Paper>
   );
 };
+
+export default BlogFeatured;

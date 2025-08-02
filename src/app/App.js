@@ -43,7 +43,7 @@ export const App = () => {
                 <Route path="/about" exact component={AboutPage} />
                 <Route path="/contact" exact component={ContactPage} />
                 <Route path="/blog" exact component={Blog} />
-                <Route path="/blog/:id" component={BlogPost} />
+                <Route path="/blog/:slug" component={BlogPost} />
                 <Route path="/resume" component={Resume} />
                 <Route path="*" component={PageNotFound} />
             </Switch>
