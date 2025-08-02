@@ -85,12 +85,6 @@ const SocialLinks = () => {
             icon: "fas fa-envelope"
           },
           {
-            network: "Discord",
-            username: "uncleruckus9003",
-            url: "https://discord.com/users/uncleruckus9003",
-            icon: "fab fa-discord"
-          },
-          {
             network: "Telegram",
             username: "RedjiJB",
             url: "https://t.me/RedjiJB",

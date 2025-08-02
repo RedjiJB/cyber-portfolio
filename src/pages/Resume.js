@@ -108,6 +108,7 @@ export const Resume = () => {
           <Tab label="Experience" />
           <Tab label="Skills" />
           <Tab label="Education" />
+          <Tab label="Interests" />
         </Tabs>
 
         <TabPanel value={value} index={0}>
@@ -183,6 +184,37 @@ export const Resume = () => {
               />
             </ListItem>
           </List>
+        </TabPanel>
+
+        <TabPanel value={value} index={3}>
+          <Typography variant="h6" gutterBottom>
+            Interests & Research Areas
+          </Typography>
+          <Grid container spacing={3}>
+            {resumeData.interests && resumeData.interests.map((interest, index) => (
+              <Grid item xs={12} md={6} key={index}>
+                <Paper className={classes.paper} elevation={2}>
+                  <Typography variant="h6" gutterBottom>
+                    {interest.name}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" gutterBottom>
+                    {interest.description}
+                  </Typography>
+                  <Box mt={2}>
+                    {interest.keywords && interest.keywords.map((keyword, idx) => (
+                      <Chip 
+                        key={idx} 
+                        label={keyword} 
+                        size="small" 
+                        className={classes.chip}
+                        color="primary"
+                      />
+                    ))}
+                  </Box>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
         </TabPanel>
       </Paper>
     </Container>

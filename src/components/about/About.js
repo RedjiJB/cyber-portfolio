@@ -136,7 +136,7 @@ export const About = () => {
   const greetings = "About Me";
   
   // Bio text reflects the resume's description and summary
-  const aboutme = `I'm ${FirstName} ${LastName}, a student based in Toronto, Canada. I'm self-taught and began coding in my free time while working in the security industry. I love the world of tech and am passionate about pivoting into the cybersecurity industry, where I can combine my security background with technical skills to protect digital systems and build robust defenses.`;
+  const aboutme = `I am a Co-operative education student at Algonquin College in the Computer Systems Technician - Networking (1560X03FWO) program. I'm learning network administration, cybersecurity fundamentals, system configuration, and IT infrastructure management. My goal is to build a career in IT, focusing on protecting digital assets and implementing secure network solutions.`;
 
   return (
     <section className={classes.main}>
@@ -243,90 +243,21 @@ export const About = () => {
 
         <div className={classes.skillsSection}>
           <Typography variant="h5" className={classes.sectionTitle}>
-            Skills & Knowledge
+            Current Skills (Level 1)
           </Typography>
 
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-shield-alt ${classes.skillIcon}`}></i>
-                  Cybersecurity Analysis
-                </Typography>
-                <Typography variant="body1" className={classes.skillDescription}>
-                  Familiar with threat intelligence, vulnerability assessment, incident response, security architecture, and risk management, applying these concepts in open source and self-driven projects.
-                </Typography>
-                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Threat Intelligence', 'SIEM', 'Incident Response', 'Vulnerability Assessment', 'Risk Management'].map((tech) => (
-                    <Chip
-                      key={tech}
-                      label={tech}
-                      color="primary"
-                      size="small"
-                      style={{ margin: '0 4px 4px 0' }}
-                    />
-                  ))}
-                </div>
-              </Paper>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.skillCard} elevation={2}>
-                <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-tools ${classes.skillIcon}`}></i>
-                  Security Tools
-                </Typography>
-                <Typography variant="body1" className={classes.skillDescription}>
-                  Hands-on experience with industry-standard security tools such as Nessus, Wireshark, Metasploit, Burp Suite, Kali Linux, and SIEM platforms, gained through practical exploration and open source work.
-                </Typography>
-                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Nessus', 'Wireshark', 'Metasploit', 'Burp Suite', 'Kali Linux', 'Splunk'].map((tech) => (
-                    <Chip
-                      key={tech}
-                      label={tech}
-                      color="primary"
-                      size="small"
-                      style={{ margin: '0 4px 4px 0' }}
-                    />
-                  ))}
-                </div>
-              </Paper>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.skillCard} elevation={2}>
-                <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-brain ${classes.skillIcon}`}></i>
-                  AI & Machine Learning
-                </Typography>
-                <Typography variant="body1" className={classes.skillDescription}>
-                  Applied security-focused AI concepts including anomaly detection, behavioral analysis, and NLP for threat detection in personal and collaborative projects.
-                </Typography>
-                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Anomaly Detection', 'TensorFlow', 'PyTorch', 'Behavioral Analysis', 'NLP', 'Security Analytics'].map((tech) => (
-                    <Chip
-                      key={tech}
-                      label={tech}
-                      color="primary"
-                      size="small"
-                      style={{ margin: '0 4px 4px 0' }}
-                    />
-                  ))}
-                </div>
-              </Paper>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.skillCard} elevation={2}>
-                <Typography variant="h6" className={classes.skillItem}>
                   <i className={`fas fa-network-wired ${classes.skillIcon}`}></i>
-                  Network Security
+                  Networking Fundamentals
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Comfortable with firewall configuration, VPN implementation, network segmentation, traffic analysis, and designing secure network architectures.
+                  Learning core networking concepts including OSI model, TCP/IP, IPv4 subnetting, VLSM, and simple LAN design through hands-on labs and Packet Tracer simulations.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Firewall Configuration', 'Traffic Analysis', 'Network Segmentation', 'IDS/IPS', 'Zero Trust'].map((tech) => (
+                  {['OSI Model', 'TCP/IP', 'IPv4 Subnetting', 'VLSM', 'LAN Design', 'Packet Tracer'].map((tech) => (
                     <Chip
                       key={tech}
                       label={tech}
@@ -342,14 +273,14 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-bug ${classes.skillIcon}`}></i>
-                  Penetration Testing
+                  <i className={`fab fa-windows ${classes.skillIcon}`}></i>
+                  Windows Desktop Support
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Explored ethical hacking, vulnerability exploitation, web application testing, and security assessment methodologies through self-guided learning and open source contributions.
+                  Hands-on experience with Windows 10/11 installation, local Group Policy configuration, NTFS permissions, PowerShell basics, and workgroup configuration.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['OSCP', 'Ethical Hacking', 'Web App Testing', 'Exploit Development', 'Security Assessments'].map((tech) => (
+                  {['Windows 10/11', 'Local GPO', 'NTFS Permissions', 'PowerShell', 'Workgroup Config'].map((tech) => (
                     <Chip
                       key={tech}
                       label={tech}
@@ -365,14 +296,83 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-code-branch ${classes.skillIcon}`}></i>
-                  Secure Development
+                  <i className={`fab fa-linux ${classes.skillIcon}`}></i>
+                  GNU/Linux System Support
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Practiced secure coding, code review for vulnerabilities, DevSecOps, and OWASP secure coding standards in both personal and collaborative environments.
+                  Comfortable with Bash command line interface, user/group management, file permissions, basic shell scripting, and Netplan networking configuration.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Secure Coding', 'Code Review', 'DevSecOps', 'OWASP Top 10', 'SAST/DAST'].map((tech) => (
+                  {['Bash CLI', 'User/Group Management', 'File Permissions', 'Shell Scripting', 'Netplan'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
+              </Paper>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Paper className={classes.skillCard} elevation={2}>
+                <Typography variant="h6" className={classes.skillItem}>
+                  <i className={`fas fa-calculator ${classes.skillIcon}`}></i>
+                  Numeracy & Logic
+                </Typography>
+                <Typography variant="body1" className={classes.skillDescription}>
+                  Strong foundation in binary, hexadecimal, and decimal number system conversions, Boolean algebra, truth tables, and introductory probability concepts.
+                </Typography>
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['Binary/Hex/Decimal', 'Boolean Algebra', 'Truth Tables', 'Probability'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
+              </Paper>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Paper className={classes.skillCard} elevation={2}>
+                <Typography variant="h6" className={classes.skillItem}>
+                  <i className={`fas fa-comments ${classes.skillIcon}`}></i>
+                  Professional Communication
+                </Typography>
+                <Typography variant="body1" className={classes.skillDescription}>
+                  Developing technical writing skills, incident documentation, professional email etiquette, and presentation abilities for IT environments.
+                </Typography>
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['Technical Writing', 'Incident Documentation', 'Email Etiquette', 'Presentations'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
+              </Paper>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Paper className={classes.skillCard} elevation={2}>
+                <Typography variant="h6" className={classes.skillItem}>
+                  <i className={`fab fa-python ${classes.skillIcon}`}></i>
+                  Programming Fundamentals
+                </Typography>
+                <Typography variant="body1" className={classes.skillDescription}>
+                  Learning Python programming basics including data types, loops, functions, error handling, and pseudocode development for automation tasks.
+                </Typography>
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['Python', 'Data Types', 'Loops', 'Functions', 'Error Handling', 'Pseudocode'].map((tech) => (
                     <Chip
                       key={tech}
                       label={tech}
@@ -387,20 +387,84 @@ export const About = () => {
           </Grid>
         </div>
 
+        <div className={classes.skillsSection}>
+          <Typography variant="h5" className={classes.sectionTitle}>
+            In-Progress Skills (Winter 2026)
+          </Typography>
+
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6}>
+              <Paper className={classes.skillCard} elevation={2}>
+                <Typography variant="h6" className={classes.skillItem}>
+                  <i className={`fas fa-server ${classes.skillIcon}`}></i>
+                  Windows Domain Administration
+                </Typography>
+                <Typography variant="body1" className={classes.skillDescription}>
+                  Currently learning Active Directory, Group Policy management, PowerShell automation, and Windows Server roles as part of CST 8200 coursework.
+                </Typography>
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['Active Directory', 'Group Policy', 'PowerShell Automation', 'Windows Server'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="secondary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
+                <Chip 
+                  label="In Progress" 
+                  size="small" 
+                  style={{ backgroundColor: '#FF9800', color: '#fff', marginTop: '8px' }}
+                />
+              </Paper>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Paper className={classes.skillCard} elevation={2}>
+                <Typography variant="h6" className={classes.skillItem}>
+                  <i className={`fas fa-route ${classes.skillIcon}`}></i>
+                  Routing & Switching Fundamentals
+                </Typography>
+                <Typography variant="body1" className={classes.skillDescription}>
+                  Advancing into VLANs, trunking, Spanning Tree Protocol, inter-VLAN routing, and small-office Wi-Fi configuration through upcoming coursework.
+                </Typography>
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['VLANs', 'Trunking', 'STP', 'Inter-VLAN Routing', 'Wi-Fi'].map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      color="secondary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
+                <Chip 
+                  label="In Progress" 
+                  size="small" 
+                  style={{ backgroundColor: '#FF9800', color: '#fff', marginTop: '8px' }}
+                />
+              </Paper>
+            </Grid>
+          </Grid>
+        </div>
+
         <div className={classes.backgroundSection}>
           <Typography variant="h5" className={classes.sectionTitle}>
-            Key Projects
+            Current Projects
           </Typography>
           
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-shield-alt ${classes.skillIcon}`}></i>
-                  AI-Powered Security Operations Center
+                  <i className={`fas fa-network-wired ${classes.skillIcon}`}></i>
+                  Subnet Designer & Visualizer
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  A comprehensive security operations platform using machine learning to detect, analyze, and respond to security threats in real-time
+                  Python tool that calculates VLSM subnet schemes and produces LAN topology diagrams. Reinforces OSI/TCP-IP knowledge and IPv4 addressing from CST 8182.
                 </Typography>
                 <Chip 
                   label="In Progress" 
@@ -414,18 +478,85 @@ export const About = () => {
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-virus ${classes.skillIcon}`}></i>
-                  Advanced Malware Analysis Framework
+                  <i className={`fab fa-windows ${classes.skillIcon}`}></i>
+                  Windows 11 Secure Build Guide
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  An AI-powered system for automated analysis of malware samples, identifying patterns, behaviors, and potential attribution using machine learning
+                  Hardened Windows 11 VM with local GPOs, NTFS permissions and PowerShell scripts for automated baseline deployment. Mirrors skills from CST 8202.
                 </Typography>
                 <Chip 
-                  label="Planning" 
+                  label="In Progress" 
                   size="small" 
-                  style={{ backgroundColor: '#FF9800', color: '#fff', margin: '8px 0' }} 
-                  icon={<i className="fas fa-clock" style={{ fontSize: '0.8rem' }} />}
+                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
+                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
                 />
+              </Paper>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Paper className={classes.skillCard} elevation={2}>
+                <Typography variant="h6" className={classes.skillItem}>
+                  <i className={`fab fa-linux ${classes.skillIcon}`}></i>
+                  Linux Essentials Lab Book
+                </Typography>
+                <Typography variant="body1" className={classes.skillDescription}>
+                  GitHub repo of step-by-step Bash labs that cover user/group management, file permissions and shell-scripting automation—direct output of CST 8207.
+                </Typography>
+                <Chip 
+                  label="In Progress" 
+                  size="small" 
+                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
+                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
+                />
+              </Paper>
+            </Grid>
+            
+            <Grid item xs={12} md={6}>
+              <Paper className={classes.skillCard} elevation={2}>
+                <Typography variant="h6" className={classes.skillItem}>
+                  <i className={`fas fa-calculator ${classes.skillIcon}`}></i>
+                  Interactive Number-System Converter
+                </Typography>
+                <Typography variant="body1" className={classes.skillDescription}>
+                  CLI program that converts binary ↔ decimal ↔ hex and demonstrates Boolean logic routines learned in MAT 8002 and CST 8324.
+                </Typography>
+                <Chip 
+                  label="In Progress" 
+                  size="small" 
+                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
+                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
+                />
+              </Paper>
+            </Grid>
+          </Grid>
+        </div>
+
+        <div className={classes.backgroundSection}>
+          <Typography variant="h5" className={classes.sectionTitle}>
+            Career Interests & Goals
+          </Typography>
+
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6}>
+              <Paper className={classes.skillCard} elevation={2}>
+                <Typography variant="h6" className={classes.skillItem}>
+                  <i className={`fas fa-shield-alt ${classes.skillIcon}`}></i>
+                  Blue-Team Security Operations
+                </Typography>
+                <Typography variant="body1" className={classes.skillDescription}>
+                  Building resilient detection pipelines and hands-on incident-response playbooks for enterprise and small networks.
+                </Typography>
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['SOC', 'SIEM', 'Incident Response', 'Detection Engineering'].map((area) => (
+                    <Chip
+                      key={area}
+                      label={area}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
               </Paper>
             </Grid>
             
@@ -433,53 +564,68 @@ export const About = () => {
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
                   <i className={`fas fa-robot ${classes.skillIcon}`}></i>
-                  Adversarial AI Testing Framework
+                  Network Automation & Infrastructure-as-Code
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  A platform for testing AI model resilience against adversarial attacks and implementing defensive measures to protect machine learning systems
+                  Eliminating manual toil by codifying network configs with Python, Ansible, and Terraform.
                 </Typography>
-                <Chip 
-                  label="Planning" 
-                  size="small" 
-                  style={{ backgroundColor: '#FF9800', color: '#fff', margin: '8px 0' }} 
-                  icon={<i className="fas fa-clock" style={{ fontSize: '0.8rem' }} />}
-                />
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['Python', 'Ansible', 'Terraform', 'CI/CD'].map((area) => (
+                    <Chip
+                      key={area}
+                      label={area}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
               </Paper>
             </Grid>
             
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-search ${classes.skillIcon}`}></i>
-                  Threat Intelligence Platform
+                  <i className={`fas fa-lock ${classes.skillIcon}`}></i>
+                  Zero-Trust / SASE Architectures
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  An AI-driven platform that collects, analyzes, and correlates threat data from multiple sources to provide actionable security intelligence
+                  Designing identity-centric, segmented networks for hybrid-cloud environments in line with NIST 800-207.
                 </Typography>
-                <Chip 
-                  label="Planning" 
-                  size="small" 
-                  style={{ backgroundColor: '#FF9800', color: '#fff', margin: '8px 0' }} 
-                  icon={<i className="fas fa-clock" style={{ fontSize: '0.8rem' }} />}
-                />
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['Zero Trust', 'SASE', 'Micro-Segmentation', 'NIST 800-207'].map((area) => (
+                    <Chip
+                      key={area}
+                      label={area}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
               </Paper>
             </Grid>
             
             <Grid item xs={12} md={6}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-laptop-code ${classes.skillIcon}`}></i>
-                  Automated Penetration Testing Framework
+                  <i className={`fas fa-cloud ${classes.skillIcon}`}></i>
+                  Cloud & Container Security
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  A comprehensive platform that automates vulnerability scanning, exploitation, and reporting for professional penetration testing engagements
+                  Hardening AWS, Azure, and Kubernetes workloads from build to runtime with DevSecOps practices.
                 </Typography>
-                <Chip 
-                  label="In Progress" 
-                  size="small" 
-                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
-                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
-                />
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+                  {['AWS', 'Azure', 'Kubernetes', 'DevSecOps'].map((area) => (
+                    <Chip
+                      key={area}
+                      label={area}
+                      color="primary"
+                      size="small"
+                      style={{ margin: '0 4px 4px 0' }}
+                    />
+                  ))}
+                </div>
               </Paper>
             </Grid>
           </Grid>
@@ -487,25 +633,25 @@ export const About = () => {
 
         <div className={classes.backgroundSection}>
           <Typography variant="h5" className={classes.sectionTitle}>
-            Research Interests
+            Planned Certifications
           </Typography>
 
           <Grid container spacing={3}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={4}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-user-secret ${classes.skillIcon}`}></i>
-                  Threat Intelligence & Attribution
+                  <i className={`fas fa-certificate ${classes.skillIcon}`}></i>
+                  Foundation 2025-26
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Researching advanced persistent threats (APTs), cyber attribution techniques, and proactive threat hunting methodologies
+                  Building core cybersecurity and networking certifications to establish professional foundation.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['APT Research', 'Cyber Attribution', 'Threat Hunting', 'Intelligence Analysis'].map((area) => (
+                  {['CompTIA Security+', 'Cisco CyberOps Associate'].map((cert) => (
                     <Chip
-                      key={area}
-                      label={area}
-                      color="primary"
+                      key={cert}
+                      label={cert}
+                      color="secondary"
                       size="small"
                       style={{ margin: '0 4px 4px 0' }}
                     />
@@ -514,21 +660,21 @@ export const About = () => {
               </Paper>
             </Grid>
             
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={4}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-unlock-alt ${classes.skillIcon}`}></i>
-                  Vulnerability Research
+                  <i className={`fas fa-shield-alt ${classes.skillIcon}`}></i>
+                  Blue-Team Depth 2026-27
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Exploring zero-day vulnerabilities, exploit development techniques, and advanced reverse engineering methodologies
+                  Advanced defensive security certifications focusing on analysis and operations.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Zero-day Research', 'Exploit Development', 'Reverse Engineering', 'Binary Analysis'].map((area) => (
+                  {['CySA+', 'CyberOps Professional', 'PCNSE', 'NSE 4-6'].map((cert) => (
                     <Chip
-                      key={area}
-                      label={area}
-                      color="primary"
+                      key={cert}
+                      label={cert}
+                      color="secondary"
                       size="small"
                       style={{ margin: '0 4px 4px 0' }}
                     />
@@ -537,44 +683,21 @@ export const About = () => {
               </Paper>
             </Grid>
             
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={4}>
               <Paper className={classes.skillCard} elevation={2}>
                 <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-brain ${classes.skillIcon}`}></i>
-                  AI Security
+                  <i className={`fas fa-graduation-cap ${classes.skillIcon}`}></i>
+                  Architect-Path 2028-29
                 </Typography>
                 <Typography variant="body1" className={classes.skillDescription}>
-                  Researching adversarial machine learning, securing AI systems from attacks, and developing robust AI models for security applications
+                  Senior-level certifications for security architecture and advanced specializations.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['Adversarial ML', 'Model Security', 'Robust AI Systems', 'Security Analytics'].map((area) => (
+                  {['CASP+', 'GIAC Certs', 'CISSP', 'CCSP'].map((cert) => (
                     <Chip
-                      key={area}
-                      label={area}
-                      color="primary"
-                      size="small"
-                      style={{ margin: '0 4px 4px 0' }}
-                    />
-                  ))}
-                </div>
-              </Paper>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.skillCard} elevation={2}>
-                <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-shield-virus ${classes.skillIcon}`}></i>
-                  Open Source Security Tools
-                </Typography>
-                <Typography variant="body1" className={classes.skillDescription}>
-                  Contributing to and developing open source security tools, frameworks, and educational resources for the cybersecurity community
-                </Typography>
-                <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['OWASP', 'Security Tools', 'Community Projects', 'Threat Sharing'].map((area) => (
-                    <Chip
-                      key={area}
-                      label={area}
-                      color="primary"
+                      key={cert}
+                      label={cert}
+                      color="secondary"
                       size="small"
                       style={{ margin: '0 4px 4px 0' }}
                     />
@@ -628,25 +751,10 @@ export const About = () => {
               Iron Horse Security & Investigations
             </Typography>
             <Typography variant="body2" className={classes.experienceDate}>
-              September 2020 - November 2025
+              September 2020 - November 2022
             </Typography>
             <Typography variant="body1" className={classes.experienceDescription}>
               Provided comprehensive security services across 15+ client locations including commercial complexes, construction sites, retail establishments, and public events. Engaged in security operations for diverse properties ranging from 10,000 to 500,000 sq ft, adapting security strategies to match unique client needs. Conducted detailed risk assessments and implemented enhanced security protocols that reduced theft incidents.
-            </Typography>
-          </Paper>
-
-          <Paper className={classes.experienceCard} elevation={2}>
-            <Typography variant="h6" className={classes.experienceTitle}>
-              Core Contributor
-            </Typography>
-            <Typography variant="subtitle1" className={classes.experienceCompany}>
-              D Central Mesh Architecture
-            </Typography>
-            <Typography variant="body2" className={classes.experienceDate}>
-              2024 - Present
-            </Typography>
-            <Typography variant="body1" className={classes.experienceDescription}>
-              Designing and implementing secure peer-to-peer communication protocols for decentralized mesh networks, focusing on resilience against network partitioning and adversarial attacks. Contributing to protocol specifications for secure node authentication, encrypted message routing, and distributed key management systems while collaborating with international team of developers.
             </Typography>
           </Paper>
 

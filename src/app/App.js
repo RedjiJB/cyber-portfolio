@@ -8,7 +8,7 @@ import { logCredits } from "../utils/logCredits";
 
 import Home from "../pages/Home";
 
-// const Resume = lazy(() => import("../pages/Resume"));
+const Resume = lazy(() => import("../pages/Resume"));
 const Projects = lazy(() => import("../pages/Projects"));
 const AboutPage = lazy(() => import("../pages/AboutPage"));
 const ContactPage = lazy(() => import("../pages/ContactPage"));
@@ -44,7 +44,7 @@ export const App = () => {
                 <Route path="/contact" exact component={ContactPage} />
                 <Route path="/blog" exact component={Blog} />
                 <Route path="/blog/:id" component={BlogPost} />
-                {/* <Route path="/resume" component={Resume} /> */}
+                <Route path="/resume" component={Resume} />
                 <Route path="*" component={PageNotFound} />
             </Switch>
           </Suspense>
