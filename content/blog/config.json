@@ -1,0 +1,33 @@
+{
+  "blog": {
+    "title": "Cybersecurity & Development Blog",
+    "description": "Insights into cybersecurity, network analysis, and development projects",
+    "author": "Redji Jean Baptiste",
+    "baseUrl": "/blog",
+    "postsPerPage": 6,
+    "featuredPosts": 3
+  },
+  "paths": {
+    "posts": "./posts",
+    "images": "./images", 
+    "assets": "./assets"
+  },
+  "categories": [
+    "Cybersecurity",
+    "Networking", 
+    "Development",
+    "Analysis",
+    "Projects"
+  ],
+  "tags": {
+    "featured": ["Python", "Cybersecurity", "Networking", "Analysis"],
+    "colors": {
+      "Python": "#3776ab",
+      "Cybersecurity": "#ff4757",
+      "Networking": "#2ed573",
+      "Analysis": "#ffa726",
+      "VLSM": "#42a5f5",
+      "Project Planning": "#ab47bc"
+    }
+  }
+}

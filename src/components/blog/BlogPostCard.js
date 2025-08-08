@@ -109,54 +109,67 @@ const useStyles = makeStyles((theme) => ({
 export const BlogPostCard = ({ post }) => {
   const classes = useStyles();
   const mainCategory = post.tags[0]; // Get first tag as primary category
+  const isComingSoon = post.comingSoon;
+
+  const CardContentComponent = () => (
+    <>
+      <CardMedia
+        className={classes.cardMedia}
+        image={`${process.env.PUBLIC_URL}${post.image}`}
+        title={post.title}
+      >
+        <Chip 
+          label={isComingSoon ? "Coming Soon" : mainCategory} 
+          className={classes.categoryChip} 
+          size="small" 
+        />
+      </CardMedia>
+      <CardContent className={classes.cardContent}>
+        <Typography variant="body2" className={classes.dateText}>
+          {new Date(post.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </Typography>
+        <Typography variant="h6" className={classes.title}>
+          {post.title}
+        </Typography>
+        <Typography variant="body2" className={classes.summary}>
+          {post.description}
+        </Typography>
+        <div className={classes.chipContainer}>
+          {post.tags.slice(1, 3).map((tag, index) => (
+            <Chip
+              key={index}
+              label={tag}
+              size="small"
+              className={classes.chip}
+            />
+          ))}
+          {post.tags.length > 3 && (
+            <Chip
+              label={`+${post.tags.length - 3}`}
+              size="small"
+              variant="outlined"
+            />
+          )}
+        </div>
+      </CardContent>
+    </>
+  );
 
   return (
     <Card className={classes.card}>
-      <CardActionArea component={Link} to={`/blog/${post.id}`}>
-        <CardMedia
-          className={classes.cardMedia}
-          image={`${process.env.PUBLIC_URL}${post.image}`}
-          title={post.title}
-        >
-          <Chip 
-            label={mainCategory} 
-            className={classes.categoryChip} 
-            size="small" 
-          />
-        </CardMedia>
-        <CardContent className={classes.cardContent}>
-          <Typography variant="body2" className={classes.dateText}>
-            {new Date(post.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </Typography>
-          <Typography variant="h6" className={classes.title}>
-            {post.title}
-          </Typography>
-          <Typography variant="body2" className={classes.summary}>
-            {post.summary}
-          </Typography>
-          <div className={classes.chipContainer}>
-            {post.tags.slice(1, 3).map((tag, index) => (
-              <Chip
-                key={index}
-                label={tag}
-                size="small"
-                className={classes.chip}
-              />
-            ))}
-            {post.tags.length > 3 && (
-              <Chip
-                label={`+${post.tags.length - 3}`}
-                size="small"
-                variant="outlined"
-              />
-            )}
-          </div>
-        </CardContent>
-      </CardActionArea>
+      {isComingSoon ? (
+        <div style={{ cursor: 'default' }}>
+          <CardContentComponent />
+        </div>
+      ) : (
+        <CardActionArea component={Link} to={`/blog/${post.slug}`}>
+          <CardContentComponent />
+        </CardActionArea>
+      )}
     </Card>
   );
 };
