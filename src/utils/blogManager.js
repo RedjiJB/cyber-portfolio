@@ -4,6 +4,11 @@ class BlogManager {
   constructor() {
     this.config = blogData.config;
     this.posts = blogData.posts;
+    this.slugToFileMap = {
+      'subnet-designer-project-start': 'subnet-designer-project-start.md',
+      'haiti-security-missions': 'blog_post_1.md',
+      'drone-zoe-platform': 'drone-zoe-platform.md'
+    };
   }
 
   // Get all blog posts with metadata
@@ -16,10 +21,11 @@ class BlogManager {
     const post = this.posts.find(p => p.slug === slug || p.id === slug);
     if (!post) return null;
 
-    // Posts that have markdown files should load content dynamically (only the two active posts)
+    // Posts that have markdown files should load content dynamically 
     const postsWithMarkdown = [
       'subnet-designer-project-start',
-      'haiti-security-missions'
+      'haiti-security-missions',
+      'drone-zoe-platform'
     ];
 
     if (postsWithMarkdown.includes(post.slug)) {
