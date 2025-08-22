@@ -10,7 +10,8 @@ export const blogConfig = {
   },
   categories: [
     "D Central",
-    "Co op Student"
+    "Co op Student",
+    "Extracurricular Projects"
   ],
   tags: {
     featured: ["Python", "Cybersecurity", "Networking", "International Development", "Community Security"],
@@ -18,6 +19,7 @@ export const blogConfig = {
       // Category colors
       "D Central": "#e74c3c",
       "Co op Student": "#3776ab",
+      "Extracurricular Projects": "#27ae60",
       // Tag colors
       "Python": "#3776ab",
       "Cybersecurity": "#ff4757",
@@ -38,12 +40,31 @@ export const blogConfig = {
       "Network Effects": "#ffc107",
       "Federation Strategy": "#dc3545",
       "Intelligence Analysis": "#343a40",
-      "Implementation Strategy": "#007bff"
+      "Implementation Strategy": "#007bff",
+      "Drones": "#27ae60",
+      "AI": "#9b59b6",
+      "IoT": "#f39c12",
+      "Autonomous Systems": "#e67e22",
+      "Open Source": "#2ecc71",
+      "Community Development": "#16a085"
     }
   }
 };
 
 export const blogPosts = [
+  {
+    id: "drone-zoe-platform",
+    slug: "drone-zoe-platform",
+    title: "Project Zoe: Democratizing Drone Technology Through Community Cooperation - Part 1",
+    date: "2025-08-22",
+    author: "Redji Jean Baptiste",
+    category: "Extracurricular Projects",
+    tags: ["Drones", "AI", "Security", "IoT", "Autonomous Systems", "Open Source", "Community Development"],
+    description: "The first entry in our development series introducing Project Zoe - an ambitious vision for community-owned, technologically sovereign drone operations. All features are prospective and in early development phases.",
+    image: "/content/blog/images/drone-zoe-platform-website.png",
+    readingTime: 20,
+    featured: true
+  },
   {
     id: "subnet-designer-project-start",
     slug: "subnet-designer-project-start",

@@ -14,6 +14,9 @@ const AboutPage = lazy(() => import("../pages/AboutPage"));
 const ContactPage = lazy(() => import("../pages/ContactPage"));
 const Blog = lazy(() => import("../pages/Blog"));
 const BlogPost = lazy(() => import("../pages/BlogPost"));
+const DCentralBlog = lazy(() => import("../pages/DCentralBlog"));
+const StudentBlog = lazy(() => import("../pages/StudentBlog"));
+const ExtracurricularBlog = lazy(() => import("../pages/ExtracurricularBlog"));
 const PageNotFound = lazy(() => import("../pages/PageNotFound"));
 
 // Loading fallback component
@@ -43,6 +46,9 @@ export const App = () => {
                 <Route path="/about" exact component={AboutPage} />
                 <Route path="/contact" exact component={ContactPage} />
                 <Route path="/blog" exact component={Blog} />
+                <Route path="/blog/d-central" exact component={DCentralBlog} />
+                <Route path="/blog/student" exact component={StudentBlog} />
+                <Route path="/blog/extracurricular" exact component={ExtracurricularBlog} />
                 <Route path="/blog/:slug" component={BlogPost} />
                 <Route path="/resume" component={Resume} />
                 <Route path="*" component={PageNotFound} />
