@@ -53,6 +53,19 @@ export const blogConfig = {
 
 export const blogPosts = [
   {
+    id: "msi-thin-15-experience",
+    slug: "msi-thin-15-experience",
+    title: "My Experience with the MSI Thin 15",
+    date: "2025-08-27",
+    author: "Redji Jean Baptiste",
+    category: "Co op Student",
+    tags: ["Hardware", "Linux", "Development", "Setup", "Cybersecurity"],
+    description: "A detailed review of setting up the MSI Thin 15 laptop for cybersecurity studies, including the challenges of dual-booting with Linux Mint and configuring the complete development environment.",
+    image: "/blog-images/msi-thin-15/desktop_setup.png",
+    readingTime: 12,
+    featured: true
+  },
+  {
     id: "drone-zoe-platform",
     slug: "drone-zoe-platform",
     title: "Project Zoe: Democratizing Drone Technology Through Community Cooperation - Part 1",
@@ -63,7 +76,7 @@ export const blogPosts = [
     description: "The first entry in our development series introducing Project Zoe - an ambitious vision for community-owned, technologically sovereign drone operations. All features are prospective and in early development phases.",
     image: "/content/blog/images/drone-zoe-platform-website.png",
     readingTime: 20,
-    featured: true
+    featured: false
   },
   {
     id: "subnet-designer-project-start",
@@ -76,7 +89,7 @@ export const blogPosts = [
     description: "Developing a comprehensive Python application that calculates VLSM subnet schemes and generates professional network topology diagrams for educational and practical use",
     image: "/content/blog/images/Subnet-Designer-Visualizer.png",
     readingTime: 15,
-    featured: true
+    featured: false
   },
   {
     id: "haiti-security-missions",
@@ -94,7 +107,9 @@ export const blogPosts = [
   }
 ];
 
-export default {
+const blogData = {
   config: blogConfig,
   posts: blogPosts
 };
+
+export default blogData;
