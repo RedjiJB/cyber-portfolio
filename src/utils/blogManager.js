@@ -1,10 +1,11 @@
-import blogData from './blogData';
+import blogData from './blogData.js';
 
 class BlogManager {
   constructor() {
     this.config = blogData.config;
     this.posts = blogData.posts;
     this.slugToFileMap = {
+      'msi-thin-15-experience': 'msi-thin-15-experience.md',
       'subnet-designer-project-start': 'subnet-designer-project-start.md',
       'haiti-security-missions': 'blog_post_1.md',
       'drone-zoe-platform': 'drone-zoe-platform.md'
@@ -23,6 +24,7 @@ class BlogManager {
 
     // Posts that have markdown files should load content dynamically 
     const postsWithMarkdown = [
+      'msi-thin-15-experience',
       'subnet-designer-project-start',
       'haiti-security-missions',
       'drone-zoe-platform'
