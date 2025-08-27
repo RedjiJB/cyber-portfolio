@@ -979,12 +979,13 @@ This comprehensive interactive resume system provides a professional, modern, an
 
 ### Architecture Overview
 
-The blog system uses a hybrid approach:
+The blog system uses a modern, optimized approach:
 
 1. **Metadata Management**: `src/utils/blogData.js`
-2. **Content Storage**: Markdown files in `content/blog/posts/`
-3. **Content Loading**: `src/utils/blogManager.js`
-4. **Display Components**: Category-specific blog pages
+2. **Content Storage**: Markdown files in `public/content/blog/posts/`
+3. **Interactive Carousel**: `src/components/blog/BlogCarousel.js`
+4. **Display Components**: Category-specific blog pages with direct data imports
+5. **Performance**: Direct imports avoiding webpack chunking issues
 
 ### Blog Data Structure
 
@@ -997,7 +998,7 @@ export const blogPosts = [
     title: "Post Title",
     date: "2025-08-22",
     author: "Author Name",
-    category: "Student Projects", // or "D Central" or "Extracurricular Projects"
+    category: "Co op Student", // or "D Central" or "Extracurricular Projects"
     tags: ["Tag1", "Tag2"],
     description: "Post excerpt",
     image: "/content/blog/images/image.jpg",
@@ -1051,6 +1052,33 @@ export const YourNewCategoryBlog = () => {
 
 4. **Update Main Blog Page**:
 Add navigation button and featured section to `src/pages/Blog.js`
+
+### Blog Carousel Component
+
+The interactive carousel (`src/components/blog/BlogCarousel.js`) features:
+
+- **Auto-play functionality** with progress indicators
+- **Manual navigation** with previous/next controls
+- **Responsive design** adapting to mobile/tablet/desktop
+- **Smooth animations** with cubic-bezier transitions
+- **Click debugging** with console logging
+
+#### Troubleshooting Common Issues
+
+1. **Carousel Not Navigating**:
+   - Check browser console for click events
+   - Verify React Router setup in `src/app/App.js`
+   - Ensure post slugs match route parameters
+
+2. **Images Not Loading**:
+   - Verify image paths in `blogData.js`
+   - Check files exist in `public/content/blog/images/`
+   - Ensure `process.env.PUBLIC_URL` is set correctly
+
+3. **Performance Issues**:
+   - Use `useMemo` for expensive computations
+   - Avoid inline object creation in render loops
+   - Implement proper React Hook dependencies
 
 ## Project Showcase
 

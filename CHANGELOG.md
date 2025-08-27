@@ -14,6 +14,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - PWA features and offline support
 - Multi-language support (i18n)
 
+## [2.2.0] - 2025-08-27
+
+### Added
+- **Interactive Blog Carousel**: Smooth carousel navigation with autoplay and manual controls
+- **Console Debugging**: Added click logging for carousel troubleshooting
+- **React Performance**: useMemo optimizations for better component performance
+
+### Fixed
+- **Critical Blog Navigation**: Resolved carousel navigation preventing access to individual blog posts
+- **Module Loading**: Fixed BlogManager webpack chunk loading failures
+- **Image Display**: Fixed MSI blog post image path and display issues
+- **React Warnings**: Eliminated React Hook dependency warnings
+- **Router Integration**: Ensured proper React Router navigation for blog posts
+
+### Changed
+- **Architecture Refactor**: Replaced BlogManager class with direct blogData imports
+- **Performance Optimization**: Implemented useMemo for BlogPost component
+- **Image Path Consistency**: Standardized image directory structure
+
+### Technical
+- Resolved webpack lazy loading issues for blog modules
+- Fixed circular dependency problems in blog management system
+- Improved React component lifecycle management
+
 ## [2.1.0] - 2025-08-22
 
 ### Added
