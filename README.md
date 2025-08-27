@@ -47,6 +47,7 @@ Check out the live portfolio at: [https://redjijb.github.io/cyber-portfolio/](ht
 -   **Progressive Web App** - Optimized for mobile and desktop
 
 ### 📝 Content Management
+-   **Interactive Blog Carousel** - Smooth carousel navigation with autoplay and manual controls
 -   **Multi-Category Blog System** - Three distinct blog categories with filtering
 -   **Project Showcase** - Detailed case studies with live demos and source code
 -   **Dynamic Content** - All content managed through JSON configuration files
