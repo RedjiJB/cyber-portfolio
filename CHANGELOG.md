@@ -141,7 +141,7 @@ content/curriculum/level1/
 - Video embedding for video modules
 - Interactive code examples in tutorials
 
-**Commit Hash**: [To be added after commit]
+**Commit Hash**: 492c9e482f16ff05e3095913c13df724a5f31c84
 **Branch**: main
 **Last Verified**: October 23, 2025
 
