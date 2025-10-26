@@ -78,8 +78,6 @@ export const TopNavbar = () => {
   const navLinks = [
     { text: 'Home', path: '/' },
     { text: 'Projects', path: '/projects' },
-    { text: 'Labs', path: '/labs' },
-    { text: 'Curriculum', path: '/curriculum' },
     { text: 'About', path: '/about' },
     { text: 'Blog', path: '/blog' },
     { text: 'Contact', path: '/contact' },

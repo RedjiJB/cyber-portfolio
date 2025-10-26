@@ -1,6 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Hidden, Container, Typography, Grid, Paper, Chip } from '@material-ui/core';
+import {
+  Hidden,
+  Container,
+  Typography,
+  Grid,
+  Paper,
+  Chip,
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Divider
+} from '@material-ui/core';
 import { LogoLink } from '../components/logo/LogoLink';
 import { ThemeToggle } from '../components/theme/ThemeToggle';
 import { SocialIcons } from '../components/content/SocialIcons';
@@ -8,11 +26,11 @@ import { SpeedDials } from '../components/speedDial/SpeedDial';
 import { TopNavbar } from '../components/nav/TopNavbar';
 
 // Material-UI Icons
-import { 
-  Build as BuildIcon, 
-  Schedule as ScheduleIcon, 
-  Security as ShieldIcon, 
-  CloudQueue as CloudIcon 
+import {
+  Build as BuildIcon,
+  Close as CloseIcon,
+  CheckCircle as CheckCircleIcon,
+  InfoOutlined as InfoIcon
 } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
@@ -50,6 +68,8 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
     },
     borderLeft: `4px solid ${theme.palette.primary.main}`,
+    display: 'flex',
+    flexDirection: 'column',
   },
   projectHeader: {
     display: 'flex',
@@ -84,126 +104,266 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#FF9800',
     color: '#fff',
   },
+  viewDetailsButton: {
+    marginTop: theme.spacing(2),
+  },
+  dialogHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingRight: theme.spacing(1),
+  },
+  dialogContent: {
+    paddingTop: theme.spacing(2),
+  },
+  deliverablesList: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+  courseChip: {
+    marginBottom: theme.spacing(2),
+    fontWeight: 600,
+  },
+  detailedSection: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+  sectionLabel: {
+    fontWeight: 700,
+    color: theme.palette.primary.main,
+    fontSize: '0.875rem',
+    marginBottom: theme.spacing(1),
+    textTransform: 'uppercase',
+    letterSpacing: '0.5px',
+  },
+  deliverableItem: {
+    fontSize: '0.875rem',
+    color: theme.palette.text.secondary,
+    marginBottom: theme.spacing(0.5),
+    paddingLeft: theme.spacing(2),
+    position: 'relative',
+    '&:before': {
+      content: '"•"',
+      position: 'absolute',
+      left: theme.spacing(0.5),
+      color: theme.palette.primary.main,
+      fontWeight: 'bold',
+    },
+  },
+  learningOutcomeItem: {
+    fontSize: '0.875rem',
+    color: theme.palette.text.secondary,
+    marginBottom: theme.spacing(0.5),
+    paddingLeft: theme.spacing(2),
+    position: 'relative',
+    '&:before': {
+      content: '"✓"',
+      position: 'absolute',
+      left: theme.spacing(0.5),
+      color: theme.palette.secondary.main,
+      fontWeight: 'bold',
+    },
+  },
+  expandableSection: {
+    flex: 1,
+  },
 }));
 
-const currentProjects = [
-  {
-    title: "Subnet Designer & Visualizer",
-    description: "Python tool that calculates VLSM subnet schemes and produces a LAN topology diagram. Reinforces OSI/TCP-IP knowledge and IPv4 addressing from CST 8182.",
-    technologies: ["Python", "CIDR", "VLSM", "Networking", "Topology"],
-    status: "In Progress"
-  },
-  {
-    title: "Windows 11 Secure Build Guide",
-    description: "Hardened Windows 11 VM with local GPOs, NTFS permissions and PowerShell scripts for automated baseline deployment. Mirrors skills from CST 8202.",
-    technologies: ["Windows", "PowerShell", "GPO", "Security Hardening"],
-    status: "In Progress"
-  },
-  {
-    title: "Linux Essentials Lab Book",
-    description: "GitHub repo of step-by-step Bash labs that cover user/group management, file permissions and shell-scripting automation—direct output of CST 8207.",
-    technologies: ["Linux", "Bash", "Shell Scripting", "System Administration"],
-    status: "In Progress"
-  },
-  {
-    title: "Interactive Number-System Converter",
-    description: "CLI program that converts binary ↔ decimal ↔ hex and demonstrates Boolean logic routines learned in MAT 8002 and CST 8324.",
-    technologies: ["Python", "Binary/Hex", "Boolean Logic", "CLI"],
-    status: "In Progress"
-  }
-];
+const courseProjects = {
+  'CST8182-Networking-Fundamentals': [
+    {
+      title: "Small Office Network Blueprint",
+      course: "CST8182 - Networking Fundamentals",
+      description: "Design and document a complete small office network infrastructure including topology, addressing, security, and implementation plan.",
+      detailedDescription: "This comprehensive project demonstrates your ability to plan and design a functional small office network from the ground up. You will apply networking fundamentals, subnetting principles, and security best practices to create a professional-grade network design that meets real-world business requirements.",
+      technologies: ["Network Design", "Cisco Packet Tracer", "VLSM", "Network Security", "Documentation"],
+      deliverables: [
+        "Network topology diagram showing all devices and connections",
+        "IP addressing plan with proper subnetting and VLSM calculations",
+        "Security policies and implementation guidelines",
+        "Hardware and software specifications with justifications",
+        "Step-by-step implementation guide for deployment",
+        "Cost analysis with budget breakdown (optional)",
+        "Final presentation demonstrating the complete solution"
+      ],
+      learningOutcomes: [
+        "Apply subnetting and VLSM to real-world scenarios",
+        "Design network topologies for business requirements",
+        "Implement security best practices in network design",
+        "Create professional technical documentation",
+        "Present technical solutions effectively"
+      ],
+      status: "In Progress"
+    }
+  ],
+  'CST8202-Windows-Desktop-Support': [
+    {
+      title: "Windows Admin Toolkit (PowerShell)",
+      course: "CST8202 - Windows Desktop Support",
+      description: "Create a comprehensive PowerShell automation toolkit for Windows administration including user management, backup automation, and encryption tools.",
+      detailedDescription: "Develop a professional-grade PowerShell toolkit that automates common Windows administration tasks. This project demonstrates your ability to leverage PowerShell for efficient system management, security, and automation. The toolkit will include modular scripts with proper error handling, logging, and documentation.",
+      technologies: ["PowerShell", "Windows Server", "Active Directory", "BitLocker", "Automation"],
+      deliverables: [
+        "User Management Module: Create, modify, delete users; password management and bulk operations",
+        "Backup Automation Module: Scheduled backups, compression, integrity verification, and restore procedures",
+        "Encryption Tools Module: File/folder encryption, BitLocker automation, and certificate management",
+        "Complete documentation including usage guides and examples",
+        "GitHub repository with organized code structure",
+        "PowerShell help documentation for each function"
+      ],
+      learningOutcomes: [
+        "Master PowerShell scripting and automation",
+        "Implement secure Windows administration practices",
+        "Develop modular and reusable code",
+        "Create professional technical documentation",
+        "Apply security best practices in scripting"
+      ],
+      status: "In Progress"
+    }
+  ],
+  'Linux-System-Support': [
+    {
+      title: "Automation Suite (Bash)",
+      course: "GNU/Linux System Support",
+      description: "Build a comprehensive Bash automation suite for Linux system administration covering backups, log management, and cron job automation.",
+      detailedDescription: "Create a professional Bash scripting suite that automates critical Linux system administration tasks. This project showcases your ability to write robust shell scripts with proper error handling, logging, and scheduling. The suite will demonstrate best practices in Linux automation and system management.",
+      technologies: ["Bash", "Linux", "Cron", "System Administration", "Log Management"],
+      deliverables: [
+        "Backup Module: File/directory backup with compression, scheduling, and retention policies",
+        "System Logs Module: Log rotation, analysis, alert generation, and archiving",
+        "Cron Job Manager: Automated task creation, monitoring, error logging, and reporting",
+        "Complete technical documentation with usage examples",
+        "Installation and configuration scripts"
+      ],
+      learningOutcomes: [
+        "Write professional Bash scripts with best practices",
+        "Automate Linux system administration tasks",
+        "Implement log management and monitoring",
+        "Schedule and manage automated tasks with cron",
+        "Handle errors and edge cases in scripts"
+      ],
+      status: "In Progress"
+    }
+  ]
+};
 
-const upcomingProjects = [
-  {
-    title: "Mini-Enterprise AD Lab",
-    description: "Multi-DC Windows Server domain with OU structure, Group Policy enforcement and PowerShell user-import CSV workflow (upcoming CST 8200).",
-    technologies: ["Windows Server", "Active Directory", "Group Policy", "PowerShell"],
-    status: "Planning"
-  },
-  {
-    title: "Packet Tracer Campus Network",
-    description: "Enterprise LAN simulation featuring VLANs, STP redundancy, inter-VLAN routing and WPA3 wireless (future CST 8315 deliverable).",
-    technologies: ["Cisco", "Packet Tracer", "VLANs", "STP", "Wi-Fi"],
-    status: "Planning"
-  },
-  {
-    title: "Linux Web & Mail Server Stack",
-    description: "Secure Apache/Nginx plus Postfix/Dovecot deployment managed by Ansible, aligned with CST 8305 and CST 8246 coursework.",
-    technologies: ["Linux", "Apache", "Postfix", "TLS", "Ansible"],
-    status: "Planning"
-  },
-  {
-    title: "Automated Help-Desk Chatbot",
-    description: "Flask micro-service that answers ITIL-style queries and integrates with Slack; ties into CST 8206 and Python automation track.",
-    technologies: ["Python", "Flask", "Chatbot", "ITIL", "Automation"],
-    status: "Planning"
-  }
-];
-
-const advancedProjects = [
-  {
-    title: "Blue-Team Home SOC",
-    description: "pfSense firewall + Suricata IDS feeding Elastic SIEM with Slack alerts; capstone for upcoming Security+ and CyberOps studies.",
-    technologies: ["pfSense", "Suricata", "Elastic Stack", "SIEM", "Incident Response"],
-    status: "Planning"
-  },
-  {
-    title: "Cloud VPC & Site-to-Site VPN",
-    description: "AWS VPC built with Terraform and IPSec tunnel back to home lab—demonstrates hybrid-cloud networking and IaC principles.",
-    technologies: ["AWS", "Terraform", "VPC", "IPSec VPN", "Cloud Networking"],
-    status: "Planning"
-  },
-  {
-    title: "Network Automation Pipeline",
-    description: "CI/CD pipeline that runs Ansible compliance checks against lab routers via GitHub Actions, producing pass/fail badges.",
-    technologies: ["Ansible", "GitHub Actions", "Automation", "Networking", "CI/CD"],
-    status: "Planning"
-  },
-  {
-    title: "Zero-Trust Reference Architecture",
-    description: "Blueprint for identity-centric segmentation using Okta, Tailscale and NIST 800-207 guidelines; long-term security-architect showcase.",
-    technologies: ["Zero Trust", "NIST 800-207", "Okta", "Tailscale", "Security Architecture"],
-    status: "Planning"
-  }
-];
-
-const ProjectCard = ({ project, classes }) => (
+const ProjectCard = ({ project, classes, onViewDetails }) => (
   <Grid item xs={12} md={6}>
     <Paper elevation={2} className={classes.projectCard}>
       <div className={classes.projectHeader}>
         <Typography variant="h6" className={classes.projectTitle}>
           {project.title}
         </Typography>
-        <Chip 
+        <Chip
           label={project.status}
           size="small"
           className={`${
-            project.status === 'In Progress' 
-              ? classes.inProgressChip 
+            project.status === 'In Progress'
+              ? classes.inProgressChip
               : classes.planningChip
           } ${classes.statusChip}`}
         />
       </div>
-      <Typography variant="body2" className={classes.projectDescription}>
-        {project.description}
-      </Typography>
-      <div className={classes.techTags}>
-        {project.technologies.map((tech, index) => (
-          <Chip
-            key={index}
-            label={tech}
-            size="small"
-            variant="outlined"
-            color="primary"
-          />
-        ))}
+      <Chip
+        label={project.course}
+        size="small"
+        color="primary"
+        className={classes.courseChip}
+      />
+
+      <div className={classes.expandableSection}>
+        <Typography variant="body2" className={classes.projectDescription}>
+          {project.detailedDescription}
+        </Typography>
+
+        {/* Key Deliverables Preview */}
+        <div className={classes.detailedSection}>
+          <Typography className={classes.sectionLabel}>
+            Key Deliverables ({project.deliverables.length} total)
+          </Typography>
+          {project.deliverables.slice(0, 3).map((deliverable, index) => (
+            <Typography key={index} className={classes.deliverableItem}>
+              {deliverable}
+            </Typography>
+          ))}
+          {project.deliverables.length > 3 && (
+            <Typography
+              variant="caption"
+              style={{ paddingLeft: '16px', fontStyle: 'italic', color: '#666' }}
+            >
+              +{project.deliverables.length - 3} more deliverables...
+            </Typography>
+          )}
+        </div>
+
+        {/* Learning Outcomes Preview */}
+        <div className={classes.detailedSection}>
+          <Typography className={classes.sectionLabel}>
+            Learning Outcomes
+          </Typography>
+          {project.learningOutcomes.slice(0, 3).map((outcome, index) => (
+            <Typography key={index} className={classes.learningOutcomeItem}>
+              {outcome}
+            </Typography>
+          ))}
+          {project.learningOutcomes.length > 3 && (
+            <Typography
+              variant="caption"
+              style={{ paddingLeft: '16px', fontStyle: 'italic', color: '#666' }}
+            >
+              +{project.learningOutcomes.length - 3} more outcomes...
+            </Typography>
+          )}
+        </div>
+
+        {/* Technologies */}
+        <div className={classes.detailedSection}>
+          <Typography className={classes.sectionLabel}>
+            Technologies & Tools
+          </Typography>
+          <div className={classes.techTags}>
+            {project.technologies.map((tech, index) => (
+              <Chip
+                key={index}
+                label={tech}
+                size="small"
+                variant="outlined"
+                color="primary"
+              />
+            ))}
+          </div>
+        </div>
       </div>
+
+      <Button
+        variant="outlined"
+        color="primary"
+        size="small"
+        className={classes.viewDetailsButton}
+        startIcon={<InfoIcon />}
+        onClick={() => onViewDetails(project)}
+        fullWidth
+      >
+        View Full Details
+      </Button>
     </Paper>
   </Grid>
 );
 
 export const Projects = () => {
   const classes = useStyles();
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const handleViewDetails = (project) => {
+    setSelectedProject(project);
+    setDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
     <div className={classes.root}>
@@ -216,49 +376,158 @@ export const Projects = () => {
         <SpeedDials />
       </Hidden>
       <TopNavbar />
-      
+
       <div className={classes.content}>
         <Container maxWidth="lg">
-          {/* Currently Building Projects */}
+          <Typography variant="h3" gutterBottom style={{ marginBottom: '2rem', fontWeight: 700 }}>
+            Course Projects
+          </Typography>
+
+          {/* CST8182 - Networking Fundamentals */}
           <div className={classes.projectSection}>
             <Typography variant="h4" className={classes.sectionTitle}>
               <BuildIcon />
-              Currently Building (Fall 2025)
+              CST8182 - Networking Fundamentals
             </Typography>
             <Grid container spacing={3}>
-              {currentProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} classes={classes} />
+              {courseProjects['CST8182-Networking-Fundamentals'].map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  project={project}
+                  classes={classes}
+                  onViewDetails={handleViewDetails}
+                />
               ))}
             </Grid>
           </div>
 
-          {/* Upcoming Projects */}
+          {/* CST8202 - Windows Desktop Support */}
           <div className={classes.projectSection}>
             <Typography variant="h4" className={classes.sectionTitle}>
-              <ScheduleIcon />
-              Next Semester & Beyond (Winter 2026+)
+              <BuildIcon />
+              CST8202 - Windows Desktop Support
             </Typography>
             <Grid container spacing={3}>
-              {upcomingProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} classes={classes} />
+              {courseProjects['CST8202-Windows-Desktop-Support'].map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  project={project}
+                  classes={classes}
+                  onViewDetails={handleViewDetails}
+                />
               ))}
             </Grid>
           </div>
 
-          {/* Advanced Security & Cloud Projects */}
+          {/* GNU/Linux System Support */}
           <div className={classes.projectSection}>
             <Typography variant="h4" className={classes.sectionTitle}>
-              <ShieldIcon />
-              Advanced Security & Cloud Projects
+              <BuildIcon />
+              GNU/Linux System Support
             </Typography>
             <Grid container spacing={3}>
-              {advancedProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} classes={classes} />
+              {courseProjects['Linux-System-Support'].map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  project={project}
+                  classes={classes}
+                  onViewDetails={handleViewDetails}
+                />
               ))}
             </Grid>
           </div>
         </Container>
       </div>
+
+      {/* Project Details Dialog */}
+      <Dialog
+        open={dialogOpen}
+        onClose={handleCloseDialog}
+        maxWidth="md"
+        fullWidth
+      >
+        <DialogTitle disableTypography className={classes.dialogHeader}>
+          <Typography variant="h5">
+            {selectedProject?.title}
+          </Typography>
+          <IconButton aria-label="close" onClick={handleCloseDialog}>
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
+
+        <DialogContent dividers className={classes.dialogContent}>
+          {selectedProject && (
+            <>
+              <Chip
+                label={selectedProject.course}
+                color="primary"
+                style={{ marginBottom: '16px' }}
+              />
+
+              <Typography variant="h6" gutterBottom style={{ marginTop: '16px' }}>
+                Overview
+              </Typography>
+              <Typography variant="body1" paragraph>
+                {selectedProject.detailedDescription}
+              </Typography>
+
+              <Divider style={{ margin: '24px 0' }} />
+
+              <Typography variant="h6" gutterBottom>
+                Project Deliverables
+              </Typography>
+              <List className={classes.deliverablesList}>
+                {selectedProject.deliverables.map((deliverable, index) => (
+                  <ListItem key={index} dense>
+                    <ListItemIcon>
+                      <CheckCircleIcon color="primary" />
+                    </ListItemIcon>
+                    <ListItemText primary={deliverable} />
+                  </ListItem>
+                ))}
+              </List>
+
+              <Divider style={{ margin: '24px 0' }} />
+
+              <Typography variant="h6" gutterBottom>
+                Learning Outcomes
+              </Typography>
+              <List className={classes.deliverablesList}>
+                {selectedProject.learningOutcomes.map((outcome, index) => (
+                  <ListItem key={index} dense>
+                    <ListItemIcon>
+                      <CheckCircleIcon color="secondary" />
+                    </ListItemIcon>
+                    <ListItemText primary={outcome} />
+                  </ListItem>
+                ))}
+              </List>
+
+              <Divider style={{ margin: '24px 0' }} />
+
+              <Typography variant="h6" gutterBottom>
+                Technologies & Tools
+              </Typography>
+              <div className={classes.techTags} style={{ marginTop: '12px' }}>
+                {selectedProject.technologies.map((tech, index) => (
+                  <Chip
+                    key={index}
+                    label={tech}
+                    color="primary"
+                    variant="outlined"
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </DialogContent>
+
+        <DialogActions>
+          <Button onClick={handleCloseDialog} color="primary" variant="contained">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
