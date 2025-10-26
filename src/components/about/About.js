@@ -453,86 +453,6 @@ export const About = () => {
 
         <div className={classes.backgroundSection}>
           <Typography variant="h5" className={classes.sectionTitle}>
-            Current Projects
-          </Typography>
-          
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.skillCard} elevation={2}>
-                <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-network-wired ${classes.skillIcon}`}></i>
-                  Subnet Designer & Visualizer
-                </Typography>
-                <Typography variant="body1" className={classes.skillDescription}>
-                  Python tool that calculates VLSM subnet schemes and produces LAN topology diagrams. Reinforces OSI/TCP-IP knowledge and IPv4 addressing from CST 8182.
-                </Typography>
-                <Chip 
-                  label="In Progress" 
-                  size="small" 
-                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
-                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
-                />
-              </Paper>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.skillCard} elevation={2}>
-                <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fab fa-windows ${classes.skillIcon}`}></i>
-                  Windows 11 Secure Build Guide
-                </Typography>
-                <Typography variant="body1" className={classes.skillDescription}>
-                  Hardened Windows 11 VM with local GPOs, NTFS permissions and PowerShell scripts for automated baseline deployment. Mirrors skills from CST 8202.
-                </Typography>
-                <Chip 
-                  label="In Progress" 
-                  size="small" 
-                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
-                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
-                />
-              </Paper>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.skillCard} elevation={2}>
-                <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fab fa-linux ${classes.skillIcon}`}></i>
-                  Linux Essentials Lab Book
-                </Typography>
-                <Typography variant="body1" className={classes.skillDescription}>
-                  GitHub repo of step-by-step Bash labs that cover user/group management, file permissions and shell-scripting automation—direct output of CST 8207.
-                </Typography>
-                <Chip 
-                  label="In Progress" 
-                  size="small" 
-                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
-                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
-                />
-              </Paper>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.skillCard} elevation={2}>
-                <Typography variant="h6" className={classes.skillItem}>
-                  <i className={`fas fa-calculator ${classes.skillIcon}`}></i>
-                  Interactive Number-System Converter
-                </Typography>
-                <Typography variant="body1" className={classes.skillDescription}>
-                  CLI program that converts binary ↔ decimal ↔ hex and demonstrates Boolean logic routines learned in MAT 8002 and CST 8324.
-                </Typography>
-                <Chip 
-                  label="In Progress" 
-                  size="small" 
-                  style={{ backgroundColor: '#4CAF50', color: '#fff', margin: '8px 0' }} 
-                  icon={<i className="fas fa-hammer" style={{ fontSize: '0.8rem' }} />}
-                />
-              </Paper>
-            </Grid>
-          </Grid>
-        </div>
-
-        <div className={classes.backgroundSection}>
-          <Typography variant="h5" className={classes.sectionTitle}>
             Career Interests & Goals
           </Typography>
 
@@ -647,7 +567,7 @@ export const About = () => {
                   Building core cybersecurity and networking certifications to establish professional foundation.
                 </Typography>
                 <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
-                  {['CompTIA Security+', 'Cisco CyberOps Associate'].map((cert) => (
+                  {['CompTIA A+', 'CompTIA Network+', 'CompTIA Security+', 'Cisco CCNA', 'Cisco CyberOps Associate'].map((cert) => (
                     <Chip
                       key={cert}
                       label={cert}
