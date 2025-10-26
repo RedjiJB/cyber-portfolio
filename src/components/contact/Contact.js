@@ -155,7 +155,7 @@ export const Contact = () => {
             className={classes.resumeButton}
             variant="contained"
             startIcon={<DescriptionIcon />}
-            onClick={() => window.open('/interactive-resume/index.html', '_blank')}
+            onClick={() => window.open('/cyber-portfolio/interactive-resume/index.html', '_blank')}
           >
             View Interactive Resume
           </Button>

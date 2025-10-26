@@ -12,9 +12,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "auto",
   },
   heading: {
-    marginLeft: theme.spacing(50),
+    marginLeft: theme.spacing(20),
     "@media (max-width: 768px)": {
-      marginLeft: theme.spacing(10),
+      marginLeft: theme.spacing(5),
     },
   },
   jobs: {
@@ -34,8 +34,7 @@ export const Content = () => {
             <TextDecrypt text={`${FirstName} ${LastName}`} />
         </Typography>
         <Typography variant="h1" component="h1" className={classes.jobs}>
-            <TextDecrypt text={`${Resume.basics.job1} + `} />
-            <TextDecrypt text={`${Resume.basics.job2}`} />
+            <TextDecrypt text={`${Resume.basics.job1}`} />
         </Typography>
       </div>
     </Container>

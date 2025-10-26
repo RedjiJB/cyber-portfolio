@@ -104,6 +104,58 @@ export const blogPosts = [
     readingTime: 8,
     featured: true,
     comingSoon: true
+  },
+  {
+    id: "networking-fundamentals-journey",
+    slug: "networking-fundamentals-journey",
+    title: "Mastering the Backbone — My Journey Through Networking Fundamentals",
+    date: "2025-10-26",
+    author: "Redji Jean Baptiste",
+    category: "Co op Student",
+    tags: ["Networking", "CST8182", "Cisco", "Wireshark", "OSI Model", "TCP/IP", "Network Design"],
+    description: "Learning how networks communicate taught me to see the digital world as interconnected systems. A deep dive into CST8182 labs, projects, and the systems thinking that networking fundamentals taught me.",
+    image: "/content/blog/images/networking-journey.png",
+    readingTime: 15,
+    featured: true
+  },
+  {
+    id: "windows-linux-system-mastery",
+    slug: "windows-linux-system-mastery",
+    title: "Automation, Control, and Command — From Windows to Linux System Mastery",
+    date: "2025-10-25",
+    author: "Redji Jean Baptiste",
+    category: "Co op Student",
+    tags: ["Windows", "Linux", "PowerShell", "Bash", "System Administration", "CST8202", "CST8207", "Automation"],
+    description: "Moving from GUI to CLI showed me that true control lies beneath the interface. A semester of dual learning across Windows and Linux system administration.",
+    image: "/content/blog/images/system-mastery.png",
+    readingTime: 18,
+    featured: true
+  },
+  {
+    id: "logic-to-leadership",
+    slug: "logic-to-leadership",
+    title: "From Logic to Leadership — Building Analytical and Adaptive Intelligence",
+    date: "2025-10-24",
+    author: "Redji Jean Baptiste",
+    category: "Co op Student",
+    tags: ["Mathematics", "Logic", "Leadership", "MAT8002", "CST8300", "Soft Skills", "Professional Development"],
+    description: "Real success in tech comes from combining analytical precision with emotional adaptability. How numeracy and success skills create dual intelligence.",
+    image: "/content/blog/images/logic-leadership.png",
+    readingTime: 12,
+    featured: false
+  },
+  {
+    id: "communicating-technical-mastery",
+    slug: "communicating-technical-mastery",
+    title: "Communicating the Invisible — Turning Technical Mastery into Clear Human Stories",
+    date: "2025-10-23",
+    author: "Redji Jean Baptiste",
+    category: "Co op Student",
+    tags: ["Communication", "Technical Writing", "ENL1813T", "Professional Development", "Presentation Skills"],
+    description: "Writing is the bridge between understanding something and making it matter. How communication skills transform technical expertise into accessible knowledge.",
+    image: "/content/blog/images/communication.png",
+    readingTime: 10,
+    featured: false
   }
 ];
 

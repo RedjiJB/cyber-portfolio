@@ -14,6 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - PWA features and offline support
 - Multi-language support (i18n)
 
+## [2.5.0] - 2025-10-26 - Portfolio Content Update
+
+### Changed
+- **Hero Section**: Simplified hero text to display just "Student", centered with left alignment
+- **Project Status**: Updated all interactive resume projects to "In Progress" status
+- **Content Component**: Removed job title concatenation and centered text layout with left offset
+
+### Fixed
+- Text positioning in hero section for better visual balance
+- Project status badges to accurately reflect current work state
+
 ## [2.4.0] - 2025-10-26 - Major Refactor and Cleanup
 
 ### Changed
