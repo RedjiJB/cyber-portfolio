@@ -199,7 +199,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 3),
   },
   dialogCourse: {
-    color: theme.palette.primary.light,
+    color: theme.palette.type === 'dark' 
+      ? theme.palette.primary.light 
+      : theme.palette.primary.main,
     fontSize: '0.9rem',
     marginTop: theme.spacing(0.5),
   },
@@ -525,8 +527,14 @@ export const SinglePageHome = () => {
 
             {/* CST8202: Windows Desktop Support */}
             <Grid item xs={12}>
-              <Box className={classes.projectCard} style={{ borderLeft: `4px solid #4CAF50` }}>
-                <Typography variant="h4" style={{ color: '#4CAF50', fontWeight: 700, marginBottom: '8px' }}>
+              <Box className={classes.projectCard} style={{ 
+                borderLeft: `4px solid ${theme.palette.type === 'dark' ? '#64B5F6' : '#1976D2'}`
+              }}>
+                <Typography variant="h4" style={{ 
+                  color: theme.palette.type === 'dark' ? '#64B5F6' : '#1976D2', 
+                  fontWeight: 700, 
+                  marginBottom: '8px' 
+                }}>
                   CST8202: Windows Desktop Support
                 </Typography>
                 <Typography variant="body1" style={{ marginBottom: '16px', fontStyle: 'italic', opacity: 0.9 }}>
@@ -548,13 +556,17 @@ export const SinglePageHome = () => {
                     <Grid item xs={12} md={6} key={index}>
                       <Box style={{ 
                         padding: '12px 16px', 
-                        backgroundColor: theme.palette.type === 'dark' ? 'rgba(76, 175, 80, 0.1)' : 'rgba(76, 175, 80, 0.05)',
+                        backgroundColor: theme.palette.type === 'dark' ? 'rgba(100, 181, 246, 0.1)' : 'rgba(25, 118, 210, 0.05)',
                         borderRadius: '8px',
-                        borderLeft: lab.capstone ? '3px solid #FF9800' : '3px solid #4CAF50'
+                        borderLeft: lab.capstone ? `3px solid ${theme.palette.type === 'dark' ? '#FFB74D' : '#F57C00'}` : `3px solid ${theme.palette.type === 'dark' ? '#64B5F6' : '#1976D2'}`
                       }}>
-                        <Typography variant="body2" style={{ fontWeight: 700, color: '#4CAF50', marginBottom: '4px' }}>
+                        <Typography variant="body2" style={{ 
+                          fontWeight: 700, 
+                          color: theme.palette.type === 'dark' ? '#64B5F6' : '#1976D2', 
+                          marginBottom: '4px' 
+                        }}>
                           Week {lab.week}: {lab.title}
-                          {lab.capstone && <span style={{ marginLeft: '8px', color: '#FF9800', fontSize: '0.75rem' }}>★ CAPSTONE</span>}
+                          {lab.capstone && <span style={{ marginLeft: '8px', color: theme.palette.type === 'dark' ? '#FFB74D' : '#F57C00', fontSize: '0.75rem' }}>★ CAPSTONE</span>}
                         </Typography>
                         <Typography variant="body2" style={{ fontSize: '0.9rem', opacity: 0.85 }}>
                           {lab.skills}
@@ -568,8 +580,14 @@ export const SinglePageHome = () => {
 
             {/* CST8207: GNU/Linux System Support */}
             <Grid item xs={12}>
-              <Box className={classes.projectCard} style={{ borderLeft: `4px solid #FF5722` }}>
-                <Typography variant="h4" style={{ color: '#FF5722', fontWeight: 700, marginBottom: '8px' }}>
+              <Box className={classes.projectCard} style={{ 
+                borderLeft: `4px solid ${theme.palette.type === 'dark' ? '#81C784' : '#388E3C'}`
+              }}>
+                <Typography variant="h4" style={{ 
+                  color: theme.palette.type === 'dark' ? '#81C784' : '#388E3C', 
+                  fontWeight: 700, 
+                  marginBottom: '8px' 
+                }}>
                   CST8207: GNU/Linux System Support
                 </Typography>
                 <Typography variant="body1" style={{ marginBottom: '16px', fontStyle: 'italic', opacity: 0.9 }}>
@@ -591,13 +609,17 @@ export const SinglePageHome = () => {
                     <Grid item xs={12} md={6} key={index}>
                       <Box style={{ 
                         padding: '12px 16px', 
-                        backgroundColor: theme.palette.type === 'dark' ? 'rgba(255, 87, 34, 0.1)' : 'rgba(255, 87, 34, 0.05)',
+                        backgroundColor: theme.palette.type === 'dark' ? 'rgba(129, 199, 132, 0.1)' : 'rgba(56, 142, 60, 0.05)',
                         borderRadius: '8px',
-                        borderLeft: lab.capstone ? '3px solid #FF9800' : '3px solid #FF5722'
+                        borderLeft: lab.capstone ? `3px solid ${theme.palette.type === 'dark' ? '#FFB74D' : '#F57C00'}` : `3px solid ${theme.palette.type === 'dark' ? '#81C784' : '#388E3C'}`
                       }}>
-                        <Typography variant="body2" style={{ fontWeight: 700, color: '#FF5722', marginBottom: '4px' }}>
+                        <Typography variant="body2" style={{ 
+                          fontWeight: 700, 
+                          color: theme.palette.type === 'dark' ? '#81C784' : '#388E3C', 
+                          marginBottom: '4px' 
+                        }}>
                           Week {lab.week}: {lab.title}
-                          {lab.capstone && <span style={{ marginLeft: '8px', color: '#FF9800', fontSize: '0.75rem' }}>★ CAPSTONE</span>}
+                          {lab.capstone && <span style={{ marginLeft: '8px', color: theme.palette.type === 'dark' ? '#FFB74D' : '#F57C00', fontSize: '0.75rem' }}>★ CAPSTONE</span>}
                         </Typography>
                         <Typography variant="body2" style={{ fontSize: '0.9rem', opacity: 0.85 }}>
                           {lab.concepts}
@@ -660,18 +682,15 @@ export const SinglePageHome = () => {
                       textTransform: 'none',
                       borderWidth: '2px',
                       fontWeight: 600,
+                      borderColor: theme.palette.type === 'dark' 
+                        ? theme.palette.primary.light 
+                        : theme.palette.primary.main,
+                      color: theme.palette.type === 'dark' 
+                        ? theme.palette.primary.light 
+                        : theme.palette.primary.main,
                       boxShadow: theme.palette.type === 'dark' 
-                        ? `0 0 10px ${theme.palette.primary.main}40` 
+                        ? `0 0 10px ${theme.palette.primary.main}60` 
                         : 'none',
-                      '&:hover': {
-                        borderWidth: '2px',
-                        boxShadow: theme.palette.type === 'dark' 
-                          ? `0 0 15px ${theme.palette.primary.main}60` 
-                          : 'none',
-                        backgroundColor: theme.palette.type === 'dark' 
-                          ? `${theme.palette.primary.main}20` 
-                          : 'transparent',
-                      }
                     }}
                   >
                     View Details
@@ -696,7 +715,15 @@ export const SinglePageHome = () => {
               <Typography variant="h5" component="div">
                 {selectedProject?.title}
               </Typography>
-              <Typography variant="subtitle2" color="primary" style={{ marginTop: '4px' }}>
+              <Typography 
+                variant="subtitle2" 
+                style={{ 
+                  marginTop: '4px',
+                  color: theme.palette.type === 'dark' 
+                    ? theme.palette.primary.light 
+                    : theme.palette.primary.main,
+                }}
+              >
                 {selectedProject?.course}
               </Typography>
             </div>

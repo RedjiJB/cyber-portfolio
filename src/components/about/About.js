@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Container, Typography, Button, Grid, Paper, Box, IconButton, Chip } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { FirstName, LastName } from "../../utils/getName";
 import { Link } from "react-router-dom";
 
@@ -133,6 +133,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const About = () => {
   const classes = useStyles();
+  const theme = useTheme();
   const greetings = "About Me";
   
   // Bio text reflects the resume's description and summary
@@ -206,7 +207,17 @@ export const About = () => {
                 </Grid>
                 
                 <Grid item xs={12} md={8}>
-                  <Typography component="h2" variant="h4" gutterBottom color="primary" style={{ fontWeight: 600 }}>
+                  <Typography 
+                    component="h2" 
+                    variant="h4" 
+                    gutterBottom 
+                    style={{ 
+                      fontWeight: 600,
+                      color: theme.palette.type === 'dark' 
+                        ? theme.palette.primary.light 
+                        : theme.palette.primary.main 
+                    }}
+                  >
                     {greetings}
                   </Typography>
                   

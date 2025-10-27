@@ -106,6 +106,19 @@ const useStyles = makeStyles((theme) => ({
   },
   viewDetailsButton: {
     marginTop: theme.spacing(2),
+    borderWidth: '2px',
+    borderColor: theme.palette.type === 'dark' 
+      ? theme.palette.primary.light 
+      : theme.palette.primary.main,
+    color: theme.palette.type === 'dark' 
+      ? theme.palette.primary.light 
+      : theme.palette.primary.main,
+    '&:hover': {
+      borderWidth: '2px',
+      backgroundColor: theme.palette.type === 'dark' 
+        ? `${theme.palette.primary.main}20` 
+        : 'rgba(42, 78, 147, 0.08)',
+    },
   },
   dialogHeader: {
     display: 'flex',

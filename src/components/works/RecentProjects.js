@@ -125,6 +125,15 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500,
     textTransform: 'none',
     fontSize: '0.875rem',
+    borderWidth: '2px',
+    '&.MuiButton-outlined': {
+      borderColor: theme.palette.type === 'dark' 
+        ? theme.palette.primary.light 
+        : theme.palette.primary.main,
+      color: theme.palette.type === 'dark' 
+        ? theme.palette.primary.light 
+        : theme.palette.primary.main,
+    },
   },
   categoryChip: {
     position: 'absolute',
@@ -164,6 +173,19 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
     textTransform: 'none',
     fontSize: '1rem',
+    borderWidth: '2px',
+    borderColor: theme.palette.type === 'dark' 
+      ? theme.palette.primary.light 
+      : theme.palette.primary.main,
+    color: theme.palette.type === 'dark' 
+      ? theme.palette.primary.light 
+      : theme.palette.primary.main,
+    '&:hover': {
+      borderWidth: '2px',
+      backgroundColor: theme.palette.type === 'dark' 
+        ? `${theme.palette.primary.main}20` 
+        : 'rgba(42, 78, 147, 0.08)',
+    },
   },
 }));
 
