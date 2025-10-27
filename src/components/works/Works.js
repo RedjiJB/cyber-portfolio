@@ -153,8 +153,18 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500,
     textTransform: 'none',
     boxShadow: 'none',
+    borderWidth: '2px',
+    '&.MuiButton-outlined': {
+      borderColor: theme.palette.type === 'dark' 
+        ? theme.palette.primary.light 
+        : theme.palette.primary.main,
+      color: theme.palette.type === 'dark' 
+        ? theme.palette.primary.light 
+        : theme.palette.primary.main,
+    },
     '&:hover': {
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      borderWidth: '2px',
     },
   },
   featureItem: {

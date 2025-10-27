@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import ReactMarkdown from 'react-markdown';
 import {
   Container,
@@ -849,6 +849,7 @@ const weeklyLabsData = {
 
 export const ModuleContentPage = () => {
   const classes = useStyles();
+  const theme = useTheme();
   const { levelId, courseSlug, moduleId, submoduleId } = useParams();
   const [markdownContent, setMarkdownContent] = useState('');
   const [loading, setLoading] = useState(true);
@@ -1018,16 +1019,22 @@ export const ModuleContentPage = () => {
             className={classes.breadcrumbs}
           >
             <Link to="/curriculum" style={{ textDecoration: 'none' }}>
-              <Typography color="primary">Curriculum</Typography>
+              <Typography style={{ color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.main }}>
+                Curriculum
+              </Typography>
             </Link>
             <Link to="/curriculum" style={{ textDecoration: 'none' }}>
-              <Typography color="primary">{level.name}</Typography>
+              <Typography style={{ color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.main }}>
+                {level.name}
+              </Typography>
             </Link>
             <Link
               to={`/curriculum/${levelId}/${courseSlug}`}
               style={{ textDecoration: 'none' }}
             >
-              <Typography color="primary">{course.name}</Typography>
+              <Typography style={{ color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.main }}>
+                {course.name}
+              </Typography>
             </Link>
             {submodule ? (
               <>

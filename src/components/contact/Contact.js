@@ -142,23 +142,35 @@ export const Contact = () => {
           </Box>
           
           {/* TryHackMe Badge */}
-          <Box mt={3} display="flex" justifyContent="center">
+          <Box mt={3} mb={3} display="flex" justifyContent="center" alignItems="center" width="100%">
             <iframe 
               src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4012776" 
-              style={{ border: 'none', width: '400px', height: '60px' }}
+              style={{ 
+                border: 'none', 
+                width: '450px', 
+                height: '80px',
+                overflow: 'hidden',
+                scrollbarWidth: 'none', /* Firefox */
+                msOverflowStyle: 'none', /* IE and Edge */
+                display: 'block',
+                margin: '0 auto',
+              }}
               title="TryHackMe Badge"
+              scrolling="no"
             />
           </Box>
           
           {/* Resume Button */}
-          <Button
-            className={classes.resumeButton}
-            variant="contained"
-            startIcon={<DescriptionIcon />}
-            onClick={() => window.open('/cyber-portfolio/interactive-resume/index.html', '_blank')}
-          >
-            View Interactive Resume
-          </Button>
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Button
+              className={classes.resumeButton}
+              variant="contained"
+              startIcon={<DescriptionIcon />}
+              onClick={() => window.open('/cyber-portfolio/interactive-resume/index.html', '_blank')}
+            >
+              View Interactive Resume
+            </Button>
+          </Box>
         </Box>
       </Container>
     </section>
