@@ -94,14 +94,14 @@ export const Contact = () => {
           {/* Email Contact */}
           <Box mb={4}>
             <Link 
-              href="mailto:redji.jeanbaptiste@mail.utoronto.ca" 
+              href="mailto:jredji429@gmail.com" 
               className={classes.socialLink} 
               target="_blank" 
               rel="noopener noreferrer"
               style={{ fontSize: '1.2rem', fontWeight: 500 }}
             >
               <i className="fab fa-google" style={{ fontSize: '1.8rem', marginRight: '12px', color: '#00bfbf' }}></i>
-              redji.jeanbaptiste@mail.utoronto.ca
+              jredji429@gmail.com
             </Link>
           </Box>
           
