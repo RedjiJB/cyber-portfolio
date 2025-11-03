@@ -14,6 +14,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - PWA features and offline support
 - Multi-language support (i18n)
 
+## [2.6.0] - 2025-11-03 - Visual Enhancement Update
+
+### Added
+- **Text Glow Effects**: Implemented graceful glowing text throughout the entire homepage
+  - Dark mode: Cyan/white glow effects matching primary color scheme
+  - Light mode: Blue/subtle black glow for depth and readability
+  - Applied to all text elements: titles, descriptions, navigation, cards, and body text
+- **Transparent Backgrounds**: Converted all section backgrounds to transparent with frosted glass effect
+  - Project cards with semi-transparent backgrounds and backdrop blur
+  - Blog post cards with glassmorphism design
+  - About Me section cards with transparent styling
+  - Skills and experience cards with backdrop blur
+  - Professional Experience section with consistent transparency
+- **Enhanced Visual Coherence**: Unified theme-aware styling across all components
+  - Consistent glow intensity based on element hierarchy
+  - Navigation buttons with enhanced hover glow effects
+  - Section titles with prominent cyan/blue glow
+  - Tech tags and chips with subtle text glow
+
+### Changed
+- **Background System**: Removed alternating solid backgrounds in favor of full transparency
+  - All sections now display animated sphere background
+  - Glassmorphism design with `backdrop-filter: blur(10px)`
+  - Theme-aware semi-transparent overlays (dark: `rgba(0,0,0,0.3)`, light: `rgba(255,255,255,0.1)`)
+- **Typography Enhancement**: Global text shadow implementation for improved readability
+  - All components now use theme-aware text shadows
+  - Hierarchical glow intensity (titles > subtitles > body text)
+  - Hover states with intensified glow effects
+
+### Technical
+- Updated `SinglePageHome.js` with comprehensive text glow styles
+- Modified `About.js` component with transparent card backgrounds and text glow
+- Enhanced `Contact.js` with global text glow styling
+- Updated `BlogPostCard.js` with transparent glassmorphism design
+- Implemented theme-aware styling using Material-UI `useTheme` hook
+- Added `& *` wildcard selectors for comprehensive text glow coverage
+
 ## [2.5.0] - 2025-10-26 - Portfolio Content Update
 
 ### Changed
