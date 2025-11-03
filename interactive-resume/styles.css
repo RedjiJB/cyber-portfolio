@@ -318,12 +318,150 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
+.language-item > div {
+    width: 100%;
+}
+
 .language-name {
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .language-level {
     color: var(--primary-color);
+    font-weight: 500;
+}
+
+.language-note {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.65;
+    margin-top: 0.25rem;
+    font-style: italic;
+    display: block;
+}
+
+.language-category {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.language-subcategory {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Certifications */
+.certification-timeline {
+    margin-top: 2rem;
+}
+
+.cert-group {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.cert-group:hover {
+    background: var(--card-bg-hover);
+    transform: translateX(5px);
+}
+
+.cert-group-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.cert-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.cert-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 191, 191, 0.1);
+    border: 1px solid rgba(0, 191, 191, 0.3);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    color: var(--text-color);
+}
+
+.cert-tag:hover {
+    background: rgba(0, 191, 191, 0.2);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 191, 191, 0.2);
+}
+
+.cert-tag.scheduled {
+    background: var(--card-bg);
+    border-color: var(--primary-color);
+}
+
+.cert-tag.scheduled:hover {
+    background: var(--card-bg-hover);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 191, 191, 0.2);
+}
+
+.cert-tag.planned {
+    background: var(--card-bg);
+    border-color: rgba(0, 191, 191, 0.2);
+}
+
+.cert-tag.planned:hover {
+    background: var(--card-bg-hover);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 191, 191, 0.2);
+}
+
+/* Light theme certification adjustments */
+.light-theme .cert-group {
+    background: rgba(0, 191, 191, 0.05);
+    border-left: 4px solid var(--primary-color);
+}
+
+.light-theme .cert-group:hover {
+    background: rgba(0, 191, 191, 0.1);
+}
+
+.light-theme .cert-tag {
+    background: rgba(0, 191, 191, 0.08);
+    border-color: rgba(0, 191, 191, 0.4);
+}
+
+.light-theme .cert-tag:hover {
+    background: rgba(0, 191, 191, 0.15);
+}
+
+.light-theme .cert-tag.scheduled {
+    background: rgba(0, 191, 191, 0.08);
+    border-color: var(--primary-color);
+}
+
+.light-theme .cert-tag.planned {
+    background: rgba(0, 191, 191, 0.05);
+    border-color: rgba(0, 191, 191, 0.3);
 }
 
 /* Experience Section */
@@ -498,9 +636,17 @@ body {
 }
 
 .project-description {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--light-text);
     opacity: 0.9;
+    line-height: 1.6;
+}
+
+.project-course {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 .tech-tag {
