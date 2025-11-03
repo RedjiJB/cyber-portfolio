@@ -236,7 +236,7 @@ export const About = () => {
                     </div>
                     
                     <Box mt={2} display="flex" justifyContent="center">
-                      <a href="mailto:redji.jeanbaptiste@mail.utoronto.ca" style={{ margin: '0 8px' }}>
+                      <a href="mailto:jredji429@gmail.com" style={{ margin: '0 8px' }}>
                         <IconButton color="primary" aria-label="Gmail">
                           <i className="fab fa-google"></i>
                         </IconButton>
