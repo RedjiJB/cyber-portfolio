@@ -14,9 +14,11 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  IconButton
+  IconButton,
+  CircularProgress
 } from '@material-ui/core';
 import { KeyboardArrowUp, Close, Info } from '@material-ui/icons';
+import ReactMarkdown from 'react-markdown';
 
 // Import components
 import { LogoLink } from '../components/logo/LogoLink';
@@ -44,6 +46,11 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(8, 0),
     position: 'relative',
     scrollMarginTop: '80px', // Account for fixed navbar
+    '& *': {
+      textShadow: theme.palette.type === 'dark'
+        ? '0 0 8px rgba(255, 255, 255, 0.15)'
+        : '0 0 5px rgba(0, 0, 0, 0.05)',
+    },
   },
   heroSection: {
     minHeight: '100vh',
@@ -52,17 +59,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     position: 'relative',
   },
-  alternateBackground: {
-    backgroundColor: theme.palette.type === 'dark' 
-      ? 'rgba(0, 0, 0, 0.3)' 
-      : 'rgba(255, 255, 255, 0.3)',
-  },
   sectionTitle: {
     marginBottom: theme.spacing(4),
     fontWeight: 700,
     textAlign: 'center',
     color: theme.palette.primary.main,
     fontSize: '2.5rem',
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 20px rgba(0, 191, 191, 0.5), 0 0 30px rgba(0, 191, 191, 0.3), 0 0 40px rgba(0, 191, 191, 0.2)'
+      : '0 0 10px rgba(33, 150, 243, 0.3), 0 0 20px rgba(33, 150, 243, 0.2)',
     [theme.breakpoints.down('sm')]: {
       fontSize: '2rem',
     },
@@ -117,6 +122,9 @@ const useStyles = makeStyles((theme) => ({
     border: theme.palette.type === 'dark' 
       ? `1.5px solid ${theme.palette.primary.main}40`
       : `1px solid transparent`,
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 8px rgba(255, 255, 255, 0.2)'
+      : 'none',
     '&:hover': {
       color: theme.palette.primary.main,
       backgroundColor: theme.palette.type === 'dark' 
@@ -127,6 +135,9 @@ const useStyles = makeStyles((theme) => ({
         : `1px solid ${theme.palette.primary.main}40`,
       transform: 'translateY(-2px)',
       boxShadow: `0 4px 12px ${theme.palette.primary.main}30`,
+      textShadow: theme.palette.type === 'dark'
+        ? '0 0 15px rgba(0, 191, 191, 0.6), 0 0 25px rgba(0, 191, 191, 0.3)'
+        : '0 0 10px rgba(33, 150, 243, 0.4)',
     },
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(0.5, 1.5),
@@ -138,9 +149,11 @@ const useStyles = makeStyles((theme) => ({
     background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
     border: `1px solid ${theme.palette.primary.main}`,
     boxShadow: `0 4px 20px ${theme.palette.primary.main}60`,
+    textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 191, 191, 0.4)',
     '&:hover': {
       transform: 'translateY(-2px)',
       boxShadow: `0 6px 25px ${theme.palette.primary.main}80`,
+      textShadow: '0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px rgba(0, 191, 191, 0.5)',
     },
   },
   scrollTopButton: {
@@ -152,24 +165,40 @@ const useStyles = makeStyles((theme) => ({
   projectCard: {
     padding: theme.spacing(3),
     height: '100%',
-    borderRadius: theme.shape.borderRadius,
+    borderRadius: '16px',
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.type === 'dark' 
+      ? 'rgba(0, 0, 0, 0.3)' 
+      : 'rgba(255, 255, 255, 0.1)',
+    backdropFilter: 'blur(10px)',
+    boxShadow: theme.palette.type === 'dark' 
+      ? '0 4px 20px rgba(0, 0, 0, 0.5)' 
+      : '0 4px 20px rgba(0, 0, 0, 0.1)',
     '&:hover': {
       transform: 'translateY(-5px)',
-      boxShadow: theme.shadows[8],
+      boxShadow: theme.palette.type === 'dark' 
+        ? '0 8px 32px rgba(0, 0, 0, 0.7)' 
+        : '0 8px 32px rgba(0, 0, 0, 0.15)',
     },
-    borderLeft: `4px solid ${theme.palette.primary.main}`,
+    borderLeft: theme.palette.type === 'dark'
+      ? `3px solid rgba(0, 191, 191, 0.3)`
+      : `3px solid rgba(33, 150, 243, 0.3)`,
   },
   projectTitle: {
     fontWeight: 600,
     marginBottom: theme.spacing(1),
     color: theme.palette.text.primary,
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(0, 191, 191, 0.2)'
+      : '0 0 8px rgba(0, 0, 0, 0.1)',
   },
   projectDescription: {
     marginBottom: theme.spacing(2),
     color: theme.palette.text.secondary,
     lineHeight: 1.6,
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 8px rgba(255, 255, 255, 0.15)'
+      : '0 0 5px rgba(0, 0, 0, 0.05)',
   },
   techTags: {
     display: 'flex',
@@ -184,6 +213,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: theme.shape.borderRadius,
     fontSize: '0.75rem',
     fontWeight: 500,
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 8px rgba(255, 255, 255, 0.2)'
+      : '0 0 5px rgba(0, 0, 0, 0.1)',
   },
   blogGrid: {
     marginTop: theme.spacing(4),
@@ -218,6 +250,87 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(1),
     },
+    '& h1': {
+      fontSize: '2rem',
+      borderBottom: `2px solid ${theme.palette.primary.main}`,
+      paddingBottom: theme.spacing(1),
+    },
+    '& h2': {
+      fontSize: '1.5rem',
+      borderBottom: `1px solid ${theme.palette.divider}`,
+      paddingBottom: theme.spacing(0.5),
+    },
+    '& h3': {
+      fontSize: '1.25rem',
+    },
+    '& h4': {
+      fontSize: '1.1rem',
+      marginTop: theme.spacing(1.5),
+      marginBottom: theme.spacing(0.5),
+      color: theme.palette.text.primary,
+    },
+    '& ul, & ol': {
+      paddingLeft: theme.spacing(3),
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1),
+    },
+    '& li': {
+      marginBottom: theme.spacing(0.5),
+    },
+    '& code': {
+      backgroundColor: theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+      padding: '2px 6px',
+      borderRadius: '4px',
+      fontFamily: 'monospace',
+      fontSize: '0.9em',
+    },
+    '& pre': {
+      backgroundColor: theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.03)',
+      padding: theme.spacing(2),
+      borderRadius: '8px',
+      overflow: 'auto',
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1),
+      border: `1px solid ${theme.palette.divider}`,
+      '& code': {
+        backgroundColor: 'transparent',
+        padding: 0,
+      },
+    },
+    '& blockquote': {
+      borderLeft: `4px solid ${theme.palette.primary.main}`,
+      paddingLeft: theme.spacing(2),
+      marginLeft: 0,
+      fontStyle: 'italic',
+      color: theme.palette.text.secondary,
+    },
+    '& hr': {
+      border: 'none',
+      borderTop: `1px solid ${theme.palette.divider}`,
+      margin: theme.spacing(3, 0),
+    },
+    '& table': {
+      borderCollapse: 'collapse',
+      width: '100%',
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
+    },
+    '& th, & td': {
+      border: `1px solid ${theme.palette.divider}`,
+      padding: theme.spacing(1),
+      textAlign: 'left',
+    },
+    '& th': {
+      backgroundColor: theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.03)',
+      fontWeight: 600,
+    },
+    '& a': {
+      color: theme.palette.primary.main,
+      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'underline',
+      },
+    },
   },
 }));
 
@@ -250,6 +363,10 @@ export const SinglePageHome = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [selectedProject, setSelectedProject] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
+  const [selectedManual, setSelectedManual] = useState(null);
+  const [openManualDialog, setOpenManualDialog] = useState(false);
+  const [manualContent, setManualContent] = useState('');
+  const [loadingManual, setLoadingManual] = useState(false);
   
   // Section refs for intersection observer
   const homeRef = useRef(null);
@@ -349,6 +466,243 @@ export const SinglePageHome = () => {
     }
   ];
 
+  // Lab Manuals data
+  const labManuals = [
+    {
+      title: "Small Office Network Blueprint",
+      course: "CST8182 - Networking Fundamentals",
+      technologies: ["Packet Tracer", "VLSM", "VLANs", "ACLs", "Network Design"],
+      description: "Complete Cisco Packet Tracer implementation guide for designing a small office network. Includes VLSM calculations, security policies, hardware specifications, and cost analysis. Features 28+ required screenshots and full network configuration examples.",
+      filePath: "/docs/small-office-network-blueprint.md",
+      details: `This comprehensive lab manual guides you through designing and implementing a complete small office network from scratch.
+
+**Week 1-2: Network Planning & Design**
+• Gather requirements for a 50-user office with 3 departments
+• Design physical and logical network topology
+• Calculate IP addressing using VLSM (172.16.0.0/16)
+• Plan VLAN segmentation (Management, Sales, IT, Guest)
+• Screenshot Requirements: Initial topology diagram, VLSM calculation sheet
+
+**Week 3-4: Cisco Packet Tracer Implementation**
+• Configure routers (RIP v2, OSPF, static routes)
+• Set up managed switches with VLAN trunking
+• Implement inter-VLAN routing
+• Configure DHCP servers for each department
+• Screenshot Requirements: Router configurations, switch port assignments, VLAN database, IP addressing tables, ping tests between VLANs
+
+**Week 5: Security & Services**
+• Implement ACLs to restrict traffic between departments
+• Configure wireless access points with WPA2-Enterprise
+• Set up DMZ for web/email servers
+• Implement site-to-site VPN
+• Screenshot Requirements: ACL configurations, wireless security settings, firewall rules, VPN tunnel status
+
+**Week 6: Testing & Documentation**
+• Perform comprehensive connectivity tests
+• Generate network documentation
+• Create executive summary and technical specifications
+• Calculate 3-year TCO and ROI
+• Screenshot Requirements: Complete topology with IP addresses, test results, cost analysis spreadsheet
+
+**Deliverables:**
+✓ Packet Tracer .pkt file with fully functional network
+✓ 28+ screenshots documenting each configuration step
+✓ Network design document (15-20 pages)
+✓ Hardware specifications and cost analysis
+✓ Implementation guide for future reference
+
+**Grading Rubric:**
+• Network Design & Topology (20%)
+• IP Addressing & VLSM (15%)
+• Router & Switch Configuration (25%)
+• Security Implementation (20%)
+• Documentation & Screenshots (20%)`
+    },
+    {
+      title: "Windows Admin Toolkit",
+      course: "CST8202 - Windows Desktop Support",
+      technologies: ["PowerShell", "Active Directory", "BitLocker", "Automation", "Windows Server"],
+      description: "PowerShell automation development guide with modules for user management, automated backups, and BitLocker encryption. Includes complete code examples, 28+ screenshots, and professional documentation templates.",
+      filePath: "/docs/windows-admin-toolkit.md",
+      details: `This comprehensive lab manual guides you through developing a professional PowerShell automation toolkit for Windows system administration.
+
+**Week 1-2: PowerShell Fundamentals & Module 1 (User Management)**
+• Set up development environment (PowerShell ISE, VS Code)
+• Create UserManagement.psm1 module structure
+• Implement functions: New-BulkADUser, Set-BulkUserProperties, Remove-BulkADUser
+• Add CSV import/export capabilities
+• Implement password policy enforcement and MFA setup
+• Screenshot Requirements: Module structure, function examples, AD Users & Computers before/after, CSV templates, error handling examples
+
+**Week 2-3: Module 2 (Backup Manager)**
+• Create BackupManager.psm1 for automated backup solutions
+• Implement Start-SystemBackup with full/incremental/differential modes
+• Add compression (ZIP, 7-Zip) and encryption (AES-256)
+• Configure cloud integration (OneDrive, Azure Blob Storage)
+• Implement rotation policies and retention management
+• Screenshot Requirements: Backup configurations, file structure, compression ratios, cloud upload status, rotation logs, scheduled task setup
+
+**Week 3-4: Module 3 (BitLocker Tools)**
+• Create BitLockerTools.psm1 for drive encryption automation
+• Implement Enable-BulkBitLocker for multiple drives
+• Add recovery key management and secure storage
+• Implement TPM integration and compliance checking
+• Create reporting functions for encryption status
+• Screenshot Requirements: BitLocker status, recovery keys, TPM configuration, compliance reports, encrypted drives
+
+**Week 4-5: Integration & Testing**
+• Create main toolkit script that imports all modules
+• Implement comprehensive error handling and logging
+• Add parameter validation and help documentation
+• Create test scenarios for each module
+• Perform integration testing
+• Screenshot Requirements: Help documentation, test results, error logs, integration examples
+
+**Week 5-6: Documentation & Deployment**
+• Create README.md with installation instructions
+• Write user guide with examples
+• Document all functions with comment-based help
+• Create deployment package
+• Screenshot Requirements: GitHub repository, documentation pages, deployment guide
+
+**Deliverables:**
+✓ 3 PowerShell modules (.psm1 files) with 500+ lines total
+✓ Main toolkit script with menu interface
+✓ 28+ screenshots documenting development and testing
+✓ Complete documentation (README, user guide, admin guide)
+✓ GitHub repository with version control history
+
+**Grading Rubric:**
+• Code Quality & PowerShell Best Practices (25%)
+• Module Functionality & Features (30%)
+• Error Handling & Logging (15%)
+• Documentation & Screenshots (20%)
+• Testing & Validation (10%)`
+    },
+    {
+      title: "Linux Automation Suite",
+      course: "CST8207 - GNU/Linux System Support",
+      technologies: ["Bash", "Cron", "Log Analysis", "System Admin", "Automation"],
+      description: "Comprehensive Bash scripting guide with automated backup systems, log analysis tools, and cron job management. Features 500+ line scripts, rotation policies, alerting systems, and 25+ required screenshots.",
+      filePath: "/docs/linux-automation-suite.md",
+      details: `This comprehensive lab manual guides you through creating a production-ready Bash automation suite for Linux system administration.
+
+**Week 1-2: Backup Module Development**
+• Create backup_manager.sh with modular design
+• Implement full, incremental, and differential backup modes
+• Add tar/gzip compression and GPG encryption
+• Configure local and remote destinations (rsync, scp)
+• Implement rotation policies and verification
+• Screenshot Requirements: Script structure, backup modes, compression examples, remote sync, rotation logs, verification output
+
+**Week 2-3: Log Analysis Module**
+• Create log_analyzer.sh for intelligent log processing
+• Implement pattern detection for common issues
+• Add security event identification (failed logins, sudo usage)
+• Create alerting system (email, Slack, Teams webhooks)
+• Generate HTML/PDF reports with statistics
+• Screenshot Requirements: Pattern matches, security alerts, email notifications, report examples, cron configuration
+
+**Week 3-4: Cron Job Management**
+• Create cron_manager.sh with template system
+• Implement job monitoring and health checks
+• Add resource usage tracking
+• Create error handling with retry logic
+• Implement heartbeat monitoring
+• Screenshot Requirements: Cron templates, job status, resource graphs, error logs, heartbeat confirmations
+
+**Week 4-5: Integration & Testing**
+• Integrate all modules with central configuration
+• Implement comprehensive error handling
+• Add logging with severity levels
+• Create test suite for all functions
+• Performance optimization
+• Screenshot Requirements: Configuration file, integrated tests, error handling examples, performance metrics
+
+**Week 5-6: Documentation & Deployment**
+• Create detailed README.md
+• Write installation and usage guides
+• Document all functions and variables
+• Create troubleshooting guide
+• Screenshot Requirements: Documentation pages, installation steps, usage examples
+
+**Deliverables:**
+✓ 3 main Bash scripts (500+ lines total)
+✓ Configuration files and templates
+✓ 25+ screenshots documenting functionality
+✓ Complete documentation package
+✓ Cron job configurations
+
+**Grading Rubric:**
+• Script Functionality & Features (30%)
+• Code Quality & POSIX Compliance (20%)
+• Error Handling & Logging (15%)
+• Documentation & Screenshots (20%)
+• Testing & Validation (15%)`
+    },
+    {
+      title: "Linux Process Tracker",
+      course: "CST8207 - GNU/Linux System Support",
+      technologies: ["Bash", "System Monitoring", "Performance", "Dashboard", "Real-time"],
+      description: "Real-time system monitoring dashboard implementation guide. Track CPU, memory, disk I/O, and network performance with an 800+ line interactive Bash dashboard. Includes alerting, historical tracking, and ASCII visualization.",
+      filePath: "/docs/linux-process-tracker.md",
+      details: `This comprehensive lab manual guides you through building an advanced real-time system monitoring dashboard entirely in Bash.
+
+**Week 1-2: Core Monitoring Engine**
+• Create process_tracker.sh with modular architecture
+• Implement /proc filesystem parsing
+• Build CPU monitoring (per-core utilization, load averages)
+• Add memory tracking (RAM, swap, cache, buffers)
+• Implement disk I/O statistics
+• Screenshot Requirements: Dashboard layout, CPU graphs, memory utilization, disk stats, code structure
+
+**Week 2-3: Process Management Features**
+• Add detailed process information (PID, user, CPU%, memory%)
+• Implement process tree visualization
+• Track thread counts and file descriptors
+• Add process filtering and sorting
+• Create process kill/priority management
+• Screenshot Requirements: Process list, tree view, filtering examples, resource sorting, management actions
+
+**Week 3-4: Performance Analysis**
+• Implement bottleneck detection algorithms
+• Add memory leak detection
+• Create top resource consumer reports
+• Implement anomaly detection
+• Add historical data collection
+• Screenshot Requirements: Bottleneck alerts, memory trends, top consumers, anomaly detection, historical graphs
+
+**Week 4-5: Alerting & Visualization**
+• Configure threshold-based alerting
+• Implement email notifications
+• Create log-based alerts
+• Add color-coded terminal output
+• Implement ASCII graphs and progress bars
+• Screenshot Requirements: Alert configurations, email examples, colored output, ASCII visualizations, progress indicators
+
+**Week 5-6: Reporting & Documentation**
+• Generate daily/weekly/monthly reports
+• Export data to CSV and JSON
+• Create executive summary reports
+• Add performance optimization
+• Screenshot Requirements: Report examples, CSV exports, JSON data, summary dashboards
+
+**Deliverables:**
+✓ Single comprehensive Bash script (800+ lines)
+✓ Configuration file for thresholds and alerts
+✓ 25+ screenshots documenting features
+✓ Complete user and admin documentation
+✓ Sample reports and exported data
+
+**Grading Rubric:**
+• Monitoring Accuracy & Features (30%)
+• Code Quality & Performance (20%)
+• User Interface & Visualization (15%)
+• Alerting System (15%)
+• Documentation & Screenshots (20%)`
+    }
+  ];
+
   const handleOpenDialog = (project) => {
     setSelectedProject(project);
     setOpenDialog(true);
@@ -357,6 +711,33 @@ export const SinglePageHome = () => {
   const handleCloseDialog = () => {
     setOpenDialog(false);
     setSelectedProject(null);
+  };
+
+  const handleOpenManualDialog = async (manual) => {
+    setSelectedManual(manual);
+    setOpenManualDialog(true);
+    setLoadingManual(true);
+    setManualContent('');
+    
+    try {
+      const response = await fetch(`${process.env.PUBLIC_URL}${manual.filePath}`);
+      if (!response.ok) {
+        throw new Error('Failed to load manual');
+      }
+      const text = await response.text();
+      setManualContent(text);
+    } catch (error) {
+      console.error('Error loading manual:', error);
+      setManualContent('# Error Loading Manual\n\nSorry, we could not load this manual. Please try again later or download it directly.');
+    } finally {
+      setLoadingManual(false);
+    }
+  };
+
+  const handleCloseManualDialog = () => {
+    setOpenManualDialog(false);
+    setSelectedManual(null);
+    setManualContent('');
   };
 
   return (
@@ -397,7 +778,7 @@ export const SinglePageHome = () => {
       <section
         id="curriculum"
         ref={curriculumRef}
-        className={`${classes.section} ${classes.alternateBackground}`}
+        className={classes.section}
       >
         <Container maxWidth="lg" className={classes.sectionContent}>
           <Typography variant="h2" className={classes.sectionTitle}>
@@ -638,7 +1019,7 @@ export const SinglePageHome = () => {
       <section 
         id="projects" 
         ref={projectsRef} 
-        className={`${classes.section} ${classes.alternateBackground}`}
+        className={classes.section}
       >
         <Container maxWidth="lg" className={classes.sectionContent}>
           <Typography variant="h2" className={classes.sectionTitle}>
@@ -682,6 +1063,7 @@ export const SinglePageHome = () => {
                       textTransform: 'none',
                       borderWidth: '2px',
                       fontWeight: 600,
+                      borderRadius: '8px',
                       borderColor: theme.palette.type === 'dark' 
                         ? theme.palette.primary.light 
                         : theme.palette.primary.main,
@@ -708,6 +1090,11 @@ export const SinglePageHome = () => {
         onClose={handleCloseDialog}
         maxWidth="md"
         fullWidth
+        PaperProps={{
+          style: {
+            borderRadius: '16px',
+          }
+        }}
       >
         <DialogTitle>
           <Box display="flex" justifyContent="space-between" alignItems="center">
@@ -755,11 +1142,302 @@ export const SinglePageHome = () => {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseDialog} color="primary" variant="contained">
+          <Button 
+            onClick={handleCloseDialog} 
+            color="primary" 
+            variant="contained"
+            style={{ borderRadius: '8px' }}
+          >
             Close
           </Button>
         </DialogActions>
       </Dialog>
+
+      {/* Lab Manual Details Dialog */}
+      <Dialog 
+        open={openManualDialog} 
+        onClose={handleCloseManualDialog}
+        maxWidth="md"
+        fullWidth
+        PaperProps={{
+          style: {
+            borderRadius: '16px',
+          }
+        }}
+      >
+        <DialogTitle>
+          <Box display="flex" justifyContent="space-between" alignItems="center">
+            <div>
+              <Typography variant="h5" component="div">
+                {selectedManual?.title}
+              </Typography>
+              <Typography 
+                variant="subtitle2" 
+                style={{ 
+                  marginTop: '4px',
+                  color: theme.palette.type === 'dark' 
+                    ? theme.palette.primary.light 
+                    : theme.palette.primary.main,
+                }}
+              >
+                {selectedManual?.course}
+              </Typography>
+            </div>
+            <IconButton onClick={handleCloseManualDialog} size="small">
+              <Close />
+            </IconButton>
+          </Box>
+        </DialogTitle>
+        <DialogContent dividers className={classes.dialogContent}>
+          {loadingManual ? (
+            <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
+              <CircularProgress />
+            </Box>
+          ) : (
+            <Box position="relative">
+              {/* Blurred Manual Content */}
+              <Box 
+                className={classes.projectDetailsText}
+                style={{ 
+                  filter: 'blur(5px)',
+                  userSelect: 'none',
+                  pointerEvents: 'none',
+                  maxHeight: '400px',
+                  overflow: 'hidden'
+                }}
+              >
+                <ReactMarkdown>
+                  {manualContent}
+                </ReactMarkdown>
+              </Box>
+              
+              {/* Overlay with Contact Button */}
+              <Box
+                position="absolute"
+                top="0"
+                left="0"
+                right="0"
+                bottom="0"
+                display="flex"
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                style={{
+                  background: theme.palette.type === 'dark' 
+                    ? 'rgba(0, 0, 0, 0.7)' 
+                    : 'rgba(255, 255, 255, 0.7)',
+                  backdropFilter: 'blur(2px)',
+                }}
+              >
+                <Typography 
+                  variant="h4" 
+                  align="center" 
+                  gutterBottom
+                  style={{ 
+                    fontWeight: 700,
+                    color: theme.palette.text.primary,
+                  }}
+                >
+                  Full Manual Available
+                </Typography>
+                <Typography 
+                  variant="body1" 
+                  align="center" 
+                  paragraph
+                  style={{ 
+                    maxWidth: '500px',
+                    marginBottom: theme.spacing(3),
+                    fontWeight: 500,
+                  }}
+                >
+                  This comprehensive lab manual includes detailed implementation guides, 
+                  code examples, screenshot requirements, and grading rubrics.
+                </Typography>
+                <Box display="flex" gap={2} flexWrap="wrap" justifyContent="center">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    onClick={() => {
+                      handleCloseManualDialog();
+                      scrollToSection('contact');
+                    }}
+                    style={{
+                      textTransform: 'none',
+                      fontWeight: 600,
+                      padding: '12px 32px',
+                      fontSize: '1.1rem',
+                      borderRadius: '12px',
+                    }}
+                  >
+                    Contact for Full Manual
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    size="large"
+                    component="a"
+                    href={`mailto:redji.jeanbaptiste@mail.utoronto.ca?subject=Request for ${selectedManual?.title} Manual`}
+                    style={{
+                      textTransform: 'none',
+                      fontWeight: 600,
+                      padding: '12px 32px',
+                      fontSize: '1.1rem',
+                      borderWidth: '2px',
+                      borderRadius: '12px',
+                    }}
+                  >
+                    Email Request
+                  </Button>
+                </Box>
+                <Typography 
+                  variant="caption" 
+                  align="center"
+                  style={{ 
+                    marginTop: theme.spacing(3),
+                    color: theme.palette.text.secondary,
+                  }}
+                >
+                  Available for academic review and collaboration
+                </Typography>
+              </Box>
+            </Box>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button 
+            onClick={handleCloseManualDialog} 
+            color="primary" 
+            variant="contained"
+            style={{ borderRadius: '8px' }}
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Lab Manuals Section */}
+      <section 
+        id="lab-manuals" 
+        ref={(el) => { /* Add ref if needed for navigation */ }} 
+        className={classes.section}
+      >
+        <Container maxWidth="lg" className={classes.sectionContent}>
+          <Typography variant="h2" className={classes.sectionTitle}>
+            Lab Manuals & Documentation
+          </Typography>
+          <Typography variant="body1" style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '900px', margin: '0 auto 3rem' }}>
+            Comprehensive project manuals with step-by-step implementation guides, Cisco Packet Tracer integration, screenshot requirements, and complete documentation templates.
+          </Typography>
+          
+          <Grid container spacing={4}>
+            {labManuals.map((manual, index) => {
+              return (
+                <Grid item xs={12} md={6} key={index}>
+                  <Box 
+                    className={classes.projectCard} 
+                    style={{ 
+                      borderRadius: '16px',
+                      boxShadow: theme.palette.type === 'dark' 
+                        ? '0 4px 20px rgba(0, 0, 0, 0.5)' 
+                        : '0 4px 20px rgba(0, 0, 0, 0.1)',
+                    }}
+                  >
+                    <Typography variant="h4" style={{ fontWeight: 700, marginBottom: '8px', color: theme.palette.text.primary }}>
+                      {manual.title}
+                    </Typography>
+                    <Typography variant="subtitle1" style={{ marginBottom: '12px', fontWeight: 600, color: theme.palette.primary.main, opacity: 0.8 }}>
+                      {manual.course}
+                    </Typography>
+                    <Typography variant="body1" style={{ marginBottom: '16px', lineHeight: 1.6 }}>
+                      {manual.description}
+                    </Typography>
+                    <div className={classes.techTags}>
+                      {manual.technologies.map((tech, i) => (
+                        <span key={i} className={classes.techChip}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      size="medium"
+                      onClick={() => handleOpenManualDialog(manual)}
+                      style={{ 
+                        marginTop: '16px', 
+                        textTransform: 'none',
+                        fontWeight: 600,
+                        borderRadius: '8px',
+                      }}
+                    >
+                      View Manual
+                    </Button>
+                  </Box>
+                </Grid>
+              );
+            })}
+          </Grid>
+
+          {/* Documentation Overview */}
+          <Box mt={6} p={4} style={{ 
+            background: theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.02)',
+            borderRadius: '20px',
+            border: `1px solid ${theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+            boxShadow: theme.palette.type === 'dark' 
+              ? '0 4px 20px rgba(0, 0, 0, 0.3)' 
+              : '0 4px 20px rgba(0, 0, 0, 0.08)',
+          }}>
+            <Typography variant="h5" gutterBottom style={{ fontWeight: 600, color: theme.palette.text.primary }}>
+              What's Included in Each Manual
+            </Typography>
+            <Grid container spacing={3} style={{ marginTop: '16px' }}>
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6" style={{ fontWeight: 600, marginBottom: '8px' }}>
+                  Implementation Guides
+                </Typography>
+                <Typography variant="body2">
+                  Week-by-week breakdown with detailed steps, complete code examples, and configuration templates
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6" style={{ fontWeight: 600, marginBottom: '8px' }}>
+                  Screenshot Requirements
+                </Typography>
+                <Typography variant="body2">
+                  Specific capture points (25-28 screenshots per project) with best practices and naming conventions
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6" style={{ fontWeight: 600, marginBottom: '8px' }}>
+                  Deliverables Checklist
+                </Typography>
+                <Typography variant="body2">
+                  Complete list of required files, documentation, testing procedures, and grading rubrics
+                </Typography>
+              </Grid>
+            </Grid>
+            <Box mt={3} textAlign="center">
+              <Button
+                variant="outlined"
+                size="large"
+                component="a"
+                href={`${process.env.PUBLIC_URL}/docs/README.md`}
+                download="lab-manuals-README.md"
+                style={{ 
+                  textTransform: 'none',
+                  fontWeight: 600,
+                  borderWidth: '1.5px',
+                  borderRadius: '12px',
+                  padding: '12px 32px',
+                }}
+              >
+                Download Complete Documentation Guide
+              </Button>
+            </Box>
+          </Box>
+        </Container>
+      </section>
 
       {/* Blog Section */}
       <section
@@ -782,7 +1460,7 @@ export const SinglePageHome = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" ref={aboutRef} className={`${classes.section} ${classes.alternateBackground}`}>
+      <section id="about" ref={aboutRef} className={classes.section}>
         <Container maxWidth="lg" className={classes.sectionContent}>
           <Typography variant="h2" className={classes.sectionTitle}>
             About Me

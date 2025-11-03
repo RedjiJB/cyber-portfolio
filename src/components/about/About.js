@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100vw',
     marginTop: '3em',
     marginBottom: "auto",
+    '& *': {
+      textShadow: theme.palette.type === 'dark'
+        ? '0 0 8px rgba(255, 255, 255, 0.15)'
+        : '0 0 5px rgba(0, 0, 0, 0.05)',
+    },
   },
   contactButton: {
     marginTop: theme.spacing(3),
@@ -55,6 +60,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.1rem',
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(3),
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 8px rgba(255, 255, 255, 0.15)'
+      : '0 0 5px rgba(0, 0, 0, 0.05)',
   },
   skillsSection: {
     marginTop: theme.spacing(6),
@@ -64,12 +72,18 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
     color: theme.palette.primary.main,
     fontWeight: 600,
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 10px rgba(0, 191, 191, 0.4), 0 0 20px rgba(0, 191, 191, 0.2)'
+      : '0 0 8px rgba(33, 150, 243, 0.3)',
   },
   skillItem: {
     marginBottom: theme.spacing(1),
     fontWeight: 600,
     display: 'flex',
     alignItems: 'center',
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 8px rgba(255, 255, 255, 0.2)'
+      : '0 0 5px rgba(0, 0, 0, 0.05)',
   },
   skillIcon: {
     marginRight: theme.spacing(1.5),
@@ -79,16 +93,28 @@ const useStyles = makeStyles((theme) => ({
   skillDescription: {
     marginLeft: theme.spacing(4),
     marginBottom: theme.spacing(3),
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 8px rgba(255, 255, 255, 0.15)'
+      : '0 0 5px rgba(0, 0, 0, 0.05)',
   },
   skillCard: {
     padding: theme.spacing(3),
     height: '100%',
     transition: 'all 0.3s ease',
+    backgroundColor: theme.palette.type === 'dark' 
+      ? 'rgba(0, 0, 0, 0.3)' 
+      : 'rgba(255, 255, 255, 0.1)',
+    backdropFilter: 'blur(10px)',
     '&:hover': {
       transform: 'translateY(-5px)',
       boxShadow: theme.shadows[8],
     },
     borderTop: `3px solid ${theme.palette.primary.main}`,
+    '& *': {
+      textShadow: theme.palette.type === 'dark'
+        ? '0 0 8px rgba(255, 255, 255, 0.15)'
+        : '0 0 5px rgba(0, 0, 0, 0.05)',
+    },
   },
   backgroundSection: {
     marginTop: theme.spacing(6),
@@ -97,6 +123,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
     marginBottom: theme.spacing(2),
     color: theme.palette.primary.main,
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 10px rgba(0, 191, 191, 0.4), 0 0 20px rgba(0, 191, 191, 0.2)'
+      : '0 0 8px rgba(33, 150, 243, 0.3)',
   },
   experienceSection: {
     marginTop: theme.spacing(6),
@@ -106,28 +135,49 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     marginBottom: theme.spacing(3),
     transition: 'all 0.3s ease',
+    backgroundColor: theme.palette.type === 'dark' 
+      ? 'rgba(0, 0, 0, 0.3)' 
+      : 'rgba(255, 255, 255, 0.1)',
+    backdropFilter: 'blur(10px)',
     '&:hover': {
       transform: 'translateY(-5px)',
       boxShadow: theme.shadows[8],
     },
     borderLeft: `3px solid ${theme.palette.primary.main}`,
+    '& *': {
+      textShadow: theme.palette.type === 'dark'
+        ? '0 0 8px rgba(255, 255, 255, 0.15)'
+        : '0 0 5px rgba(0, 0, 0, 0.05)',
+    },
   },
   experienceTitle: {
     fontWeight: 600,
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(1),
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 10px rgba(0, 191, 191, 0.3), 0 0 15px rgba(0, 191, 191, 0.2)'
+      : '0 0 8px rgba(33, 150, 243, 0.2)',
   },
   experienceCompany: {
     fontWeight: 500,
     marginBottom: theme.spacing(0.5),
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 8px rgba(255, 255, 255, 0.2)'
+      : '0 0 5px rgba(0, 0, 0, 0.05)',
   },
   experienceDate: {
     color: theme.palette.text.secondary,
     fontSize: '0.9rem',
     marginBottom: theme.spacing(1),
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 8px rgba(255, 255, 255, 0.15)'
+      : '0 0 5px rgba(0, 0, 0, 0.05)',
   },
   experienceDescription: {
     marginTop: theme.spacing(1),
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 8px rgba(255, 255, 255, 0.15)'
+      : '0 0 5px rgba(0, 0, 0, 0.05)',
   },
 }));
 
@@ -148,7 +198,11 @@ export const About = () => {
             style={{ 
               borderRadius: '16px', 
               overflow: 'hidden', 
-              marginBottom: '40px' 
+              marginBottom: '40px',
+              backgroundColor: theme.palette.type === 'dark' 
+                ? 'rgba(0, 0, 0, 0.3)' 
+                : 'rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)',
             }}
           >
             <Box p={4}>
@@ -182,7 +236,7 @@ export const About = () => {
                     </div>
                     
                     <Box mt={2} display="flex" justifyContent="center">
-                      <a href="mailto:jredji429@gmail.com" style={{ margin: '0 8px' }}>
+                      <a href="mailto:redji.jeanbaptiste@mail.utoronto.ca" style={{ margin: '0 8px' }}>
                         <IconButton color="primary" aria-label="Gmail">
                           <i className="fab fa-google"></i>
                         </IconButton>

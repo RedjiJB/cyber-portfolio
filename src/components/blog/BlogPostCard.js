@@ -21,7 +21,10 @@ const useStyles = makeStyles((theme) => ({
     transition: 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
     borderRadius: theme.shape.borderRadius * 3,
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.type === 'dark' 
+      ? 'rgba(0, 0, 0, 0.3)' 
+      : 'rgba(255, 255, 255, 0.1)',
+    backdropFilter: 'blur(10px)',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
     border: `1px solid ${theme.palette.divider}`,
     position: 'relative',

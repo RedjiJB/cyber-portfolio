@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100vw',
     marginTop: '3em',
     marginBottom: "3em",
+    '& *': {
+      textShadow: theme.palette.type === 'dark'
+        ? '0 0 8px rgba(255, 255, 255, 0.15)'
+        : '0 0 5px rgba(0, 0, 0, 0.05)',
+    },
   },
   contactHeading: {
     marginBottom: theme.spacing(2),
@@ -89,14 +94,14 @@ export const Contact = () => {
           {/* Email Contact */}
           <Box mb={4}>
             <Link 
-              href="mailto:jredji429@gmail.com" 
+              href="mailto:redji.jeanbaptiste@mail.utoronto.ca" 
               className={classes.socialLink} 
               target="_blank" 
               rel="noopener noreferrer"
               style={{ fontSize: '1.2rem', fontWeight: 500 }}
             >
               <i className="fab fa-google" style={{ fontSize: '1.8rem', marginRight: '12px', color: '#00bfbf' }}></i>
-              jredji429@gmail.com
+              redji.jeanbaptiste@mail.utoronto.ca
             </Link>
           </Box>
           
@@ -142,18 +147,31 @@ export const Contact = () => {
           </Box>
           
           {/* TryHackMe Badge */}
-          <Box mt={3} mb={3} display="flex" justifyContent="center" alignItems="center" width="100%">
+          <Box 
+            mt={3} 
+            mb={3} 
+            display="flex" 
+            justifyContent="center" 
+            alignItems="center" 
+            width="100%"
+            style={{
+              textAlign: 'center',
+            }}
+          >
             <iframe 
               src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4012776" 
               style={{ 
                 border: 'none', 
                 width: '450px', 
+                maxWidth: '100%',
                 height: '80px',
                 overflow: 'hidden',
                 scrollbarWidth: 'none', /* Firefox */
                 msOverflowStyle: 'none', /* IE and Edge */
                 display: 'block',
                 margin: '0 auto',
+                marginLeft: 'calc(50% + 35px)',
+                transform: 'translateX(-50%)',
               }}
               title="TryHackMe Badge"
               scrolling="no"

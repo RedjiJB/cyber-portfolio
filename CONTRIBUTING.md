@@ -1151,6 +1151,58 @@ export const lightTheme = createMuiTheme({
 });
 ```
 
+### Visual Design System (v2.6.0+)
+
+#### Glassmorphism & Transparency
+
+All cards and sections now use transparent backgrounds with frosted glass effect:
+
+```javascript
+// Standard card styling
+backgroundColor: theme.palette.type === 'dark' 
+  ? 'rgba(0, 0, 0, 0.3)'     // Dark mode: 30% black
+  : 'rgba(255, 255, 255, 0.1)', // Light mode: 10% white
+backdropFilter: 'blur(10px)',   // Frosted glass blur effect
+```
+
+#### Text Glow Effects
+
+All text throughout the homepage includes graceful glow effects:
+
+```javascript
+// Section titles - prominent glow
+textShadow: theme.palette.type === 'dark'
+  ? '0 0 20px rgba(0, 191, 191, 0.5), 0 0 30px rgba(0, 191, 191, 0.3), 0 0 40px rgba(0, 191, 191, 0.2)'
+  : '0 0 10px rgba(33, 150, 243, 0.3), 0 0 20px rgba(33, 150, 243, 0.2)',
+
+// Body text - subtle glow
+textShadow: theme.palette.type === 'dark'
+  ? '0 0 8px rgba(255, 255, 255, 0.15)'
+  : '0 0 5px rgba(0, 0, 0, 0.05)',
+```
+
+**Glow Hierarchy:**
+- **Primary titles**: Multi-layer cyan/blue glow (3-4 shadow layers)
+- **Subtitles/headings**: Medium cyan/blue glow (2 layers)
+- **Body text**: Subtle white/black glow (1 layer)
+- **Interactive elements**: Intensified glow on hover
+
+#### Global Text Glow Implementation
+
+Apply to all component text using wildcard selector:
+
+```javascript
+const useStyles = makeStyles((theme) => ({
+  componentRoot: {
+    '& *': {
+      textShadow: theme.palette.type === 'dark'
+        ? '0 0 8px rgba(255, 255, 255, 0.15)'
+        : '0 0 5px rgba(0, 0, 0, 0.05)',
+    },
+  },
+}));
+```
+
 ### Category Color Schemes
 
 Each blog category has its own color scheme defined in `blogData.js`:
@@ -1177,7 +1229,10 @@ Use the `makeStyles` hook for component styling:
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.type === 'dark' 
+      ? 'rgba(0, 0, 0, 0.3)' 
+      : 'rgba(255, 255, 255, 0.1)',
+    backdropFilter: 'blur(10px)',
     borderRadius: theme.shape.borderRadius,
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(1),
@@ -1185,7 +1240,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: theme.palette.text.primary,
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
+    textShadow: theme.palette.type === 'dark'
+      ? '0 0 10px rgba(0, 191, 191, 0.4), 0 0 20px rgba(0, 191, 191, 0.2)'
+      : '0 0 8px rgba(33, 150, 243, 0.3)',
   }
 }));
 ```
