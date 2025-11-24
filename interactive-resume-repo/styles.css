@@ -370,12 +370,37 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.timeline-location {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-location i {
+    color: var(--primary-color);
+}
+
 .timeline-details {
     padding-left: 1.25rem;
 }
 
 .timeline-details li {
     margin-bottom: 0.5rem;
+}
+
+.timeline-skills {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(0, 191, 191, 0.05);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.timeline-skills strong {
+    color: var(--primary-color);
 }
 
 /* Education Section */
@@ -606,83 +631,133 @@ footer {
     }
 }
 
-/* Research Papers Carousel */
-#papers {
+/* Contact Info Styles */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.contact-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
+}
+
+.contact-item i {
+    color: var(--primary-color);
+}
+
+/* Research Interests Cards */
+#research {
     padding: 1.5rem 0;
 }
 
-.carousel-indicators {
-    margin-bottom: -2rem;
-}
-
-.carousel-indicators button {
-    background-color: var(--primary-color) !important;
-    width: 12px !important;
-    height: 12px !important;
-    border-radius: 50%;
-    opacity: 0.4;
-}
-
-.carousel-indicators .active {
-    opacity: 1;
-}
-
-.paper-card {
+.research-card {
     background-color: var(--card-bg);
     border-radius: 10px;
     padding: 2rem;
-    margin: 2rem 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    min-height: 240px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid var(--border-color);
 }
 
-.paper-card h4 {
+.research-card:hover {
+    background-color: var(--card-bg-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 191, 191, 0.2);
+}
+
+.research-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.research-content h4 {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-weight: 600;
+    font-size: 1.2rem;
 }
 
-.paper-abstract {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-}
-
-.paper-link {
-    display: inline-block;
+.research-date {
     color: var(--primary-color);
-    font-weight: 600;
-    text-decoration: none;
-    transition: var(--transition);
     font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
-.paper-link:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
+.research-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 1rem;
 }
 
-.carousel-control-prev, 
-.carousel-control-next {
-    width: 10%;
-    opacity: 0.8;
+.research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    padding: 1.5rem;
-    background-size: 50%;
+.research-tag {
+    background-color: rgba(0, 191, 191, 0.1);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(0, 191, 191, 0.3);
+    transition: var(--transition);
+}
+
+.research-tag:hover {
+    background-color: rgba(0, 191, 191, 0.2);
+    transform: translateY(-2px);
+}
+
+.education-location {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+    opacity: 0.9;
+}
+
+.education-location i {
+    color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
-    .paper-card {
+    .contact-info {
+        gap: 0.4rem;
+    }
+    
+    .contact-item {
+        font-size: 0.85rem;
+    }
+    
+    .research-card {
         padding: 1.5rem;
-        min-height: 280px;
+        margin-bottom: 1rem;
+    }
+    
+    .research-icon {
+        font-size: 2rem;
+    }
+    
+    .research-content h4 {
+        font-size: 1.1rem;
     }
 } 

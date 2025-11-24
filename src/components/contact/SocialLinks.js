@@ -80,8 +80,8 @@ const SocialLinks = () => {
         setProfiles([
           {
             network: "Email",
-            username: "jredji429@gmail.com",
-            url: "mailto:jredji429@gmail.com",
+            username: "jean0319@algonquinlive.com",
+            url: "mailto:jean0319@algonquinlive.com",
             icon: "fas fa-envelope"
           },
           {

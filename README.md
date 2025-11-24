@@ -248,6 +248,35 @@ export const lightTheme = {
 };
 ```
 
+### About Component Configuration
+
+The About component supports multiple display modes for flexible content presentation:
+
+```javascript
+// Full About page with all sections (default)
+<About />
+
+// Minimal view - only profile photo and bio
+<About minimalView={true} showAdditionalSections={false} showExperience={false} />
+
+// Custom configurations
+<About 
+  minimalView={false}           // Show social links and buttons (default: false)
+  showAdditionalSections={true} // Show skills, certifications, career sections (default: true)
+  showExperience={true}         // Show professional experience section (default: true)
+/>
+```
+
+**Available Props:**
+- `minimalView` - When true, hides social media icons and action buttons
+- `showAdditionalSections` - Controls visibility of skills, certifications, and career interest sections
+- `showExperience` - Controls visibility of professional experience section
+
+**Use Cases:**
+- **Homepage:** Minimal view with just photo and bio (`minimalView={true}`)
+- **About Page:** Full content with all sections (default props)
+- **Custom Layouts:** Mix and match props for specific needs
+
 **Color scheme categories:**
 - D Central Research: Red (`#e74c3c`)
 - Student Projects: Blue (`#3776ab`) 
@@ -425,7 +454,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Portfolio:** [https://redjijb.github.io/cyber-portfolio/](https://redjijb.github.io/cyber-portfolio/)
 - **LinkedIn:** [https://www.linkedin.com/in/redji-jean-baptiste-25b0471b7](https://www.linkedin.com/in/redji-jean-baptiste-25b0471b7)
 - **GitHub:** [https://github.com/RedjiJB](https://github.com/RedjiJB)
-- **Email:** jredji429@gmail.com
+- **Email:** jean0319@algonquinlive.com
 
 ### Project Links
 - **Repository:** [https://github.com/RedjiJB/cyber-portfolio](https://github.com/RedjiJB/cyber-portfolio)

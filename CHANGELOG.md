@@ -14,6 +14,56 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - PWA features and offline support
 - Multi-language support (i18n)
 
+## [2.6.2] - 2025-11-24 - About Section Minimal View Implementation
+
+### Changed
+- **About Component Enhancement**: Added flexible display modes with new props
+  - Added `minimalView` prop to show only profile photo and bio text
+  - Added `showAdditionalSections` prop to control skills, certifications, and career sections
+  - Added `showExperience` prop to control professional experience visibility
+  - Updated bio text to emphasize 4+ years of security operations experience and career transition to cybersecurity
+- **SinglePageHome Update**: Configured minimal About section display
+  - Shows only profile photo and bio text on homepage
+  - Removed social media icons, action buttons, skills sections, certifications, and professional experience from homepage view
+  - Full content still available on dedicated About page (/about)
+- **Contact Information**: Updated email from jredji429@gmail.com to jean0319@algonquinlive.com across all components
+
+### Added
+- Conditional rendering for social media links based on `minimalView` prop
+- Conditional rendering for action buttons (Get In Touch, Resume) based on `minimalView` prop
+- Conditional rendering for all additional sections based on `showAdditionalSections` prop
+
+### Technical
+- Modified `About.js` to accept three new props: `minimalView`, `showAdditionalSections`, `showExperience`
+- Updated `SinglePageHome.js` to pass `minimalView={true}` to About component
+- Maintained backward compatibility with default prop values (all features enabled by default)
+
+## [2.6.1] - 2025-11-24 - About Section Simplification
+
+### Changed
+- **About Component**: Simplified About component to display minimal view on SinglePageHome
+  - Removed duplicate "About Me" heading (now managed by SinglePageHome section title)
+  - Removed all skill sections (Current Skills, In-Progress Skills)
+  - Removed Career Interests & Goals section
+  - Removed Planned Certifications section
+  - Removed Professional Experience section
+  - Kept only: profile photo, social media icons, bio text, and action buttons
+- **SinglePageHome Integration**: Updated to use minimal About component
+  - Displays single "About Me" section title
+  - Shows clean profile section with essential information only
+
+### Removed
+- Skills sections from About component
+- Career interests and goals section
+- Certifications timeline
+- Professional experience cards
+- Duplicate heading in About component
+
+### Technical
+- Modified `About.js` to remove extensive sections (lines 309-760 removed)
+- Updated `SinglePageHome.js` to pass minimal view configuration
+- Simplified component structure for cleaner SinglePageHome layout
+
 ## [2.6.0] - 2025-11-03 - Visual Enhancement Update
 
 ### Added
@@ -298,6 +348,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History Summary
 
+- **v2.6.1**: Simplified About section on SinglePageHome for cleaner minimal layout
+- **v2.6.0**: Visual enhancement update with text glow effects and transparent backgrounds
+- **v2.5.0**: Portfolio content update with hero section refinement
+- **v2.4.0**: Major curriculum system refactor and content expansion
 - **v2.1.0**: Enhanced blog system with extracurricular projects category and drone platform showcase
 - **v2.0.0**: Major blog system overhaul with multi-category support and interactive resume
 - **v1.5.0**: Performance optimizations and contact form integration
@@ -308,6 +362,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **v1.0.0**: Initial portfolio release with core features
 
 ## Migration Notes
+
+### From v2.6.0 to v2.6.1
+- About component simplified - extensive sections removed from SinglePageHome
+- If using About component elsewhere, ensure minimalView props are configured correctly
+- Skills, certifications, and experience sections removed from About component
+- Consider using dedicated pages for detailed professional information if needed
 
 ### From v2.0.x to v2.1.x
 - New Extracurricular Projects category added to blog system
