@@ -1,14 +1,14 @@
 {
     "basics": {
         "name": "Redji Jean Baptiste",
-        "label": "Student",
-        "email": "jredji429@gmail.com",
-        "phone": "",
+        "label": "Computer Systems Technician Student",
+        "email": "jean0319@algonquinlive.com",
+        "phone": "+1 (819) 319-6405",
         "picture": "profile.JPG",
         "x_title": "Hello, I'm",
         "job1": "Computer Systems Technician - Networking",
         "job2": "",
-        "description": "I am a Co-operative education student at Algonquin College in the Computer Systems Technician - Networking (1560X03FWO) program. I'm learning network administration, cybersecurity fundamentals, system configuration, and IT infrastructure management. My goal is to build a career in IT, focusing on protecting digital assets and implementing secure network solutions.",
+        "description": "Co-operative education student at Algonquin College in the Computer Systems Technician - Networking program with extensive security operations experience. Skilled in physical security systems, access control, video surveillance, and incident response. Seeking opportunities to apply technical knowledge and security expertise in IT infrastructure and cybersecurity roles.",
         "summary": "based in Ottawa, Canada.",
         "keywords": "networking,cybersecurity,system administration,algonquin college,student,co-op,ottawa,canada,python,bash,powershell,windows,linux,security,infrastructure",
         "url": "https://redjijb.github.io/cyber-portfolio",
@@ -22,9 +22,9 @@
         },
         "profiles": [
             {
-                "network": "Gmail",
-                "username": "jredji429@gmail.com",
-                "url": "mailto:jredji429@gmail.com",
+                "network": "Email",
+                "username": "jean0319@algonquinlive.com",
+                "url": "mailto:jean0319@algonquinlive.com",
                 "x_icon": "fab fa-google"
             },
             {
@@ -55,42 +55,72 @@
     },
     "work": [
         {
-            "company": "Decentralized Governance Framework",
-            "position": "Core Contributor",
+            "company": "One King West Hotel & Residence",
+            "position": "Security Officer",
             "website": "",
-            "startDate": "2024-01-01",
-            "endDate": "",
-            "summary": "Planning to build open-source governance tools for DAOs and decentralized communities",
+            "startDate": "2024-07-01",
+            "endDate": "2025-04-01",
+            "summary": "Provided comprehensive security services and hotel-level guest assistance in a 51-story luxury hotel environment, serving 400+ residences and hotel guests daily",
             "highlights": [
-                "Designing quadratic voting mechanisms for community decision-making",
-                "Planning treasury management modules for transparent capital allocation", 
-                "Researching conflict resolution systems for decentralized protocols"
+                "Operated Avigilon CCTV surveillance system monitoring 80+ IP cameras across multiple building zones",
+                "Administered HID Global access control infrastructure and VingCard Visionline system to manage all guest, resident, and staff credentials",
+                "Conducted access control investigations by reviewing Visionline audit trails during security incidents",
+                "Responded to emergency situations with average response time under 2 minutes"
             ]
         },
         {
-            "company": "AI Ethics Framework",
-            "position": "Lead Developer",
+            "company": "UTSC Student Managed Fund",
+            "position": "Associate",
             "website": "",
-            "startDate": "2024-01-01",
-            "endDate": "",
-            "summary": "Currently working on open-source tools for ensuring responsible AI development",
+            "startDate": "2023-05-01",
+            "endDate": "2024-01-01",
+            "summary": "Conducted comprehensive financial analysis and due diligence on equity and fixed-income securities for a simulated student-managed investment portfolio",
             "highlights": [
-                "Developing bias detection algorithms for large language models",
-                "Creating ethical guidelines and templates for responsible AI deployment",
-                "Building explainability tools to make complex AI systems more transparent"
+                "Collaborated with team of student analysts to develop investment strategies and perform sector research",
+                "Utilized financial modelling software and advanced Excel functions to analyze market trends",
+                "Participated in weekly investment committee meetings, presenting research findings",
+                "Developed expertise in ESG investing principles and sustainable finance practices"
             ]
         },
         {
-            "company": "Web3 Education Platform",
-            "position": "Contributor",
+            "company": "Great Canadian Entertainment",
+            "position": "Security Officer",
             "website": "",
-            "startDate": "2024-01-01",
-            "endDate": "",
-            "summary": "Starting development on an open learning platform for blockchain and Web3 technologies",
+            "startDate": "2022-12-01",
+            "endDate": "2023-04-01",
+            "summary": "Engaged in security operations in a high-traffic entertainment complex serving 5,000+ daily visitors across gaming floors, restaurants, and event spaces",
             "highlights": [
-                "Planning interactive tutorials on smart contract development and security",
-                "Designing automated testing frameworks for hands-on learning experiences",
-                "Creating comprehensive documentation resources for new Web3 developers"
+                "Operated Avigilon Unity/ACC video management platform with integrated SAFR facial recognition module",
+                "Deployed Avigilon License Plate Recognition solution to capture and verify vehicle plates",
+                "Coordinated hourly patrols covering 200,000 sq ft and monitored 50+ CCTV cameras",
+                "Collaborated with local law enforcement; de-escalated conflicts and managed crowd control"
+            ]
+        },
+        {
+            "company": "Iron Horse Security",
+            "position": "Security Guard",
+            "website": "",
+            "startDate": "2020-09-01",
+            "endDate": "2023-12-01",
+            "summary": "Provided comprehensive security services across multiple client locations including commercial complexes, construction sites, retail establishments, and public events",
+            "highlights": [
+                "Engaged in security operations for diverse properties ranging from 10,000 to 500,000 sq ft",
+                "Conducted detailed risk assessments and implemented enhanced security protocols",
+                "Utilized advanced surveillance technology including IP camera systems",
+                "Developed strong relationships with property managers and tenants"
+            ]
+        },
+        {
+            "company": "Black Youth Advisory Council",
+            "position": "Student Coordinator",
+            "website": "",
+            "startDate": "2019-09-01",
+            "endDate": "2020-06-01",
+            "summary": "Collaborated with school board officials, community leaders, and fellow organizers to plan, promote, and execute the annual Black Youth Forum",
+            "highlights": [
+                "Coordinated with guest speakers and workshop facilitators to create engaging content",
+                "Developed and managed budgets, securing sponsorships and allocating resources",
+                "Conducted post-event evaluations to inform improvements and ensure continued growth"
             ]
         }
     ],

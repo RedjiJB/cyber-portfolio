@@ -71,7 +71,7 @@ const importData = async () => {
       basics: {
         name: resumeData.basics.name,
         label: resumeData.basics.label,
-        email: "jredji429@gmail.com",
+        email: "jean0319@algonquinlive.com",
         phone: resumeData.basics.phone,
         website: resumeData.basics.website,
         summary: resumeData.basics.summary,
@@ -79,8 +79,8 @@ const importData = async () => {
         profiles: [
           {
             network: "Email",
-            username: "jredji429@gmail.com",
-            url: "mailto:jredji429@gmail.com",
+            username: "jean0319@algonquinlive.com",
+            url: "mailto:jean0319@algonquinlive.com",
             icon: "fas fa-envelope"
           },
           {

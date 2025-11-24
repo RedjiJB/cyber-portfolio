@@ -2,13 +2,13 @@
     "basics": {
         "name": "Redji Jean Baptiste",
         "label": "Student",
-        "email": "jredji429@gmail.com",
+        "email": "jean0319@algonquinlive.com",
         "phone": "",
         "picture": "profile.JPG",
         "x_title": "Hello, I'm",
         "job1": "Co-operative",
         "job2": "Student",
-        "description": "I am a Co-operative education student at Algonquin College in the Computer Systems Technician - Networking (1560X03FWO) program. I'm learning network administration, cybersecurity fundamentals, system configuration, and IT infrastructure management. My goal is to build a career in IT, focusing on protecting digital assets and implementing secure network solutions.",
+        "description": "Co-operative education student at Algonquin College in the Computer Systems Technician - Networking program with extensive security operations experience. Skilled in physical security systems, access control, video surveillance, and incident response. Seeking opportunities to apply technical knowledge and security expertise in IT infrastructure and cybersecurity roles.",
         "summary": "based in Ottawa, Canada.",
         "keywords": "networking,cybersecurity,system administration,algonquin college,student,co-op,ottawa,canada,python,bash,powershell,windows,linux,security,infrastructure",
         "url": "https://redjijb.github.io/cyber-portfolio",
@@ -23,8 +23,8 @@
         "profiles": [
             {
                 "network": "Gmail",
-                "username": "jredji429@gmail.com",
-                "url": "mailto:jredji429@gmail.com",
+                "username": "jean0319@algonquinlive.com",
+                "url": "mailto:jean0319@algonquinlive.com",
                 "x_icon": "fab fa-google"
             },
             {

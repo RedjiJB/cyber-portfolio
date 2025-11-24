@@ -1277,7 +1277,7 @@ export const SinglePageHome = () => {
                     color="primary"
                     size="large"
                     component="a"
-                    href={`mailto:redji.jeanbaptiste@mail.utoronto.ca?subject=Request for ${selectedManual?.title} Manual`}
+                    href={`mailto:jean0319@algonquinlive.com?subject=Request for ${selectedManual?.title} Manual`}
                     style={{
                       textTransform: 'none',
                       fontWeight: 600,
@@ -1465,7 +1465,7 @@ export const SinglePageHome = () => {
           <Typography variant="h2" className={classes.sectionTitle}>
             About Me
           </Typography>
-          <About />
+          <About minimalView={true} showAdditionalSections={false} showExperience={false} />
         </Container>
       </section>
 

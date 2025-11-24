@@ -43,11 +43,11 @@ http://localhost:3000/#/multi
 
 ### Sections Included
 1. **Home** - Hero with 3D background
-2. **Projects** - Portfolio showcase  
-3. **Labs** - Experimental projects
-4. **Curriculum** - Study materials
-5. **About** - Personal info
-6. **Blog** - Latest posts
+2. **Curriculum** - Level 1 courses overview
+3. **Labs** - Hands-on technical labs and tutorials
+4. **Projects** - Portfolio showcase with lab manuals
+5. **Blog** - Latest posts
+6. **About** - Minimal profile (photo, bio, social links, buttons only)
 7. **Contact** - Get in touch
 
 ### Visual Design
@@ -158,6 +158,28 @@ Want to enhance your single-page layout?
 - Customize animations
 
 See `SINGLE-PAGE-GUIDE.md` for implementation ideas!
+
+---
+
+## 📝 Recent Updates (v2.6.1 - Nov 24, 2025)
+
+### About Section Simplification
+The About section has been streamlined for a cleaner, more focused presentation:
+
+**What's Shown:**
+- Profile photo with border styling
+- Social media icons (Gmail, LinkedIn, GitHub, Telegram)
+- Bio text paragraph
+- "Get In Touch" button (links to Contact section)
+- "Resume" button (opens interactive resume)
+
+**What's Removed:**
+- Skills sections (Current Skills, In-Progress Skills)
+- Career Interests & Goals
+- Planned Certifications timeline
+- Professional Experience cards
+
+This creates a minimal, professional about section that encourages visitors to explore other parts of the portfolio for detailed information.
 
 ---
 
