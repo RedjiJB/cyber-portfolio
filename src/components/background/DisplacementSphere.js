@@ -49,54 +49,64 @@ const DisplacementSphere = (props) => {
     const isInViewport = useInViewport(canvasRef);
 
     useEffect(() => {
-        mouse.current = new Vector2(0.8, 0.5);
-        renderer.current = new WebGLRenderer({
-            canvas: canvasRef.current,
-            powerPreference: "high-performance",
-        });
-        renderer.current.setSize(width.current, height.current);
-        renderer.current.setPixelRatio(1);
-        renderer.current.outputEncoding = sRGBEncoding;
+        if (!canvasRef.current) return;
 
-        camera.current = new PerspectiveCamera(
-            55,
-            width.current / height.current,
-            0.1,
-            200
-        );
-        camera.current.position.z = 52;
+        try {
+            mouse.current = new Vector2(0.8, 0.5);
+            renderer.current = new WebGLRenderer({
+                canvas: canvasRef.current,
+                powerPreference: "high-performance",
+                failIfMajorPerformanceCaveat: false,
+            });
+            renderer.current.setSize(width.current, height.current);
+            renderer.current.setPixelRatio(1);
+            renderer.current.outputEncoding = sRGBEncoding;
 
-        scene.current = new Scene();
+            camera.current = new PerspectiveCamera(
+                55,
+                width.current / height.current,
+                0.1,
+                200
+            );
+            camera.current.position.z = 52;
 
-        material.current = new MeshPhongMaterial();
-        material.current.onBeforeCompile = (shader) => {
-            uniforms.current = UniformsUtils.merge([
-                UniformsLib["ambient"],
-                UniformsLib["lights"],
-                shader.uniforms,
-                { time: { type: "f", value: 0 } },
-            ]);
+            scene.current = new Scene();
 
-            shader.uniforms = uniforms.current;
-            shader.vertexShader = vertShader;
-            shader.fragmentShader = fragShader;
-            shader.lights = true;
-        };
+            material.current = new MeshPhongMaterial();
+            material.current.onBeforeCompile = (shader) => {
+                uniforms.current = UniformsUtils.merge([
+                    UniformsLib["ambient"],
+                    UniformsLib["lights"],
+                    shader.uniforms,
+                    { time: { type: "f", value: 0 } },
+                ]);
 
-        geometry.current = new SphereBufferGeometry(32, 128, 128);
+                shader.uniforms = uniforms.current;
+                shader.vertexShader = vertShader;
+                shader.fragmentShader = fragShader;
+                shader.lights = true;
+            };
 
-        sphere.current = new Mesh(geometry.current, material.current);
-        sphere.current.position.z = 0;
-        sphere.current.modifier = Math.random();
-        scene.current.add(sphere.current);
+            geometry.current = new SphereBufferGeometry(32, 128, 128);
+
+            sphere.current = new Mesh(geometry.current, material.current);
+            sphere.current.position.z = 0;
+            sphere.current.modifier = Math.random();
+            scene.current.add(sphere.current);
+        } catch (error) {
+            console.warn("WebGL initialization failed:", error);
+            return;
+        }
 
         return () => {
-            cleanScene(scene.current);
-            cleanRenderer(renderer.current);
+            if (scene.current) cleanScene(scene.current);
+            if (renderer.current) cleanRenderer(renderer.current);
         };
     }, []);
 
     useEffect(() => {
+        if (!scene.current) return;
+
         const dirLight = new DirectionalLight(
             rgbToThreeColor("250 250 250"),
             0.6
@@ -115,16 +125,23 @@ const DisplacementSphere = (props) => {
         lights.current.forEach((light) => scene.current.add(light));
 
         return () => {
-            removeLights(lights.current);
+            if (lights.current) removeLights(lights.current);
         };
     }, [rgbBackground, theme]);
 
     useEffect(() => {
         const handleResize = () => {
+            if (!canvasRef.current) return;
+
             const canvasHeight = innerHeight();
             const windowWidth = window.innerWidth;
             const fullHeight = canvasHeight + canvasHeight * 0.3;
             canvasRef.current.style.height = fullHeight;
+
+            if (!renderer.current || !camera.current || !sphere.current) {
+                return;
+            }
+
             renderer.current.setSize(windowWidth, fullHeight);
             camera.current.aspect = windowWidth / fullHeight;
             camera.current.updateProjectionMatrix();
@@ -156,6 +173,8 @@ const DisplacementSphere = (props) => {
 
     useEffect(() => {
         const onMouseMove = (event) => {
+            if (!sphere.current) return;
+
             const { rotation } = sphere.current;
 
             const position = {
@@ -184,7 +203,7 @@ const DisplacementSphere = (props) => {
             }).start(sphereSpring.current);
         };
 
-        if (!prefersReducedMotion && isInViewport) {
+        if (!prefersReducedMotion && isInViewport && sphere.current) {
             window.addEventListener("mousemove", onMouseMove);
         }
 
@@ -198,6 +217,8 @@ const DisplacementSphere = (props) => {
     }, [isInViewport, prefersReducedMotion]);
 
     useEffect(() => {
+        if (!renderer.current || !scene.current || !camera.current || !sphere.current) return;
+
         let animation;
 
         const animate = () => {

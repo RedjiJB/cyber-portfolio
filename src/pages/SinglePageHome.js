@@ -15,23 +15,21 @@ import {
   DialogContent,
   DialogActions,
   IconButton,
-  CircularProgress
+  CircularProgress,
+  Tabs,
+  Tab
 } from '@material-ui/core';
-import { KeyboardArrowUp, Close, Info } from '@material-ui/icons';
-import ReactMarkdown from 'react-markdown';
-
-// Import components
-import { LogoLink } from '../components/logo/LogoLink';
-import { Content } from '../components/content/Content';
+import { KeyboardArrowUp, Close, Info, ExpandMore, ExpandLess } from '@material-ui/icons';
 import DisplacementSphere from '../components/background/DisplacementSphere';
 import { ThemeToggle } from '../components/theme/ThemeToggle';
 import { SocialIcons } from '../components/content/SocialIcons';
 import { SpeedDials } from '../components/speedDial/SpeedDial';
+import { LogoLink } from '../components/logo/LogoLink';
+import { Content } from '../components/content/Content';
 import { About } from '../components/about/About';
 import { Contact } from '../components/contact/Contact';
-import { BlogPostCard } from '../components/blog/BlogPostCard';
 import { Resume } from '../components/resume/Resume';
-import blogData from '../utils/blogData';
+import ReactMarkdown from 'react-markdown';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,9 +45,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     scrollMarginTop: '80px', // Account for fixed navbar
     '& *': {
-      textShadow: theme.palette.type === 'dark'
-        ? '0 0 8px rgba(255, 255, 255, 0.15)'
-        : '0 0 5px rgba(0, 0, 0, 0.05)',
+      textShadow: 'none',
     },
   },
   heroSection: {
@@ -63,11 +59,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     fontWeight: 700,
     textAlign: 'center',
-    color: theme.palette.primary.main,
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
     fontSize: '2.5rem',
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 20px rgba(0, 191, 191, 0.5), 0 0 30px rgba(0, 191, 191, 0.3), 0 0 40px rgba(0, 191, 191, 0.2)'
-      : '0 0 10px rgba(33, 150, 243, 0.3), 0 0 20px rgba(33, 150, 243, 0.2)',
+    textShadow: 'none',
     [theme.breakpoints.down('sm')]: {
       fontSize: '2rem',
     },
@@ -112,32 +106,28 @@ const useStyles = makeStyles((theme) => ({
   navButton: {
     padding: theme.spacing(0.75, 2),
     cursor: 'pointer',
-    color: theme.palette.text.primary,
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
     fontWeight: 600,
     fontSize: '0.95rem',
     transition: 'all 0.3s ease',
     borderRadius: '25px',
     position: 'relative',
     backgroundColor: 'transparent',
-    border: theme.palette.type === 'dark' 
+    border: theme.palette.type === 'dark'
       ? `1.5px solid ${theme.palette.primary.main}40`
       : `1px solid transparent`,
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 8px rgba(255, 255, 255, 0.2)'
-      : 'none',
+    textShadow: 'none',
     '&:hover': {
-      color: theme.palette.primary.main,
-      backgroundColor: theme.palette.type === 'dark' 
-        ? 'rgba(0, 191, 191, 0.15)' 
+      color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
+      backgroundColor: theme.palette.type === 'dark'
+        ? 'rgba(0, 191, 191, 0.15)'
         : 'rgba(0, 191, 191, 0.05)',
       border: theme.palette.type === 'dark'
         ? `1.5px solid ${theme.palette.primary.main}80`
         : `1px solid ${theme.palette.primary.main}40`,
       transform: 'translateY(-2px)',
       boxShadow: `0 4px 12px ${theme.palette.primary.main}30`,
-      textShadow: theme.palette.type === 'dark'
-        ? '0 0 15px rgba(0, 191, 191, 0.6), 0 0 25px rgba(0, 191, 191, 0.3)'
-        : '0 0 10px rgba(33, 150, 243, 0.4)',
+      textShadow: 'none',
     },
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(0.5, 1.5),
@@ -187,18 +177,14 @@ const useStyles = makeStyles((theme) => ({
   projectTitle: {
     fontWeight: 600,
     marginBottom: theme.spacing(1),
-    color: theme.palette.text.primary,
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(0, 191, 191, 0.2)'
-      : '0 0 8px rgba(0, 0, 0, 0.1)',
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
+    textShadow: 'none',
   },
   projectDescription: {
     marginBottom: theme.spacing(2),
-    color: theme.palette.text.secondary,
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
     lineHeight: 1.6,
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 8px rgba(255, 255, 255, 0.15)'
-      : '0 0 5px rgba(0, 0, 0, 0.05)',
+    textShadow: 'none',
   },
   techTags: {
     display: 'flex',
@@ -209,16 +195,74 @@ const useStyles = makeStyles((theme) => ({
   techChip: {
     padding: theme.spacing(0.5, 1),
     backgroundColor: theme.palette.primary.light,
-    color: theme.palette.primary.contrastText,
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
     borderRadius: theme.shape.borderRadius,
     fontSize: '0.75rem',
     fontWeight: 500,
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 8px rgba(255, 255, 255, 0.2)'
-      : '0 0 5px rgba(0, 0, 0, 0.1)',
+    textShadow: 'none',
   },
-  blogGrid: {
-    marginTop: theme.spacing(4),
+  levelTabs: {
+    marginBottom: theme.spacing(4),
+    borderRadius: '18px',
+    padding: theme.spacing(1),
+    backgroundColor: theme.palette.type === 'dark'
+      ? 'rgba(255, 255, 255, 0.05)'
+      : 'rgba(0, 0, 0, 0.04)',
+    border: `1px solid ${theme.palette.divider}`,
+  },
+  curriculumCard: {
+    padding: theme.spacing(3),
+    borderRadius: '16px',
+    backgroundColor: theme.palette.type === 'dark'
+      ? 'rgba(0, 0, 0, 0.25)'
+      : 'rgba(255, 255, 255, 0.08)',
+    boxShadow: theme.palette.type === 'dark'
+      ? '0 8px 32px rgba(0, 0, 0, 0.65)'
+      : '0 8px 32px rgba(0, 0, 0, 0.12)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    minHeight: '340px',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    '&:hover': {
+      transform: 'translateY(-6px)',
+      boxShadow: theme.palette.type === 'dark'
+        ? '0 12px 36px rgba(0, 0, 0, 0.75)'
+        : '0 12px 40px rgba(0, 0, 0, 0.18)',
+    },
+  },
+  curriculumInfoRow: {
+    marginTop: theme.spacing(2),
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: theme.spacing(1.5),
+    fontSize: '0.9rem',
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
+    lineHeight: 1.5,
+  },
+  labList: {
+    marginTop: theme.spacing(3),
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.spacing(1.25),
+  },
+  labItem: {
+    padding: theme.spacing(1.25, 1.5),
+    borderRadius: '12px',
+    backgroundColor: theme.palette.type === 'dark'
+      ? 'rgba(255, 255, 255, 0.04)'
+      : 'rgba(0, 0, 0, 0.03)',
+    borderLeft: `4px solid ${theme.palette.primary.main}`,
+  },
+  labTitle: {
+    fontWeight: 600,
+    fontSize: '0.95rem',
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
+  },
+  labSummary: {
+    fontSize: '0.85rem',
+    opacity: 0.8,
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
   },
   dialogContent: {
     padding: theme.spacing(3),
@@ -231,9 +275,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 3),
   },
   dialogCourse: {
-    color: theme.palette.type === 'dark' 
-      ? theme.palette.primary.light 
-      : theme.palette.primary.main,
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
     fontSize: '0.9rem',
     marginTop: theme.spacing(0.5),
   },
@@ -241,18 +283,19 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'pre-wrap',
     lineHeight: 1.8,
     fontSize: '0.95rem',
+    color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
     '& strong': {
-      color: theme.palette.primary.main,
+      color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
       fontWeight: 600,
     },
     '& h1, & h2, & h3': {
-      color: theme.palette.primary.main,
+      color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(1),
     },
     '& h1': {
       fontSize: '2rem',
-      borderBottom: `2px solid ${theme.palette.primary.main}`,
+      borderBottom: theme.palette.type === 'dark' ? '2px solid #FFFFFF' : '2px solid #000000',
       paddingBottom: theme.spacing(1),
     },
     '& h2': {
@@ -267,7 +310,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1.1rem',
       marginTop: theme.spacing(1.5),
       marginBottom: theme.spacing(0.5),
-      color: theme.palette.text.primary,
+      color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
     },
     '& ul, & ol': {
       paddingLeft: theme.spacing(3),
@@ -298,11 +341,11 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     '& blockquote': {
-      borderLeft: `4px solid ${theme.palette.primary.main}`,
+      borderLeft: theme.palette.type === 'dark' ? '4px solid #FFFFFF' : '4px solid #000000',
       paddingLeft: theme.spacing(2),
       marginLeft: 0,
       fontStyle: 'italic',
-      color: theme.palette.text.secondary,
+      color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
     },
     '& hr': {
       border: 'none',
@@ -325,7 +368,7 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: 600,
     },
     '& a': {
-      color: theme.palette.primary.main,
+      color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
       textDecoration: 'none',
       '&:hover': {
         textDecoration: 'underline',
@@ -360,111 +403,259 @@ function ScrollTop({ children }) {
 export const SinglePageHome = () => {
   const classes = useStyles();
   const theme = useTheme();
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeTab, setActiveTab] = useState('home');
   const [selectedProject, setSelectedProject] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedManual, setSelectedManual] = useState(null);
   const [openManualDialog, setOpenManualDialog] = useState(false);
   const [manualContent, setManualContent] = useState('');
   const [loadingManual, setLoadingManual] = useState(false);
-  
-  // Section refs for intersection observer
-  const homeRef = useRef(null);
-  const projectsRef = useRef(null);
-  const aboutRef = useRef(null);
-  const blogRef = useRef(null);
-  const labsRef = useRef(null);
-  const curriculumRef = useRef(null);
-  const contactRef = useRef(null);
+  const [activeLevel, setActiveLevel] = useState('level1');
+  const [expandedCourses, setExpandedCourses] = useState({});
 
-  const sections = [
-    { id: 'home', label: 'Home', ref: homeRef },
-    { id: 'curriculum', label: 'Curriculum', ref: curriculumRef },
-    { id: 'labs', label: 'Labs', ref: labsRef },
-    { id: 'projects', label: 'Projects', ref: projectsRef },
-    { id: 'blog', label: 'Blog', ref: blogRef },
-    { id: 'about', label: 'About', ref: aboutRef },
-    { id: 'contact', label: 'Contact', ref: contactRef },
-  ];
-
-  // Intersection observer to track active section
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-50% 0px -50% 0px',
-      threshold: 0,
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    sections.forEach(({ ref }) => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
-
-    return () => {
-      sections.forEach(({ ref }) => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      });
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleLevelChange = (event, newValue) => {
+    if (newValue) {
+      setActiveLevel(newValue);
     }
   };
 
-  // Get recent blog posts
-  const recentBlogPosts = blogData.posts
-    .filter(post => !post.comingSoon)
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+  const toggleCourseExpansion = (courseCode) => {
+    setExpandedCourses(prev => ({
+      ...prev,
+      [courseCode]: !prev[courseCode]
+    }));
+  };
+
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
 
   // Projects data
   const projects = [
     {
-      title: "Small Office Network Blueprint",
-      course: "CST8182 - Networking Fundamentals",
-      technologies: ["Network Design", "IP Addressing", "Security Policies", "Cisco Packet Tracer"],
-      description: "Design a complete small office network from the ground up. This project encompasses topology design, IP addressing with VLSM, security policies, hardware specifications, and detailed cost analysis.",
-      details: `Design and document a complete small office network infrastructure including physical and logical topology diagrams with VLAN segmentation, IPv4 addressing scheme using VLSM for departmental subnets, comprehensive security policies (firewall rules, DMZ, VPN, wireless security), detailed hardware/software specifications (routers, switches, servers, workstations, access points), step-by-step implementation guide with configuration templates, full cost analysis including 3-year TCO and ROI, and professional presentation materials with executive summary and technical documentation for stakeholder approval.`
+      title: "TERMGAME",
+      course: "Terminal Training Platform",
+      technologies: ["Python", "Docker", "Cisco IOS", "PowerShell", "Linux"],
+      description: "A terminal-based training platform for mastering Linux, Cisco IOS, and PowerShell through interactive missions with progressive difficulty and XP tracking.",
+      details: `Built an interactive terminal-based training platform with progressive difficulty missions across Linux, Cisco IOS, and PowerShell environments. Developed 66+ PowerShell missions covering Windows Server administration from fundamentals to Azure cloud integration. Implemented Docker containerized environments (Windows Server Core, Linux) for safe hands-on practice without risking real systems. Created a mission validation system with XP progression tracking and scenario-based assessments. Features structured learning paths from beginner to advanced levels, real-time command validation, and comprehensive feedback on each mission attempt.`
+    },
+    {
+      title: "Linux Automation Suite",
+      course: "Bash Automation Scripts",
+      technologies: ["Bash", "Cron", "Linux", "GPG", "System Administration"],
+      description: "A comprehensive Bash automation suite for Linux system administration featuring automated backups, intelligent log analysis, and cron job management.",
+      details: `Developed an automated backup system with full/incremental/differential modes, tar/gzip compression, and GPG encryption for secure data protection. Built an intelligent log analysis tool with pattern detection, security event identification, and customizable alerting via email notifications. Created a cron job manager with template-based scheduling, execution monitoring, and comprehensive error handling with retry logic. All modules feature POSIX-compliant code, minimal dependencies, and production-ready logging for enterprise environments.`
     },
     {
       title: "Windows Admin Toolkit",
-      course: "CST8202 - Windows Desktop Support",
-      technologies: ["PowerShell", "Automation", "Windows", "Active Directory", "BitLocker"],
-      description: "Develop a PowerShell automation toolkit for Windows administrators. Includes modules for user account management, automated backup systems, and BitLocker encryption tools with comprehensive documentation and error handling.",
-      details: `Develop a professional-grade PowerShell toolkit with three core modules: User Management (bulk account creation/modification/deletion, password policy enforcement, group membership, MFA setup, compliance reporting), Backup Automation (scheduled backups with differential/incremental support, compression, cloud integration, VSS support, database backups, encryption, automated rotation and retention policies), and Encryption Tools (BitLocker automation, recovery key management, EFS automation, AES-256 encryption, TPM integration, secure file deletion). Includes comprehensive documentation, GitHub repository with version control best practices, detailed user and administrator guides, and demonstrates PowerShell scripting expertise with real-world enterprise IT automation solutions.`
+      course: "PowerShell Automation Suite",
+      technologies: ["PowerShell", "Active Directory", "BitLocker", "AES-256", "Windows Server"],
+      description: "A PowerShell automation suite for Windows system administration, streamlining Active Directory management, backup operations, and disk encryption workflows.",
+      details: `Developed a user management module for bulk AD account creation, password policy enforcement, group membership management, and automated onboarding/offboarding processes. Built an automated backup system with full/incremental/differential modes, AES-256 encryption, compression, and cloud storage integration for enterprise environments. Implemented BitLocker automation tools with recovery key management, TPM integration, and compliance reporting for organizational security policies. Designed modular architecture with comprehensive error handling, logging, and configuration management for maintainable enterprise-grade scripts.`
     },
     {
-      title: "Automation Suite",
-      course: "CST8207 - GNU/Linux System Support",
-      technologies: ["Bash", "Automation", "Linux", "Cron", "System Administration"],
-      description: "Create a comprehensive Bash automation suite for Linux systems. Features automated backups with rotation policies, intelligent log analysis with alerting, and cron job management with monitoring and error handling.",
-      details: `Create a comprehensive Bash-based automation suite with three core modules: Backup Module (automated full/incremental/differential backups with tar/gzip compression, local and remote destinations via rsync/scp, retention policies, GPG encryption, LVM snapshots, database backup support, and verification/restoration scripts), System Logs Module (automated rotation and compression, intelligent pattern detection, security event identification, customizable alerting via email/Slack/Teams, and statistical analysis with daily/weekly/monthly reports), and Cron Job Manager (template-based job creation, execution monitoring, resource usage tracking, comprehensive error handling with retry logic, heartbeat monitoring, and detailed reporting with success/failure statistics). Includes complete documentation, POSIX-compliant code, minimal dependencies, and demonstrates advanced Bash scripting with production-ready error handling and logging.`
-    },
-    {
-      title: "Linux Process Tracker",
-      course: "CST8207 - GNU/Linux System Support",
-      technologies: ["Bash", "System Monitoring", "Performance Analysis", "Linux"],
-      description: "Build a real-time system monitoring dashboard for Linux. Tracks CPU, memory, disk I/O, and network performance with process-level details, performance analysis, and configurable alerting for resource thresholds.",
-      details: `Develop a comprehensive system monitoring tool that provides real-time insights through an auto-refreshing dashboard displaying CPU usage per core, memory utilization (RAM/swap/cache), disk I/O statistics, network traffic, and system load averages. Features detailed process monitoring with PID, user, resource consumption, thread counts, open file descriptors, and process tree visualization. Includes performance analysis for bottleneck identification, memory leak detection, top resource consumers, and anomaly detection. Implements configurable threshold-based alerting for CPU, memory, disk space, and service failures with email and log notifications. Efficiently reads from /proc filesystem with minimal system overhead, provides color-coded terminal output with sortable columns, exports data to CSV/JSON, generates daily/weekly/monthly reports, and demonstrates advanced Bash scripting with POSIX compliance and modular design.`
+      title: "Cyber Portfolio",
+      course: "Personal Portfolio Website",
+      technologies: ["React", "Material-UI", "JavaScript", "GitHub Pages", "HTML/CSS"],
+      description: "A React-based portfolio website showcasing projects, curriculum progress, and an interactive resume with animated UI elements and dark mode support.",
+      details: `Built a single-page React application with Material-UI components featuring tabbed navigation across Home, Curriculum, Projects, About, and Contact sections. Implemented an interactive resume with timeline-based experience display, downloadable PDF, and animated text effects. Created a curriculum tracker with expandable weekly topic views for all enrolled courses across multiple semesters. Features a custom animated background with displacement sphere, dark/light theme toggle, social media integration, and responsive design for all screen sizes. Deployed on GitHub Pages with continuous integration.`
     }
   ];
+
+  // Course data for Level 1
+  const level1Courses = [
+    {
+      code: 'CST8202',
+      title: 'Windows Desktop Support',
+      description: 'Windows operating system configuration, troubleshooting, and desktop support.',
+      color: '#1976D2',
+      darkColor: '#64B5F6',
+      tools: 'VMware, PowerShell, Windows 10/11',
+      focus: 'Windows administration, automation, security',
+      labs: [
+        { week: 1, title: 'VM Setup & File Organization', skills: 'VMware configuration, system snapshots' },
+        { week: 2, title: 'Windows Installation', skills: 'OS deployment, user accounts, partitioning' },
+        { week: 3, title: 'File Systems & Backup', skills: 'NTFS permissions, File History recovery' },
+        { week: 4, title: 'PowerShell Basics', skills: 'Cmdlets (Get-Service, Stop-Process)' },
+        { week: 5, title: 'Local User & Group Policy', skills: 'Custom GPOs, security restrictions' },
+        { week: 6, title: 'Midterm Review & System Imaging', skills: 'Recovery media, backup images' },
+        { week: 7, title: 'Windows Security Tools', skills: 'BitLocker, Windows Defender' },
+        { week: 8, title: 'Software Deployment', skills: 'PowerShell deployment, Group Policy' },
+        { week: 9, title: 'Remote Desktop & Networking', skills: 'RDP configuration, Firewall rules' },
+        { week: '10-14', title: 'Enterprise Support Simulation', skills: 'Incident tickets, root-cause analysis', capstone: true }
+      ]
+    },
+    {
+      code: 'CST8207',
+      title: 'GNU/Linux System Support',
+      description: 'Linux system administration, command line, scripting, and system management.',
+      color: '#388E3C',
+      darkColor: '#81C784',
+      tools: 'Linux terminal, Bash shell, CLI tools',
+      focus: 'Linux administration, shell scripting, automation',
+      labs: [
+        { week: 1, title: 'Command Line Orientation', concepts: 'man, ls, grep, navigation' },
+        { week: 2, title: 'File Permissions', concepts: 'chmod, chown, umask' },
+        { week: 3, title: 'Redirection and Pipes', concepts: 'grep, sort, uniq, piping' },
+        { week: 4, title: 'User & Group Management', concepts: 'User/group creation, privileges' },
+        { week: 5, title: 'Shell Variables & .bashrc', concepts: 'Variables, aliases, profile customization' },
+        { week: 6, title: 'Midterm Review & File System Deep Dive', concepts: '/proc, /dev, mount points' },
+        { week: 7, title: 'Cron & Process Scheduling', concepts: 'Job scheduling, CPU monitoring' },
+        { week: 8, title: 'Shell Scripting Basics', concepts: 'Loops, conditionals, functions' },
+        { week: 9, title: 'Regular Expressions & Text Parsing', concepts: 'awk, sed, regex, log analysis' },
+        { week: '10-14', title: 'Linux Service Suite', concepts: 'Backup, monitoring, logging tool', capstone: true }
+      ]
+    },
+    {
+      code: 'CST8182',
+      title: 'Networking Fundamentals',
+      description: 'OSI Model, TCP/IP, routing, switching, and network protocols.',
+      color: '#2196F3',
+      darkColor: '#2196F3',
+      tools: 'Cisco Packet Tracer, Wireshark',
+      focus: 'Network design, IP addressing, routing, security',
+      labs: [
+        { week: 1, title: 'Network Topology Exploration', focus: 'Bus, star, ring, mesh, hybrid topologies' },
+        { week: 2, title: 'OSI vs TCP/IP Deep Dive', focus: 'Protocol stack analysis, packet flow' },
+        { week: 3, title: 'Subnetting Scenarios', focus: 'Subnet mapping, IP ranges, masks' },
+        { week: 4, title: 'Router Configuration', focus: 'Routing tables, VLANs, gateways' },
+        { week: 5, title: 'DHCP & DNS Setup', focus: 'Dynamic allocation, DNS resolution' },
+        { week: 6, title: 'Network Security Basics', focus: 'ACLs, traffic control' },
+        { week: 7, title: 'Midterm Review & Topology Optimization', focus: 'Network redesign, performance tuning' },
+        { week: 8, title: 'Packet Flow Analysis', focus: 'Wireshark protocol troubleshooting' },
+        { week: 9, title: 'IPv6 Integration', focus: 'IPv4 to IPv6 dual-stack transition' },
+        { week: '10-14', title: 'LAN-WAN Design Project', focus: 'Multi-site network capstone', capstone: true }
+      ]
+    }
+  ];
+
+  const level2Courses = [
+    {
+      code: 'CST8200',
+      title: 'Windows Domain Administration',
+      description: 'Build and operate Active Directory domains, group policies, and identity/security services on modern Windows Server platforms.',
+      color: '#0D47A1',
+      darkColor: '#90CAF9',
+      tools: 'Windows Server, Active Directory, VMware, RSAT, Group Policy',
+      focus: 'Domain controllers, DNS/DHCP, GPO, IIS, WSUS',
+      labs: [
+        { week: 1, title: 'Preparing the Lab Environment', skills: 'VMware, Windows Server installation' },
+        { week: 2, title: 'Active Directory & Domain Controllers', skills: 'AD installation, joining computers to domains' },
+        { week: 3, title: 'Organizational Units', skills: 'Domain controllers, OU management' },
+        { week: 4, title: 'DNS & Working with OUs', skills: 'Domain operations, SID, DNS configuration' },
+        { week: 5, title: 'RDP, RSAT, Server Manager & File Shares', skills: 'Remote Desktop, file sharing, DFS' },
+        { week: 6, title: 'Group Policy Objects', skills: 'GPO creation, RSOP, midterm review' },
+        { week: 7, title: 'Midterm Test & GPO Lab', skills: 'Assessment, GPO implementation' },
+        { week: 9, title: 'Logging & Windows Containers', skills: 'Event logs, container basics, firewall' },
+        { week: 10, title: 'IIS, NTP & WSUS', skills: 'Web services, time sync, update management' },
+        { week: 11, title: 'DHCP, WDS & PXE', skills: 'Dynamic IP, deployment services, network boot' },
+        { week: 12, title: 'Advanced DNS & Domain Migration', skills: 'DNS records, domain migration strategies' },
+        { week: 13, title: 'Azure AD & Catch Up', skills: 'Cloud directory services, lab catch-up' },
+        { week: 14, title: 'Final Exam Review', skills: 'Comprehensive review', capstone: true }
+      ]
+    },
+    {
+      code: 'CST8208',
+      title: 'PC System Technology',
+      description: 'Deep dive into modern hardware, firmware, and peripheral standards to troubleshoot and optimize mixed-device PC fleets.',
+      color: '#F06292',
+      darkColor: '#F8BBD0',
+      tools: 'Hardware diagnostics, BIOS/UEFI, Imaging tools, Power supply tester',
+      focus: 'Hardware assembly, RAID, troubleshooting',
+      labs: [
+        { week: 1, title: 'Course Introduction', skills: 'Motherboards, chipsets, AC Day 1' },
+        { week: 2, title: 'Component Identification', skills: 'Hard drives, SSDs, component ID' },
+        { week: 3, title: 'Basic System Build', skills: 'RAID, laptop hardware' },
+        { week: 4, title: 'Advanced System Build', skills: 'Memory, cooling, overclocking' },
+        { week: 5, title: 'Laptop Disassembly/Reassembly', skills: 'Power supplies, power protection' },
+        { week: 6, title: 'RAID Configuration', skills: 'Midterm review, RAID setup' },
+        { week: 7, title: 'Term Test & Catch Up Lab', skills: 'Assessment, lab catch-up' },
+        { week: 9, title: 'SFF & Ethernet Cables', skills: 'Printers, processors, POST, boot process' },
+        { week: 10, title: 'UPS and Firmware Flash', skills: 'Display units, optical storage' },
+        { week: 11, title: 'System Imaging', skills: 'Internal/external expansion, sound cards' },
+        { week: 12, title: 'Troubleshooting & PS Tester', skills: 'E-waste, server hardware, diagnostics' },
+        { week: 13, title: 'Final Exam Review & Catch Up', skills: 'Review, lab catch-up' },
+        { week: 14, title: 'Final Exam Review Quiz', skills: 'Comprehensive review', capstone: true }
+      ]
+    },
+    {
+      code: 'CST8305',
+      title: 'GNU/Linux Server Administration',
+      description: 'Manage server life cycle, automation, and security for Debian/Ubuntu and Red Hat systems in enterprise datacenters.',
+      color: '#43A047',
+      darkColor: '#A5D6A7',
+      tools: 'Red Hat Enterprise Linux, Podman, SELinux, OpenShift',
+      focus: 'Server administration, containerization, security',
+      labs: [
+        { week: 1, title: 'User and Group Management', skills: 'RH124 Ch.6-7: Users, groups, permissions' },
+        { week: 2, title: 'Process Management and Logging', skills: 'RH124 Ch.8-9: Processes, systemd, logs' },
+        { week: 3, title: 'Networking and Package Management', skills: 'RH124 Ch.11-12: Network config, DNF/YUM' },
+        { week: 4, title: 'Scheduling and Storage', skills: 'RH124 Ch.13 & RH134 Ch.1: Cron, LVM, partitions' },
+        { week: 5, title: 'Midterm Review & Advanced Topics', skills: 'RH134 Ch.3-4: Review, automation' },
+        { week: 6, title: 'Midterm Exam & Podman Containers', skills: 'Assessment, PA1 demo (Podman)' },
+        { week: 7, title: 'SELinux and Performance Tuning', skills: 'RH134 Ch.5-6: Security contexts, tuning' },
+        { week: 9, title: 'Filesystems and Advanced Features', skills: 'RH134 Ch.7-8: XFS, Stratis, NFS' },
+        { week: 10, title: 'Booting and Firewalls', skills: 'RH134 Ch.10-13: GRUB, firewalld, PA2 demo' },
+        { week: 11, title: 'Introduction to Containers', skills: 'DO188 Ch.1-3: Podman, container basics' },
+        { week: 12, title: 'Container Images and Volumes', skills: 'DO188 Ch.4-5: Multi-container apps, PA3 demo' },
+        { week: 13, title: 'Compose, OpenShift and Kubernetes', skills: 'DO188 Ch.6-8: Orchestration platforms' },
+        { week: 14, title: 'OpenShift Server Deployment', skills: 'PA4 demo: Production deployment', capstone: true }
+      ]
+    },
+    {
+      code: 'CST8324',
+      title: 'Programming Fundamentals',
+      description: 'Introduction to programming concepts, logic, and problem-solving using a high-level programming language.',
+      color: '#7B1FA2',
+      darkColor: '#CE93D8',
+      tools: 'Python, Linux VM, VS Code, Git',
+      focus: 'Programming logic, data structures, file I/O',
+      labs: [
+        { week: 1, title: 'Environment Setup', skills: 'Linux VM, Python installation, development tools' },
+        { week: 2, title: 'Basic Python Expressions', skills: 'Variables, operators, data types' },
+        { week: 3, title: 'Flow Control: Decision & Iteration', skills: 'Conditionals, loops, style guide' },
+        { week: 4, title: 'Nested Flow Control & Version Control', skills: 'Nested loops, Git basics' },
+        { week: 5, title: 'Functions & Modules', skills: 'Decomposition, parameters, return values' },
+        { week: 6, title: 'Midterm Review & Advanced Functions', skills: 'Function design, code organization' },
+        { week: 7, title: 'Midterm Exam & VS Code Exploration', skills: 'Assessment, IDE proficiency' },
+        { week: 9, title: 'Collection Data Types', skills: 'Lists, dictionaries, data manipulation' },
+        { week: 10, title: 'File Operations & Exception Handling', skills: 'Read/write files, error handling' },
+        { week: 11, title: 'Data Formats: CSV & JSON', skills: 'File format conversion, data processing' },
+        { week: '12-14', title: 'Capstone Project', skills: 'Multi-phase project, demo presentation', capstone: true }
+      ]
+    },
+    {
+      code: 'CST8315',
+      title: 'Routing and Switching',
+      description: 'Enterprise routing and switching with VLANs, STP, EtherChannel, and LAN security in switched networks.',
+      color: '#1E88E5',
+      darkColor: '#90CAF9',
+      tools: 'Cisco IOS, Packet Tracer, Netacad',
+      focus: 'VLANs, STP, EtherChannel, LAN security, FHRP',
+      labs: [
+        { week: 1, title: 'Switch & Router Configuration Review', skills: 'Switch ports, SVIs, router interfaces, cabling' },
+        { week: 2, title: 'Routing Concepts & Static Routing', skills: 'Routing tables, static routes, default/floating routes' },
+        { week: 3, title: 'Troubleshoot Routes & DHCPv4', skills: 'Static route issues, switching concepts, DHCP config' },
+        { week: 4, title: 'VLANs & Trunking', skills: 'VLAN config, trunk ports, DTP, access ports' },
+        { week: 5, title: 'InterVLAN Routing', skills: 'ROAS, L3 switching, interVLAN troubleshooting' },
+        { week: 6, title: 'Spanning-Tree Protocol', skills: 'STP concepts, redundancy, Rapid-PVST+' },
+        { week: 7, title: 'Midterm Exam', skills: 'Assessment covering Weeks 1-6' },
+        { week: 9, title: 'SBA #1 & Advanced DHCP', skills: 'Skills-based assessment, DHCP relay, STP recap' },
+        { week: 10, title: 'EtherChannel', skills: 'EtherChannel technology and configuration' },
+        { week: 11, title: 'LAN Security & Switch Hardening', skills: 'Port security, DHCP snooping, DAI, 802.1X' },
+        { week: 12, title: 'FHRP Concepts', skills: 'First hop redundancy protocols' },
+        { week: 13, title: 'WLAN Concepts & Configuration', skills: 'Wireless standards, security, channel management' },
+        { week: 14, title: 'SBA #2 - Cumulative Assessment', skills: 'Full semester skills-based assessment', capstone: true }
+      ]
+    }
+  ];
+
+  const getCourseAccent = (course) => {
+    if (!course) return theme.palette.primary.main;
+    return theme.palette.type === 'dark'
+      ? (course.darkColor || course.color)
+      : course.color;
+  };
 
   // Lab Manuals data
   const labManuals = [
@@ -741,286 +932,284 @@ export const SinglePageHome = () => {
   };
 
   return (
-    <div className={classes.root}>
-      {/* Fixed Navigation Bar */}
+    <div className={classes.root} style={{ height: '100vh', overflow: 'hidden' }}>
+      <DisplacementSphere />
+      <LogoLink />
+      <ThemeToggle />
+      <Hidden smDown>
+        <SocialIcons />
+      </Hidden>
+      <Hidden mdUp>
+        <SpeedDials />
+      </Hidden>
+
+      {/* Tab Navigation */}
       <div className={classes.navbar}>
         <div className={classes.navContainer}>
-          <div className={classes.navLinks}>
-            {sections.filter(s => s.id !== 'home').map(({ id, label }) => (
-              <div
-                key={id}
-                className={`${classes.navButton} ${activeSection === id ? classes.activeNavButton : ''}`}
-                onClick={() => scrollToSection(id)}
-              >
-                {label}
-              </div>
-            ))}
-          </div>
+          <Tabs
+            value={activeTab}
+            onChange={handleTabChange}
+            variant="scrollable"
+            scrollButtons="auto"
+            aria-label="navigation tabs"
+            TabIndicatorProps={{
+              style: {
+                backgroundColor: theme.palette.primary.main,
+                height: '3px',
+              }
+            }}
+          >
+            <Tab value="home" label="Home" className={classes.navButton} />
+            <Tab value="curriculum" label="Curriculum" className={classes.navButton} />
+            <Tab value="projects" label="Projects" className={classes.navButton} />
+            <Tab value="about" label="About" className={classes.navButton} />
+            <Tab value="contact" label="Contact" className={classes.navButton} />
+          </Tabs>
         </div>
       </div>
 
-      {/* Home Section */}
-      <section id="home" ref={homeRef} className={classes.heroSection}>
-        <DisplacementSphere />
-        <LogoLink />
-        <Content />
-        {activeSection === 'home' && <Resume />}
-        <ThemeToggle />
-        <Hidden smDown>
-          <SocialIcons />
-        </Hidden>
-        <Hidden mdUp>
-          <SpeedDials />
-        </Hidden>
-      </section>
+      {/* Tab Content Container */}
+      <Box style={{ height: 'calc(100vh - 80px)', overflow: 'auto', marginTop: '80px' }}>
 
-      {/* Curriculum Section */}
-      <section
-        id="curriculum"
-        ref={curriculumRef}
-        className={classes.section}
-      >
+        {/* Home Tab */}
+        {activeTab === 'home' && (
+          <div className={classes.heroSection}>
+            <Content />
+            <Resume />
+          </div>
+        )}
+
+        {/* Curriculum Tab */}
+        {activeTab === 'curriculum' && (
+          <div className={classes.section}>
         <Container maxWidth="lg" className={classes.sectionContent}>
           <Typography variant="h2" className={classes.sectionTitle}>
-            Learning Curriculum - Level 1
+            Curriculum & Labs
           </Typography>
-          <Typography variant="body1" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            Computer Systems Technician Level 1 courses covering essential IT and cybersecurity fundamentals.
+          <Typography
+            variant="body1"
+            style={{
+              textAlign: 'center',
+              marginBottom: '2.5rem',
+              maxWidth: '800px',
+              margin: '0 auto 2.5rem',
+              fontSize: '1.05rem',
+              lineHeight: 1.7,
+              opacity: 0.9
+            }}
+          >
+            Building enterprise-ready skills through hands-on labs in Windows, Linux, and Network administration
           </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box className={classes.projectCard}>
-                <Typography variant="h5" className={classes.projectTitle}>
-                  CST8202 – Windows Desktop Support
-                </Typography>
-                <Typography variant="body2" className={classes.projectDescription}>
-                  Windows operating system configuration, troubleshooting, and desktop support.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box className={classes.projectCard}>
-                <Typography variant="h5" className={classes.projectTitle}>
-                  CST8207 – GNU/Linux System Support
-                </Typography>
-                <Typography variant="body2" className={classes.projectDescription}>
-                  Linux system administration, command line, scripting, and system management.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box className={classes.projectCard}>
-                <Typography variant="h5" className={classes.projectTitle}>
-                  CST8182 – Networking Fundamentals
-                </Typography>
-                <Typography variant="body2" className={classes.projectDescription}>
-                  OSI Model, TCP/IP, routing, switching, and network protocols.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box className={classes.projectCard}>
-                <Typography variant="h5" className={classes.projectTitle}>
-                  CST8300 – Achieving Success
-                </Typography>
-                <Typography variant="body2" className={classes.projectDescription}>
-                  Professional skills, teamwork, and career development strategies.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box className={classes.projectCard}>
-                <Typography variant="h5" className={classes.projectTitle}>
-                  ENL1813 – Communications
-                </Typography>
-                <Typography variant="body2" className={classes.projectDescription}>
-                  Technical writing, presentations, and professional communication skills.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box className={classes.projectCard}>
-                <Typography variant="h5" className={classes.projectTitle}>
-                  MAT8002 – Numeracy & Logic
-                </Typography>
-                <Typography variant="body2" className={classes.projectDescription}>
-                  Mathematical reasoning, problem-solving, and logical thinking skills.
-                </Typography>
-              </Box>
-            </Grid>
-          </Grid>
+
+          <Box
+            style={{
+              marginBottom: '3rem',
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            <Tabs
+              value={activeLevel}
+              onChange={handleLevelChange}
+              indicatorColor="primary"
+              textColor="primary"
+              variant="standard"
+              aria-label="Choose curriculum level"
+              TabIndicatorProps={{
+                style: {
+                  height: '3px',
+                  borderRadius: '3px 3px 0 0',
+                }
+              }}
+              style={{
+                backgroundColor: theme.palette.type === 'dark'
+                  ? 'rgba(0, 0, 0, 0.2)'
+                  : 'rgba(255, 255, 255, 0.05)',
+                borderRadius: '12px',
+                padding: '8px',
+                minHeight: '56px',
+              }}
+            >
+              <Tab
+                value="level1"
+                label="Level 1 — Foundations"
+                style={{
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  textTransform: 'none',
+                  minHeight: '48px',
+                  minWidth: '200px',
+                }}
+              />
+              <Tab
+                value="level2"
+                label="Level 2 — Specializations"
+                style={{
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  textTransform: 'none',
+                  minHeight: '48px',
+                  minWidth: '200px',
+                }}
+              />
+            </Tabs>
+          </Box>
+
+          {activeLevel === 'level1' && (
+            <>
+              <Typography variant="body1" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                Level 1 covers the core courses required for day-to-day endpoint, server, and network support. Each technical course includes labs plus a capstone simulation or professional context.
+              </Typography>
+
+              <Grid container spacing={3}>
+                {level1Courses.map((course) => {
+                  const accent = getCourseAccent(course);
+                  const hasDetails = course.tools || course.focus;
+                  return (
+                    <Grid item xs={12} md={6} key={course.code}>
+                      <Box
+                        className={classes.curriculumCard}
+                        style={{ borderLeft: `4px solid ${accent}` }}
+                      >
+                        <div>
+                          <Typography variant="h5" className={classes.projectTitle}>
+                            {course.code} – {course.title}
+                          </Typography>
+                          {hasDetails && (
+                            <Box className={classes.curriculumInfoRow} style={{ justifyContent: 'flex-start' }}>
+                              {course.tools && <span><strong>Tools:</strong> {course.tools}</span>}
+                              {course.focus && <span><strong>Focus:</strong> {course.focus}</span>}
+                            </Box>
+                          )}
+                          {course.labs && course.labs.length > 0 && (
+                            <Button
+                              onClick={() => toggleCourseExpansion(course.code)}
+                              endIcon={expandedCourses[course.code] ? <ExpandLess /> : <ExpandMore />}
+                              style={{
+                                marginTop: theme.spacing(1),
+                                textTransform: 'none',
+                                color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
+                              }}
+                            >
+                              {expandedCourses[course.code] ? 'Hide Weekly Topics' : 'Show Weekly Topics'}
+                            </Button>
+                          )}
+                        </div>
+                        {course.labs && course.labs.length > 0 && expandedCourses[course.code] && (
+                          <Box className={classes.labList}>
+                            {course.labs.map((lab, index) => {
+                              const labDescription = lab.focus || lab.skills || lab.concepts || lab.summary || 'Hands-on lab work';
+                              return (
+                                <Box
+                                  key={index}
+                                  className={classes.labItem}
+                                  style={{
+                                    borderLeftColor: lab.capstone
+                                      ? (theme.palette.type === 'dark' ? '#FFFFFF' : '#000000')
+                                      : accent,
+                                  }}
+                                >
+                                  <Typography className={classes.labTitle}>
+                                    {lab.week ? `Week ${lab.week}: ` : ''}{lab.title}
+                                    {lab.capstone && (
+                                      <span
+                                        style={{
+                                          marginLeft: '8px',
+                                          color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
+                                          fontSize: '0.8rem',
+                                        }}
+                                      >
+                                        ★ Capstone
+                                      </span>
+                                    )}
+                                  </Typography>
+                                </Box>
+                              );
+                            })}
+                          </Box>
+                        )}
+                      </Box>
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </>
+          )}
+
+          {activeLevel === 'level2' && (
+            <>
+              <Typography variant="body1" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                Level 2 brings advanced lab stacks for specialization tracks in security, cloud automation, and incident response. Each block includes orchestration, detection, and capstone simulations designed for enterprise readiness.
+              </Typography>
+              <Grid container spacing={3}>
+                {level2Courses.map((course) => {
+                  const accent = getCourseAccent(course);
+                  return (
+                    <Grid item xs={12} md={6} key={course.code}>
+                      <Box
+                        className={classes.curriculumCard}
+                        style={{ borderLeft: `4px solid ${accent}` }}
+                      >
+                        <div>
+                          <Typography variant="h5" className={classes.projectTitle}>
+                            {course.code} – {course.title}
+                          </Typography>
+                          <Box className={classes.curriculumInfoRow}>
+                            <span><strong>Tools:</strong> {course.tools}</span>
+                            <span><strong>Focus:</strong> {course.focus}</span>
+                          </Box>
+                          {course.labs && (
+                            <Button
+                              onClick={() => toggleCourseExpansion(course.code)}
+                              endIcon={expandedCourses[course.code] ? <ExpandLess /> : <ExpandMore />}
+                              style={{
+                                marginTop: theme.spacing(1),
+                                textTransform: 'none',
+                                color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
+                              }}
+                            >
+                              {expandedCourses[course.code] ? 'Hide Weekly Topics' : 'Show Weekly Topics'}
+                            </Button>
+                          )}
+                        </div>
+                        {course.labs && expandedCourses[course.code] && (
+                          <Box className={classes.labList}>
+                            {course.labs.map((lab, index) => (
+                              <Box
+                                key={index}
+                                className={classes.labItem}
+                                style={{
+                                  borderLeftColor: lab.capstone
+                                    ? (theme.palette.type === 'dark' ? '#FFFFFF' : '#000000')
+                                    : accent,
+                                }}
+                              >
+                                <Typography className={classes.labTitle}>
+                                  {lab.week ? `Week ${lab.week}: ` : ''}{lab.title}
+                                  {lab.capstone && (
+                                    <span style={{ marginLeft: '8px', color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000', fontSize: '0.8rem' }}>
+                                      ★ Capstone
+                                    </span>
+                                  )}
+                                </Typography>
+                              </Box>
+                            ))}
+                          </Box>
+                        )}
+                      </Box>
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </>
+          )}
         </Container>
-      </section>
+          </div>
+        )}
 
-      {/* Labs Section */}
-      <section id="labs" ref={labsRef} className={classes.section}>
-        <Container maxWidth="lg" className={classes.sectionContent}>
-          <Typography variant="h2" className={classes.sectionTitle}>
-            Labs & Tutorials
-          </Typography>
-          <Typography variant="body1" style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
-            Hands-on technical labs covering networking, Windows administration, and Linux system support. Each course includes 9 weekly labs plus a comprehensive capstone project.
-          </Typography>
-          
-          <Grid container spacing={4}>
-            {/* CST8182: Networking Fundamentals */}
-            <Grid item xs={12}>
-              <Box className={classes.projectCard} style={{ borderLeft: `4px solid #2196F3` }}>
-                <Typography variant="h4" style={{ color: '#2196F3', fontWeight: 700, marginBottom: '8px' }}>
-                  CST8182: Networking Fundamentals
-                </Typography>
-                <Typography variant="body1" style={{ marginBottom: '16px', fontStyle: 'italic', opacity: 0.9 }}>
-                  <strong>Primary Tools:</strong> Cisco Packet Tracer, Wireshark | <strong>Focus:</strong> Network design, IP addressing, routing, security
-                </Typography>
-                <Grid container spacing={2} style={{ marginTop: '16px' }}>
-                  {[
-                    { week: 1, title: 'Network Topology Exploration', focus: 'Bus, star, ring, mesh, hybrid topologies' },
-                    { week: 2, title: 'OSI vs TCP/IP Deep Dive', focus: 'Protocol stack analysis, packet flow' },
-                    { week: 3, title: 'Subnetting Scenarios', focus: 'Subnet mapping, IP ranges, masks' },
-                    { week: 4, title: 'Router Configuration', focus: 'Routing tables, VLANs, gateways' },
-                    { week: 5, title: 'DHCP & DNS Setup', focus: 'Dynamic allocation, DNS resolution' },
-                    { week: 6, title: 'Network Security Basics', focus: 'ACLs, traffic control' },
-                    { week: 7, title: 'Midterm Review & Topology Optimization', focus: 'Network redesign, performance tuning' },
-                    { week: 8, title: 'Packet Flow Analysis', focus: 'Wireshark protocol troubleshooting' },
-                    { week: 9, title: 'IPv6 Integration', focus: 'IPv4 to IPv6 dual-stack transition' },
-                    { week: '10-14', title: 'LAN-WAN Design Project', focus: 'Multi-site network capstone', capstone: true }
-                  ].map((lab, index) => (
-                    <Grid item xs={12} md={6} key={index}>
-                      <Box style={{ 
-                        padding: '12px 16px', 
-                        backgroundColor: theme.palette.type === 'dark' ? 'rgba(33, 150, 243, 0.1)' : 'rgba(33, 150, 243, 0.05)',
-                        borderRadius: '8px',
-                        borderLeft: lab.capstone ? '3px solid #FF9800' : '3px solid #2196F3'
-                      }}>
-                        <Typography variant="body2" style={{ fontWeight: 700, color: '#2196F3', marginBottom: '4px' }}>
-                          Week {lab.week}: {lab.title}
-                          {lab.capstone && <span style={{ marginLeft: '8px', color: '#FF9800', fontSize: '0.75rem' }}>★ CAPSTONE</span>}
-                        </Typography>
-                        <Typography variant="body2" style={{ fontSize: '0.9rem', opacity: 0.85 }}>
-                          {lab.focus}
-                        </Typography>
-                      </Box>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Box>
-            </Grid>
-
-            {/* CST8202: Windows Desktop Support */}
-            <Grid item xs={12}>
-              <Box className={classes.projectCard} style={{ 
-                borderLeft: `4px solid ${theme.palette.type === 'dark' ? '#64B5F6' : '#1976D2'}`
-              }}>
-                <Typography variant="h4" style={{ 
-                  color: theme.palette.type === 'dark' ? '#64B5F6' : '#1976D2', 
-                  fontWeight: 700, 
-                  marginBottom: '8px' 
-                }}>
-                  CST8202: Windows Desktop Support
-                </Typography>
-                <Typography variant="body1" style={{ marginBottom: '16px', fontStyle: 'italic', opacity: 0.9 }}>
-                  <strong>Primary Tools:</strong> VMware, PowerShell, Windows 10/11 | <strong>Focus:</strong> Windows administration, automation, security
-                </Typography>
-                <Grid container spacing={2} style={{ marginTop: '16px' }}>
-                  {[
-                    { week: 1, title: 'VM Setup & File Organization', skills: 'VMware configuration, system snapshots' },
-                    { week: 2, title: 'Windows Installation', skills: 'OS deployment, user accounts, partitioning' },
-                    { week: 3, title: 'File Systems & Backup', skills: 'NTFS permissions, File History recovery' },
-                    { week: 4, title: 'PowerShell Basics', skills: 'Cmdlets (Get-Service, Stop-Process)' },
-                    { week: 5, title: 'Local User & Group Policy', skills: 'Custom GPOs, security restrictions' },
-                    { week: 6, title: 'Midterm Review & System Imaging', skills: 'Recovery media, backup images' },
-                    { week: 7, title: 'Windows Security Tools', skills: 'BitLocker, Windows Defender' },
-                    { week: 8, title: 'Software Deployment', skills: 'PowerShell deployment, Group Policy' },
-                    { week: 9, title: 'Remote Desktop & Networking', skills: 'RDP configuration, Firewall rules' },
-                    { week: '10-14', title: 'Enterprise Support Simulation', skills: 'Incident tickets, root-cause analysis', capstone: true }
-                  ].map((lab, index) => (
-                    <Grid item xs={12} md={6} key={index}>
-                      <Box style={{ 
-                        padding: '12px 16px', 
-                        backgroundColor: theme.palette.type === 'dark' ? 'rgba(100, 181, 246, 0.1)' : 'rgba(25, 118, 210, 0.05)',
-                        borderRadius: '8px',
-                        borderLeft: lab.capstone ? `3px solid ${theme.palette.type === 'dark' ? '#FFB74D' : '#F57C00'}` : `3px solid ${theme.palette.type === 'dark' ? '#64B5F6' : '#1976D2'}`
-                      }}>
-                        <Typography variant="body2" style={{ 
-                          fontWeight: 700, 
-                          color: theme.palette.type === 'dark' ? '#64B5F6' : '#1976D2', 
-                          marginBottom: '4px' 
-                        }}>
-                          Week {lab.week}: {lab.title}
-                          {lab.capstone && <span style={{ marginLeft: '8px', color: theme.palette.type === 'dark' ? '#FFB74D' : '#F57C00', fontSize: '0.75rem' }}>★ CAPSTONE</span>}
-                        </Typography>
-                        <Typography variant="body2" style={{ fontSize: '0.9rem', opacity: 0.85 }}>
-                          {lab.skills}
-                        </Typography>
-                      </Box>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Box>
-            </Grid>
-
-            {/* CST8207: GNU/Linux System Support */}
-            <Grid item xs={12}>
-              <Box className={classes.projectCard} style={{ 
-                borderLeft: `4px solid ${theme.palette.type === 'dark' ? '#81C784' : '#388E3C'}`
-              }}>
-                <Typography variant="h4" style={{ 
-                  color: theme.palette.type === 'dark' ? '#81C784' : '#388E3C', 
-                  fontWeight: 700, 
-                  marginBottom: '8px' 
-                }}>
-                  CST8207: GNU/Linux System Support
-                </Typography>
-                <Typography variant="body1" style={{ marginBottom: '16px', fontStyle: 'italic', opacity: 0.9 }}>
-                  <strong>Primary Tools:</strong> Linux terminal, Bash shell, CLI tools | <strong>Focus:</strong> Linux administration, shell scripting, automation
-                </Typography>
-                <Grid container spacing={2} style={{ marginTop: '16px' }}>
-                  {[
-                    { week: 1, title: 'Command Line Orientation', concepts: 'man, ls, grep, navigation' },
-                    { week: 2, title: 'File Permissions', concepts: 'chmod, chown, umask' },
-                    { week: 3, title: 'Redirection and Pipes', concepts: 'grep, sort, uniq, piping' },
-                    { week: 4, title: 'User & Group Management', concepts: 'User/group creation, privileges' },
-                    { week: 5, title: 'Shell Variables & .bashrc', concepts: 'Variables, aliases, profile customization' },
-                    { week: 6, title: 'Midterm Review & File System Deep Dive', concepts: '/proc, /dev, mount points' },
-                    { week: 7, title: 'Cron & Process Scheduling', concepts: 'Job scheduling, CPU monitoring' },
-                    { week: 8, title: 'Shell Scripting Basics', concepts: 'Loops, conditionals, functions' },
-                    { week: 9, title: 'Regular Expressions & Text Parsing', concepts: 'awk, sed, regex, log analysis' },
-                    { week: '10-14', title: 'Linux Service Suite', concepts: 'Backup, monitoring, logging tool', capstone: true }
-                  ].map((lab, index) => (
-                    <Grid item xs={12} md={6} key={index}>
-                      <Box style={{ 
-                        padding: '12px 16px', 
-                        backgroundColor: theme.palette.type === 'dark' ? 'rgba(129, 199, 132, 0.1)' : 'rgba(56, 142, 60, 0.05)',
-                        borderRadius: '8px',
-                        borderLeft: lab.capstone ? `3px solid ${theme.palette.type === 'dark' ? '#FFB74D' : '#F57C00'}` : `3px solid ${theme.palette.type === 'dark' ? '#81C784' : '#388E3C'}`
-                      }}>
-                        <Typography variant="body2" style={{ 
-                          fontWeight: 700, 
-                          color: theme.palette.type === 'dark' ? '#81C784' : '#388E3C', 
-                          marginBottom: '4px' 
-                        }}>
-                          Week {lab.week}: {lab.title}
-                          {lab.capstone && <span style={{ marginLeft: '8px', color: theme.palette.type === 'dark' ? '#FFB74D' : '#F57C00', fontSize: '0.75rem' }}>★ CAPSTONE</span>}
-                        </Typography>
-                        <Typography variant="body2" style={{ fontSize: '0.9rem', opacity: 0.85 }}>
-                          {lab.concepts}
-                        </Typography>
-                      </Box>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
-      </section>
-
-      {/* Projects Section */}
-      <section 
-        id="projects" 
-        ref={projectsRef} 
-        className={classes.section}
-      >
+        {/* Projects Tab */}
+        {activeTab === 'projects' && (
+          <div className={classes.section}>
         <Container maxWidth="lg" className={classes.sectionContent}>
           <Typography variant="h2" className={classes.sectionTitle}>
             Projects
@@ -1032,12 +1221,12 @@ export const SinglePageHome = () => {
                   <Typography variant="h5" className={classes.projectTitle}>
                     {project.title}
                   </Typography>
-                  <Typography 
-                    variant="subtitle2" 
-                    style={{ 
-                      color: '#00bfbf', 
+                  <Typography
+                    variant="subtitle2"
+                    style={{
+                      color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
                       marginBottom: '12px',
-                      fontWeight: 600 
+                      fontWeight: 600
                     }}
                   >
                     {project.course}
@@ -1082,7 +1271,34 @@ export const SinglePageHome = () => {
             ))}
           </Grid>
         </Container>
-      </section>
+          </div>
+        )}
+
+
+        {/* About Tab */}
+        {activeTab === 'about' && (
+          <div className={classes.section}>
+            <Container maxWidth="lg" className={classes.sectionContent}>
+              <Typography variant="h2" className={classes.sectionTitle}>
+                About Me
+              </Typography>
+              <About minimalView={true} showAdditionalSections={false} showExperience={false} />
+            </Container>
+          </div>
+        )}
+
+        {/* Contact Tab */}
+        {activeTab === 'contact' && (
+          <div className={classes.section}>
+            <Container maxWidth="lg" className={classes.sectionContent}>
+              <Contact />
+            </Container>
+          </div>
+        )}
+
+      </Box>
+
+      {/* Dialogs - These exist outside of tabs */}
 
       {/* Project Details Dialog */}
       <Dialog 
@@ -1102,13 +1318,11 @@ export const SinglePageHome = () => {
               <Typography variant="h5" component="div">
                 {selectedProject?.title}
               </Typography>
-              <Typography 
-                variant="subtitle2" 
-                style={{ 
+              <Typography
+                variant="subtitle2"
+                style={{
                   marginTop: '4px',
-                  color: theme.palette.type === 'dark' 
-                    ? theme.palette.primary.light 
-                    : theme.palette.primary.main,
+                  color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
                 }}
               >
                 {selectedProject?.course}
@@ -1129,7 +1343,7 @@ export const SinglePageHome = () => {
             {selectedProject?.details}
           </Typography>
           <Box mt={3}>
-            <Typography variant="h6" gutterBottom style={{ color: '#00bfbf', fontWeight: 600 }}>
+            <Typography variant="h6" gutterBottom style={{ color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000', fontWeight: 600 }}>
               Technologies & Tools:
             </Typography>
             <Box display="flex" flexWrap="wrap" gap={1}>
@@ -1171,13 +1385,11 @@ export const SinglePageHome = () => {
               <Typography variant="h5" component="div">
                 {selectedManual?.title}
               </Typography>
-              <Typography 
-                variant="subtitle2" 
-                style={{ 
+              <Typography
+                variant="subtitle2"
+                style={{
                   marginTop: '4px',
-                  color: theme.palette.type === 'dark' 
-                    ? theme.palette.primary.light 
-                    : theme.palette.primary.main,
+                  color: theme.palette.type === 'dark' ? '#FFFFFF' : '#000000',
                 }}
               >
                 {selectedManual?.course}
@@ -1260,7 +1472,7 @@ export const SinglePageHome = () => {
                     size="large"
                     onClick={() => {
                       handleCloseManualDialog();
-                      scrollToSection('contact');
+                      setActiveTab('contact');
                     }}
                     style={{
                       textTransform: 'none',
@@ -1316,174 +1528,11 @@ export const SinglePageHome = () => {
         </DialogActions>
       </Dialog>
 
-      {/* Lab Manuals Section */}
-      <section 
-        id="lab-manuals" 
-        ref={(el) => { /* Add ref if needed for navigation */ }} 
-        className={classes.section}
-      >
-        <Container maxWidth="lg" className={classes.sectionContent}>
-          <Typography variant="h2" className={classes.sectionTitle}>
-            Lab Manuals & Documentation
-          </Typography>
-          <Typography variant="body1" style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '900px', margin: '0 auto 3rem' }}>
-            Comprehensive project manuals with step-by-step implementation guides, Cisco Packet Tracer integration, screenshot requirements, and complete documentation templates.
-          </Typography>
-          
-          <Grid container spacing={4}>
-            {labManuals.map((manual, index) => {
-              return (
-                <Grid item xs={12} md={6} key={index}>
-                  <Box 
-                    className={classes.projectCard} 
-                    style={{ 
-                      borderRadius: '16px',
-                      boxShadow: theme.palette.type === 'dark' 
-                        ? '0 4px 20px rgba(0, 0, 0, 0.5)' 
-                        : '0 4px 20px rgba(0, 0, 0, 0.1)',
-                    }}
-                  >
-                    <Typography variant="h4" style={{ fontWeight: 700, marginBottom: '8px', color: theme.palette.text.primary }}>
-                      {manual.title}
-                    </Typography>
-                    <Typography variant="subtitle1" style={{ marginBottom: '12px', fontWeight: 600, color: theme.palette.primary.main, opacity: 0.8 }}>
-                      {manual.course}
-                    </Typography>
-                    <Typography variant="body1" style={{ marginBottom: '16px', lineHeight: 1.6 }}>
-                      {manual.description}
-                    </Typography>
-                    <div className={classes.techTags}>
-                      {manual.technologies.map((tech, i) => (
-                        <span key={i} className={classes.techChip}>
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      size="medium"
-                      onClick={() => handleOpenManualDialog(manual)}
-                      style={{ 
-                        marginTop: '16px', 
-                        textTransform: 'none',
-                        fontWeight: 600,
-                        borderRadius: '8px',
-                      }}
-                    >
-                      View Manual
-                    </Button>
-                  </Box>
-                </Grid>
-              );
-            })}
-          </Grid>
-
-          {/* Documentation Overview */}
-          <Box mt={6} p={4} style={{ 
-            background: theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.02)',
-            borderRadius: '20px',
-            border: `1px solid ${theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-            boxShadow: theme.palette.type === 'dark' 
-              ? '0 4px 20px rgba(0, 0, 0, 0.3)' 
-              : '0 4px 20px rgba(0, 0, 0, 0.08)',
-          }}>
-            <Typography variant="h5" gutterBottom style={{ fontWeight: 600, color: theme.palette.text.primary }}>
-              What's Included in Each Manual
-            </Typography>
-            <Grid container spacing={3} style={{ marginTop: '16px' }}>
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" style={{ fontWeight: 600, marginBottom: '8px' }}>
-                  Implementation Guides
-                </Typography>
-                <Typography variant="body2">
-                  Week-by-week breakdown with detailed steps, complete code examples, and configuration templates
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" style={{ fontWeight: 600, marginBottom: '8px' }}>
-                  Screenshot Requirements
-                </Typography>
-                <Typography variant="body2">
-                  Specific capture points (25-28 screenshots per project) with best practices and naming conventions
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" style={{ fontWeight: 600, marginBottom: '8px' }}>
-                  Deliverables Checklist
-                </Typography>
-                <Typography variant="body2">
-                  Complete list of required files, documentation, testing procedures, and grading rubrics
-                </Typography>
-              </Grid>
-            </Grid>
-            <Box mt={3} textAlign="center">
-              <Button
-                variant="outlined"
-                size="large"
-                component="a"
-                href={`${process.env.PUBLIC_URL}/docs/README.md`}
-                download="lab-manuals-README.md"
-                style={{ 
-                  textTransform: 'none',
-                  fontWeight: 600,
-                  borderWidth: '1.5px',
-                  borderRadius: '12px',
-                  padding: '12px 32px',
-                }}
-              >
-                Download Complete Documentation Guide
-              </Button>
-            </Box>
-          </Box>
-        </Container>
-      </section>
-
-      {/* Blog Section */}
-      <section
-        id="blog"
-        ref={blogRef}
-        className={classes.section}
-      >
-        <Container maxWidth="lg" className={classes.sectionContent}>
-          <Typography variant="h2" className={classes.sectionTitle}>
-            Latest Blog Posts
-          </Typography>
-          <Grid container spacing={4} className={classes.blogGrid}>
-            {recentBlogPosts.map((post) => (
-              <Grid item xs={12} md={6} lg={4} key={post.id}>
-                <BlogPostCard post={post} />
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </section>
-
-      {/* About Section */}
-      <section id="about" ref={aboutRef} className={classes.section}>
-        <Container maxWidth="lg" className={classes.sectionContent}>
-          <Typography variant="h2" className={classes.sectionTitle}>
-            About Me
-          </Typography>
-          <About minimalView={true} showAdditionalSections={false} showExperience={false} />
-        </Container>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" ref={contactRef} className={classes.section}>
-        <Container maxWidth="lg" className={classes.sectionContent}>
-          <Typography variant="h2" className={classes.sectionTitle}>
-            Get In Touch
-          </Typography>
-          <Contact />
-        </Container>
-      </section>
-
       {/* Scroll to top button */}
       <ScrollTop>
-        <Fab 
-          color="primary" 
-          size="small" 
+        <Fab
+          color="primary"
+          size="small"
           aria-label="scroll back to top"
           className={classes.scrollTopButton}
         >
