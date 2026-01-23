@@ -8,7 +8,8 @@ import {
   Chip, 
   Button, 
   Box,
-  Avatar
+  Avatar,
+  Grid
 } from '@material-ui/core';
 import { ArrowBack } from '@material-ui/icons';
 import ReactMarkdown from 'react-markdown';
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: theme.palette.type === 'dark' ? '#050914' : '#f5f6fb',
     color: theme.palette.text.primary,
     position: 'relative',
   },
@@ -36,14 +37,40 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '3rem',
     position: 'relative',
     zIndex: 1,
+    padding: theme.spacing(0, 2),
   },
   hero: {
-    padding: theme.spacing(4),
-    background: `linear-gradient(90deg, #00bfbf 0%, #0077b6 100%)`,
-    color: '#fff',
-    borderRadius: theme.shape.borderRadius,
+    padding: theme.spacing(5),
+    borderRadius: theme.shape.borderRadius * 2,
     marginBottom: theme.spacing(4),
+    position: 'relative',
+    overflow: 'hidden',
+    background: `linear-gradient(135deg, ${theme.palette.primary.dark}, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
+    boxShadow: theme.shadows[8],
+    color: '#fff',
+  },
+  heroLayer: {
+    position: 'absolute',
+    inset: 0,
+    background: 'radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent 60%)',
+    opacity: 0.35,
+  },
+  heroContent: {
+    position: 'relative',
+    zIndex: 2,
     textAlign: 'center',
+  },
+  heroBadge: {
+    position: 'absolute',
+    top: theme.spacing(2),
+    right: theme.spacing(2),
+    borderRadius: '999px',
+    padding: theme.spacing(0.5, 2),
+    backgroundColor: 'rgba(255,255,255,0.15)',
+    border: `1px solid rgba(255,255,255,0.4)`,
+    fontWeight: 700,
+    letterSpacing: '0.08em',
+    fontSize: '0.8rem',
   },
   headerImage: {
     width: '100%',
@@ -60,22 +87,83 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(2, 0),
     display: 'flex',
     justifyContent: 'center',
-    gap: theme.spacing(2),
+    gap: theme.spacing(1.5),
     flexWrap: 'wrap',
     alignItems: 'center',
   },
   tag: {
     margin: theme.spacing(0.5),
-    background: theme.palette.type === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
-    color: theme.palette.text.primary,
+    background: 'rgba(255,255,255,0.18)',
+    color: '#fff',
     fontWeight: 600,
   },
-  content: {
+  heroStats: {
+    marginTop: theme.spacing(3),
+    display: 'flex',
+    justifyContent: 'center',
+    gap: theme.spacing(2),
+    flexWrap: 'wrap',
+  },
+  heroStat: {
+    minWidth: 140,
+    padding: theme.spacing(1.25, 2.5),
+    borderRadius: 999,
+    background: 'rgba(255,255,255,0.12)',
+    border: `1px solid rgba(255,255,255,0.3)`,
+    textAlign: 'center',
+  },
+  heroStatLabel: {
+    fontSize: '0.75rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.12em',
+    opacity: 0.8,
+  },
+  heroStatValue: {
+    fontSize: '1rem',
+    fontWeight: 700,
+    marginTop: theme.spacing(0.25),
+  },
+  phaseGrid: {
+    marginBottom: theme.spacing(4),
+  },
+  phaseCard: {
     padding: theme.spacing(3),
+    borderRadius: theme.shape.borderRadius * 1.2,
     background: theme.palette.background.paper,
-    borderRadius: theme.shape.borderRadius,
-    boxShadow: theme.shadows[1],
+    border: `1px solid ${theme.palette.divider}`,
+    boxShadow: theme.shadows[4],
+    minHeight: 220,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.spacing(1.5),
+  },
+  phaseDuration: {
+    fontSize: '0.85rem',
+    color: theme.palette.text.secondary,
+    letterSpacing: '0.08em',
+    textTransform: 'uppercase',
+  },
+  phaseTitle: {
+    fontWeight: 700,
     fontSize: '1.1rem',
+  },
+  phaseEssence: {
+    fontSize: '0.95rem',
+    color: theme.palette.text.secondary,
+  },
+  phaseBullet: {
+    fontSize: '0.9rem',
+    lineHeight: 1.6,
+  },
+  contentPanel: {
+    padding: theme.spacing(4),
+    borderRadius: theme.shape.borderRadius * 1.5,
+    background: theme.palette.type === 'dark' ? '#0b111f' : '#ffffff',
+    boxShadow: theme.shadows[4],
+    border: `1px solid ${theme.palette.divider}`,
+  },
+  markdownContent: {
+    fontSize: '1.05rem',
     lineHeight: 1.8,
     color: theme.palette.text.primary,
     '& h1, & h2, & h3': {
@@ -84,23 +172,22 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(1),
     },
     '& a': {
-      color: theme.palette.primary.main,
+      color: theme.palette.primary.light,
       textDecoration: 'none',
-      borderBottom: `1px dashed ${theme.palette.primary.main}55`,
+      borderBottom: `1px dashed ${theme.palette.primary.light}55`,
     },
     '& a:hover': {
       textDecoration: 'underline',
     },
     '& blockquote': {
-      borderLeft: `4px solid ${theme.palette.primary.main}`,
-      background: theme.palette.type === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)',
+      borderLeft: `4px solid ${theme.palette.secondary.main}`,
+      background: theme.palette.type === 'dark' ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.03)',
       padding: theme.spacing(1, 2),
       margin: theme.spacing(2, 0),
       fontStyle: 'italic',
     },
     '& pre': {
       background: theme.palette.type === 'dark' ? '#111' : '#f5f5f5',
-      color: theme.palette.text.primary,
       borderRadius: theme.shape.borderRadius,
       padding: theme.spacing(2),
       overflowX: 'auto',
@@ -112,6 +199,7 @@ const useStyles = makeStyles((theme) => ({
     },
     '& ul, & ol': {
       marginLeft: theme.spacing(3),
+      marginBottom: theme.spacing(2),
     },
     '& img': {
       maxWidth: '100%',
@@ -126,7 +214,7 @@ const useStyles = makeStyles((theme) => ({
       border: `1px solid ${theme.palette.divider}`,
     },
     '& th': {
-      backgroundColor: theme.palette.type === 'dark' 
+      backgroundColor: theme.palette.type === 'dark'
         ? 'rgba(255, 255, 255, 0.08)'
         : 'rgba(0, 0, 0, 0.08)',
       padding: theme.spacing(1.5),
@@ -141,12 +229,12 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.text.primary,
     },
     '& tr:nth-child(even)': {
-      backgroundColor: theme.palette.type === 'dark' 
+      backgroundColor: theme.palette.type === 'dark'
         ? 'rgba(255, 255, 255, 0.02)'
         : 'rgba(0, 0, 0, 0.02)',
     },
     '& tr:hover': {
-      backgroundColor: theme.palette.type === 'dark' 
+      backgroundColor: theme.palette.type === 'dark'
         ? 'rgba(255, 255, 255, 0.05)'
         : 'rgba(0, 0, 0, 0.05)',
     },
@@ -178,7 +266,8 @@ export const BlogPost = () => {
       'msi-thin-15-experience',
       'subnet-designer-project-start', 
       'haiti-security-missions',
-      'drone-zoe-platform'
+      'drone-zoe-platform',
+      'os-sentinel-initiative'
     ];
     
     return post && postsWithMarkdown.includes(post.slug) 
@@ -199,7 +288,11 @@ export const BlogPost = () => {
       'td',
       'th',
       'del',
-      'input'
+      'input',
+      'sup',
+      'sub',
+      'section',
+      'hr'
     ];
     schema.attributes = {
       ...(defaultSchema.attributes || {}),
@@ -245,7 +338,8 @@ export const BlogPost = () => {
       'msi-thin-15-experience': 'msi-thin-15-experience.md',
       'subnet-designer-project-start': 'subnet-designer-project-start.md', 
       'haiti-security-missions': 'blog_post_1.md',
-      'drone-zoe-platform': 'drone-zoe-platform.md'
+      'drone-zoe-platform': 'drone-zoe-platform.md',
+      'os-sentinel-initiative': 'os-sentinel-initiative.md'
     };
 
     const loadContent = async () => {
@@ -344,6 +438,14 @@ This article provides valuable insights into ${postWithFlags.category.toLowerCas
     );
   }
 
+  const heroStats = postWithFlags.heroStats || [
+    { label: 'Category', value: postWithFlags.category },
+    { label: 'Reading Time', value: `${postWithFlags.readingTime || 10} min read` },
+    { label: 'Published', value: new Date(postWithFlags.date).toLocaleDateString() }
+  ];
+  const phaseHighlights = postWithFlags.phaseHighlights || [];
+  const heroSummary = postWithFlags.summary || postWithFlags.description;
+
   return (
     <div className={classes.root}>
       <LogoLink />
@@ -358,41 +460,77 @@ This article provides valuable insights into ${postWithFlags.category.toLowerCas
       <div className={classes.contentWrapper}>
         <Container maxWidth="lg">
           <Paper className={classes.hero} elevation={3}>
-            <Typography variant="h3" component="h1" gutterBottom>
-              {postWithFlags.title}
-            </Typography>
-            <div className={classes.meta}>
-              <Avatar alt={postWithFlags.author} src="/assets/profile.JPG" />
-              <Typography variant="subtitle1">{postWithFlags.author}</Typography>
-              <Typography variant="subtitle2">{new Date(postWithFlags.date).toLocaleDateString()}</Typography>
-              {postWithFlags.tags && postWithFlags.tags.map((tag) => (
-                <Chip key={tag} label={tag} className={classes.tag} />
-              ))}
-            </div>
-            {postWithFlags.image && (
-              <Box style={{ textAlign: 'center', marginBottom: '16px' }}>
-                <img src={`${process.env.PUBLIC_URL}${postWithFlags.image}`} alt={postWithFlags.title} className={classes.headerImage} />
+            <div className={classes.heroLayer} />
+            <div className={classes.heroContent}>
+              <Typography variant="h3" component="h1" gutterBottom>
+                {postWithFlags.title}
+              </Typography>
+              <Typography variant="h6" gutterBottom>
+                {heroSummary}
+              </Typography>
+              <div className={classes.meta}>
+                <Avatar alt={postWithFlags.author} src="/assets/profile.JPG" />
+                <Typography variant="subtitle1">{postWithFlags.author}</Typography>
+                <Typography variant="subtitle2">{new Date(postWithFlags.date).toLocaleDateString()}</Typography>
+                {postWithFlags.tags && postWithFlags.tags.map((tag) => (
+                  <Chip key={tag} label={tag} className={classes.tag} />
+                ))}
+              </div>
+              {postWithFlags.image && (
+                <Box style={{ textAlign: 'center', marginBottom: '16px' }}>
+                  <img src={`${process.env.PUBLIC_URL}${postWithFlags.image}`} alt={postWithFlags.title} className={classes.headerImage} />
+                </Box>
+              )}
+              <Box className={classes.heroStats}>
+                {heroStats.map((stat) => (
+                  <div key={stat.label} className={classes.heroStat}>
+                    <Typography className={classes.heroStatLabel}>{stat.label}</Typography>
+                    <Typography className={classes.heroStatValue}>{stat.value}</Typography>
+                  </div>
+                ))}
               </Box>
+            </div>
+            {postWithFlags.heroBadge && (
+              <span className={classes.heroBadge}>{postWithFlags.heroBadge}</span>
             )}
-            <Typography variant="h6">{postWithFlags.summary}</Typography>
           </Paper>
-          <Paper className={classes.content} elevation={1}>
-            <ReactMarkdown 
-              rehypePlugins={[[rehypeSanitize, sanitizeSchema]]}
-              linkTarget="_blank"
-              components={{
-                img: ({src, alt, ...props}) => (
-                  <img 
-                    src={src.startsWith('/') ? `${process.env.PUBLIC_URL}${src}` : src} 
-                    alt={alt} 
-                    style={{maxWidth: '100%', height: 'auto'}} 
-                    {...props} 
-                  />
-                )
-              }}
-            >
-              {markdownContent}
-            </ReactMarkdown>
+          {phaseHighlights.length > 0 && (
+            <Grid container spacing={3} className={classes.phaseGrid}>
+              {phaseHighlights.map((phase) => (
+                <Grid item xs={12} md={4} key={phase.title}>
+                  <Box className={classes.phaseCard}>
+                    <Typography className={classes.phaseDuration}>{phase.duration}</Typography>
+                    <Typography className={classes.phaseTitle}>{phase.title}</Typography>
+                    <Typography className={classes.phaseEssence}>{phase.essence}</Typography>
+                    <ul>
+                      {phase.bullets && phase.bullets.map((bullet) => (
+                        <li key={bullet} className={classes.phaseBullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          )}
+          <Paper className={classes.contentPanel} elevation={0}>
+            <div className={classes.markdownContent}>
+              <ReactMarkdown 
+                rehypePlugins={[[rehypeSanitize, sanitizeSchema]]}
+                linkTarget="_blank"
+                components={{
+                  img: ({src, alt, ...props}) => (
+                    <img 
+                      src={src.startsWith('/') ? `${process.env.PUBLIC_URL}${src}` : src} 
+                      alt={alt} 
+                      style={{maxWidth: '100%', height: 'auto'}} 
+                      {...props} 
+                    />
+                  )
+                }}
+              >
+                {markdownContent}
+              </ReactMarkdown>
+            </div>
           </Paper>
           <Button 
             component={Link} 

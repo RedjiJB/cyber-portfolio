@@ -22,7 +22,7 @@
                 <div class="col-md-8">
                     <h1 class="name">Redji Jean Baptiste</h1>
                     <h2 class="role mb-3">Computer Systems Technician Student</h2>
-                    <p class="lead mb-3">Co-operative education student at Algonquin College in the Computer Systems Technician - Networking program with extensive security operations experience. Skilled in physical security systems, access control, video surveillance, and incident response. Seeking opportunities to apply technical knowledge and security expertise in IT infrastructure and cybersecurity roles.</p>
+                    <p class="lead mb-3">Co-op student at Algonquin College in the Computer Systems Technician - Networking program with extensive security operations experience. Skilled in physical security systems, physical access control, video surveillance technologies, and incident response. Seeking opportunities to apply technical knowledge and security expertise in IT infrastructure and cybersecurity roles.</p>
                     
                     <div class="contact-info mb-3">
                         <div class="contact-item">
@@ -94,9 +94,6 @@
                 <li class="nav-item">
                     <a class="nav-link" data-section="research">Research</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-section="projects">Projects</a>
-                </li>
             </ul>
         </nav>
         
@@ -136,6 +133,8 @@
                             <span class="skill-tag">NTFS permissions</span>
                             <span class="skill-tag">PowerShell basics</span>
                             <span class="skill-tag">Workgroup config</span>
+                            <span class="skill-tag">Active Directory</span>
+                            <span class="skill-tag">User Profile Mgmt</span>
                         </div>
                     </div>
                 </div>
@@ -528,22 +527,49 @@
         
         <!-- Open Source Section -->
         <section id="experience" class="resume-section">
-            <h3 class="section-title">Open Source Contributions</h3>
-            
+            <h3 class="section-title">Open Source Projects</h3>
+
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2024 - Present</div>
-                        <h4 class="timeline-title">Contributor (Open Source)</h4>
-                        <h5 class="timeline-company">Remote</h5>
-                        <p>Researching and developing deployment strategies for open-source enterprise solutions</p>
+                        <div class="timeline-date">2025 - Present</div>
+                        <h4 class="timeline-title">TERMGAME - Terminal Training Platform</h4>
+                        <h5 class="timeline-company">Python, Docker, Cisco IOS, PowerShell</h5>
+                        <p>A terminal-based training platform for mastering Linux, Cisco IOS, and PowerShell through interactive missions</p>
                         <ul class="timeline-details">
-                            <li>Researching and developing deployment strategies for open-source enterprise solutions to replace proprietary software, focusing on cost reduction, data sovereignty, and infrastructure modernization</li>
-                            <li>Designing integration frameworks for open-source video surveillance platforms including ZoneMinder and Frigate as alternatives to proprietary CCTV systems, enabling enterprises to maintain full control over security infrastructure</li>
-                            <li>Evaluating and deploying open-source large language models (LLMs) as replacements for hyperscaler AI solutions, implementing self-hosted AI infrastructure to eliminate vendor lock-in and enhance data privacy</li>
-                            <li>Creating deployment documentation and migration guides for enterprise office suite software including Nextcloud, enabling organizations to transition from proprietary cloud platforms while maintaining collaboration capabilities</li>
-                            <li>Collaborating with international open-source communities using Git to develop comprehensive technical documentation, contributing to projects that support enterprise adoption of open-source technologies</li>
+                            <li>Built an interactive terminal-based training platform with progressive difficulty missions across Linux, Cisco IOS, and PowerShell</li>
+                            <li>Developed 66+ PowerShell missions covering Windows Server administration from fundamentals to Azure cloud integration</li>
+                            <li>Implemented Docker containerized environments (Windows Server Core, Linux) for safe hands-on practice</li>
+                            <li>Created mission validation system with XP progression tracking and scenario-based assessments</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Present</div>
+                        <h4 class="timeline-title">Linux Automation Suite</h4>
+                        <h5 class="timeline-company">Bash, Cron, Linux</h5>
+                        <p>Bash automation scripts for Linux system administration</p>
+                        <ul class="timeline-details">
+                            <li>Developed automated backup system with full/incremental/differential modes and GPG encryption</li>
+                            <li>Built intelligent log analysis tool with pattern detection, security event identification, and alerting</li>
+                            <li>Created cron job manager with template-based scheduling, monitoring, and error handling with retry logic</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Present</div>
+                        <h4 class="timeline-title">Windows Admin Toolkit</h4>
+                        <h5 class="timeline-company">PowerShell, Active Directory, BitLocker</h5>
+                        <p>PowerShell automation suite for Windows administration</p>
+                        <ul class="timeline-details">
+                            <li>Developed user management module for bulk AD account creation, password policy enforcement, and group membership</li>
+                            <li>Built automated backup system with compression, AES-256 encryption, and cloud integration</li>
+                            <li>Created BitLocker automation tools with recovery key management and TPM integration</li>
                         </ul>
                     </div>
                 </div>
@@ -614,250 +640,6 @@
             </div>
         </section>
         
-        <!-- Projects Section -->
-        <section id="projects" class="resume-section">
-            <h3 class="section-title">Projects</h3>
-            
-            <!-- In Progress Projects -->
-            <div class="project-category mb-5">
-                <h4 class="project-category-title">
-                    <i class="fas fa-hammer me-2"></i>Currently Building (Fall 2025)
-                </h4>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h5>Subnet Designer & Visualizer</h5>
-                                <span class="project-status in-progress">In Progress</span>
-                            </div>
-                            <p class="project-description">Python tool that calculates VLSM subnet schemes and produces a LAN topology diagram. Reinforces OSI/TCP-IP knowledge and IPv4 addressing from <strong>CST 8182</strong>.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">CIDR</span>
-                                <span class="tech-tag">VLSM</span>
-                                <span class="tech-tag">Networking</span>
-                                <span class="tech-tag">Topology</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h5>Windows 11 Secure Build Guide</h5>
-                                <span class="project-status in-progress">In Progress</span>
-                            </div>
-                            <p class="project-description">Hardened Windows 11 VM with local GPOs, NTFS permissions and PowerShell scripts for automated baseline deployment. Mirrors skills from <strong>CST 8202</strong>.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Windows</span>
-                                <span class="tech-tag">PowerShell</span>
-                                <span class="tech-tag">GPO</span>
-                                <span class="tech-tag">Security Hardening</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h5>Linux Essentials Lab Book</h5>
-                                <span class="project-status in-progress">In Progress</span>
-                            </div>
-                            <p class="project-description">GitHub repo of step-by-step Bash labs that cover user/group management, file permissions and shell-scripting automation—direct output of <strong>CST 8207</strong>.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Linux</span>
-                                <span class="tech-tag">Bash</span>
-                                <span class="tech-tag">Shell Scripting</span>
-                                <span class="tech-tag">System Administration</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h5>Interactive Number-System Converter</h5>
-                                <span class="project-status in-progress">In Progress</span>
-                            </div>
-                            <p class="project-description">CLI program that converts binary ↔ decimal ↔ hex and demonstrates Boolean logic routines learned in <strong>MAT 8002</strong> and <strong>CST 8324</strong>.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Binary/Hex</span>
-                                <span class="tech-tag">Boolean Logic</span>
-                                <span class="tech-tag">CLI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Upcoming Projects -->
-            <div class="project-category mb-5">
-                <h4 class="project-category-title">
-                    <i class="fas fa-calendar-alt me-2"></i>Next Semester & Beyond (Winter 2026+)
-                </h4>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card planned">
-                            <div class="project-header">
-                                <h5>Mini-Enterprise AD Lab</h5>
-                                <span class="project-status planning">Planning</span>
-                            </div>
-                            <p class="project-description">Multi-DC Windows Server domain with OU structure, Group Policy enforcement and PowerShell user-import CSV workflow (upcoming <strong>CST 8200</strong>).</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Windows Server</span>
-                                <span class="tech-tag">Active Directory</span>
-                                <span class="tech-tag">Group Policy</span>
-                                <span class="tech-tag">PowerShell</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card planned">
-                            <div class="project-header">
-                                <h5>Packet Tracer Campus Network</h5>
-                                <span class="project-status planning">Planning</span>
-                            </div>
-                            <p class="project-description">Enterprise LAN simulation featuring VLANs, STP redundancy, inter-VLAN routing and WPA3 wireless (future <strong>CST 8315</strong> deliverable).</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Cisco</span>
-                                <span class="tech-tag">Packet Tracer</span>
-                                <span class="tech-tag">VLANs</span>
-                                <span class="tech-tag">STP</span>
-                                <span class="tech-tag">Wi-Fi</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card planned">
-                            <div class="project-header">
-                                <h5>Linux Web & Mail Server Stack</h5>
-                                <span class="project-status planning">Planning</span>
-                            </div>
-                            <p class="project-description">Secure Apache/Nginx plus Postfix/Dovecot deployment managed by Ansible, aligned with <strong>CST 8305</strong> and <strong>CST 8246</strong> coursework.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Linux</span>
-                                <span class="tech-tag">Apache</span>
-                                <span class="tech-tag">Postfix</span>
-                                <span class="tech-tag">TLS</span>
-                                <span class="tech-tag">Ansible</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card planned">
-                            <div class="project-header">
-                                <h5>Automated Help-Desk Chatbot</h5>
-                                <span class="project-status planning">Planning</span>
-                            </div>
-                            <p class="project-description">Flask micro-service that answers ITIL-style queries and integrates with Slack; ties into <strong>CST 8206</strong> and Python automation track.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Flask</span>
-                                <span class="tech-tag">Chatbot</span>
-                                <span class="tech-tag">ITIL</span>
-                                <span class="tech-tag">Automation</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Advanced Security Projects -->
-            <div class="project-category mb-4">
-                <h4 class="project-category-title">
-                    <i class="fas fa-shield-alt me-2"></i>Advanced Security & Cloud Projects
-                </h4>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card planned">
-                            <div class="project-header">
-                                <h5>Blue-Team Home SOC</h5>
-                                <span class="project-status planning">Planning</span>
-                            </div>
-                            <p class="project-description">pfSense firewall + Suricata IDS feeding Elastic SIEM with Slack alerts; capstone for upcoming Security+ and CyberOps studies.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">pfSense</span>
-                                <span class="tech-tag">Suricata</span>
-                                <span class="tech-tag">Elastic Stack</span>
-                                <span class="tech-tag">SIEM</span>
-                                <span class="tech-tag">Incident Response</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card planned">
-                            <div class="project-header">
-                                <h5>Cloud VPC & Site-to-Site VPN</h5>
-                                <span class="project-status planning">Planning</span>
-                            </div>
-                            <p class="project-description">AWS VPC built with Terraform and IPSec tunnel back to home lab—demonstrates hybrid-cloud networking and IaC principles.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">AWS</span>
-                                <span class="tech-tag">Terraform</span>
-                                <span class="tech-tag">VPC</span>
-                                <span class="tech-tag">IPSec VPN</span>
-                                <span class="tech-tag">Cloud Networking</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card planned">
-                            <div class="project-header">
-                                <h5>Network Automation Pipeline</h5>
-                                <span class="project-status planning">Planning</span>
-                            </div>
-                            <p class="project-description">CI/CD pipeline that runs Ansible compliance checks against lab routers via GitHub Actions, producing pass/fail badges.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Ansible</span>
-                                <span class="tech-tag">GitHub Actions</span>
-                                <span class="tech-tag">Automation</span>
-                                <span class="tech-tag">Networking</span>
-                                <span class="tech-tag">CI/CD</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-4">
-                        <div class="project-card planned">
-                            <div class="project-header">
-                                <h5>Zero-Trust Reference Architecture</h5>
-                                <span class="project-status planning">Planning</span>
-                            </div>
-                            <p class="project-description">Blueprint for identity-centric segmentation using Okta, Tailscale and NIST 800-207 guidelines; long-term security-architect showcase.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Zero Trust</span>
-                                <span class="tech-tag">NIST 800-207</span>
-                                <span class="tech-tag">Okta</span>
-                                <span class="tech-tag">Tailscale</span>
-                                <span class="tech-tag">Security Architecture</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project Status Legend -->
-            <div class="project-status-legend">
-                <div class="status-item">
-                    <span class="project-status in-progress">
-                        <i class="fas fa-hammer me-1"></i>In Progress
-                    </span>
-                    <span class="status-description">Labs actively being built this semester</span>
-                </div>
-                <div class="status-item">
-                    <span class="project-status planning">
-                        <i class="fas fa-calendar-alt me-1"></i>Planning
-                    </span>
-                    <span class="status-description">Scoped projects queued for future courses or cert milestones</span>
-                </div>
-            </div>
-        </section>
         
         <!-- Footer -->
         <footer class="mt-5 text-center">

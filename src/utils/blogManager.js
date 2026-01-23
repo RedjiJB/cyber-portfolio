@@ -8,7 +8,8 @@ class BlogManager {
       'msi-thin-15-experience': 'msi-thin-15-experience.md',
       'subnet-designer-project-start': 'subnet-designer-project-start.md',
       'haiti-security-missions': 'blog_post_1.md',
-      'drone-zoe-platform': 'drone-zoe-platform.md'
+      'drone-zoe-platform': 'drone-zoe-platform.md',
+      'os-sentinel-initiative': 'os-sentinel-initiative.md'
     };
   }
 
@@ -27,7 +28,8 @@ class BlogManager {
       'msi-thin-15-experience',
       'subnet-designer-project-start',
       'haiti-security-missions',
-      'drone-zoe-platform'
+      'drone-zoe-platform',
+      'os-sentinel-initiative'
     ];
 
     if (postsWithMarkdown.includes(post.slug)) {
