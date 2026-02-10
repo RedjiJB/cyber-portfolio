@@ -187,7 +187,7 @@ export const About = () => {
   const greetings = "About Me";
   
   // Bio text reflects the resume's description and summary
-  const aboutme = `I am a Co-operative education student at Algonquin College in the Computer Systems Technician - Networking (1560X03FWO) program. I'm learning network administration, cybersecurity fundamentals, system configuration, and IT infrastructure management. My goal is to build a career in IT, focusing on protecting digital assets and implementing secure network solutions.`;
+  const aboutme = `I am a student at Algonquin College in the Computer Systems Technician - Networking (1560X03FWO) program. I'm learning network administration, cybersecurity fundamentals, enterprise system configuration, and IT infrastructure management. My goal is to build a career in IT, focusing on protecting digital assets and implementing secure network solutions.`;
 
   return (
     <section className={classes.main}>
