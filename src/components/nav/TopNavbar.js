@@ -1,155 +1,120 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { AppBar, Toolbar, Button, makeStyles, useMediaQuery, useTheme, IconButton, Drawer, List, ListItem, ListItemText } from "@material-ui/core";
-import MenuIcon from '@material-ui/icons/Menu';
+import "./TopNavbar.css";
 
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    backgroundColor: 'transparent',
-    color: theme.palette.text.primary,
-    boxShadow: 'none',
-  },
-  toolbar: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    padding: theme.spacing(0, 2),
-  },
-  navLinks: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  navButton: {
-    margin: theme.spacing(0, 1),
-    fontWeight: 500,
-    '&:hover': {
-      color: theme.palette.primary.main,
-      backgroundColor: 'transparent',
-    },
-  },
-  active: {
-    color: theme.palette.primary.main,
-    borderBottom: `2px solid ${theme.palette.primary.main}`,
-  },
-  menuButton: {
-    display: 'none',
-    [theme.breakpoints.down('sm')]: {
-      display: 'block',
-    },
-  },
-  desktopNav: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
-  },
-  drawerPaper: {
-    backgroundColor: theme.palette.background.default,
-    width: 250,
-  },
-  drawerItem: {
-    padding: theme.spacing(2, 3),
-  },
-  drawerItemActive: {
-    backgroundColor: `${theme.palette.primary.main}22`,
-  },
-}));
+const navLinks = [
+  { text: 'Home',     path: '/' },
+  { text: 'Projects', path: '/projects' },
+  { text: 'About',    path: '/about' },
+  { text: 'Contact',  path: '/contact' },
+];
 
 export const TopNavbar = () => {
-  const classes = useStyles();
   const location = useLocation();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  
+  const [scrolled, setScrolled]   = useState(false);
+  const [hidden, setHidden]       = useState(false);
+  const [menuOpen, setMenuOpen]   = useState(false);
+  const lastScrollY = useRef(0);
+
   const isActive = (path) => {
-    if (path === '/' && location.pathname === '/') {
-      return true;
-    }
+    if (path === '/' && location.pathname === '/') return true;
     return location.pathname === path;
   };
 
-  const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-    setDrawerOpen(open);
-  };
-
-  // Navigation links
-  const navLinks = [
-    { text: 'Home', path: '/' },
-    { text: 'Projects', path: '/projects' },
-    { text: 'About', path: '/about' },
-    { text: 'Blog', path: '/blog' },
-    { text: 'Contact', path: '/contact' },
-  ];
-
-  // Close drawer when changing routes on mobile
+  /* ── scroll-reactive hide/show + glass ── */
   useEffect(() => {
-    if (isMobile) {
-      setDrawerOpen(false);
-    }
-  }, [location.pathname, isMobile]);
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 20);
+      if (currentY > lastScrollY.current && currentY > 80) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const drawer = (
-    <List>
-      {navLinks.map((link) => (
-        <ListItem 
-          button 
-          component={Link} 
-          to={link.path} 
-          key={link.text}
-          className={`${classes.drawerItem} ${isActive(link.path) ? classes.drawerItemActive : ''}`}
-        >
-          <ListItemText 
-            primary={link.text} 
-            primaryTypographyProps={{ color: isActive(link.path) ? "primary" : "textPrimary" }}
-          />
-        </ListItem>
-      ))}
-    </List>
-  );
+  /* ── lock body scroll when overlay open ── */
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  /* ── close overlay on route change ── */
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  const headerClass = [
+    'nav-header',
+    scrolled  ? 'nav-header--scrolled' : '',
+    hidden    ? 'nav-header--hidden'   : '',
+  ].filter(Boolean).join(' ');
 
   return (
-    <AppBar position="fixed" className={classes.appBar}>
-      <Toolbar className={classes.toolbar}>
-        {/* Desktop Navigation */}
-        {!isMobile && (
-          <nav className={classes.navLinks}>
+    <>
+      <header className={headerClass}>
+        <div className="nav-inner">
+
+          {/* Logo */}
+          <Link to="/" className="nav-logo" onClick={() => setMenuOpen(false)}>
+            <span className="nav-logo__bracket">&lt;</span>
+            RJB
+            <span className="nav-logo__bracket">/&gt;</span>
+          </Link>
+
+          {/* Desktop links */}
+          <nav className="nav-links" aria-label="Main navigation">
             {navLinks.map((link) => (
-              <Button
+              <Link
                 key={link.text}
-                component={Link}
                 to={link.path}
-                className={`${classes.navButton} ${isActive(link.path) ? classes.active : ''}`}
-                disableRipple
+                className={`nav-link${isActive(link.path) ? ' nav-link--active' : ''}`}
               >
-                {link.text}
-              </Button>
+                <span className="nav-link__label">{link.text}</span>
+              </Link>
             ))}
           </nav>
-        )}
-        {/* Mobile Navigation */}
-        {isMobile && (
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={toggleDrawer(true)}
-            className={classes.menuButton}
+
+          {/* Hamburger */}
+          <button
+            className={`nav-hamburger${menuOpen ? ' nav-hamburger--open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
           >
-            <MenuIcon />
-          </IconButton>
-        )}
-      </Toolbar>
-      {/* Mobile Drawer */}
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={toggleDrawer(false)}
-        classes={{ paper: classes.drawerPaper }}
+            <span /><span /><span />
+          </button>
+
+        </div>
+      </header>
+
+      {/* Mobile full-screen overlay */}
+      <div
+        className={`nav-overlay${menuOpen ? ' nav-overlay--open' : ''}`}
+        aria-hidden={!menuOpen}
+        role="dialog"
+        aria-label="Navigation menu"
       >
-        {drawer}
-      </Drawer>
-    </AppBar>
+        <nav className="nav-overlay__links">
+          {navLinks.map((link, i) => (
+            <Link
+              key={link.text}
+              to={link.path}
+              className={`nav-overlay__link${isActive(link.path) ? ' nav-overlay__link--active' : ''}`}
+              style={{ '--i': i }}
+              tabIndex={menuOpen ? 0 : -1}
+            >
+              <span className="nav-overlay__num">0{i + 1}</span>
+              {link.text}
+            </Link>
+          ))}
+        </nav>
+        <div className="nav-overlay__footer">Portfolio &mdash; RedjiJB</div>
+      </div>
+    </>
   );
-}; 
+};

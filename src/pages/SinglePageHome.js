@@ -139,11 +139,11 @@ const useStyles = makeStyles((theme) => ({
     background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
     border: `1px solid ${theme.palette.primary.main}`,
     boxShadow: `0 4px 20px ${theme.palette.primary.main}60`,
-    textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 191, 191, 0.4)',
+    textShadow: 'none',
     '&:hover': {
       transform: 'translateY(-2px)',
       boxShadow: `0 6px 25px ${theme.palette.primary.main}80`,
-      textShadow: '0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px rgba(0, 191, 191, 0.5)',
+      textShadow: 'none',
     },
   },
   scrollTopButton: {

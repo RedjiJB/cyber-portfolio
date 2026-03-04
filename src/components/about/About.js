@@ -15,9 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '3em',
     marginBottom: "auto",
     '& *': {
-      textShadow: theme.palette.type === 'dark'
-        ? '0 0 8px rgba(255, 255, 255, 0.15)'
-        : '0 0 5px rgba(0, 0, 0, 0.05)',
+      textShadow: 'none',
     },
   },
   contactButton: {
@@ -60,9 +58,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.1rem',
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(3),
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 8px rgba(255, 255, 255, 0.15)'
-      : '0 0 5px rgba(0, 0, 0, 0.05)',
+    textShadow: 'none',
   },
   skillsSection: {
     marginTop: theme.spacing(6),
@@ -72,18 +68,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
     color: theme.palette.primary.main,
     fontWeight: 600,
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 10px rgba(0, 191, 191, 0.4), 0 0 20px rgba(0, 191, 191, 0.2)'
-      : '0 0 8px rgba(33, 150, 243, 0.3)',
+    textShadow: 'none',
   },
   skillItem: {
     marginBottom: theme.spacing(1),
     fontWeight: 600,
     display: 'flex',
     alignItems: 'center',
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 8px rgba(255, 255, 255, 0.2)'
-      : '0 0 5px rgba(0, 0, 0, 0.05)',
+    textShadow: 'none',
   },
   skillIcon: {
     marginRight: theme.spacing(1.5),
@@ -93,9 +85,7 @@ const useStyles = makeStyles((theme) => ({
   skillDescription: {
     marginLeft: theme.spacing(4),
     marginBottom: theme.spacing(3),
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 8px rgba(255, 255, 255, 0.15)'
-      : '0 0 5px rgba(0, 0, 0, 0.05)',
+    textShadow: 'none',
   },
   skillCard: {
     padding: theme.spacing(3),
@@ -111,9 +101,7 @@ const useStyles = makeStyles((theme) => ({
     },
     borderTop: `3px solid ${theme.palette.primary.main}`,
     '& *': {
-      textShadow: theme.palette.type === 'dark'
-        ? '0 0 8px rgba(255, 255, 255, 0.15)'
-        : '0 0 5px rgba(0, 0, 0, 0.05)',
+      textShadow: 'none',
     },
   },
   backgroundSection: {
@@ -123,9 +111,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
     marginBottom: theme.spacing(2),
     color: theme.palette.primary.main,
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 10px rgba(0, 191, 191, 0.4), 0 0 20px rgba(0, 191, 191, 0.2)'
-      : '0 0 8px rgba(33, 150, 243, 0.3)',
+    textShadow: 'none',
   },
   experienceSection: {
     marginTop: theme.spacing(6),
@@ -145,39 +131,29 @@ const useStyles = makeStyles((theme) => ({
     },
     borderLeft: `3px solid ${theme.palette.primary.main}`,
     '& *': {
-      textShadow: theme.palette.type === 'dark'
-        ? '0 0 8px rgba(255, 255, 255, 0.15)'
-        : '0 0 5px rgba(0, 0, 0, 0.05)',
+      textShadow: 'none',
     },
   },
   experienceTitle: {
     fontWeight: 600,
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(1),
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 10px rgba(0, 191, 191, 0.3), 0 0 15px rgba(0, 191, 191, 0.2)'
-      : '0 0 8px rgba(33, 150, 243, 0.2)',
+    textShadow: 'none',
   },
   experienceCompany: {
     fontWeight: 500,
     marginBottom: theme.spacing(0.5),
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 8px rgba(255, 255, 255, 0.2)'
-      : '0 0 5px rgba(0, 0, 0, 0.05)',
+    textShadow: 'none',
   },
   experienceDate: {
     color: theme.palette.text.secondary,
     fontSize: '0.9rem',
     marginBottom: theme.spacing(1),
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 8px rgba(255, 255, 255, 0.15)'
-      : '0 0 5px rgba(0, 0, 0, 0.05)',
+    textShadow: 'none',
   },
   experienceDescription: {
     marginTop: theme.spacing(1),
-    textShadow: theme.palette.type === 'dark'
-      ? '0 0 8px rgba(255, 255, 255, 0.15)'
-      : '0 0 5px rgba(0, 0, 0, 0.05)',
+    textShadow: 'none',
   },
 }));
 

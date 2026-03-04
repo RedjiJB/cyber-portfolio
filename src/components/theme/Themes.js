@@ -26,6 +26,7 @@ export const LightTheme = responsiveFontSizes(
     typography: {
       fontSize: 16,
       htmlFontSize: 16,
+      fontFamily: 'Inter, sans-serif',
       h1: {
         fontWeight: 500,
       },
@@ -37,11 +38,11 @@ export const LightTheme = responsiveFontSizes(
       },
       h5: {
         fontWeight: 500,
-        fontFamily: 'Roboto Mono, monospace',
+        fontFamily: 'JetBrains Mono, monospace',
       },
       body: {
         fontWeight: 500,
-        fontFamily: 'Roboto Mono, monospace',
+        fontFamily: 'Inter, sans-serif',
       },
     },
     overrides: {
@@ -94,7 +95,7 @@ export const LightTheme = responsiveFontSizes(
       },
       MuiTooltip: {
         tooltip: {
-          fontFamily: 'Roboto Mono, monospace',
+          fontFamily: 'JetBrains Mono, monospace',
           backgroundColor: primary,
           color: black,
           fontSize: 12,
@@ -124,6 +125,7 @@ export const DarkTheme = responsiveFontSizes(
     typography: {
       fontSize: 16,
       htmlFontSize: 16,
+      fontFamily: 'Inter, sans-serif',
       h1: {
         fontWeight: 500,
       },
@@ -135,11 +137,11 @@ export const DarkTheme = responsiveFontSizes(
       },
       h5: {
         fontWeight: 500,
-        fontFamily: 'Roboto Mono, monospace',
+        fontFamily: 'JetBrains Mono, monospace',
       },
       body: {
         fontWeight: 500,
-        fontFamily: 'Roboto Mono, monospace',
+        fontFamily: 'Inter, sans-serif',
       },
     },
     overrides: {
@@ -192,7 +194,7 @@ export const DarkTheme = responsiveFontSizes(
       },
       MuiTooltip: {
         tooltip: {
-          fontFamily: 'Roboto Mono, monospace',
+          fontFamily: 'JetBrains Mono, monospace',
           backgroundColor: primary,
           color: white,
           fontSize: 12,

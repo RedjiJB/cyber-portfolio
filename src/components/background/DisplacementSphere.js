@@ -11,6 +11,7 @@ import {
     UniformsUtils,
     UniformsLib,
     MeshPhongMaterial,
+    MeshBasicMaterial,
     SphereBufferGeometry,
     Mesh,
 } from "three";
@@ -43,6 +44,9 @@ const DisplacementSphere = (props) => {
     const material = useRef();
     const geometry = useRef();
     const sphere = useRef();
+    const wireframe = useRef();
+    const innerSphere = useRef();
+    const innerUniforms = useRef();
     const tweenRef = useRef();
     const sphereSpring = useRef();
     const prefersReducedMotion = Boolean(usePrefersReducedMotion() && false); //disabled until switching themes fixed
@@ -93,6 +97,37 @@ const DisplacementSphere = (props) => {
             sphere.current.position.z = 0;
             sphere.current.modifier = Math.random();
             scene.current.add(sphere.current);
+
+            const wireGeometry = new SphereBufferGeometry(33.2, 48, 48);
+            const wireMaterial = new MeshBasicMaterial({
+                color: 0xffffff,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.04,
+            });
+            wireframe.current = new Mesh(wireGeometry, wireMaterial);
+            wireframe.current.position.z = 0;
+            scene.current.add(wireframe.current);
+
+            const innerMaterial = new MeshPhongMaterial();
+            innerMaterial.onBeforeCompile = (shader) => {
+                innerUniforms.current = UniformsUtils.merge([
+                    UniformsLib["ambient"],
+                    UniformsLib["lights"],
+                    shader.uniforms,
+                    { time: { type: "f", value: 0 } },
+                ]);
+                shader.uniforms = innerUniforms.current;
+                shader.vertexShader = vertShader;
+                shader.fragmentShader = fragShader;
+                shader.lights = true;
+            };
+
+            const innerGeometry = new SphereBufferGeometry(14, 96, 96);
+            innerSphere.current = new Mesh(innerGeometry, innerMaterial);
+            innerSphere.current.position.z = 0;
+            innerSphere.current.modifier = Math.random();
+            scene.current.add(innerSphere.current);
         } catch (error) {
             console.warn("WebGL initialization failed:", error);
             return;
@@ -154,12 +189,18 @@ const DisplacementSphere = (props) => {
             if (windowWidth <= media.mobile) {
                 sphere.current.position.x = 14;
                 sphere.current.position.y = 10;
+                if (wireframe.current) { wireframe.current.position.x = 14; wireframe.current.position.y = 10; }
+                if (innerSphere.current) { innerSphere.current.position.x = 14; innerSphere.current.position.y = 10; }
             } else if (windowWidth <= media.tablet) {
                 sphere.current.position.x = 18;
                 sphere.current.position.y = 14;
+                if (wireframe.current) { wireframe.current.position.x = 18; wireframe.current.position.y = 14; }
+                if (innerSphere.current) { innerSphere.current.position.x = 18; innerSphere.current.position.y = 14; }
             } else {
                 sphere.current.position.x = 22;
                 sphere.current.position.y = 16;
+                if (wireframe.current) { wireframe.current.position.x = 22; wireframe.current.position.y = 16; }
+                if (innerSphere.current) { innerSphere.current.position.x = 22; innerSphere.current.position.y = 16; }
             }
         };
 
@@ -226,10 +267,24 @@ const DisplacementSphere = (props) => {
 
             if (uniforms.current !== undefined) {
                 uniforms.current.time.value =
-                    0.00005 * (Date.now() - start.current);
+                    0.00009 * (Date.now() - start.current);
+            }
+
+            if (innerUniforms.current !== undefined) {
+                innerUniforms.current.time.value =
+                    0.00009 * (Date.now() - start.current) + 3.14;
             }
 
             sphere.current.rotation.z += 0.001;
+            if (wireframe.current) {
+                wireframe.current.rotation.z -= 0.0006;
+                wireframe.current.rotation.y += 0.0004;
+            }
+            if (innerSphere.current) {
+                innerSphere.current.rotation.z -= 0.0015;
+                innerSphere.current.rotation.x += 0.001;
+                innerSphere.current.rotation.y -= 0.0008;
+            }
             renderer.current.render(scene.current, camera.current);
         };
 
