@@ -760,4 +760,112 @@ footer {
     .research-content h4 {
         font-size: 1.1rem;
     }
+}
+
+/* ─── Mobile-first improvements ──────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Nav pills: allow wrapping so all 6 tabs are reachable */
+    .resume-nav .nav-pills {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .resume-nav .nav-pills .nav-link {
+        padding: 0.35rem 0.85rem;
+        font-size: 0.82rem;
+        margin-right: 0;
+    }
+
+    /* Container padding already handled above; ensure sensible min padding */
+    .resume-container {
+        padding: 1.25rem;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    /* Header: stack profile image above text on small screens */
+    header .row {
+        flex-direction: column-reverse;
+    }
+
+    header .col-md-4 {
+        text-align: center !important;
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+    }
+
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    /* Download button + theme toggle — stack or shrink */
+    .pdf-download-btn {
+        display: block;
+        text-align: center;
+        padding: 9px 16px;
+        font-size: 0.9rem;
+    }
+
+    .theme-toggle-btn {
+        margin-left: 0 !important;
+        margin-top: 0.75rem;
+    }
+
+    /* Name & role */
+    .name {
+        font-size: 2rem;
+        word-break: break-word;
+    }
+
+    .role {
+        font-size: 1.1rem;
+    }
+
+    /* Timeline */
+    .timeline .timeline-item {
+        padding-left: 1.25rem;
+    }
+
+    /* Skill bars — full width on mobile */
+    .skill-bar-container {
+        min-width: 100%;
+    }
+
+    /* Section headings */
+    .section-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-container {
+        padding: 1rem;
+    }
+
+    .name {
+        font-size: 1.75rem;
+    }
+
+    .role {
+        font-size: 1rem;
+    }
+
+    .resume-nav .nav-pills .nav-link {
+        padding: 0.3rem 0.65rem;
+        font-size: 0.75rem;
+    }
+
+    .pdf-download-btn {
+        font-size: 0.82rem;
+        padding: 8px 14px;
+    }
+
+    /* Contact info links: slightly smaller */
+    .contact-links a {
+        font-size: 1.2rem;
+    }
+}
 } 
