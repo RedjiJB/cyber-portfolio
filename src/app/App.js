@@ -49,6 +49,7 @@ const prefetchRoutes = () => {
 // wait is noticeable; otherwise it just flashes between pages.
 const LoadingFallback = () => {
   const [visible, setVisible] = useState(false);
+  const { pathname } = useLocation();
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 250);
     return () => clearTimeout(timer);
@@ -60,6 +61,8 @@ const LoadingFallback = () => {
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
+      // Every page except the landing page has a dark backdrop, so don't flash white between them.
+      background: pathname === '/' ? 'transparent' : '#121212',
       opacity: visible ? 1 : 0,
       transition: 'opacity 0.2s ease',
     }}>
