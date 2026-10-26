@@ -1,0 +1,31 @@
+# Redji Jean Baptiste
+
+> Full-Stack Developer & Cloud System Administrator. Computer Systems Technician - Networking student at Algonquin College and full-stack developer and cloud system administrator at The Sod Boys, running a production field-operations platform on Oracle Cloud. Background in IT help desk and physical security operations: access control, video surveillance and incident response. Seeking co-op and cybersecurity / networking roles.
+
+Personal portfolio of Redji Jean Baptiste (Ottawa & Toronto, Ontario, Canada).
+
+## Pages
+- [Home](https://redjijb.github.io/cyber-portfolio/): Portfolio of Redji Jean Baptiste: full-stack developer, cloud system administrator and networking student at Algonquin College (Ottawa & Toronto, Canada).
+- [Projects](https://redjijb.github.io/cyber-portfolio/projects/): Projects by Redji Jean Baptiste: a production field-operations platform, a terminal training game, Windows and Linux automation toolkits and networking labs.
+- [About](https://redjijb.github.io/cyber-portfolio/about/): About Redji Jean Baptiste: cloud administration, software development, IT help desk and security operations experience, plus studies at Algonquin College.
+- [Contact](https://redjijb.github.io/cyber-portfolio/contact/): Contact Redji Jean Baptiste about co-op and internship roles in software development, cloud and systems administration, networking and cybersecurity.
+
+## Projects
+- [Field Operations Platform](https://redjijb.github.io/cyber-portfolio/projects/field-operations-platform/): Production field-operations platform for a landscaping company: crew dispatch, timeclock and GPS tracking, fleet, inventory and payroll, with a React dashboard and a WhatsApp AI agent, running on Oracle Cloud and PostgreSQL.
+- [Business IT Stack](https://redjijb.github.io/cyber-portfolio/projects/business-it-stack/): Self-hosted business IT stack: single sign-on, helpdesk, ERP, file sharing, mail and a password vault behind Cloudflare Access, with AI-agent admin tools built as MCP servers.
+- [Homelab](https://redjijb.github.io/cyber-portfolio/projects/homelab/): Two-site homelab: a Raspberry Pi 5 running always-on services and a Windows Server host running Hyper-V, joined by a Tailscale mesh with monitoring, encrypted backups and written runbooks.
+- [TermGame](https://redjijb.github.io/cyber-portfolio/projects/termgame/): Gamified terminal training platform for mastering Linux, Cisco IOS and PowerShell through interactive missions with progressive difficulty and XP tracking, run in Docker sandboxes.
+- [Windows Admin Toolkit](https://redjijb.github.io/cyber-portfolio/projects/windows-admin-toolkit/): Modular PowerShell toolkit for Windows administration: user management, backup automation, security operations, network management and system health monitoring.
+- [Linux Automation Suite](https://redjijb.github.io/cyber-portfolio/projects/linux-automation-suite/): Bash scripts for automated backups, intelligent log analysis and cron job management on Linux systems.
+- [Subnet Designer & Visualizer](https://redjijb.github.io/cyber-portfolio/projects/subnet-designer-visualizer/): Python tool that calculates VLSM subnet schemes and produces a LAN topology diagram. Reinforces OSI/TCP-IP knowledge and IPv4 addressing from CST 8182.
+- [Windows 11 Secure Build Guide](https://redjijb.github.io/cyber-portfolio/projects/windows-11-secure-build-guide/): Hardened Windows 11 VM with local GPOs, NTFS permissions and PowerShell scripts for automated baseline deployment. Mirrors skills from CST 8202.
+- [Linux Essentials Lab Book](https://redjijb.github.io/cyber-portfolio/projects/linux-essentials-lab-book/): GitHub repo of step-by-step Bash labs that cover user/group management, file permissions and shell-scripting automation—direct output of CST 8207.
+- [Interactive Number-System Converter](https://redjijb.github.io/cyber-portfolio/projects/interactive-number-system-converter/): CLI program that converts binary ↔ decimal ↔ hex and demonstrates Boolean logic routines learned in MAT 8002 and CST 8324.
+- [Blue-Team Home SOC](https://redjijb.github.io/cyber-portfolio/projects/blue-team-home-soc/): pfSense firewall + Suricata IDS feeding Elastic SIEM with Slack alerts; capstone for upcoming Security+ and CyberOps studies.
+
+## Optional
+- [Full text of this site](https://redjijb.github.io/cyber-portfolio/llms-full.txt)
+- [JSON Resume](https://redjijb.github.io/cyber-portfolio/resume.json)
+- [GitHub](https://github.com/RedjiJB)
+- [LinkedIn](https://www.linkedin.com/in/redji-jean-baptiste-25b0471b7)
+- Contact: jean0319@algonquinlive.com

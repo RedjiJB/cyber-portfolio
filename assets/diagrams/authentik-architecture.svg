@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="1100" height="520" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d"><title id="t">Authentik architecture</title><desc id="d">Authentik server and worker share one Postgres; Traefik routes auth.example.org to the server; apps use OIDC providers.</desc><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker></defs><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="32" text-anchor="start" font-size="20" font-weight="700" fill="#1a202c">Authentik 2026.8.3: identity provider (OIDC) for the IT stack</text>
+<rect x="20" y="60" width="1060" height="440" rx="12" fill="#fdf2f8" fill-opacity="0.45" stroke="#b83280" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="32" y="78" font-size="12" font-weight="700" fill="#b83280">it-stack VM, docker network itstack_internal</text>
+<rect x="50" y="110" width="150" height="60" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="125" y="134" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Traefik :80</text>
+<text x="125" y="148" text-anchor="middle" font-size="11" fill="#4a5568">Host auth.example.org</text>
+<rect x="280" y="110" width="190" height="60" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="375" y="134" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">authentik-server</text>
+<text x="375" y="148" text-anchor="middle" font-size="11" fill="#4a5568">UI + API + flows :9000</text>
+<text x="375" y="162" text-anchor="middle" font-size="11" fill="#4a5568">mem 1 GB</text>
+<rect x="280" y="220" width="190" height="60" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="375" y="244" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">authentik-worker</text>
+<text x="375" y="258" text-anchor="middle" font-size="11" fill="#4a5568">tasks, outposts, mail</text>
+<text x="375" y="272" text-anchor="middle" font-size="11" fill="#4a5568">mem 768 MB</text>
+<rect x="560" y="165" width="170" height="60" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="645" y="189" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">postgres:16</text>
+<text x="645" y="203" text-anchor="middle" font-size="11" fill="#4a5568">db authentik</text>
+<text x="645" y="217" text-anchor="middle" font-size="11" fill="#4a5568">volume pg-authentik</text>
+<rect x="560" y="280" width="170" height="60" rx="8" fill="#ffffff" stroke="#4a5568" stroke-width="1.6"/>
+<text x="645" y="304" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">./data/authentik</text>
+<text x="645" y="318" text-anchor="middle" font-size="11" fill="#4a5568">/data: media, certs, client config</text>
+<line x1="200" y1="140" x2="280" y2="140" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="470" y1="140" x2="560" y2="185" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="470" y1="250" x2="560" y2="205" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="375" y1="170" x2="375" y2="220" stroke="#4a5568" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<line x1="470" y1="260" x2="560" y2="300" stroke="#4a5568" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<rect x="800" y="110" width="240" height="70" rx="8" fill="#fff0f0" stroke="#c53030" stroke-width="1.6"/>
+<text x="920" y="134" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Providers (OIDC)</text>
+<text x="920" y="148" text-anchor="middle" font-size="11" fill="#4a5568">nextcloud, zammad, vault, odoo</text>
+<text x="920" y="162" text-anchor="middle" font-size="11" fill="#4a5568">strict redirect URIs, RS256</text>
+<rect x="800" y="210" width="240" height="70" rx="8" fill="#ffffff" stroke="#4a5568" stroke-width="1.6"/>
+<text x="920" y="234" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Flows</text>
+<text x="920" y="248" text-anchor="middle" font-size="11" fill="#4a5568">default-authentication-flow</text>
+<text x="920" y="262" text-anchor="middle" font-size="11" fill="#4a5568">provider authorization flows</text>
+<rect x="800" y="310" width="240" height="70" rx="8" fill="#ffffff" stroke="#4a5568" stroke-width="1.6"/>
+<text x="920" y="334" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Users and groups</text>
+<text x="920" y="348" text-anchor="middle" font-size="11" fill="#4a5568">admin account (TOTP), group</text>
+<text x="920" y="362" text-anchor="middle" font-size="11" fill="#4a5568">authentik Admins (Vault)</text>
+<line x1="470" y1="140" x2="800" y2="145" stroke="#4a5568" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<rect x="50" y="330" width="460" height="120" rx="8" fill="#fff7e0" stroke="#b7791f" stroke-width="1.6"/>
+<text x="280" y="354" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Public URL map</text>
+<text x="280" y="368" text-anchor="middle" font-size="11" fill="#4a5568">https://auth.example.org/                       Access wall (e-mail PIN)</text>
+<text x="280" y="382" text-anchor="middle" font-size="11" fill="#4a5568">/application/o/*                                 Access BYPASS (OIDC protocol)</text>
+<text x="280" y="396" text-anchor="middle" font-size="11" fill="#4a5568">/if/admin/ , /api/v3/ , /if/flow/               behind Access</text>
+</svg>

@@ -1,0 +1,211 @@
+# Redji Jean Baptiste: full portfolio text
+
+Full-Stack Developer & Cloud System Administrator
+Computer Systems Technician - Networking student at Algonquin College and full-stack developer and cloud system administrator at The Sod Boys, running a production field-operations platform on Oracle Cloud. Background in IT help desk and physical security operations: access control, video surveillance and incident response. Seeking co-op and cybersecurity / networking roles.
+Location: Ottawa & Toronto, Ontario, Canada
+Email: jean0319@algonquinlive.com
+GitHub: https://github.com/RedjiJB
+LinkedIn: https://www.linkedin.com/in/redji-jean-baptiste-25b0471b7
+
+## Experience
+### Full-Stack Developer & Cloud System Administrator, The Sod Boys (May 2026 - Present)
+Internship: built and now administer a production field-operations platform (crew dispatch, timeclock/GPS tracking, fleet, inventory and payroll) for a live business, used through a web dashboard and a WhatsApp-based AI agent.
+- Own uptime and reliability for live production infrastructure (Oracle Cloud, PostgreSQL, Cloudflare) with heartbeat health checks and independent external uptime monitoring
+- Diagnosed and recovered a real production outage under time pressure, then authored a disaster-recovery runbook
+- Automated nightly backups with periodically tested restores that verify real data integrity
+- Developed the full stack: TypeScript/Node.js backend, PostgreSQL (42 migrations), REST API and a React/TypeScript dashboard
+- Built an AI agent integration (Model Context Protocol) connecting a WhatsApp crew assistant to backend systems
+
+### Information Technology Help Desk, One King West Hotel & Residence (Apr 2025 - Aug 2025)
+First-level technical support for staff across hardware, software, account and connectivity issues.
+- Supported Microsoft 365 applications, account access, password resets and MFA
+- Diagnosed and configured Windows computers, printers and mobile devices
+- Created, updated and resolved tickets following escalation procedures
+- Handled user onboarding and offboarding: accounts, devices and access
+
+### Security Supervisor, One King West Hotel & Residence (Jul 2024 - Apr 2025)
+Administered multi-zone physical security infrastructure across a 51-story facility.
+- Operated 80+ networked Avigilon IP cameras, HID Global biometric access and integrated alarm monitoring
+- Managed credential provisioning and access policy across VingCard Visionline RFID and SAFR facial recognition
+- Ran incident response for medical, fire and security events with average response under 2 minutes
+- Conducted security audits and produced findings reports for management
+
+### Security Supervisor, Great Canadian Entertainment (Dec 2022 - Apr 2024)
+Supervised surveillance and security operations at a casino property.
+- Operated Avigilon Unity/ACC video analytics with SAFR facial recognition and licence-plate recognition for watch-list enforcement
+- Applied access and crowd-control protocols for VIP events of up to 1,000 guests
+- Trained and mentored junior security personnel on surveillance systems and protocols
+- Coordinated with law enforcement and emergency services during incidents
+
+### Associate, UTSC Student Managed Fund (May 2023 - Jan 2024)
+Equity and fixed-income research for a student-managed investment portfolio.
+- Performed financial analysis and due diligence on equity and fixed-income securities
+- Presented quarterly performance reports and recommendations to faculty advisors
+- Applied ESG and sustainable-finance principles to investment decisions
+
+### Security Guard, Iron Horse Security (Sep 2021 - Dec 2022)
+Contract security across 15+ client sites in Ottawa.
+- Performed risk assessments and documented findings in compliance-ready formats
+- Operated IP camera systems and mobile patrol tracking software across properties up to 500,000 sq ft
+- Detected and escalated unauthorized access and policy violations with defensible documentation
+
+### Student Coordinator, Black Youth Advisory Council (Sep 2019 - Jun 2020)
+Helped plan and run the annual Black Youth Forum.
+- Coordinated guest speakers and workshop facilitators
+- Developed budgets and secured sponsorships
+- Ran post-event evaluations to inform improvements
+
+## Education
+- Computer Systems Technician - Networking (1560X03F), Algonquin College (2025 - 2027)
+
+## Community and involvement
+- Member, Onyx Initiative Scholars Program (Nov 2025 - Present): Career-development program for Black students and recent graduates: mentorship, coaching and skill-building workshops with leaders at top tech companies.
+- Active Member, Algonquin Kali Club (Sep 2025 - Present): Hands-on penetration testing, vulnerability assessment and ethical-hacking training on Kali Linux, plus CTF competitions and security tool workshops.
+- Volunteer, CyberSci 2025 (Nov 2025): Supported logistics, registration and technical setup for Canada's national student cybersecurity competition (CTF).
+
+## Certifications
+- Ontario Security Guard Licence (Ontario Government): Issued May 2021 · Expires Jan 2027
+- CompTIA Security+ (CompTIA): Scheduled 2025-26
+- Cisco CyberOps Associate (Cisco): Scheduled 2025-26
+
+## Skills
+- Software Development: TypeScript, Node.js, React, REST APIs, PostgreSQL, Model Context Protocol, AI-Assisted Development
+- Cloud & Production Operations: Oracle Cloud Infrastructure, Linux Administration, Cloudflare, System Monitoring, Disaster Recovery, Security Auditing
+- Physical Security Systems: Avigilon ACC, SAFR Facial Recognition, HID Global, VingCard Visionline, Incident Response, Access Control
+- IT Help Desk: Microsoft 365, MFA & Password Resets, Ticketing, Onboarding / Offboarding, Windows Support
+- Networking Fundamentals: OSI, TCP/IP, IPv4 subnetting, VLSM, Simple LAN design, Packet Tracer
+- Windows Desktop Support: Windows 10/11 install, Local GPO, NTFS permissions, PowerShell basics, Workgroup config
+- GNU/Linux System Support: Bash CLI, User/Group mgmt, File permissions, Shell scripting, Netplan networking
+- Numeracy & Logic: Binary↔Hex↔Decimal, Boolean algebra, Truth tables, Intro probability
+- Professional Communication: Technical writing, Incident notes, Email etiquette, Presentations
+- Windows Domain Administration: Active Directory, Group Policy, PowerShell automation, Windows Server roles
+- PC System Technology: Hardware assembly, BIOS/UEFI, Peripheral config, Component compatibility
+- GNU/Linux Server Admin: Apache/Nginx, SSH hardening, Cron/systemd, User quotas
+- Routing & Switching Fundamentals: VLANs, Trunking, STP, Inter-VLAN routing, Small-office Wi-Fi
+- Programming Fundamentals (Python): Data types, Loops, Functions, Error handling, Pseudocode
+
+## Projects
+### Field Operations Platform (In Progress)
+A landscaping and construction crew was coordinating schedules, equipment loadouts, material orders and check-ins through scattered group chats, spreadsheets and memory. I built a single system that holds that data, and two ways to use it from a phone: a web dashboard for managers and a WhatsApp assistant for crews. I wrote the backend, adapted the frontend, deploy it, and keep it running.
+#### Architecture
+
+- Backend: a TypeScript/Node.js domain layer (crew, sites, equipment, inventory, timeclock, procurement, payroll) exposed two ways: a REST facade for the dashboard and an MCP server for AI agents. Both call the same domain functions, so business rules live in one place.
+- Data: PostgreSQL (with pgvector) in a container, schema managed by ordered migrations, with a nightly dump copied to cloud object storage.
+- Frontend: an open-source construction-ERP frontend, forked and pruned down to the eight modules the business uses, served as static files by Caddy.
+- Edge: Cloudflare in front, full-strict TLS with an origin certificate, Caddy as the reverse proxy on a small Oracle Cloud VM.
+- Crew interface: a WhatsApp gateway connected to the MCP server, so crews can check in, log photos, order materials and ask questions in plain language.
+#### The WhatsApp agent and how it is kept safe
+
+- Every action is a typed tool that declares a capability tier: 0 for read-only lookups, 2 for crew submissions (time clock, receipts, mileage, check-outs), 3 for anything that commits money, schedule or inventory, and 4 for admin and financial actions.
+- The gateway holds one service credential limited to tier 2, attached by the gateway so the language model never sees it. I tested a tier-3 call with that credential against the real server and it was denied.
+- Credentials are signed capability grants tied to an identity, and revoking a grant is the safety valve if one is ever exposed.
+- Some crew actions, such as spend records and mileage claims, use confirm-before-execute: the submission becomes a pending confirmation that a manager approves or rejects before anything is committed.
+- The agent resolves who is writing by looking up the sender's phone number with a tool, and it only reports what a tool returns, not what it guesses.
+- A policy file states which functions may call external services, and the AI provider chain has fallbacks if one provider fails.
+#### Security and reliability
+
+- Login rate limiting plus per-account lockout, and TOTP multi-factor authentication for admin accounts.
+- Dependency audit clean, and the git history scanned for committed secrets (none found).
+- Heartbeat health checks from the server and an independent external uptime monitor.
+- Nightly database backups, and a restore into a throwaway database to prove the backup holds real, coherent data.
+#### A real outage, and what changed
+A frontend build run on the 1 GB production VM exhausted memory and made the server unresponsive for over an hour. I recovered it under time pressure, then wrote a disaster-recovery runbook. Builds now happen on my own machine and are shipped as static files, and the backup restore test that was previously just a gap in the plan is now done for real.
+Technologies: TypeScript, Node.js, PostgreSQL, React, Oracle Cloud, MCP
+Source: https://github.com/RedjiJB/sodboys-fieldops
+URL: https://redjijb.github.io/cyber-portfolio/projects/field-operations-platform/
+
+### Business IT Stack (In Progress)
+A small company ran almost everything through WhatsApp and personal accounts. I designed and built a self-hosted stack of open-source services behind one login, and a set of MCP tools so day-to-day administration can happen from the same WhatsApp chat the staff already use. It is running in my homelab and was written up as a proposal for the business.
+#### What is in the stack
+
+- Authentik: identity provider with MFA and OIDC for every other app.
+- Nextcloud: files and sharing. Zammad: helpdesk and ticketing. Odoo Community: ERP, CRM and timesheets. Vault: secrets and signing keys.
+- Mail: Stalwart mail server with Roundcube webmail on a separate cloud VM, with inbound mail delivered through Cloudflare Email Routing and an outbound relay.
+- Traefik routes by hostname on a private Docker network; each app has its own database and only Traefik publishes a port.
+#### How a request is protected
+A request passes the Cloudflare edge, then Cloudflare Access (one-time e-mail PIN with an allow-list), then an outbound-only tunnel into the VM, then Traefik, then the app, which sends the user to Authentik for single sign-on with a password and TOTP. The tunnel is outbound-only, so nothing on the VM is published to the internet.
+Only Authentik's protocol endpoints (token, userinfo and key discovery) bypass the Access wall, because the apps' servers must call them directly. Those calls still require a client secret or bearer token.
+#### Mail without opening port 25
+The cloud provider blocks inbound port 25 at its edge, so inbound mail is received by Cloudflare Email Routing, handed to a Worker, posted over HTTPS to a small bridge on the mail VM and passed to Stalwart with the original sender's address preserved. Outbound mail goes through an authenticated relay with SPF and DKIM.
+#### Administering it from WhatsApp
+
+- The goal was to let staff rarely open the service UIs: an `it-admin` MCP server plus thin servers for Zammad, Authentik, Stalwart and Odoo, all driven by the company's WhatsApp assistant.
+- Safety by construction: the tools have no operation for passwords, recovery links, tokens or keys, and refuse to touch superusers and service accounts.
+- Tiered actions with staged approval: risky changes wait for an out-of-chat approval, which re-authenticates the approver through Authentik with MFA and is valid only for that one action.
+- Testing: each MCP server has unit tests, mutation checks, and live tests run against real instances of the product, not only mocks. Testing against real response shapes caught a bug that convenient mocks had hidden.
+#### Status and what I would do next
+The stack is built and running on a lab host; at the last update, finishing the single sign-on wiring and final hardening were still open. Deploying it for the business is a proposal, not a finished rollout. Next steps are finishing the SSO wiring, a restore drill for the whole stack, and moving it to always-on hosting.
+Technologies: Docker, Authentik, OIDC, Traefik, Cloudflare, Nextcloud, Zammad, Odoo, Vault, MCP, TypeScript
+URL: https://redjijb.github.io/cyber-portfolio/projects/business-it-stack/
+
+### Homelab (In Progress)
+I built a homelab to practise what a small IT team does: networking, monitoring, backups, identity, and documentation. A Raspberry Pi 5 runs the services that must always be up, a Windows Server 2022 machine runs the heavier workloads, and the two reach each other and my cloud servers over Tailscale. Everything is documented as runbooks, and the monitoring is defined in git.
+#### Layout
+
+- Raspberry Pi 5 (wired): DNS and ad blocking with AdGuard Home, Uptime Kuma, ntfy push alerts, a Tailscale node, and a small website behind a Cloudflare Tunnel.
+- Windows Server 2022 host: Hyper-V runs the IT-stack VM on a schedule; the host also runs a media server and has GNS3 installed for CCNA practice.
+- Two Oracle Cloud VMs host the field-operations platform and the mail server; both are reachable over SSH only through Tailscale.
+- A Wi-Fi repeater in router mode gives the server its own subnet and internet access, because the server has no Wi-Fi of its own.
+#### Networking and access
+Devices sit on the home network, the repeater's private subnet and a Tailscale overlay. Services such as the password manager, SSH and RDP are tailnet-only, with firewall rules scoped to the lab subnet and Tailscale's address range. From anywhere, I connect through Tailscale instead of opening ports.
+#### Monitoring
+Uptime Kuma on the Pi checks 28 targets: the machines, the website, the field-operations platform, mail, SSH on the cloud servers and each IT-stack service. Alerts go to my phone through ntfy, and backups report in with a success or failure heartbeat. A timer on a cloud VM checks the public site from outside, because if the Pi goes down so does its monitoring.
+Known gaps are written down: the monitoring depends on the Pi, and the password manager does not yet have its own monitor.
+#### Backups
+Backups are pulled, not pushed: the server fetches each machine's data over SSH using keys restricted to that job, checks the streams, encrypts them with an authenticated scheme and copies the result off-site to cloud storage, weekly and on demand. The first full backup set completed and verified. A full restore drill has not been done yet, and the documentation says so.
+#### Design changes and lessons
+The first design had the Pi route a separate lab subnet over a cable. It was dropped because the USB Ethernet adapter it needed was never bought and the Pi's Wi-Fi roaming kept causing outages, so the Pi moved to a wired connection and the server went behind the repeater. The changelog records both designs and why one replaced the other.
+Alongside the build I wrote operations docs, a troubleshooting log of real incidents, a service-by-service reference with diagrams, and an offline study set (phone e-books and 588 flashcards) so the whole environment can be learned and rebuilt.
+Technologies: Raspberry Pi, Tailscale, Windows Server, Hyper-V, Docker, Networking, Monitoring, Backups
+URL: https://redjijb.github.io/cyber-portfolio/projects/homelab/
+
+### TermGame (In Progress)
+Gamified terminal training platform for mastering Linux, Cisco IOS and PowerShell through interactive missions with progressive difficulty and XP tracking, run in Docker sandboxes.
+
+Technologies: Python, Docker, Linux, Cisco IOS, PowerShell
+Source: https://github.com/RedjiJB/TERMGAME
+URL: https://redjijb.github.io/cyber-portfolio/projects/termgame/
+
+### Windows Admin Toolkit (In Progress)
+Modular PowerShell toolkit for Windows administration: user management, backup automation, security operations, network management and system health monitoring.
+
+Technologies: PowerShell, Windows, Active Directory, Automation
+Source: https://github.com/RedjiJB/window-admin-toolkit
+URL: https://redjijb.github.io/cyber-portfolio/projects/windows-admin-toolkit/
+
+### Linux Automation Suite (In Progress)
+Bash scripts for automated backups, intelligent log analysis and cron job management on Linux systems.
+
+Technologies: Bash, Linux, Cron, Automation
+Source: https://github.com/RedjiJB/linux-automation-suite
+URL: https://redjijb.github.io/cyber-portfolio/projects/linux-automation-suite/
+
+### Subnet Designer & Visualizer (In Progress)
+Python tool that calculates VLSM subnet schemes and produces a LAN topology diagram. Reinforces OSI/TCP-IP knowledge and IPv4 addressing from CST 8182.
+
+Technologies: Python, CIDR, VLSM, Networking, Topology
+URL: https://redjijb.github.io/cyber-portfolio/projects/subnet-designer-visualizer/
+
+### Windows 11 Secure Build Guide (In Progress)
+Hardened Windows 11 VM with local GPOs, NTFS permissions and PowerShell scripts for automated baseline deployment. Mirrors skills from CST 8202.
+
+Technologies: Windows, PowerShell, GPO, Security Hardening
+URL: https://redjijb.github.io/cyber-portfolio/projects/windows-11-secure-build-guide/
+
+### Linux Essentials Lab Book (In Progress)
+GitHub repo of step-by-step Bash labs that cover user/group management, file permissions and shell-scripting automation—direct output of CST 8207.
+
+Technologies: Linux, Bash, Shell Scripting, System Administration
+URL: https://redjijb.github.io/cyber-portfolio/projects/linux-essentials-lab-book/
+
+### Interactive Number-System Converter (In Progress)
+CLI program that converts binary ↔ decimal ↔ hex and demonstrates Boolean logic routines learned in MAT 8002 and CST 8324.
+
+Technologies: Python, Binary/Hex, Boolean Logic, CLI
+URL: https://redjijb.github.io/cyber-portfolio/projects/interactive-number-system-converter/
+
+### Blue-Team Home SOC (Planning)
+pfSense firewall + Suricata IDS feeding Elastic SIEM with Slack alerts; capstone for upcoming Security+ and CyberOps studies.
+
+Technologies: pfSense, Suricata, Elastic Stack, SIEM, Incident Response
+URL: https://redjijb.github.io/cyber-portfolio/projects/blue-team-home-soc/

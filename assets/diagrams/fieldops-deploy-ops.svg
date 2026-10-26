@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d"><title id="t">Deploy, backup and monitoring for the field operations platform</title><desc id="d">Builds happen on a laptop, code is pulled on the server, and static files are copied across. A nightly timer dumps the database to object storage; a heartbeat and an external check watch uptime.</desc><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker></defs><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="32" text-anchor="start" font-size="20" font-weight="700" fill="#1a202c">Deploy, backup and monitoring</text>
+<rect x="20" y="60" width="1160" height="200" rx="12" fill="#eef6ff" fill-opacity="0.45" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="32" y="78" font-size="12" font-weight="700" fill="#2b6cb0">Deploy</text>
+<rect x="40" y="100" width="230" height="80" rx="8" fill="#eef6ff" stroke="#2b6cb0" stroke-width="1.6"/>
+<text x="155" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Build on my machine</text>
+<text x="155" y="138" text-anchor="middle" font-size="11" fill="#4a5568">backend compile + frontend build</text>
+<text x="155" y="152" text-anchor="middle" font-size="11" fill="#4a5568">(too heavy for the small server)</text>
+<rect x="330" y="100" width="190" height="80" rx="8" fill="#f7f7f7" stroke="#718096" stroke-width="1.6"/>
+<text x="425" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">GitHub</text>
+<text x="425" y="138" text-anchor="middle" font-size="11" fill="#4a5568">app repo + frontend fork</text>
+<rect x="590" y="100" width="250" height="80" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="715" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Server: update the code</text>
+<text x="715" y="138" text-anchor="middle" font-size="11" fill="#4a5568">fetch · build · migrate</text>
+<text x="715" y="152" text-anchor="middle" font-size="11" fill="#4a5568">sync policy · restart the service</text>
+<rect x="900" y="100" width="260" height="80" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="1030" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Frontend files</text>
+<text x="1030" y="138" text-anchor="middle" font-size="11" fill="#4a5568">copied across; the current</text>
+<text x="1030" y="152" text-anchor="middle" font-size="11" fill="#4a5568">copy is backed up first</text>
+<line x1="270" y1="140" x2="330" y2="140" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="300" y="135" text-anchor="middle" font-size="11" fill="#4a5568" paint-order="stroke" stroke="#fff" stroke-width="3">push</text>
+<line x1="520" y1="140" x2="590" y2="140" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="555" y="135" text-anchor="middle" font-size="11" fill="#4a5568" paint-order="stroke" stroke="#fff" stroke-width="3">pull</text>
+<line x1="155" y1="180" x2="155" y2="236" stroke="#718096" stroke-width="1.8" stroke-dasharray="6 4"/>
+<line x1="155" y1="236" x2="1030" y2="236" stroke="#718096" stroke-width="1.8" stroke-dasharray="6 4"/>
+<line x1="1030" y1="236" x2="1030" y2="182" stroke="#718096" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<text x="600" y="230" text-anchor="middle" font-size="11" font-weight="400" fill="#718096">static files copied directly from my machine</text>
+<rect x="20" y="280" width="1160" height="170" rx="12" fill="#fff5e6" fill-opacity="0.45" stroke="#c05621" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="32" y="298" font-size="12" font-weight="700" fill="#c05621">Backup</text>
+<rect x="40" y="320" width="230" height="80" rx="8" fill="#ffffff" stroke="#4a5568" stroke-width="1.6"/>
+<text x="155" y="342" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Timer (nightly)</text>
+<text x="155" y="358" text-anchor="middle" font-size="11" fill="#4a5568">a scheduled system service</text>
+<rect x="330" y="320" width="260" height="80" rx="8" fill="#fff5e6" stroke="#c05621" stroke-width="1.6"/>
+<text x="460" y="342" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Database dump</text>
+<text x="460" y="358" text-anchor="middle" font-size="11" fill="#4a5568">pg_dump inside the database</text>
+<text x="460" y="372" text-anchor="middle" font-size="11" fill="#4a5568">container, compressed</text>
+<rect x="650" y="320" width="250" height="80" rx="8" fill="#f3f0ff" stroke="#6b46c1" stroke-width="1.6"/>
+<text x="775" y="342" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Object Storage bucket</text>
+<text x="775" y="358" text-anchor="middle" font-size="11" fill="#4a5568">upload uses the VM's own identity,</text>
+<text x="775" y="372" text-anchor="middle" font-size="11" fill="#4a5568">so no key is stored</text>
+<rect x="940" y="320" width="220" height="80" rx="8" fill="#e8f7ee" stroke="#2f855a" stroke-width="1.6"/>
+<text x="1050" y="342" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Restore test</text>
+<text x="1050" y="358" text-anchor="middle" font-size="11" fill="#4a5568">restored into a throwaway</text>
+<text x="1050" y="372" text-anchor="middle" font-size="11" fill="#4a5568">database and checked</text>
+<line x1="270" y1="360" x2="330" y2="360" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="590" y1="360" x2="650" y2="360" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="900" y1="360" x2="940" y2="360" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="920" y="355" text-anchor="middle" font-size="11" fill="#4a5568" paint-order="stroke" stroke="#fff" stroke-width="3">periodic</text>
+<text x="40" y="432" text-anchor="start" font-size="11" font-weight="400" fill="#4a5568">The backup job reports success or failure to the platform's health tools when it exits.</text>
+<rect x="20" y="470" width="1160" height="190" rx="12" fill="#e8f7ee" fill-opacity="0.45" stroke="#2f855a" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="32" y="488" font-size="12" font-weight="700" fill="#2f855a">Monitoring</text>
+<rect x="40" y="510" width="250" height="80" rx="8" fill="#e8f7ee" stroke="#2f855a" stroke-width="1.6"/>
+<text x="165" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Heartbeat (every 15 min)</text>
+<text x="165" y="548" text-anchor="middle" font-size="11" fill="#4a5568">dashboard reachable · outbound</text>
+<text x="165" y="562" text-anchor="middle" font-size="11" fill="#4a5568">connectivity · disk space</text>
+<rect x="350" y="510" width="250" height="80" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="475" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Health reports</text>
+<text x="475" y="548" text-anchor="middle" font-size="11" fill="#4a5568">sent to the platform through</text>
+<text x="475" y="562" text-anchor="middle" font-size="11" fill="#4a5568">its own MCP health tools</text>
+<rect x="660" y="510" width="220" height="80" rx="8" fill="#fff7e0" stroke="#b7791f" stroke-width="1.6"/>
+<text x="770" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Alerts</text>
+<text x="770" y="548" text-anchor="middle" font-size="11" fill="#4a5568">raised in the dashboard</text>
+<text x="770" y="562" text-anchor="middle" font-size="11" fill="#4a5568">when a check fails</text>
+<rect x="940" y="510" width="220" height="80" rx="8" fill="#f3f0ff" stroke="#6b46c1" stroke-width="1.6"/>
+<text x="1050" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">External check (5 min)</text>
+<text x="1050" y="548" text-anchor="middle" font-size="11" fill="#4a5568">a separate cloud VM probes</text>
+<text x="1050" y="562" text-anchor="middle" font-size="11" fill="#4a5568">the public endpoints</text>
+<line x1="290" y1="550" x2="350" y2="550" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="600" y1="550" x2="660" y2="550" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="940" y="614" text-anchor="start" font-size="11" font-weight="400" fill="#4a5568">Needed because the heartbeat runs on the</text>
+<text x="940" y="628" text-anchor="start" font-size="11" font-weight="400" fill="#4a5568">server it is checking.</text>
+</svg>
