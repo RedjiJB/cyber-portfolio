@@ -167,3 +167,10 @@
   .pp-categories { flex-wrap: wrap; }
   .pp-category { flex-grow: 1; text-align: center; }
 }
+
+/* Long certification status text (e.g. "Issued May 2021 · Expires Jan 2027") must wrap on phones */
+@media screen and (max-width: 600px) {
+  .pp-certs .sp-cert-item { flex-wrap: wrap; padding: 1rem; }
+  .pp-certs .sp-cert-status { margin-left: 0; width: 100%; flex-shrink: 1; }
+  .pp-certs .sp-tag { white-space: normal; }
+}
