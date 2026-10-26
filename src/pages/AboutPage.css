@@ -1,0 +1,288 @@
+/* About page: intro card, stat cards, experience/education timelines, grouped skills */
+.ab-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ab-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-align: center;
+  color: var(--sp-text);
+  margin-bottom: 3rem;
+}
+
+.ab-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: var(--sp-text);
+  margin: 4rem 0 2.5rem;
+}
+
+/* Glass surface shared by the cards */
+.ab-personal-card,
+.ab-stat,
+.ab-timeline-card,
+.ab-skill-group {
+  border: 1px solid var(--sp-border);
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+/* Personal introduction */
+.ab-personal-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.ab-photo {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--sp-border);
+}
+
+.ab-personal-text {
+  min-width: 0;
+}
+
+.ab-intro-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--sp-text);
+}
+
+.ab-role {
+  margin: 0.25rem 0 1rem;
+  color: var(--sp-cyan);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ab-intro {
+  line-height: 1.7;
+  color: var(--sp-dim);
+  margin-bottom: 1.25rem;
+}
+
+.ab-socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.ab-socials a {
+  color: var(--sp-dim);
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.ab-socials a:hover {
+  color: var(--sp-text);
+  transform: translateY(-2px);
+}
+
+.ab-socials .ab-resume {
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Stat cards */
+.ab-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.ab-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.ab-stat__icon {
+  font-size: 1.4rem;
+  color: var(--sp-cyan);
+  margin-bottom: 0.25rem;
+}
+
+.ab-stat__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sp-dim);
+}
+
+.ab-stat__value {
+  font-weight: 600;
+  color: var(--sp-text);
+}
+
+/* Timeline */
+.ab-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ab-timeline-item {
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.ab-timeline.is-visible .ab-timeline-item {
+  animation: abFadeIn 0.6s ease forwards;
+  animation-delay: calc(var(--order) * 0.15s);
+}
+
+.ab-dot {
+  position: absolute;
+  left: 0;
+  top: 1.5rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--sp-cyan);
+  box-shadow: 0 0 0 4px var(--sp-cyan-dim);
+}
+
+.ab-line {
+  position: absolute;
+  left: 6px;
+  top: calc(1.5rem + 14px);
+  bottom: -1.5rem;
+  width: 2px;
+  background: var(--sp-cyan-dim);
+}
+
+.ab-timeline-card {
+  padding: 1.5rem;
+}
+
+.ab-timeline-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--sp-text);
+}
+
+.ab-company {
+  color: var(--sp-cyan);
+}
+
+.ab-period {
+  margin: 0.35rem 0 0.9rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--sp-dim);
+}
+
+.ab-desc {
+  line-height: 1.6;
+  color: var(--sp-dim);
+  margin-bottom: 0.75rem;
+}
+
+.ab-bullets {
+  padding-left: 1.2rem;
+  line-height: 1.6;
+  color: var(--sp-dim);
+}
+
+/* Tags */
+.ab-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ab-tag,
+.ab-skill-tag {
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--sp-dim);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Skills, grouped by area */
+.ab-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.ab-skill-group {
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.ab-skills.is-visible .ab-skill-group {
+  animation: abFadeIn 0.6s ease forwards;
+  animation-delay: calc(var(--order) * 0.1s);
+}
+
+.ab-skill-category {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sp-text);
+}
+
+.ab-skill-tag {
+  padding: 0.4rem 0.7rem;
+  font-size: 0.8rem;
+  text-transform: none;
+  letter-spacing: 0;
+  border: 1px solid var(--sp-border);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.ab-skill-tag:hover {
+  color: var(--sp-text);
+  border-color: var(--sp-border-hv);
+}
+
+@keyframes abFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ab-timeline-item,
+  .ab-skill-group { opacity: 1; transform: none; animation: none !important; }
+}
+
+@media screen and (max-width: 768px) {
+  .ab-title { font-size: 2.5rem; }
+  .ab-personal-card { flex-direction: column; text-align: center; }
+  .ab-socials { justify-content: center; }
+  .ab-photo { width: 160px; height: 160px; }
+}

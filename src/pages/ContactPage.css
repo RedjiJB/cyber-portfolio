@@ -1,0 +1,205 @@
+/* Contact page: info card beside a message form, same glass look as Projects/About */
+.ct-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ct-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-align: center;
+  color: var(--sp-text);
+  margin-bottom: 3rem;
+}
+
+.ct-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.ct-info,
+.ct-form-wrap {
+  padding: 2rem;
+  border: 1px solid var(--sp-border);
+  border-radius: 12px;
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.ct-info__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--sp-text);
+}
+
+.ct-info__text {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--sp-dim);
+}
+
+.ct-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--sp-dim);
+  word-break: break-word;
+}
+
+.ct-detail i {
+  color: var(--sp-cyan);
+}
+
+.ct-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ct-social__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--sp-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, color 0.3s ease;
+}
+
+.ct-social__button:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--sp-text);
+}
+
+/* Form */
+.ct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ct-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ct-group label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--sp-dim);
+}
+
+.ct-group input,
+.ct-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--sp-border);
+  border-radius: 6px;
+  background: rgba(18, 18, 18, 0.8);
+  color: var(--sp-text);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ct-group input:focus,
+.ct-group textarea:focus {
+  outline: none;
+  border-color: rgba(52, 152, 219, 0.5);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.ct-group input:disabled,
+.ct-group textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ct-textarea {
+  position: relative;
+}
+
+.ct-counter {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.6rem;
+  font-size: 0.75rem;
+  color: var(--sp-dim);
+  pointer-events: none;
+}
+
+.ct-counter.limit {
+  color: #e74c3c;
+}
+
+.ct-submit {
+  width: fit-content;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--sp-cyan);
+  color: #07080f;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.ct-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 200, 232, 0.25);
+}
+
+.ct-submit.submitting {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Status messages */
+.ct-status {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.ct-status--success {
+  background: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  color: #2ecc71;
+}
+
+.ct-status--error {
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+}
+
+.ct-status--warn {
+  background: rgba(241, 196, 15, 0.1);
+  border: 1px solid rgba(241, 196, 15, 0.3);
+  color: #f1c40f;
+}
+
+@media screen and (max-width: 860px) {
+  .ct-content { grid-template-columns: 1fr; }
+  .ct-title { font-size: 2.5rem; }
+  .ct-section { padding-left: 1rem; padding-right: 1rem; }
+}

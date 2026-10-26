@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 import './About.css';
 
-import profilePic from '../../assets/profile.JPG';
+import profilePic from '../../assets/profile-bw.jpg';
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -250,16 +250,6 @@ export const About = () => {
                       startIcon={<i className="fas fa-terminal"></i>}
                     >
                       Get In Touch
-                    </Button>
-                    <Button 
-                      component="a"
-                      href={process.env.PUBLIC_URL + "/interactive-resume"}
-                      variant="contained" 
-                      className={classes.resumeButton}
-                      startIcon={<i className="fas fa-file-alt"></i>}
-                      target="_blank"
-                    >
-                      Resume
                     </Button>
                   </Box>
                 </Grid>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d"><title id="t">IT stack request path</title><desc id="d">A browser request passes Cloudflare Access (one-time PIN), the it-stack tunnel, cloudflared and Traefik in the VM, and reaches Authentik, Nextcloud, Zammad, Odoo or Vault.</desc><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker></defs><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="32" text-anchor="start" font-size="20" font-weight="700" fill="#1a202c">IT stack: how a request reaches a service, and what keeps it safe</text>
+<rect x="24" y="90" width="130" height="60" rx="8" fill="#f7f7f7" stroke="#718096" stroke-width="1.6"/>
+<text x="89" y="114" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Browser</text>
+<text x="89" y="128" text-anchor="middle" font-size="11" fill="#4a5568">crew / admin</text>
+<rect x="200" y="90" width="190" height="60" rx="8" fill="#fff7e0" stroke="#b7791f" stroke-width="1.6"/>
+<text x="295" y="114" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Cloudflare Access</text>
+<text x="295" y="128" text-anchor="middle" font-size="11" fill="#4a5568">e-mail one-time PIN, allow-list</text>
+<rect x="440" y="90" width="170" height="60" rx="8" fill="#fff7e0" stroke="#b7791f" stroke-width="1.6"/>
+<text x="525" y="114" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Tunnel  it-stack</text>
+<text x="525" y="128" text-anchor="middle" font-size="11" fill="#4a5568">outbound only</text>
+<line x1="154" y1="120" x2="200" y2="120" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="177" y="115" text-anchor="middle" font-size="11" fill="#4a5568" paint-order="stroke" stroke="#fff" stroke-width="4">https</text>
+<line x1="390" y1="120" x2="440" y2="120" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="24" y="190" width="1150" height="400" rx="12" fill="#fdf2f8" fill-opacity="0.45" stroke="#b83280" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="36" y="208" font-size="12" font-weight="700" fill="#b83280">Hyper-V VM  it-stack (10.x.x.x)  docker network itstack_internal, nothing published except Traefik :80 on the VM</text>
+<rect x="60" y="230" width="130" height="60" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="125" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">cloudflared</text>
+<text x="125" y="268" text-anchor="middle" font-size="11" fill="#4a5568">connector</text>
+<rect x="240" y="230" width="130" height="60" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="305" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Traefik :80</text>
+<text x="305" y="268" text-anchor="middle" font-size="11" fill="#4a5568">routes by Host</text>
+<line x1="525" y1="150" x2="125" y2="230" stroke="#b7791f" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="325" y="185" text-anchor="middle" font-size="11" fill="#b7791f" paint-order="stroke" stroke="#fff" stroke-width="4">tunnel</text>
+<line x1="190" y1="260" x2="240" y2="260" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="470" y="225" width="250" height="56" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="595" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Authentik 2026.8.3</text>
+<text x="595" y="263" text-anchor="middle" font-size="11" fill="#4a5568">auth.example.org</text>
+<rect x="790" y="225" width="130" height="56" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="855" y="257" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Postgres 16</text>
+<line x1="720" y1="253" x2="790" y2="253" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="370" y1="260" x2="470" y2="253" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="470" y="297" width="250" height="56" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="595" y="321" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Nextcloud 35 (+Redis)</text>
+<text x="595" y="335" text-anchor="middle" font-size="11" fill="#4a5568">cloud.example.org</text>
+<rect x="790" y="297" width="130" height="56" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="855" y="329" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Postgres 16</text>
+<line x1="720" y1="325" x2="790" y2="325" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="370" y1="260" x2="470" y2="325" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="470" y="369" width="250" height="56" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="595" y="393" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Zammad 17.5 (+ Elasticsearch)</text>
+<text x="595" y="407" text-anchor="middle" font-size="11" fill="#4a5568">help.example.org</text>
+<rect x="790" y="369" width="130" height="56" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="855" y="401" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Postgres 17</text>
+<line x1="720" y1="397" x2="790" y2="397" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="370" y1="260" x2="470" y2="397" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="470" y="441" width="250" height="56" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="595" y="465" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Odoo 19</text>
+<text x="595" y="479" text-anchor="middle" font-size="11" fill="#4a5568">erp.example.org</text>
+<rect x="790" y="441" width="130" height="56" rx="8" fill="#fdf2f8" stroke="#b83280" stroke-width="1.6"/>
+<text x="855" y="473" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Postgres 16</text>
+<line x1="720" y1="469" x2="790" y2="469" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="370" y1="260" x2="470" y2="469" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="470" y="513" width="250" height="56" rx="8" fill="#fff0f0" stroke="#c53030" stroke-width="1.6"/>
+<text x="595" y="537" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Vault 2.1 (sealed outside work hours)</text>
+<text x="595" y="551" text-anchor="middle" font-size="11" fill="#4a5568">vault.example.org</text>
+<line x1="370" y1="260" x2="470" y2="541" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="960" y="225" width="190" height="150" rx="8" fill="#ffffff" stroke="#4a5568" stroke-width="1.6"/>
+<text x="1055" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Daily backup</text>
+<text x="1055" y="263" text-anchor="middle" font-size="11" fill="#4a5568">17:00 Mon-Sat: pull backup</text>
+<text x="1055" y="277" text-anchor="middle" font-size="11" fill="#4a5568">(restricted key, forced command</text>
+<text x="1055" y="291" text-anchor="middle" font-size="11" fill="#4a5568">a single backup command)</text>
+<text x="1055" y="305" text-anchor="middle" font-size="11" fill="#4a5568">-&gt; backup copy on the lab host</text>
+<rect x="960" y="400" width="190" height="120" rx="8" fill="#fff5e6" stroke="#c05621" stroke-width="1.6"/>
+<text x="1055" y="424" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Schedule (Machine B)</text>
+<text x="1055" y="438" text-anchor="middle" font-size="11" fill="#4a5568">07:30 start: VM up, wait SSH,</text>
+<text x="1055" y="452" text-anchor="middle" font-size="11" fill="#4a5568">unseal Vault</text>
+<text x="1055" y="466" text-anchor="middle" font-size="11" fill="#4a5568">17:00 stop: backup, seal Vault,</text>
+<text x="1055" y="480" text-anchor="middle" font-size="11" fill="#4a5568">graceful shutdown</text>
+<text x="24" y="612" text-anchor="start" font-size="11" font-weight="400" fill="#4a5568">Server-to-server SSO traffic (apps -&gt; Authentik) stays on the container network; if an app must call the public auth hostname it needs an Access bypass or service token.</text>
+</svg>

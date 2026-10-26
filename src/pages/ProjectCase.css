@@ -1,0 +1,145 @@
+/* Case study page: stacked glass cards, diagrams on a light panel so they stay readable */
+.pc-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pc-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sp-cyan);
+}
+
+.pc-title {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  color: var(--sp-text);
+}
+
+.pc-sub {
+  margin-bottom: 2rem;
+  color: var(--sp-dim);
+}
+
+.pc-card {
+  margin-bottom: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid var(--sp-border);
+  border-radius: 12px;
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.pc-heading {
+  margin-bottom: 0.9rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--sp-text);
+}
+
+.pc-text {
+  margin-bottom: 0.9rem;
+  line-height: 1.7;
+  color: var(--sp-dim);
+}
+
+.pc-text:last-child,
+.pc-list:last-child {
+  margin-bottom: 0;
+}
+
+.pc-list {
+  padding-left: 1.2rem;
+  line-height: 1.7;
+  color: var(--sp-dim);
+}
+
+.pc-list li + li {
+  margin-top: 0.5rem;
+}
+
+.pc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pc-tag {
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--sp-dim);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Diagrams */
+.pc-diagrams {
+  margin-bottom: 1.5rem;
+}
+
+.pc-figure {
+  margin: 0 0 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--sp-border);
+  border-radius: 12px;
+  background: #f4f6fa;
+}
+
+.pc-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pc-figure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.pc-note {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--sp-dim);
+}
+
+.pc-link,
+.pc-pager a {
+  color: var(--sp-cyan);
+  text-decoration: none;
+}
+
+.pc-link:hover,
+.pc-pager a:hover {
+  text-decoration: underline;
+}
+
+.pc-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .pc-section { padding: 6.5rem 1rem 3rem; }
+  .pc-title { font-size: 2.2rem; }
+  .pc-card { padding: 1.25rem; }
+}
+
+.pc-hint {
+  color: #718096;
+  font-style: italic;
+}

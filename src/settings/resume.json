@@ -1,21 +1,20 @@
 {
     "basics": {
         "name": "Redji Jean Baptiste",
-        "label": "Computer Systems Technician Student",
+        "label": "Full-Stack Developer & Cloud System Administrator",
         "email": "jean0319@algonquinlive.com",
-        "phone": "+1 (819) 319-6405",
         "picture": "profile.JPG",
         "x_title": "Hello, I'm",
         "job1": "Computer Systems Technician - Networking",
         "job2": "",
-        "description": "Co-operative education student at Algonquin College in the Computer Systems Technician - Networking program with extensive security operations experience. Skilled in physical security systems, access control, video surveillance, and incident response. Seeking opportunities to apply technical knowledge and security expertise in IT infrastructure and cybersecurity roles.",
-        "summary": "based in Ottawa, Canada.",
-        "keywords": "networking,cybersecurity,system administration,algonquin college,student,co-op,ottawa,canada,python,bash,powershell,windows,linux,security,infrastructure",
+        "description": "Computer Systems Technician - Networking student at Algonquin College and full-stack developer and cloud system administrator at The Sod Boys, running a production field-operations platform on Oracle Cloud. Background in IT help desk and physical security operations: access control, video surveillance and incident response. Seeking co-op and cybersecurity / networking roles.",
+        "summary": "based in Ottawa & Toronto, Ontario.",
+        "keywords": "networking,cybersecurity,system administration,algonquin college,student,co-op,ottawa,toronto,ontario,canada,python,bash,powershell,windows,linux,security,infrastructure",
         "url": "https://redjijb.github.io/cyber-portfolio",
         "location": {
             "address": "",
             "postalCode": "",
-            "city": "Ottawa",
+            "city": "Ottawa & Toronto",
             "country": "Canada",
             "countryCode": "CA",
             "region": "Ontario"
@@ -55,17 +54,70 @@
     },
     "work": [
         {
+            "company": "The Sod Boys",
+            "position": "Full-Stack Developer & Cloud System Administrator",
+            "website": "https://thesodboys.ca",
+            "startDate": "2026-05-01",
+            "endDate": "",
+            "summary": "Internship: built and now administer a production field-operations platform (crew dispatch, timeclock/GPS tracking, fleet, inventory and payroll) for a live business, used through a web dashboard and a WhatsApp-based AI agent.",
+            "highlights": [
+                "Own uptime and reliability for live production infrastructure (Oracle Cloud, PostgreSQL, Cloudflare) with heartbeat health checks and independent external uptime monitoring",
+                "Diagnosed and recovered a real production outage under time pressure, then authored a disaster-recovery runbook",
+                "Automated nightly backups with periodically tested restores that verify real data integrity",
+                "Developed the full stack: TypeScript/Node.js backend, PostgreSQL (42 migrations), REST API and a React/TypeScript dashboard",
+                "Built an AI agent integration (Model Context Protocol) connecting a WhatsApp crew assistant to backend systems"
+            ],
+            "skills": [
+                "TypeScript",
+                "Node.js",
+                "React",
+                "PostgreSQL",
+                "Oracle Cloud",
+                "Cloudflare",
+                "Linux",
+                "Model Context Protocol"
+            ]
+        },
+        {
             "company": "One King West Hotel & Residence",
-            "position": "Security Officer",
+            "position": "Information Technology Help Desk",
+            "website": "",
+            "startDate": "2025-04-01",
+            "endDate": "2025-08-01",
+            "summary": "First-level technical support for staff across hardware, software, account and connectivity issues.",
+            "highlights": [
+                "Supported Microsoft 365 applications, account access, password resets and MFA",
+                "Diagnosed and configured Windows computers, printers and mobile devices",
+                "Created, updated and resolved tickets following escalation procedures",
+                "Handled user onboarding and offboarding: accounts, devices and access"
+            ]
+        },
+        {
+            "company": "One King West Hotel & Residence",
+            "position": "Security Supervisor",
             "website": "",
             "startDate": "2024-07-01",
             "endDate": "2025-04-01",
-            "summary": "Provided comprehensive security services and hotel-level guest assistance in a 51-story luxury hotel environment, serving 400+ residences and hotel guests daily",
+            "summary": "Administered multi-zone physical security infrastructure across a 51-story facility.",
             "highlights": [
-                "Operated Avigilon CCTV surveillance system monitoring 80+ IP cameras across multiple building zones",
-                "Administered HID Global access control infrastructure and VingCard Visionline system to manage all guest, resident, and staff credentials",
-                "Conducted access control investigations by reviewing Visionline audit trails during security incidents",
-                "Responded to emergency situations with average response time under 2 minutes"
+                "Operated 80+ networked Avigilon IP cameras, HID Global biometric access and integrated alarm monitoring",
+                "Managed credential provisioning and access policy across VingCard Visionline RFID and SAFR facial recognition",
+                "Ran incident response for medical, fire and security events with average response under 2 minutes",
+                "Conducted security audits and produced findings reports for management"
+            ]
+        },
+        {
+            "company": "Great Canadian Entertainment",
+            "position": "Security Supervisor",
+            "website": "",
+            "startDate": "2022-12-01",
+            "endDate": "2024-04-01",
+            "summary": "Supervised surveillance and security operations at a casino property.",
+            "highlights": [
+                "Operated Avigilon Unity/ACC video analytics with SAFR facial recognition and licence-plate recognition for watch-list enforcement",
+                "Applied access and crowd-control protocols for VIP events of up to 1,000 guests",
+                "Trained and mentored junior security personnel on surveillance systems and protocols",
+                "Coordinated with law enforcement and emergency services during incidents"
             ]
         },
         {
@@ -74,40 +126,24 @@
             "website": "",
             "startDate": "2023-05-01",
             "endDate": "2024-01-01",
-            "summary": "Conducted comprehensive financial analysis and due diligence on equity and fixed-income securities for a simulated student-managed investment portfolio",
+            "summary": "Equity and fixed-income research for a student-managed investment portfolio.",
             "highlights": [
-                "Collaborated with team of student analysts to develop investment strategies and perform sector research",
-                "Utilized financial modelling software and advanced Excel functions to analyze market trends",
-                "Participated in weekly investment committee meetings, presenting research findings",
-                "Developed expertise in ESG investing principles and sustainable finance practices"
-            ]
-        },
-        {
-            "company": "Great Canadian Entertainment",
-            "position": "Security Officer",
-            "website": "",
-            "startDate": "2022-12-01",
-            "endDate": "2023-04-01",
-            "summary": "Engaged in security operations in a high-traffic entertainment complex serving 5,000+ daily visitors across gaming floors, restaurants, and event spaces",
-            "highlights": [
-                "Operated Avigilon Unity/ACC video management platform with integrated SAFR facial recognition module",
-                "Deployed Avigilon License Plate Recognition solution to capture and verify vehicle plates",
-                "Coordinated hourly patrols covering 200,000 sq ft and monitored 50+ CCTV cameras",
-                "Collaborated with local law enforcement; de-escalated conflicts and managed crowd control"
+                "Performed financial analysis and due diligence on equity and fixed-income securities",
+                "Presented quarterly performance reports and recommendations to faculty advisors",
+                "Applied ESG and sustainable-finance principles to investment decisions"
             ]
         },
         {
             "company": "Iron Horse Security",
             "position": "Security Guard",
             "website": "",
-            "startDate": "2020-09-01",
-            "endDate": "2023-12-01",
-            "summary": "Provided comprehensive security services across multiple client locations including commercial complexes, construction sites, retail establishments, and public events",
+            "startDate": "2021-09-01",
+            "endDate": "2022-12-01",
+            "summary": "Contract security across 15+ client sites in Ottawa.",
             "highlights": [
-                "Engaged in security operations for diverse properties ranging from 10,000 to 500,000 sq ft",
-                "Conducted detailed risk assessments and implemented enhanced security protocols",
-                "Utilized advanced surveillance technology including IP camera systems",
-                "Developed strong relationships with property managers and tenants"
+                "Performed risk assessments and documented findings in compliance-ready formats",
+                "Operated IP camera systems and mobile patrol tracking software across properties up to 500,000 sq ft",
+                "Detected and escalated unauthorized access and policy violations with defensible documentation"
             ]
         },
         {
@@ -116,11 +152,12 @@
             "website": "",
             "startDate": "2019-09-01",
             "endDate": "2020-06-01",
-            "summary": "Collaborated with school board officials, community leaders, and fellow organizers to plan, promote, and execute the annual Black Youth Forum",
+            "excludeFromTenure": true,
+            "summary": "Helped plan and run the annual Black Youth Forum.",
             "highlights": [
-                "Coordinated with guest speakers and workshop facilitators to create engaging content",
-                "Developed and managed budgets, securing sponsorships and allocating resources",
-                "Conducted post-event evaluations to inform improvements and ensure continued growth"
+                "Coordinated guest speakers and workshop facilitators",
+                "Developed budgets and secured sponsorships",
+                "Ran post-event evaluations to inform improvements"
             ]
         }
     ],
@@ -130,8 +167,8 @@
             "url": "https://www.algonquincollege.com/",
             "area": "Computer Systems Technician - Networking (1560X03F)",
             "studyType": "Diploma",
-            "startDate": "2024-09-01",
-            "endDate": "2026-06-01",
+            "startDate": "2025",
+            "endDate": "2027",
             "score": "",
             "courses": [
                 "Network Infrastructure",
@@ -143,68 +180,172 @@
     ],
     "skills": [
         {
+            "name": "Software Development",
+            "level": "Professional",
+            "keywords": [
+                "TypeScript",
+                "Node.js",
+                "React",
+                "REST APIs",
+                "PostgreSQL",
+                "Model Context Protocol",
+                "AI-Assisted Development"
+            ]
+        },
+        {
+            "name": "Cloud & Production Operations",
+            "level": "Professional",
+            "keywords": [
+                "Oracle Cloud Infrastructure",
+                "Linux Administration",
+                "Cloudflare",
+                "System Monitoring",
+                "Disaster Recovery",
+                "Security Auditing"
+            ]
+        },
+        {
+            "name": "Physical Security Systems",
+            "level": "Professional",
+            "keywords": [
+                "Avigilon ACC",
+                "SAFR Facial Recognition",
+                "HID Global",
+                "VingCard Visionline",
+                "Incident Response",
+                "Access Control"
+            ]
+        },
+        {
+            "name": "IT Help Desk",
+            "level": "Professional",
+            "keywords": [
+                "Microsoft 365",
+                "MFA & Password Resets",
+                "Ticketing",
+                "Onboarding / Offboarding",
+                "Windows Support"
+            ]
+        },
+        {
             "name": "Networking Fundamentals",
             "level": "Beginner",
-            "keywords": ["OSI", "TCP/IP", "IPv4 subnetting", "VLSM", "Simple LAN design", "Packet Tracer"]
+            "keywords": [
+                "OSI",
+                "TCP/IP",
+                "IPv4 subnetting",
+                "VLSM",
+                "Simple LAN design",
+                "Packet Tracer"
+            ]
         },
         {
             "name": "Windows Desktop Support",
             "level": "Beginner",
-            "keywords": ["Windows 10/11 install", "Local GPO", "NTFS permissions", "PowerShell basics", "Workgroup config"]
+            "keywords": [
+                "Windows 10/11 install",
+                "Local GPO",
+                "NTFS permissions",
+                "PowerShell basics",
+                "Workgroup config"
+            ]
         },
         {
             "name": "GNU/Linux System Support",
             "level": "Beginner",
-            "keywords": ["Bash CLI", "User/Group mgmt", "File permissions", "Shell scripting", "Netplan networking"]
+            "keywords": [
+                "Bash CLI",
+                "User/Group mgmt",
+                "File permissions",
+                "Shell scripting",
+                "Netplan networking"
+            ]
         },
         {
             "name": "Numeracy & Logic",
             "level": "Beginner",
-            "keywords": ["Binary↔Hex↔Decimal", "Boolean algebra", "Truth tables", "Intro probability"]
+            "keywords": [
+                "Binary↔Hex↔Decimal",
+                "Boolean algebra",
+                "Truth tables",
+                "Intro probability"
+            ]
         },
         {
             "name": "Professional Communication",
             "level": "Beginner",
-            "keywords": ["Technical writing", "Incident notes", "Email etiquette", "Presentations"]
+            "keywords": [
+                "Technical writing",
+                "Incident notes",
+                "Email etiquette",
+                "Presentations"
+            ]
         },
         {
             "name": "Windows Domain Administration",
             "level": "In Progress",
-            "keywords": ["Active Directory", "Group Policy", "PowerShell automation", "Windows Server roles"]
+            "keywords": [
+                "Active Directory",
+                "Group Policy",
+                "PowerShell automation",
+                "Windows Server roles"
+            ]
         },
         {
             "name": "PC System Technology",
             "level": "In Progress",
-            "keywords": ["Hardware assembly", "BIOS/UEFI", "Peripheral config", "Component compatibility"]
+            "keywords": [
+                "Hardware assembly",
+                "BIOS/UEFI",
+                "Peripheral config",
+                "Component compatibility"
+            ]
         },
         {
             "name": "GNU/Linux Server Admin",
             "level": "In Progress",
-            "keywords": ["Apache/Nginx", "SSH hardening", "Cron/systemd", "User quotas"]
+            "keywords": [
+                "Apache/Nginx",
+                "SSH hardening",
+                "Cron/systemd",
+                "User quotas"
+            ]
         },
         {
             "name": "Routing & Switching Fundamentals",
             "level": "In Progress",
-            "keywords": ["VLANs", "Trunking", "STP", "Inter-VLAN routing", "Small-office Wi-Fi"]
+            "keywords": [
+                "VLANs",
+                "Trunking",
+                "STP",
+                "Inter-VLAN routing",
+                "Small-office Wi-Fi"
+            ]
         },
         {
             "name": "Programming Fundamentals (Python)",
             "level": "In Progress",
-            "keywords": ["Data types", "Loops", "Functions", "Error handling", "Pseudocode"]
+            "keywords": [
+                "Data types",
+                "Loops",
+                "Functions",
+                "Error handling",
+                "Pseudocode"
+            ]
         }
     ],
     "languages": [
         {
-            "language": "Haitian Creole",
-            "fluency": "Native"
+            "language": "English",
+            "fluency": "Native or bilingual"
         },
         {
-            "language": "English",
-            "fluency": "Fluent"
+            "language": "Haitian Creole",
+            "fluency": "Native or bilingual"
         },
         {
             "language": "French",
-            "fluency": "Fluent"
+            "fluency": "Limited working proficiency"
         },
         {
             "language": "Python",
@@ -230,46 +371,421 @@
     "interests": [
         {
             "name": "Blue-Team Security Operations",
-            "keywords": ["SOC", "SIEM", "Incident Response"],
+            "keywords": [
+                "SOC",
+                "SIEM",
+                "Incident Response"
+            ],
             "description": "Building resilient detection pipelines and hands-on incident-response playbooks for enterprise and small networks."
         },
         {
             "name": "Network Automation & Infrastructure-as-Code",
-            "keywords": ["Python", "Ansible", "Terraform", "CI/CD"],
+            "keywords": [
+                "Python",
+                "Ansible",
+                "Terraform",
+                "CI/CD"
+            ],
             "description": "Eliminating manual toil by codifying network configs with Python, Ansible, and Terraform."
         },
         {
             "name": "Zero-Trust / SASE Architectures",
-            "keywords": ["Zero Trust", "SASE", "Micro-Segmentation"],
+            "keywords": [
+                "Zero Trust",
+                "SASE",
+                "Micro-Segmentation"
+            ],
             "description": "Designing identity-centric, segmented networks for hybrid-cloud environments in line with NIST 800-207."
         },
         {
             "name": "Cloud & Container Security",
-            "keywords": ["AWS", "Azure", "Kubernetes", "DevSecOps"],
+            "keywords": [
+                "AWS",
+                "Azure",
+                "Kubernetes",
+                "DevSecOps"
+            ],
             "description": "Hardening AWS, Azure, and Kubernetes workloads from build to runtime with DevSecOps practices."
         },
         {
             "name": "Open-Source Governance & Digital Sovereignty",
-            "keywords": ["Open Source", "Transparency", "Sovereignty"],
+            "keywords": [
+                "Open Source",
+                "Transparency",
+                "Sovereignty"
+            ],
             "description": "Empowering nations like Haiti through transparent, community-owned software and \"public-money, public-code\" principles."
         },
         {
             "name": "Decentralized Mesh Networking",
-            "keywords": ["Mesh", "LoRa", "P2P", "Resilience"],
+            "keywords": [
+                "Mesh",
+                "LoRa",
+                "P2P",
+                "Resilience"
+            ],
             "description": "Building community-run, disaster-tolerant networks that blend LoRa, Wi-Fi, and P2P routing."
         },
         {
             "name": "Blockchain & Web3 Security",
-            "keywords": ["Smart Contracts", "DAOs", "zk-SNARKs"],
+            "keywords": [
+                "Smart Contracts",
+                "DAOs",
+                "zk-SNARKs"
+            ],
             "description": "Auditing smart contracts and safeguarding on-chain assets, DAOs, and emerging token economies."
         },
         {
             "name": "AI for Cyber Defense",
-            "keywords": ["Machine Learning", "Threat Intel", "Automation"],
+            "keywords": [
+                "Machine Learning",
+                "Threat Intel",
+                "Automation"
+            ],
             "description": "Leveraging machine learning to automate threat hunting, anomaly detection, and phishing prevention."
         }
     ],
     "projects": [
+        {
+            "name": "Field Operations Platform",
+            "description": "Production field-operations platform for a landscaping company: crew dispatch, timeclock and GPS tracking, fleet, inventory and payroll, with a React dashboard and a WhatsApp AI agent, running on Oracle Cloud and PostgreSQL.",
+            "overview": "A landscaping and construction crew was coordinating schedules, equipment loadouts, material orders and check-ins through scattered group chats, spreadsheets and memory. I built a single system that holds that data, and two ways to use it from a phone: a web dashboard for managers and a WhatsApp assistant for crews. I wrote the backend, adapted the frontend, deploy it, and keep it running.",
+            "highlights": [
+                "40+ database migrations, a TypeScript domain layer and a REST API behind a React dashboard",
+                "WhatsApp crew assistant that calls the same domain logic through an MCP server",
+                "Nightly backups with restores actually tested, health heartbeats and a disaster-recovery runbook"
+            ],
+            "keywords": [
+                "TypeScript",
+                "Node.js",
+                "PostgreSQL",
+                "React",
+                "Oracle Cloud",
+                "MCP"
+            ],
+            "sections": [
+                {
+                    "title": "Architecture",
+                    "bullets": [
+                        "Backend: a TypeScript/Node.js domain layer (crew, sites, equipment, inventory, timeclock, procurement, payroll) exposed two ways: a REST facade for the dashboard and an MCP server for AI agents. Both call the same domain functions, so business rules live in one place.",
+                        "Data: PostgreSQL (with pgvector) in a container, schema managed by ordered migrations, with a nightly dump copied to cloud object storage.",
+                        "Frontend: an open-source construction-ERP frontend, forked and pruned down to the eight modules the business uses, served as static files by Caddy.",
+                        "Edge: Cloudflare in front, full-strict TLS with an origin certificate, Caddy as the reverse proxy on a small Oracle Cloud VM.",
+                        "Crew interface: a WhatsApp gateway connected to the MCP server, so crews can check in, log photos, order materials and ask questions in plain language."
+                    ]
+                },
+                {
+                    "title": "The WhatsApp agent and how it is kept safe",
+                    "bullets": [
+                        "Every action is a typed tool that declares a capability tier: 0 for read-only lookups, 2 for crew submissions (time clock, receipts, mileage, check-outs), 3 for anything that commits money, schedule or inventory, and 4 for admin and financial actions.",
+                        "The gateway holds one service credential limited to tier 2, attached by the gateway so the language model never sees it. I tested a tier-3 call with that credential against the real server and it was denied.",
+                        "Credentials are signed capability grants tied to an identity, and revoking a grant is the safety valve if one is ever exposed.",
+                        "Some crew actions, such as spend records and mileage claims, use confirm-before-execute: the submission becomes a pending confirmation that a manager approves or rejects before anything is committed.",
+                        "The agent resolves who is writing by looking up the sender's phone number with a tool, and it only reports what a tool returns, not what it guesses.",
+                        "A policy file states which functions may call external services, and the AI provider chain has fallbacks if one provider fails."
+                    ]
+                },
+                {
+                    "title": "Security and reliability",
+                    "bullets": [
+                        "Login rate limiting plus per-account lockout, and TOTP multi-factor authentication for admin accounts.",
+                        "Dependency audit clean, and the git history scanned for committed secrets (none found).",
+                        "Heartbeat health checks from the server and an independent external uptime monitor.",
+                        "Nightly database backups, and a restore into a throwaway database to prove the backup holds real, coherent data."
+                    ]
+                },
+                {
+                    "title": "A real outage, and what changed",
+                    "paragraphs": [
+                        "A frontend build run on the 1 GB production VM exhausted memory and made the server unresponsive for over an hour. I recovered it under time pressure, then wrote a disaster-recovery runbook. Builds now happen on my own machine and are shipped as static files, and the backup restore test that was previously just a gap in the plan is now done for real."
+                    ]
+                }
+            ],
+            "diagrams": [
+                {
+                    "src": "assets/diagrams/fieldops-architecture.svg",
+                    "alt": "Architecture of the field operations platform: a web dashboard and a WhatsApp gateway reach a REST facade and an MCP server, which share one TypeScript domain layer backed by PostgreSQL on a cloud VM behind Cloudflare and Caddy",
+                    "caption": "System architecture: two front doors, one domain layer."
+                },
+                {
+                    "src": "assets/diagrams/fieldops-agent-flow.svg",
+                    "alt": "How a WhatsApp request is checked and approved: gateway calls the MCP server, a signed capability grant is verified against the tool's tier, reads answer directly and gated writes wait for manager approval",
+                    "caption": "How a WhatsApp request is checked, approved and recorded."
+                },
+                {
+                    "src": "assets/diagrams/fieldops-deploy-ops.svg",
+                    "alt": "Deploy, backup and monitoring: builds on a laptop, code pulled on the server, nightly database dump to object storage with restore tests, a heartbeat and an external uptime check",
+                    "caption": "Deploy, backup and monitoring."
+                }
+            ],
+            "startDate": "2026-08-01",
+            "endDate": "",
+            "url": "https://github.com/RedjiJB/sodboys-fieldops",
+            "roles": [
+                "Developer"
+            ],
+            "entity": "The Sod Boys",
+            "type": "In Progress"
+        },
+        {
+            "name": "Business IT Stack",
+            "description": "Self-hosted business IT stack: single sign-on, helpdesk, ERP, file sharing, mail and a password vault behind Cloudflare Access, with AI-agent admin tools built as MCP servers.",
+            "overview": "A small company ran almost everything through WhatsApp and personal accounts. I designed and built a self-hosted stack of open-source services behind one login, and a set of MCP tools so day-to-day administration can happen from the same WhatsApp chat the staff already use. It is running in my homelab and was written up as a proposal for the business.",
+            "highlights": [
+                "Authentik single sign-on (OIDC) in front of Nextcloud, Zammad, Odoo and Vault",
+                "Nothing is exposed directly: Cloudflare Access, an outbound-only tunnel and one reverse proxy",
+                "MCP admin servers built from scratch and tested against the real products"
+            ],
+            "keywords": [
+                "Docker",
+                "Authentik",
+                "OIDC",
+                "Traefik",
+                "Cloudflare",
+                "Nextcloud",
+                "Zammad",
+                "Odoo",
+                "Vault",
+                "MCP",
+                "TypeScript"
+            ],
+            "sections": [
+                {
+                    "title": "What is in the stack",
+                    "bullets": [
+                        "Authentik: identity provider with MFA and OIDC for every other app.",
+                        "Nextcloud: files and sharing. Zammad: helpdesk and ticketing. Odoo Community: ERP, CRM and timesheets. Vault: secrets and signing keys.",
+                        "Mail: Stalwart mail server with Roundcube webmail on a separate cloud VM, with inbound mail delivered through Cloudflare Email Routing and an outbound relay.",
+                        "Traefik routes by hostname on a private Docker network; each app has its own database and only Traefik publishes a port."
+                    ]
+                },
+                {
+                    "title": "How a request is protected",
+                    "paragraphs": [
+                        "A request passes the Cloudflare edge, then Cloudflare Access (one-time e-mail PIN with an allow-list), then an outbound-only tunnel into the VM, then Traefik, then the app, which sends the user to Authentik for single sign-on with a password and TOTP. The tunnel is outbound-only, so nothing on the VM is published to the internet.",
+                        "Only Authentik's protocol endpoints (token, userinfo and key discovery) bypass the Access wall, because the apps' servers must call them directly. Those calls still require a client secret or bearer token."
+                    ]
+                },
+                {
+                    "title": "Mail without opening port 25",
+                    "paragraphs": [
+                        "The cloud provider blocks inbound port 25 at its edge, so inbound mail is received by Cloudflare Email Routing, handed to a Worker, posted over HTTPS to a small bridge on the mail VM and passed to Stalwart with the original sender's address preserved. Outbound mail goes through an authenticated relay with SPF and DKIM."
+                    ]
+                },
+                {
+                    "title": "Administering it from WhatsApp",
+                    "bullets": [
+                        "The goal was to let staff rarely open the service UIs: an `it-admin` MCP server plus thin servers for Zammad, Authentik, Stalwart and Odoo, all driven by the company's WhatsApp assistant.",
+                        "Safety by construction: the tools have no operation for passwords, recovery links, tokens or keys, and refuse to touch superusers and service accounts.",
+                        "Tiered actions with staged approval: risky changes wait for an out-of-chat approval, which re-authenticates the approver through Authentik with MFA and is valid only for that one action.",
+                        "Testing: each MCP server has unit tests, mutation checks, and live tests run against real instances of the product, not only mocks. Testing against real response shapes caught a bug that convenient mocks had hidden."
+                    ]
+                },
+                {
+                    "title": "Status and what I would do next",
+                    "paragraphs": [
+                        "The stack is built and running on a lab host; at the last update, finishing the single sign-on wiring and final hardening were still open. Deploying it for the business is a proposal, not a finished rollout. Next steps are finishing the SSO wiring, a restore drill for the whole stack, and moving it to always-on hosting."
+                    ]
+                }
+            ],
+            "diagrams": [
+                {
+                    "src": "assets/diagrams/it-stack-traffic.svg",
+                    "alt": "Diagram of how a browser request reaches a service: Cloudflare Access, tunnel, Traefik, then Authentik, Nextcloud, Zammad, Odoo or Vault",
+                    "caption": "How a request reaches a service, and what keeps it safe."
+                },
+                {
+                    "src": "assets/diagrams/security-layers.svg",
+                    "alt": "Defence-in-depth layers from the internet to a service",
+                    "caption": "Defence in depth: what stands between the internet and a service."
+                },
+                {
+                    "src": "assets/diagrams/sso-login-flow.svg",
+                    "alt": "Single sign-on OIDC authorization code flow between a browser, Nextcloud and Authentik",
+                    "caption": "Single sign-on (OIDC authorization-code flow)."
+                },
+                {
+                    "src": "assets/diagrams/authentik-architecture.svg",
+                    "alt": "Authentik server, worker and database with OIDC providers for the other apps",
+                    "caption": "Authentik: the identity provider for the stack."
+                },
+                {
+                    "src": "assets/diagrams/docker-networks.svg",
+                    "alt": "Docker networks in the IT stack VM, with only Traefik publishing a port",
+                    "caption": "Docker layout: only the reverse proxy publishes a port."
+                },
+                {
+                    "src": "assets/diagrams/mail-flow.svg",
+                    "alt": "Mail flow with Cloudflare Email Routing, a Worker, a bridge and Stalwart",
+                    "caption": "Mail delivery without opening inbound port 25."
+                },
+                {
+                    "src": "assets/diagrams/lead-to-job-flow.svg",
+                    "alt": "How a website quote request becomes a job",
+                    "caption": "From website quote request to job."
+                }
+            ],
+            "startDate": "2026-09-01",
+            "endDate": "",
+            "url": "",
+            "roles": [
+                "Developer"
+            ],
+            "entity": "The Sod Boys",
+            "type": "In Progress"
+        },
+        {
+            "name": "Homelab",
+            "description": "Two-site homelab: a Raspberry Pi 5 running always-on services and a Windows Server host running Hyper-V, joined by a Tailscale mesh with monitoring, encrypted backups and written runbooks.",
+            "overview": "I built a homelab to practise what a small IT team does: networking, monitoring, backups, identity, and documentation. A Raspberry Pi 5 runs the services that must always be up, a Windows Server 2022 machine runs the heavier workloads, and the two reach each other and my cloud servers over Tailscale. Everything is documented as runbooks, and the monitoring is defined in git.",
+            "highlights": [
+                "28 service monitors defined in git, with phone alerts and an external backstop check",
+                "Tailscale mesh: SSH and admin services are reachable only on the private network",
+                "Encrypted, pull-based backups of every machine, with a documented restore plan"
+            ],
+            "keywords": [
+                "Raspberry Pi",
+                "Tailscale",
+                "Windows Server",
+                "Hyper-V",
+                "Docker",
+                "Networking",
+                "Monitoring",
+                "Backups"
+            ],
+            "sections": [
+                {
+                    "title": "Layout",
+                    "bullets": [
+                        "Raspberry Pi 5 (wired): DNS and ad blocking with AdGuard Home, Uptime Kuma, ntfy push alerts, a Tailscale node, and a small website behind a Cloudflare Tunnel.",
+                        "Windows Server 2022 host: Hyper-V runs the IT-stack VM on a schedule; the host also runs a media server and has GNS3 installed for CCNA practice.",
+                        "Two Oracle Cloud VMs host the field-operations platform and the mail server; both are reachable over SSH only through Tailscale.",
+                        "A Wi-Fi repeater in router mode gives the server its own subnet and internet access, because the server has no Wi-Fi of its own."
+                    ]
+                },
+                {
+                    "title": "Networking and access",
+                    "paragraphs": [
+                        "Devices sit on the home network, the repeater's private subnet and a Tailscale overlay. Services such as the password manager, SSH and RDP are tailnet-only, with firewall rules scoped to the lab subnet and Tailscale's address range. From anywhere, I connect through Tailscale instead of opening ports."
+                    ]
+                },
+                {
+                    "title": "Monitoring",
+                    "paragraphs": [
+                        "Uptime Kuma on the Pi checks 28 targets: the machines, the website, the field-operations platform, mail, SSH on the cloud servers and each IT-stack service. Alerts go to my phone through ntfy, and backups report in with a success or failure heartbeat. A timer on a cloud VM checks the public site from outside, because if the Pi goes down so does its monitoring.",
+                        "Known gaps are written down: the monitoring depends on the Pi, and the password manager does not yet have its own monitor."
+                    ]
+                },
+                {
+                    "title": "Backups",
+                    "paragraphs": [
+                        "Backups are pulled, not pushed: the server fetches each machine's data over SSH using keys restricted to that job, checks the streams, encrypts them with an authenticated scheme and copies the result off-site to cloud storage, weekly and on demand. The first full backup set completed and verified. A full restore drill has not been done yet, and the documentation says so."
+                    ]
+                },
+                {
+                    "title": "Design changes and lessons",
+                    "paragraphs": [
+                        "The first design had the Pi route a separate lab subnet over a cable. It was dropped because the USB Ethernet adapter it needed was never bought and the Pi's Wi-Fi roaming kept causing outages, so the Pi moved to a wired connection and the server went behind the repeater. The changelog records both designs and why one replaced the other.",
+                        "Alongside the build I wrote operations docs, a troubleshooting log of real incidents, a service-by-service reference with diagrams, and an offline study set (phone e-books and 588 flashcards) so the whole environment can be learned and rebuilt."
+                    ]
+                }
+            ],
+            "diagrams": [
+                {
+                    "src": "assets/diagrams/network-overview.svg",
+                    "alt": "Homelab network overview: home network, Raspberry Pi, Wi-Fi repeater, Windows Server host, Tailscale overlay, two cloud VMs and Cloudflare",
+                    "caption": "Network overview. Addresses are placeholders."
+                },
+                {
+                    "src": "assets/diagrams/tailscale-mesh.svg",
+                    "alt": "Which devices are on the Tailscale network and which services are tailnet-only",
+                    "caption": "The Tailscale mesh and what is reachable only on it."
+                },
+                {
+                    "src": "assets/diagrams/monitoring-chain.svg",
+                    "alt": "Monitoring chain from Uptime Kuma to ntfy to a phone, with backup heartbeats and an external check",
+                    "caption": "Monitoring and alerting."
+                }
+            ],
+            "startDate": "2026-10-01",
+            "endDate": "",
+            "url": "",
+            "roles": [
+                "Developer"
+            ],
+            "entity": "Personal Project",
+            "type": "In Progress"
+        },
+        {
+            "name": "TermGame",
+            "description": "Gamified terminal training platform for mastering Linux, Cisco IOS and PowerShell through interactive missions with progressive difficulty and XP tracking, run in Docker sandboxes.",
+            "highlights": [
+                "Linux, Cisco IOS and PowerShell mission tracks",
+                "Docker-based sandboxes for safe practice",
+                "XP progression and command validation"
+            ],
+            "keywords": [
+                "Python",
+                "Docker",
+                "Linux",
+                "Cisco IOS",
+                "PowerShell"
+            ],
+            "startDate": "2026-01-01",
+            "endDate": "",
+            "url": "https://github.com/RedjiJB/TERMGAME",
+            "roles": [
+                "Developer"
+            ],
+            "entity": "Personal Project",
+            "type": "In Progress"
+        },
+        {
+            "name": "Windows Admin Toolkit",
+            "description": "Modular PowerShell toolkit for Windows administration: user management, backup automation, security operations, network management and system health monitoring.",
+            "highlights": [
+                "Bulk user operations from CSV with audit logging",
+                "Backup automation and security operations modules",
+                "System health monitoring"
+            ],
+            "keywords": [
+                "PowerShell",
+                "Windows",
+                "Active Directory",
+                "Automation"
+            ],
+            "startDate": "2026-01-01",
+            "endDate": "",
+            "url": "https://github.com/RedjiJB/window-admin-toolkit",
+            "roles": [
+                "Developer"
+            ],
+            "entity": "Personal Project",
+            "type": "In Progress"
+        },
+        {
+            "name": "Linux Automation Suite",
+            "description": "Bash scripts for automated backups, intelligent log analysis and cron job management on Linux systems.",
+            "highlights": [
+                "Automated backup operations",
+                "Log analysis tooling",
+                "Cron job management"
+            ],
+            "keywords": [
+                "Bash",
+                "Linux",
+                "Cron",
+                "Automation"
+            ],
+            "startDate": "2026-02-01",
+            "endDate": "",
+            "url": "https://github.com/RedjiJB/linux-automation-suite",
+            "roles": [
+                "Developer"
+            ],
+            "entity": "Personal Project",
+            "type": "In Progress"
+        },
         {
             "name": "Subnet Designer & Visualizer",
             "description": "Python tool that calculates VLSM subnet schemes and produces a LAN topology diagram. Reinforces OSI/TCP-IP knowledge and IPv4 addressing from CST 8182.",
@@ -278,11 +794,19 @@
                 "LAN topology visualization",
                 "IPv4 addressing practice"
             ],
-            "keywords": ["Python", "CIDR", "VLSM", "Networking", "Topology"],
+            "keywords": [
+                "Python",
+                "CIDR",
+                "VLSM",
+                "Networking",
+                "Topology"
+            ],
             "startDate": "2024-09-01",
             "endDate": "",
             "url": "",
-            "roles": ["Developer"],
+            "roles": [
+                "Developer"
+            ],
             "entity": "Personal Project",
             "type": "In Progress"
         },
@@ -294,11 +818,18 @@
                 "PowerShell automation scripts",
                 "Group Policy implementation"
             ],
-            "keywords": ["Windows", "PowerShell", "GPO", "Security Hardening"],
+            "keywords": [
+                "Windows",
+                "PowerShell",
+                "GPO",
+                "Security Hardening"
+            ],
             "startDate": "2024-09-01",
             "endDate": "",
             "url": "",
-            "roles": ["Developer"],
+            "roles": [
+                "Developer"
+            ],
             "entity": "Personal Project",
             "type": "In Progress"
         },
@@ -310,11 +841,18 @@
                 "System administration labs",
                 "Documentation and guides"
             ],
-            "keywords": ["Linux", "Bash", "Shell Scripting", "System Administration"],
+            "keywords": [
+                "Linux",
+                "Bash",
+                "Shell Scripting",
+                "System Administration"
+            ],
             "startDate": "2024-09-01",
             "endDate": "",
             "url": "",
-            "roles": ["Developer"],
+            "roles": [
+                "Developer"
+            ],
             "entity": "Personal Project",
             "type": "In Progress"
         },
@@ -326,11 +864,18 @@
                 "Boolean logic implementation",
                 "Command-line interface"
             ],
-            "keywords": ["Python", "Binary/Hex", "Boolean Logic", "CLI"],
+            "keywords": [
+                "Python",
+                "Binary/Hex",
+                "Boolean Logic",
+                "CLI"
+            ],
             "startDate": "2024-09-01",
             "endDate": "",
             "url": "",
-            "roles": ["Developer"],
+            "roles": [
+                "Developer"
+            ],
             "entity": "Personal Project",
             "type": "In Progress"
         },
@@ -342,11 +887,19 @@
                 "SIEM implementation",
                 "Incident response automation"
             ],
-            "keywords": ["pfSense", "Suricata", "Elastic Stack", "SIEM", "Incident Response"],
+            "keywords": [
+                "pfSense",
+                "Suricata",
+                "Elastic Stack",
+                "SIEM",
+                "Incident Response"
+            ],
             "startDate": "",
             "endDate": "",
             "url": "",
-            "roles": ["Developer"],
+            "roles": [
+                "Developer"
+            ],
             "entity": "Personal Project",
             "type": "Planning"
         }
@@ -390,6 +943,12 @@
     ],
     "certificates": [
         {
+            "name": "Ontario Security Guard Licence",
+            "issuer": "Ontario Government",
+            "status": "Issued May 2021 · Expires Jan 2027",
+            "url": ""
+        },
+        {
             "name": "CompTIA Security+",
             "date": "",
             "issuer": "CompTIA",
@@ -409,5 +968,28 @@
         "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
         "version": "v1.0.0",
         "lastModified": "2025-08-01T00:00:00"
-    }
+    },
+    "volunteer": [
+        {
+            "organization": "Onyx Initiative Scholars Program",
+            "position": "Member",
+            "startDate": "2025-11",
+            "endDate": "",
+            "summary": "Career-development program for Black students and recent graduates: mentorship, coaching and skill-building workshops with leaders at top tech companies."
+        },
+        {
+            "organization": "Algonquin Kali Club",
+            "position": "Active Member",
+            "startDate": "2025-09",
+            "endDate": "",
+            "summary": "Hands-on penetration testing, vulnerability assessment and ethical-hacking training on Kali Linux, plus CTF competitions and security tool workshops."
+        },
+        {
+            "organization": "CyberSci 2025",
+            "position": "Volunteer",
+            "startDate": "2025-11",
+            "endDate": "2025-11",
+            "summary": "Supported logistics, registration and technical setup for Canada's national student cybersecurity competition (CTF)."
+        }
+    ]
 }

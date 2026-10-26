@@ -1,0 +1,359 @@
+/* ─── Header shell ─────────────────────────────────────── */
+.nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.4s ease,
+              backdrop-filter 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+.nav-header--scrolled {
+  background: rgba(17, 17, 17, 0.65);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.nav-header--hidden {
+  transform: translateY(-100%);
+}
+
+/* ─── Inner layout ─────────────────────────────────────── */
+.nav-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ─── Logo ─────────────────────────────────────────────── */
+.nav-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fafafa;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.75;
+}
+
+.nav-logo__bracket {
+  color: #00b4d8;
+  font-weight: 400;
+}
+
+/* ─── Desktop nav links ────────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.65);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: calc(100% - 1.7rem);
+  height: 2px;
+  background: linear-gradient(90deg, #2a4e93, #00b4d8);
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  color: #fafafa;
+}
+
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-link--active {
+  color: #00b4d8;
+}
+
+.nav-link--active::after {
+  transform: translateX(-50%) scaleX(1);
+  background: linear-gradient(90deg, #00b4d8, #2a4e93);
+}
+
+/* Glitch flicker on hover label */
+.nav-link__label {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover .nav-link__label {
+  animation: labelPop 0.25s ease;
+}
+
+@keyframes labelPop {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+/* ─── Hamburger ────────────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1300;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fafafa;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s ease,
+              width 0.25s ease;
+}
+
+/* → X state */
+.nav-hamburger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger--open span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.nav-hamburger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Mobile full-screen overlay ───────────────────────── */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(11, 11, 18, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  pointer-events: none;
+  clip-path: circle(0% at calc(100% - 2rem) 32px);
+  transition: clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-overlay--open {
+  pointer-events: all;
+  clip-path: circle(160% at calc(100% - 2rem) 32px);
+}
+
+/* ─── Overlay link list ────────────────────────────────── */
+.nav-overlay__links {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2.5rem;
+  margin-top: 1rem;
+}
+
+.nav-overlay__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(1.8rem, 9vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(250, 250, 250, 0.18);
+  text-decoration: none;
+  line-height: 1;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  /* reset state — allows re-animation on each open */
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.nav-overlay__links .nav-overlay__link:last-child {
+  border-bottom: none;
+}
+
+/* Active left accent bar */
+.nav-overlay__link--active::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: linear-gradient(180deg, #2a4e93, #00b4d8);
+  border-radius: 0 2px 2px 0;
+}
+
+/* Play entrance animation when overlay opens */
+.nav-overlay--open .nav-overlay__link {
+  animation: overlayLinkIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(0.2s + var(--i) * 0.075s);
+}
+
+/* Reset instantly when overlay is closed so re-open re-animates */
+.nav-overlay:not(.nav-overlay--open) .nav-overlay__link {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: none;
+}
+
+@keyframes overlayLinkIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nav-overlay__link:active {
+  color: #fafafa;
+}
+
+@media (hover: hover) {
+  .nav-overlay__link:hover {
+    color: #fafafa;
+  }
+
+  .nav-overlay__link:hover .nav-overlay__num {
+    color: #fafafa;
+  }
+}
+
+.nav-overlay__link--active {
+  color: #00b4d8;
+}
+
+.nav-overlay__num {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #00b4d8;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  min-width: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+/* ─── Overlay bottom hint ───────────────────────────────── */
+.nav-overlay__footer {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: rgba(250, 250, 250, 0.18);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.6s;
+}
+
+.nav-overlay--open .nav-overlay__footer {
+  opacity: 1;
+}
+
+/* ─── Responsive breakpoints ───────────────────────────── */
+@media (max-width: 768px) {
+  .nav-header {
+    padding: 0 1.25rem;
+    /* transparent at top — JS adds --scrolled class on scroll */
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .nav-header--scrolled {
+    background: rgba(11, 11, 18, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-overlay {
+    display: none;
+  }
+}
+
+/* Overlay social links */
+.nav-overlay__social {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.nav-overlay__social a {
+  color: #fafafa;
+  font-size: 1.6rem;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.nav-overlay__social a:hover {
+  opacity: 1;
+  color: #00b4d8;
+}
+
+/* Light theme: dark text on the light backdrop (never while the overlay is open) */
+.nav-header--light .nav-logo { color: #111; }
+.nav-header--light .nav-link { color: rgba(17, 17, 17, 0.65); }
+.nav-header--light .nav-link:hover { color: #111; }
+.nav-header--light .nav-link--active { color: #2a4e93; }
+.nav-header--light .nav-hamburger span { background: #111; }
+.nav-header--light.nav-header--scrolled {
+  background: rgba(250, 250, 250, 0.7);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d"><title id="t">How a WhatsApp request is checked and approved</title><desc id="d">A crew message becomes a tool call. The MCP server verifies the caller's signed capability grant against the tool's tier. Reads answer directly; gated writes wait for a manager's approval.</desc><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker></defs><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="32" text-anchor="start" font-size="20" font-weight="700" fill="#1a202c">WhatsApp agent: how a request is checked, approved and recorded</text>
+<rect x="30" y="80" width="190" height="76" rx="8" fill="#eef6ff" stroke="#2b6cb0" stroke-width="1.6"/>
+<text x="125" y="102" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">1  Crew sends a message</text>
+<text x="125" y="118" text-anchor="middle" font-size="11" fill="#4a5568">e.g. check in, log a receipt,</text>
+<text x="125" y="132" text-anchor="middle" font-size="11" fill="#4a5568">ask for tomorrow's jobs</text>
+<rect x="260" y="80" width="200" height="76" rx="8" fill="#f3f0ff" stroke="#6b46c1" stroke-width="1.6"/>
+<text x="360" y="102" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">2  Gateway + LLM pick a tool</text>
+<text x="360" y="118" text-anchor="middle" font-size="11" fill="#4a5568">the agent looks up the sender</text>
+<text x="360" y="132" text-anchor="middle" font-size="11" fill="#4a5568">by phone number with a tool</text>
+<rect x="500" y="80" width="210" height="76" rx="8" fill="#f3f0ff" stroke="#6b46c1" stroke-width="1.6"/>
+<text x="605" y="102" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">3  Gateway calls the MCP server</text>
+<text x="605" y="118" text-anchor="middle" font-size="11" fill="#4a5568">service credential goes in a</text>
+<text x="605" y="132" text-anchor="middle" font-size="11" fill="#4a5568">header; the LLM never sees it</text>
+<rect x="750" y="80" width="190" height="76" rx="8" fill="#fff7e0" stroke="#b7791f" stroke-width="1.6"/>
+<text x="845" y="102" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">4  Capability check</text>
+<text x="845" y="118" text-anchor="middle" font-size="11" fill="#4a5568">signed grant verified:</text>
+<text x="845" y="132" text-anchor="middle" font-size="11" fill="#4a5568">is tool tier &lt;= credential tier?</text>
+<line x1="220" y1="118" x2="260" y2="118" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="460" y1="118" x2="500" y2="118" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="710" y1="118" x2="750" y2="118" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="750" y="210" width="190" height="70" rx="8" fill="#fff0f0" stroke="#c53030" stroke-width="1.6"/>
+<text x="845" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Denied</text>
+<text x="845" y="248" text-anchor="middle" font-size="11" fill="#4a5568">e.g. a tier-3 tool called</text>
+<text x="845" y="262" text-anchor="middle" font-size="11" fill="#4a5568">with the tier-2 credential</text>
+<line x1="845" y1="156" x2="845" y2="210" stroke="#c53030" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="845" y="178" text-anchor="middle" font-size="11" fill="#c53030" paint-order="stroke" stroke="#fff" stroke-width="3">not allowed</text>
+<rect x="990" y="60" width="180" height="64" rx="8" fill="#e8f7ee" stroke="#2f855a" stroke-width="1.6"/>
+<text x="1080" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">5a  Read or simple tool</text>
+<text x="1080" y="98" text-anchor="middle" font-size="11" fill="#4a5568">queries the domain layer;</text>
+<text x="1080" y="112" text-anchor="middle" font-size="11" fill="#4a5568">the answer is shown in chat</text>
+<rect x="990" y="165" width="180" height="76" rx="8" fill="#e8f7ee" stroke="#2f855a" stroke-width="1.6"/>
+<text x="1080" y="187" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">5b  Gated write</text>
+<text x="1080" y="203" text-anchor="middle" font-size="11" fill="#4a5568">creates a pending</text>
+<text x="1080" y="217" text-anchor="middle" font-size="11" fill="#4a5568">confirmation: awaiting review</text>
+<line x1="940" y1="105" x2="990" y2="92" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="965" y="89" text-anchor="middle" font-size="11" fill="#4a5568" paint-order="stroke" stroke="#fff" stroke-width="3">allowed</text>
+<line x1="940" y1="130" x2="990" y2="203" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="990" y="290" width="180" height="64" rx="8" fill="#eef6ff" stroke="#2b6cb0" stroke-width="1.6"/>
+<text x="1080" y="312" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">6  Manager reviews</text>
+<text x="1080" y="328" text-anchor="middle" font-size="11" fill="#4a5568">approves or rejects</text>
+<text x="1080" y="342" text-anchor="middle" font-size="11" fill="#4a5568">in the dashboard</text>
+<line x1="1080" y1="241" x2="1080" y2="290" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="750" y="380" width="190" height="70" rx="8" fill="#fff0f0" stroke="#c53030" stroke-width="1.6"/>
+<text x="845" y="402" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Rejected</text>
+<text x="845" y="418" text-anchor="middle" font-size="11" fill="#4a5568">nothing changes;</text>
+<text x="845" y="432" text-anchor="middle" font-size="11" fill="#4a5568">a note is recorded</text>
+<line x1="990" y1="335" x2="940" y2="405" stroke="#c53030" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="965" y="365" text-anchor="middle" font-size="11" fill="#c53030" paint-order="stroke" stroke="#fff" stroke-width="3">reject</text>
+<rect x="750" y="290" width="190" height="64" rx="8" fill="#e8f7ee" stroke="#2f855a" stroke-width="1.6"/>
+<text x="845" y="312" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">7  Approved: executor runs</text>
+<text x="845" y="328" text-anchor="middle" font-size="11" fill="#4a5568">the domain layer commits</text>
+<text x="845" y="342" text-anchor="middle" font-size="11" fill="#4a5568">the change</text>
+<line x1="990" y1="322" x2="940" y2="322" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="965" y="317" text-anchor="middle" font-size="11" fill="#4a5568" paint-order="stroke" stroke="#fff" stroke-width="3">approve</text>
+<rect x="510" y="290" width="190" height="64" rx="8" fill="#ffffff" stroke="#4a5568" stroke-width="1.6"/>
+<text x="605" y="312" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">8  Outcome recorded</text>
+<text x="605" y="328" text-anchor="middle" font-size="11" fill="#4a5568">history keeps who asked,</text>
+<text x="605" y="342" text-anchor="middle" font-size="11" fill="#4a5568">who approved, and the result</text>
+<line x1="750" y1="322" x2="700" y2="322" stroke="#4a5568" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="20" y="480" width="1160" height="120" rx="12" fill="#f7f7f7" fill-opacity="0.45" stroke="#718096" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="32" y="498" font-size="12" font-weight="700" fill="#718096">Capability tiers (every tool declares one)</text>
+<rect x="40" y="510" width="255" height="70" rx="8" fill="#ffffff" stroke="#4a5568" stroke-width="1.6"/>
+<text x="167" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Tier 0</text>
+<text x="167" y="548" text-anchor="middle" font-size="11" fill="#4a5568">read-only lookups</text>
+<rect x="315" y="510" width="255" height="70" rx="8" fill="#e8f7ee" stroke="#2f855a" stroke-width="1.6"/>
+<text x="442" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Tier 2</text>
+<text x="442" y="548" text-anchor="middle" font-size="11" fill="#4a5568">crew submissions: time clock, receipts,</text>
+<text x="442" y="562" text-anchor="middle" font-size="11" fill="#4a5568">mileage, check-outs (gateway ceiling)</text>
+<rect x="590" y="510" width="255" height="70" rx="8" fill="#fff7e0" stroke="#b7791f" stroke-width="1.6"/>
+<text x="717" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Tier 3</text>
+<text x="717" y="548" text-anchor="middle" font-size="11" fill="#4a5568">commits money, schedule</text>
+<text x="717" y="562" text-anchor="middle" font-size="11" fill="#4a5568">or inventory</text>
+<rect x="865" y="510" width="295" height="70" rx="8" fill="#fff0f0" stroke="#c53030" stroke-width="1.6"/>
+<text x="1012" y="532" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Tier 4</text>
+<text x="1012" y="548" text-anchor="middle" font-size="11" fill="#4a5568">admin and financial actions</text>
+<text x="1012" y="562" text-anchor="middle" font-size="11" fill="#4a5568">(not reachable by the gateway)</text>
+<text x="24" y="616" text-anchor="start" font-size="11" font-weight="400" fill="#4a5568">Simplified. Grants are signed credentials; revoking a grant is the safety valve if a credential is exposed.</text>
+</svg>
