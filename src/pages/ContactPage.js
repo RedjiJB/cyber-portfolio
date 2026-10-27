@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { TopNavbar } from '../components/nav/TopNavbar';
 import DarkSphere from '../components/background/DarkSphere';
 import resume from '../settings/resume.json';
+import { analyticsEnabled } from '../components/analytics/Analytics';
 import './SubPage.css';
 import './ContactPage.css';
 
@@ -190,6 +191,13 @@ export const ContactPage = () => {
             </form>
           </div>
         </div>
+
+        {analyticsEnabled && (
+          <p className="ct-privacy">
+            Privacy: visits are counted with GoatCounter, which uses no cookies, does not store your IP
+            address and does not build a profile of you. If your browser sends Do Not Track, nothing is counted.
+          </p>
+        )}
       </main>
     </div>
   );

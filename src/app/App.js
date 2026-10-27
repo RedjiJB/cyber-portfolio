@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 
 import { BrowserRouter as Router, Switch, Route, useLocation, useHistory } from "react-router-dom";
 import { HelmetMeta } from "./HelmetMeta";
+import { Analytics } from "../components/analytics/Analytics";
 import { ThemeProvider } from "../components/theme/ThemeProvider";
 import { CssBaseline, CircularProgress, useMediaQuery } from "@material-ui/core";
 import { logCredits } from "../utils/logCredits";
@@ -109,6 +110,7 @@ export const App = () => {
           <HelmetMeta />
           <LegacyHashRedirect />
           <ScrollToTop />
+          <Analytics />
           <Suspense fallback={<LoadingFallback />}>
             <Switch>
                 <Route path="/" exact component={HomeRoute} />
