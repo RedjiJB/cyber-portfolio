@@ -109,12 +109,18 @@ const bodies = {
 };
 
 /* ── Head + shell ──────────────────────────────────────────────────────── */
+// The prerendered content is for crawlers and AI agents, not for people, so it is
+// visually hidden (still in the HTML and still read by screen readers). Visitors see a
+// splash in the colour of the page that is about to load, so nothing flashes before React mounts.
 const PRERENDER_CSS = `
-  #root > .prerender{max-width:820px;margin:0 auto;padding:5rem 1.5rem 3rem;font:16px/1.65 Inter,system-ui,sans-serif;color:#eceff8;background:#121212;min-height:100vh}
-  #root > .prerender a{color:#00c8e8}
-  #root > .prerender h1{font-size:2.4rem;letter-spacing:-.04em;margin:1rem 0 .25rem}
-  #root > .prerender h2{margin-top:2rem}
-  #root > .prerender nav{margin-bottom:1.5rem}`;
+  #root > .prerender{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+  #root > .prerender-splash{position:fixed;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center}
+  #root > .prerender-splash::after{content:"";width:36px;height:36px;border:3px solid rgba(128,128,128,.25);border-top-color:#00b4d8;border-radius:50%;animation:root-spin .8s linear infinite}`;
+
+// The landing page follows the saved theme (light by default); every other page is dark.
+const backdropHeadFor = (route) => (route.kind === 'home'
+  ? `<style>html{background:#fafafa}</style><script>try{if(JSON.parse(localStorage.getItem("dark")))document.documentElement.style.background="#111111"}catch(e){}</script>`
+  : `<style>html{background:#121212}</style>`);
 
 const headFor = (route) => {
   const url = urlFor(route.path);
@@ -139,6 +145,9 @@ const headFor = (route) => {
     `<meta name="twitter:image" content="${esc(SOCIAL_IMAGE)}" data-react-helmet="true" />`,
     `<script type="application/ld+json" data-react-helmet="true">${JSON.stringify(jsonLdFor(route)).replace(/</g, '\\u003c')}</script>`,
     `<style>${PRERENDER_CSS}</style>`,
+    backdropHeadFor(route),
+    // Without JavaScript there is no app to wait for, so show the readable static page instead of the splash.
+    `<noscript><style>#root>.prerender-splash{display:none}#root>.prerender{position:static;width:auto;height:auto;max-width:820px;margin:0 auto;padding:2rem 1.5rem;overflow:visible;clip:auto;clip-path:none;white-space:normal;font:16px/1.65 system-ui,sans-serif;color:#eceff8;background:#121212;min-height:100vh}#root>.prerender a{color:#00c8e8}html,body{background:#121212}</style></noscript>`,
   ];
   return tags.join('\n        ');
 };
@@ -146,7 +155,8 @@ const headFor = (route) => {
 const render = (shell, route) => {
   let html = shell.replace(/<title>[\s\S]*?<\/title>/, '');
   html = html.replace('</head>', `        ${headFor(route)}\n    </head>`);
-  const body = `<div class="prerender"><main>${bodies[route.kind](route)}</main></div>`;
+  const splashStyle = route.kind === 'home' ? '' : ' style="background:#121212"';
+  const body = `<div class="prerender-splash" aria-hidden="true"${splashStyle}></div><div class="prerender"><main>${bodies[route.kind](route)}</main></div>`;
   return html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
 };
 
